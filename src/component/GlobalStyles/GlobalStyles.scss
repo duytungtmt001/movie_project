@@ -1,0 +1,114 @@
+@import 'normalize.css';
+
+:root {
+    --primary-color: #fe2c55;
+
+    // Default layout
+    --height-header: 60px;
+    --width-layout-default: 1150px;
+    --width-sidebar: 280px;
+    --black-color: #000;
+    --text-color: #161823;
+    --white-color: #fff;
+    --font-family: 'Quicksand', 'san-serif';
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+}
+
+html {
+    font-size: 62.5%;
+}
+
+// Scroll bar
+
+html *::-webkit-scrollbar {
+    border-radius: 0;
+    width: 8px;
+}
+
+html *::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(22, 24, 35, 0.3);
+}
+
+html *::-webkit-scrollbar-track {
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+body {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    color: var(--text-color);
+    overflow-y: overlay;
+}
+
+button {
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+button,
+input,
+[tabindex] {
+    outline: none;
+    border: none;
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+// Fonts embeded
+
+// @font-face {
+//     font-family: ProximaNova;
+//     src: url('/assets/fonts/Proxima-Nova-Regular.woff2');
+//     font-weight: 500;
+// }
+
+// @font-face {
+//     font-family: ProximaNova;
+//     src: url('/assets/fonts/Proxima-Nova-Semibold.woff2');
+//     font-weight: 600;
+// }
+
+// @font-face {
+//     font-family: ProximaNova;
+//     src: url('/assets/fonts/Proxima-Nova-Bold.woff');
+//     font-weight: 700;
+// }
+
+// @font-face {
+//     font-family: SofiaPro;
+//     src: url('/assets/fonts/sofiapro-semibold.otf');
+//     font-weight: 600;
+// }
+
+// @font-face {
+//     font-family: SofiaPro;
+//     src: url('/assets/fonts/sofiapro-bold.woff');
+//     font-weight: 700;
+// }
+
+// Tippy tooltip
+body {
+    .tippy-box {
+        font-weight: 6000;
+        font-size: 1.4rem;
+        line-height: 22px;
+        padding: 4px 0;
+        border-radius: 8px;
+        background-color: rgba(84, 84, 84, 0.92);
+    }
+
+    .tippy-arrow {
+        color: rgba(84, 84, 84, 0.92);
+    }
+}
