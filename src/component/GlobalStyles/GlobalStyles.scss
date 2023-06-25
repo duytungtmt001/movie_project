@@ -1,14 +1,9 @@
 @import 'normalize.css';
 
 :root {
-    --primary-color: #fe2c55;
+    --background-color: #111111;
 
     // Default layout
-    --height-header: 60px;
-    --width-layout-default: 1150px;
-    --width-sidebar: 280px;
-    --black-color: #000;
-    --text-color: #161823;
     --white-color: #fff;
     --font-family: 'Quicksand', 'san-serif';
 }
@@ -18,7 +13,6 @@
     margin: 0;
     padding: 0;
     font-family: var(--font-family);
-    text-align: center;
 }
 
 html {
@@ -65,38 +59,6 @@ a {
     color: var(--text-color);
     text-decoration: none;
 }
-
-// Fonts embeded
-
-// @font-face {
-//     font-family: ProximaNova;
-//     src: url('/assets/fonts/Proxima-Nova-Regular.woff2');
-//     font-weight: 500;
-// }
-
-// @font-face {
-//     font-family: ProximaNova;
-//     src: url('/assets/fonts/Proxima-Nova-Semibold.woff2');
-//     font-weight: 600;
-// }
-
-// @font-face {
-//     font-family: ProximaNova;
-//     src: url('/assets/fonts/Proxima-Nova-Bold.woff');
-//     font-weight: 700;
-// }
-
-// @font-face {
-//     font-family: SofiaPro;
-//     src: url('/assets/fonts/sofiapro-semibold.otf');
-//     font-weight: 600;
-// }
-
-// @font-face {
-//     font-family: SofiaPro;
-//     src: url('/assets/fonts/sofiapro-bold.woff');
-//     font-weight: 700;
-// }
 
 // Tippy tooltip
 body {
