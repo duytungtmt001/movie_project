@@ -3,5 +3,7 @@ export const routes = {
     release: '/release',
     odd: '/odd',
     series: '/series',
-    wishlish: '/wishlist',
+    wishlist: '/wishlist',
+    login: '/login',
+    donate: '/donate'
 }

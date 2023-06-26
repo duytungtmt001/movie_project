@@ -55,9 +55,17 @@ input,
     // border: none;
 }
 
+ul {
+    list-style-type: none;
+}
+
 a {
     color: var(--text-color);
     text-decoration: none;
+}
+
+h1 {
+    margin-top: 100px;
 }
 
 // Tippy tooltip

@@ -1,0 +1,117 @@
+.wrapper {
+    --header-height: 70px;
+    width: 100%;
+    height: var(--header-height);
+    background-color: var(--background-color);
+    padding: 6px 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+// Logo
+.logo {
+    height: 100%;
+    width: 200px;
+    
+    .logo-image {
+        height: calc(var(--header-height) - 12px);
+    }
+}
+
+// Navbar
+.navbar {
+    flex: 1;
+    
+    .navbar-list  {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        .navbar-item {
+                color: #fff;
+                padding: 1.6rem;
+                cursor: pointer;
+                font-weight: 600;
+                font-size: 1.7rem;
+                transition: all ease-out .2s;
+                opacity: .8;
+        
+                &:hover {
+                    opacity: 1;
+                }
+        
+                &:hover .bar-bottom {
+                    width: 100%;
+                }
+            }
+    }
+
+    .bar-bottom {
+        height: 1px;
+        width: 0;
+        background-color: #fff;
+        border-radius: 1.2rem;
+        transition: all ease-out .4s .1s;
+    }
+
+    .navbar-item.active {
+        opacity: 1;
+    }
+
+    .navbar-item.active .bar-bottom {
+        width: 100%;
+    }
+}
+
+// Search
+.search {
+    display: flex;
+    align-items: center;
+    margin-right: 28px;
+    position: relative;
+}
+
+.search-input {
+    padding: 10px;
+    padding-right: 40px;
+    width: 280px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 4px;
+}
+
+.search-icon {
+    position: absolute;
+    right: 0;
+    color: #fff;
+    font-size: 1.9rem;
+    padding: 10px;
+    cursor: pointer;
+    opacity: .8;
+    transition: all ease-out .2s;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+// Header-right
+.options {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
