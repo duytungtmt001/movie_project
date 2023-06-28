@@ -6,7 +6,7 @@ import images from "../../assets/images";
 
 const cx = classNames.bind(styles);
 
-const Image = ({alt, src, className, fallback: customFallback = images.noImage, ...props}, ref) => {
+const Image = ({alt, src, className, fallback: customFallback = images.noImage, ...props}) => {
     const [fallback, setFallback] = useState('');
 
     const handleError = () => {

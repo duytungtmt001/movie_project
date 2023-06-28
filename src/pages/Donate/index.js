@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 const Donate = (props) => {
     return <h1>Donate</h1>;
