@@ -1,21 +1,91 @@
 import { Link } from 'react-router-dom';
 import styles from './Header.module.scss';
 import classNames from 'classnames/bind';
-import { AnnouncementIcon, SearchIcon } from '../../../components/Icons/Icons';
+import { AccountIcon, AnnouncementIcon, LanguageIcon, LogOutIcon, SearchIcon, SettingIcon, ThemeIcon, WishlistIcon } from '../../../components/Icons';
 
 import { useState } from 'react';
 import Tippy from '@tippyjs/react/headless';
 import Wrapper from '../../../components/Popper';
+import Menu from '../../../components/Popper/Menu';
 
 import { publicRoutes } from '../../../routes/routes';
 import Image from '../../../components/Image'
-
+import HeaderMenu from '../../../components/Popper/Menu';
 const cx = classNames.bind(styles)
+
+// import {} from "framer-motion";
 
 
 function Header() {
     const [itemActive, setItemActive] = useState(0);
     const [inputSearch, setInputSearch] = useState(false);
+
+    const userMenu = [
+        {
+            icon: <AccountIcon />,
+            title: 'Tài khoản',
+            to: '/',
+        },
+        {
+            icon: <WishlistIcon />,
+            title: 'Danh sách yêu thích',
+            to: '/wishlist',
+        },
+        {
+            icon: <LanguageIcon />,
+            title: 'Ngôn ngữ',
+            children: {
+                title: 'Languages',
+                data: [
+                    {
+                        type: 'language',
+                        code: 'en',
+                        title: 'English',
+                    },
+                    {
+                        type: 'language',
+                        code: 'vi',
+                        title: 'Tiếng Việt',
+                    },
+                    {
+                        type: 'language',
+                        code: 'cn',
+                        title: '中国人',
+                    },
+                ],
+            },
+        },
+        {
+            icon: <SettingIcon />,
+            title: 'Cài đặt',
+            to: '/',
+        },
+        {
+            icon: <ThemeIcon />,
+            title: 'Chủ đề',
+            children: {
+                title: 'Chọn chủ đề',
+                data: [
+                    {
+                        type: 'theme',
+                        code: 'dark',
+                        title: 'Tối',
+                    },
+                    {
+                        type: 'theme',
+                        code: 'light',
+                        title: 'Sáng',
+                    },
+                ],
+            },
+        },
+        {
+            icon: <LogOutIcon />,
+            title: 'Đăng xuất',
+            separate: true,
+            to: '/',
+        },
+    ];
 
     return (
         <div className={cx('wrapper')}>
@@ -72,17 +142,8 @@ function Header() {
                     <AnnouncementIcon />
                 </div>
             </div>
-
-            <Tippy
-                interactive
-                render={(attrs) => (
-                    <div tabIndex="-1" {...attrs}>
-                        <Wrapper>
-                            <h2>Hello ae</h2>
-                        </Wrapper>
-                    </div>
-                )}
-            >
+            
+            <Menu items={userMenu}>
                 <div className={cx('user')}>
                     <Image
                         src={require('../../../assets/avt/1.jpg')}
@@ -90,7 +151,8 @@ function Header() {
                         className="header-avt"
                     />
                 </div>
-            </Tippy>
+            </Menu>
+           
         </div>
     );
 }

@@ -2,6 +2,8 @@
 
 :root {
     --background-color: #111111;
+    --button-height: 42px;
+    --background-button-dark: #404446;
 
     // Default layout
     --white-color: #fff;
@@ -17,6 +19,7 @@
 
 html {
     font-size: 62.5%;
+    color: var(--white-color);
 }
 
 // Scroll bar
@@ -52,7 +55,7 @@ button,
 input,
 [tabindex] {
     outline: none;
-    // border: none;
+    border: none;
 }
 
 ul {
