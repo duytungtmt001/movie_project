@@ -1,9 +1,10 @@
-import { Fragment } from 'react';
+import { Fragment, useRef } from 'react';
 import { Defaultlayout } from './layouts';
 import {publicRoutes} from './routes'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
+
     return (
         <BrowserRouter>
             <Routes>
@@ -31,7 +32,7 @@ function App() {
                 })}
             </Routes>
         </BrowserRouter>
-    );  
+    )
 }
 
 export default App;

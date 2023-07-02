@@ -11,10 +11,10 @@ import Menu from '../../../components/Popper/Menu';
 import { publicRoutes } from '../../../routes/routes';
 import Image from '../../../components/Image'
 import HeaderMenu from '../../../components/Popper/Menu';
+
+import {motion} from 'framer-motion';
+
 const cx = classNames.bind(styles)
-
-// import {} from "framer-motion";
-
 
 function Header() {
     const [itemActive, setItemActive] = useState(0);
@@ -152,7 +152,6 @@ function Header() {
                     />
                 </div>
             </Menu>
-           
         </div>
     );
 }
