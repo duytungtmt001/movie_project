@@ -7,7 +7,7 @@ import MenuItem from './MenuItem';
 import HeaderMenu from './HeaderMenu'
 import { useState } from 'react';
 
-import { motion } from 'framer-motion';
+import  motion  from 'framer-motion';
 
 const cx = classNames.bind(styles);
 
@@ -45,14 +45,16 @@ function Menu({
 
     const renderResult = ((attrs) => {
         return (
-            <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
-                <Wrapper className={cx('menu-wrap')}>
-                    {history.length > 1 && (
-                        <HeaderMenu title={current.title} onBack={handleBack} />
-                    )}
-                    <div className={cx('menu-body')}>{renderItems()}</div>
-                </Wrapper>
-            </div>
+            <motion.div>
+                <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
+                    <Wrapper className={cx('menu-wrap')}>
+                        {history.length > 1 && (
+                            <HeaderMenu title={current.title} onBack={handleBack} />
+                        )}
+                        <div className={cx('menu-body')}>{renderItems()}</div>
+                    </Wrapper>
+                </div>
+            </motion.div>
         );
     })
 
@@ -72,12 +74,7 @@ function Menu({
             offset={[0, 10]}
             hideOnClick={hideOnClick}
             placement="bottom-end"
-            // render={renderResult}
-            render={(attrs) => (
-                <motion.div {...attrs}>
-                    Hello
-                </motion.div>
-            )}
+            render={renderResult}
             onHide={handleResetMenu}
         >
             {children}
