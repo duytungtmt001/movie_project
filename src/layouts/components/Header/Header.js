@@ -4,15 +4,11 @@ import classNames from 'classnames/bind';
 import { AccountIcon, AnnouncementIcon, LanguageIcon, LogOutIcon, SearchIcon, SettingIcon, ThemeIcon, WishlistIcon } from '../../../components/Icons';
 
 import { useState } from 'react';
-import Tippy from '@tippyjs/react/headless';
-import Wrapper from '../../../components/Popper';
 import Menu from '../../../components/Popper/Menu';
 
 import { publicRoutes } from '../../../routes/routes';
 import Image from '../../../components/Image'
 import HeaderMenu from '../../../components/Popper/Menu';
-
-import {motion} from 'framer-motion';
 
 const cx = classNames.bind(styles)
 
