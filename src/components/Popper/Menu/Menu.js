@@ -6,18 +6,29 @@ import Wrapper from '../../Popper'
 import MenuItem from './MenuItem';
 import HeaderMenu from './HeaderMenu'
 import { useState } from 'react';
-import { motion } from 'framer-motion';
+
+import { motion, useMotionValue, useSpring } from 'framer-motion';
+
+
 const cx = classNames.bind(styles);
+
 
 const defaultFn = () => {}
 
 const Menu = ({
-    children,
-    items = [],
-    onChange = defaultFn,
-    hideOnClick = false,
-    motion = true,
+    children, 
+    items = [], 
+    onChange = defaultFn, 
+    hideOnClick = false
 }) => {
+    const springConfig = {
+        damping: 200,
+        stiffness: 1500
+    };
+    const transformDefault = -8;
+    const transform = useSpring(transformDefault, springConfig);
+    const opacity = useSpring(0, springConfig);
+
     const [history, setHistory] = useState([{data: items}])
 
     const current = history[history.length - 1];
@@ -43,16 +54,16 @@ const Menu = ({
 
     const renderResult = ((attrs) => {
         return (
-            <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
-                <Wrapper className={cx('menu-wrap')}>
-                    {history.length > 1 && (
-                        <HeaderMenu title={current.title} onBack={handleBack} />
-                    )}
-                    <div className={cx('menu-body')}>
-                        {renderItems()}
-                    </div>
-                </Wrapper>
-            </div>
+            <motion.div style={{y: transform, opacity}} {...attrs}>
+                <div className={cx('menu-list')} tabIndex="-1">
+                    <Wrapper className={cx('menu-wrap')}>
+                        {history.length > 1 && (
+                            <HeaderMenu title={current.title} onBack={handleBack} />
+                        )}
+                        <div className={cx('menu-body')}>{renderItems()}</div>
+                    </Wrapper>
+                </div>
+            </motion.div>
         );
     })
 
@@ -60,21 +71,35 @@ const Menu = ({
         setHistory(prev => prev.slice(0, prev.length - 1))
     }
 
-    const handleResetMenu = () => {
-        setHistory(prev => prev.slice(0,1))
-    }
+    const handleMount = () => {
+        transform.set(4);
+        opacity.set(1);
+    };
     
+    const handleHide = ({unmount}) => {
+        const cleanup = opacity.on("change", (value) => {
+            if (value <= 0) {
+                cleanup();
+                unmount();
+            }
+        });
+
+        transform.set(-8);
+        opacity.set(0);
+        setHistory(prev => prev.slice(0,1));
+    }
 
     return (
         <Tippy
+            trigger='click'
             interactive
-            delay={[100, 400]}
             offset={[0, 10]}
             hideOnClick={hideOnClick}
             placement="bottom-end"
-            // render={renderResult}
-            render={() => <motion.div>Hello</motion.div>}
-            onHide={handleResetMenu}
+            render={renderResult}
+            onHide={handleHide}
+            animation={true}
+            onMount={handleMount}
         >
             {children}
         </Tippy>
