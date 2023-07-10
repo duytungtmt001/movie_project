@@ -1,18 +1,15 @@
 import { Link } from 'react-router-dom';
 import styles from './Header.module.scss';
 import classNames from 'classnames/bind';
-import { AccountIcon, AnnouncementIcon, LanguageIcon, LogOutIcon, SearchIcon, SettingIcon, ThemeIcon, WishlistIcon } from '../../../components/Icons';
+import { AccountIcon, AnnouncementIcon, LanguageIcon, LogOutIcon, SearchIcon, SettingIcon, ThemeIcon, WishlistIcon, NoNotifiIcon } from '../../../components/Icons';
 
 import { useState } from 'react';
-import Tippy from '@tippyjs/react/headless';
-import Wrapper from '../../../components/Popper';
 import Menu from '../../../components/Popper/Menu';
 
 import { publicRoutes } from '../../../routes/routes';
 import Image from '../../../components/Image'
-import HeaderMenu from '../../../components/Popper/Menu';
 
-import {motion} from 'framer-motion';
+import Notification from '../../../components/Popper/Notification'; 
 
 const cx = classNames.bind(styles)
 
@@ -87,6 +84,19 @@ function Header() {
         },
     ];
 
+    const notificationList = [
+        {
+            image: 'https://vapa.vn/wp-content/uploads/2022/12/anh-3d-thien-nhien.jpeg',
+            content: 'Bạn đã thêm phim vào danh sách yêu thích',
+            time: '1 giờ trước',
+        },
+        {
+            image: 'https://internetviettel.vn/wp-content/uploads/2017/05/1-2.jpg',
+            content: 'Bạn đã thêm phim vào danh sách yêu thích',
+            time: '2 giờ trước',
+        },
+    ];
+
     return (
         <div className={cx('wrapper')}>
             <div className={cx('logo')}>
@@ -139,11 +149,13 @@ function Header() {
                 </div>
 
                 <div className={cx('announcement-icon')}>
-                    <AnnouncementIcon />
+                    <Notification hideOnClick>
+                        <div><AnnouncementIcon /></div>
+                    </Notification>
                 </div>
             </div>
-            
-            <Menu items={userMenu}>
+
+            <Menu items={userMenu} hideOnClick>
                 <div className={cx('user')}>
                     <Image
                         src={require('../../../assets/avt/1.jpg')}
