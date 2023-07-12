@@ -5,7 +5,7 @@ import { AccountIcon, AnnouncementIcon, LanguageIcon, LogOutIcon, SearchIcon, Se
 
 import { useState } from 'react';
 import Menu from '../../../components/Popper/Menu';
-
+import Search from '../../../components/Search';
 import { publicRoutes } from '../../../routes/routes';
 import Image from '../../../components/Image'
 
@@ -15,7 +15,6 @@ const cx = classNames.bind(styles)
 
 function Header() {
     const [itemActive, setItemActive] = useState(0);
-    const [inputSearch, setInputSearch] = useState(false);
 
     const userMenu = [
         {
@@ -132,21 +131,7 @@ function Header() {
             </div>
 
             <div className={cx('options')}>
-                <div className={cx('search')}>
-                    <input
-                        className={cx('search-input', {
-                            show: inputSearch,
-                        })}
-                        placeholder="Tìm kiếm phim, diễn viên, thể loại..."
-                    />
-
-                    <div
-                        className={cx('search-icon')}
-                        onClick={() => setInputSearch((prev) => !prev)}
-                    >
-                        <SearchIcon width="2.8rem" height="2.8rem" />
-                    </div>
-                </div>
+                <Search />
 
                 <div className={cx('announcement-icon')}>
                     <Notification hideOnClick>
