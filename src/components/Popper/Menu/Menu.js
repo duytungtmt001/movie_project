@@ -7,7 +7,7 @@ import MenuItem from './MenuItem';
 import HeaderMenu from './HeaderMenu'
 import { useState } from 'react';
 
-import { motion, useMotionValue, useSpring } from 'framer-motion';
+import { motion, useSpring } from 'framer-motion';
 
 
 const cx = classNames.bind(styles);

@@ -1,14 +1,9 @@
-import { Fragment, useEffect, useRef, useState } from 'react';
+import { Fragment } from 'react';
 import { Defaultlayout } from './layouts';
 import {publicRoutes} from './routes'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import Tippy from '@tippyjs/react/headless';
-
-import {motion, useSpring} from 'framer-motion'
-
-function App() {
-
+function App() {      
     return (
         <BrowserRouter>
             <Routes>
@@ -37,18 +32,7 @@ function App() {
             </Routes>
         </BrowserRouter>
     )
-
-    // return (
-    //     <Tippy
-    //         render={() => 
-    //             <motion.div>
-    //                 Good morning
-    //             </motion.div>
-    //         }
-    //     >
-    //         <button>Click me</button>
-    //     </Tippy>
-    // )
 }
 
-export default App;
+export default App
+
