@@ -134,7 +134,7 @@ function Header() {
                 <Search />
 
                 <div className={cx('announcement-icon')}>
-                    <Notification hideOnClick>
+                    <Notification hideOnClick data={notificationList}>
                         <div><AnnouncementIcon /></div>
                     </Notification>
                 </div>

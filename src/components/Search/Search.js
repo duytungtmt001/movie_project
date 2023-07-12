@@ -3,23 +3,31 @@ import styles from './Search.module.scss';
 import classNames from 'classnames/bind';
 import { SearchIcon } from '../Icons';
 
+import {motion, useMotionValue} from 'framer-motion'
+
 const cx = classNames.bind(styles);
 
 function Search() {
     const [inputSearch, setInputSearch] = useState(false);
 
+
     return (
-        <div className={cx('search')}>
+        <div className={cx('search', {
+            "search-hidden": inputSearch
+        })}>
+            <div 
+                className={cx('search-icon')} 
+                onClick={() => setInputSearch((prev) => !prev)}
+            >
+                <SearchIcon width="2.6rem" height="2.6rem" />
+            </div>
+
             <input
                 className={cx('search-input', {
-                    show: inputSearch,
+                    "input-hidden": inputSearch,
                 })}
-                placeholder="Tìm kiếm phim, diễn viên, thể loại..."
+                placeholder="Tìm kiếm phim, diễn viên..."
             />
-
-            <div className={cx('search-icon')} onClick={() => setInputSearch((prev) => !prev)}>
-                <SearchIcon width="2.8rem" height="2.8rem" />
-            </div>
         </div>
     );
 }

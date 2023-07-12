@@ -3,7 +3,7 @@
     width: 100%;
     height: var(--header-height);
     background-color: var(--background-color);
-    padding: 6px 70px;
+    padding: 6px 52px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -74,6 +74,16 @@
     align-items: center;
     padding: 0 30px;
 }
+
+// Announcement 
+.announcement-icon {
+    padding: 8px;
+    cursor: pointer;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+
 
 
 // Header-right

@@ -1,45 +1,72 @@
-// Search
+// // Search
+// .search {
+//     position: relative;
+//     display: flex;
+//     align-items: center;
+//     margin-right: 16px;
+
+//     .search-input {
+//         padding: 12px 0;
+//         width: 0;
+//         visibility: hidden;
+//         background-color: rgba(0, 0, 0, 0.5);
+//         color: #fff;
+//         border: 1px solid #fff;
+//         border-radius: 4px;
+//         transition: all ease-out 0.5s;
+//     }
+
+//     .show {
+//         width: 280px;
+//         padding: 12px 10px;
+//         padding-right: 40px;
+//         visibility: visible;
+//     }
+
+//     .search-icon {
+//         position: absolute;
+//         display: flex;
+//         align-items: center;
+//         color: #fff;
+//         right: 0;
+//         cursor: pointer;
+//         transition: all ease-out 0.2s;
+//     }
+
+// }
+
+// .search-icon,
+
+
 .search {
-    position: relative;
     display: flex;
     align-items: center;
     margin-right: 16px;
-
-    .search-input {
-        padding: 12px 0;
-        width: 0;
-        visibility: hidden;
-        background-color: rgba(0, 0, 0, 0.5);
-        color: #fff;
-        border: 1px solid #fff;
-        border-radius: 4px;
-        transition: all ease-out 0.5s;
-    }
-
-    .show {
-        width: 280px;
-        padding: 12px 10px;
-        padding-right: 40px;
-        visibility: visible;
-    }
-
-    .search-icon {
-        position: absolute;
-        display: flex;
-        align-items: center;
-        color: #fff;
-        right: 0;
-        cursor: pointer;
-        transition: all ease-out 0.2s;
-    }
-
+    border: 1px solid #fff;
+    border-radius: 4px;
+    transition: all ease-in-out .5s;
 }
 
-.search-icon,
-.announcement-icon {
-    padding: 8px;
+.search-input {
+    width: 220px;
+    padding: 8px 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    transition: all ease-in-out 0.5s;
+}
+
+.search-icon {
+    padding: 6px 8px;
     cursor: pointer;
     color: #fff;
     display: flex;
     align-items: center;
+}
+
+.input-hidden {
+    width: 0;
+}
+
+.search-hidden {
+    border-color: transparent;
 }

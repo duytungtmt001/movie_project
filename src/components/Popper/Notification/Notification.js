@@ -4,7 +4,7 @@ import Tippy from '@tippyjs/react/headless'
 import Image from '../../Image'
 import { NoNotifiIcon } from '../../Icons'
 
-import {motion, useSpring} from 'framer-motion'
+import {motion, useSpring, useTransform} from 'framer-motion'
 
 import Wrapper from '../Wrapper'
 
@@ -49,7 +49,7 @@ function Notification({
 
     const renderResult = (attrs) => {
         return (
-            <motion.div {...attrs} tabIndex="-1" style={{opacity, y: transform}} transition={{y: {duration: 3}}}>
+            <motion.div {...attrs} tabIndex="-1" style={{opacity, y: transform}} transition={{duration: 3}}>
                 <div className={cx('wrapper')}>
                     <Wrapper className={cx('content')}>
                         <div className={cx('header')}>

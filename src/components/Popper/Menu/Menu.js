@@ -94,11 +94,11 @@ const Menu = ({
             trigger='click'
             interactive
             offset={[0, 10]}
+            animation={true}
             hideOnClick={hideOnClick}
             placement="bottom-end"
             render={renderResult}
             onHide={handleHide}
-            animation={true}
             onMount={handleMount}
         >
             {children}
