@@ -96,6 +96,74 @@ function Header() {
         },
     ];
 
+    const typeMovies = [
+        {
+            id: 1,
+            name: 'Gia đình',
+            img: 'giadinh.png',
+        },
+        {
+            id: 2,
+            name: 'Tâm lý',
+            img: 'tamly.png',
+        },
+        {
+            id: 3,
+            name: 'Hành động',
+            img: 'hanhdong.png',
+        },
+        {
+            id: 4,
+            name: 'Hài',
+            img: 'hai.png',
+        },
+        {
+            id: 5,
+            name: 'Phim Việt',
+            img: 'phimviet.png',
+        },
+        {
+            id: 6,
+            name: 'Kiếm hiệp',
+            img: 'kiemhiep.png',
+        },
+        {
+            id: 7,
+            name: 'Lãng mạn',
+            img: 'langman.png',
+        },
+        {
+            id: 8,
+            name: 'Tài liệu',
+            img: 'tailieu.png',
+        },
+        {
+            id: 9,
+            name: 'Cổ trang',
+            img: 'cotrang.png',
+        },
+        {
+            id: 10,
+            name: 'Kinh dị',
+            img: 'kinhdi.png',
+        },
+        {
+            id: 11,
+            name: 'Anime',
+            img: 'anime.png',
+        },
+        {
+            id: 12,
+            name: 'Khoa học viễn tưởng',
+            img: 'khoahoc.png',
+        },
+        {
+            id: 13,
+            name: 'Tiểu sử',
+            img: 'tieusu.png',
+        },
+    ];
+
     return (
         <div className={cx('wrapper')}>
             <div className={cx('logo')}>
@@ -131,7 +199,7 @@ function Header() {
             </div>
 
             <div className={cx('options')}>
-                <Search />
+                <Search data={typeMovies}/>
 
                 <div className={cx('announcement-icon')}>
                     <Notification hideOnClick data={notificationList}>
@@ -143,7 +211,7 @@ function Header() {
             <Menu items={userMenu} hideOnClick>
                 <div className={cx('user')}>
                     <Image
-                        src={require('../../../assets/avt/1.jpg')}
+                        src={require('../../../assets/images/avt/1.jpg')}
                         alt={'error'}
                         className="header-avt"
                     />

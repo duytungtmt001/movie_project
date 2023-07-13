@@ -17,6 +17,7 @@
 .logo {
     height: 100%;
     width: 200px;
+    user-select: none;
 
     .logo-image {
         height: calc(var(--header-height) - 12px);
