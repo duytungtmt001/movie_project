@@ -76,7 +76,7 @@ function Notification({
             }
         });
 
-        transform.set(-8);
+        transform.set(transformDefault);
         opacity.set(0);
     }
 

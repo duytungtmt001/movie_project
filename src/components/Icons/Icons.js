@@ -210,7 +210,7 @@ export const NoNotifiIcon = ({ width = '3rem', height = '3rem', classname }) => 
     </svg>
 );
 
-export const CloseIcon = ({ width = '3rem', height = '3rem', classname }) => (
+export const CloseIcon = ({ width = '3rem', height = '3rem', classname, onClick }) => (
     <svg
         width={width}
         height={height}
@@ -218,6 +218,7 @@ export const CloseIcon = ({ width = '3rem', height = '3rem', classname }) => (
         viewBox="0 0 24 24"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        onClick={onClick}
     >
         <rect width="24" height="24" fill="transparent" />
         <path

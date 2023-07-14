@@ -3,7 +3,7 @@ import styles from './Search.module.scss';
 import classNames from 'classnames/bind';
 import { CloseIcon, LoadingIcon, SearchIcon } from '../Icons';
 
-import {motion, useMotionValue} from 'framer-motion'
+import {motion, useMotionValue, useSpring} from 'framer-motion'
 import Tippy from '@tippyjs/react/headless';
 import Wrapper from '../Popper/Wrapper';
 import Image from '../Image/Image';
@@ -15,37 +15,30 @@ function Search({
     hideOnClick = false
 }) {
     const [inputSearch, setInputSearch] = useState(false);
+    const [value, setValue] = useState('')
+    const [visible, setVisible] = useState(false)
+    
     const searchWrapRef = useRef()
     const inputRef = useRef();
 
-    useEffect(() => {
-        const handleHideSearch = (e) => {
-            if (!e.target.closest(`.${searchWrapRef.current.className.split(' ')[0]}`)) {
-                inputSearch && setInputSearch(false)
-            }
-        };
 
+    const springConfig = {
+        damping: 200,
+        stiffness: 1400,
+    };
+    const transformDefault = -8;
+    const transform = useSpring(transformDefault, springConfig);
+    const opacity = useSpring(0, springConfig);
+
+    useEffect(() => {
         if(inputSearch) {
             inputRef.current.focus()
         }
-
-        document.addEventListener('click', handleHideSearch);
-
-        return () => document.removeEventListener('click', handleHideSearch)
     }, [inputSearch])
-
-
-    const handleSearch = () => {
-        if(!inputSearch) {
-            setInputSearch(true)
-        } else {
-            console.log('Search') 
-        }
-    }
 
     const renderResult = ({attrs}) => {
         return (
-            <motion.div {...attrs}>
+            <motion.div {...attrs} style={{opacity, y: transform}}>
                 <Wrapper className={cx('wrapper')}>
                     <div className="row" style={{margin: '0 -6px'}}>
                         {data.map((item, index) => (
@@ -66,25 +59,58 @@ function Search({
         );
     }
 
-    const handleMount = () => {
-
+    const handleSearch = () => {
+        if(!inputSearch) {
+            setInputSearch(true)
+            setVisible(true)
+        } else {
+            // console.log('Search') 
+        }
     }
 
-    const handleHide = () => {
+    const handleClickOutside = () => {
+        setInputSearch(false)
+        setVisible(false)
+    }
 
+    const handleMount = () => {
+        transform.set(12);
+        opacity.set(1);
+    }
+
+    const handleHide = ({unmount}) => {
+        const cleanup = opacity.on('change', (value) => {
+            if (value <= 0) {
+                cleanup();
+                unmount();
+            }
+        });
+
+        transform.set(transformDefault);
+        opacity.set(0)
+    }
+
+    const handleChangeInput = (e) => {
+        if(!e.target.value.startsWith(' ')) {
+            setValue(e.target.value)
+        }
+    }
+
+    const handleClickClose = () => {
+        setValue('');
     }
 
     return (
         <div>
             <Tippy
-                trigger='click'
+                visible={visible}
                 interactive
-                offset={[0, 20]}
                 placement='bottom-end'
                 render={renderResult}
                 onMount={handleMount}
                 onHide={handleHide}
-                hideOnClick={hideOnClick}
+                onClickOutside={handleClickOutside}
+                animation={true}
             >
                 <div className={cx('search', {
                     "search-show": inputSearch
@@ -97,14 +123,16 @@ function Search({
                     </div>
         
                     <input
-                        ref={inputRef}   
+                        ref={inputRef} 
+                        value={value}  
                         className={cx('search-input', {
                             "input-show": inputSearch,
                         })}
                         placeholder="Tìm kiếm phim, diễn viên..."
+                        onChange={handleChangeInput}
                     />
-                    {/* <CloseIcon  classname={cx('search-right', 'close')}/>
-                    <LoadingIcon width='3rem' height='3rem' classname={cx('search-right', 'loading')}/> */}
+                    {value && <CloseIcon classname={cx('search-right', 'close')} onClick={handleClickClose} />}
+                    {/* <LoadingIcon width='3rem' height='3rem' classname={cx('search-right', 'loading')}/> */}
                 </div>
             </Tippy>
         </div>
