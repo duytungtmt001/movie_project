@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 import styles from './Search.module.scss';
 import classNames from 'classnames/bind';
-import { CloseIcon, LoadingIcon, SearchIcon } from '../Icons';
+import { ArrowDownIcon, ArrowUpIcon, CloseIcon, LoadingIcon, SearchIcon } from '../Icons';
 
-import {motion, useMotionValue, useSpring} from 'framer-motion'
+import {motion, useSpring} from 'framer-motion'
 import Tippy from '@tippyjs/react/headless';
 import Wrapper from '../Popper/Wrapper';
 import Image from '../Image/Image';
@@ -11,49 +11,119 @@ import Image from '../Image/Image';
 const cx = classNames.bind(styles);
 
 function Search({
-    data = [],
+    dataTypeMovie = [],
+    dataSuggestMovie = [],
     hideOnClick = false
 }) {
     const [inputSearch, setInputSearch] = useState(false);
-    const [value, setValue] = useState('')
-    const [visible, setVisible] = useState(false)
-    
+    const [value, setValue] = useState('');
+    const [visible, setVisible] = useState(false);
+    const [seeMore, setSeeMore] = useState(false);
+
     const searchWrapRef = useRef()
     const inputRef = useRef();
-
+    const typeMovieRef = useRef();
 
     const springConfig = {
         damping: 200,
         stiffness: 1400,
     };
+    
+    const typeMovieStyleConfig = {
+        height: seeMore ? '184px' : 0
+    }
+
     const transformDefault = -8;
     const transform = useSpring(transformDefault, springConfig);
     const opacity = useSpring(0, springConfig);
-
-    useEffect(() => {
-        if(inputSearch) {
-            inputRef.current.focus()
-        }
-    }, [inputSearch])
 
     const renderResult = ({attrs}) => {
         return (
             <motion.div {...attrs} style={{opacity, y: transform}}>
                 <Wrapper className={cx('wrapper')}>
-                    <div className="row" style={{margin: '0 -6px'}}>
-                        {data.map((item, index) => (
-                            <div className="col l-4" style={{marginTop: '12px', padding: '0 6px', position: 'relative'}} key={index}>
-                                <Image
-                                    alt="Movie"
-                                    src={require(`../../assets/images/type_movie/${item.img}`)}
-                                    className={cx('item-image')}
-                                />
-                                <span className={cx('item-title')}>{item.name}</span>
-                            </div>
-                        ))}
+                    <div className="row" ref={typeMovieRef} style={{margin: '0 -6px', transition: 'all ease-out 0.5s'}}>
+                        {dataTypeMovie.map((item, index) => 
+                            {
+                                if(index+1 <= 6) {
+                                    return (
+                                        <div className="col l-4" style={{marginTop: '12px', padding: '0 6px', position: 'relative'}} key={index}>
+                                            <div className={cx('item')}>
+                                                <Image
+                                                    alt="Movie"
+                                                    src={require(`../../assets/images/type_movie/${item.img}`)}
+                                                    className={cx('item-image')}
+                                                />
+                                                <span className={cx('item-title')}>{item.name}</span>
+                                            </div>
+                                        </div>
+                                    )
+                                }
+                            }
+                        )}
                     </div>
 
-                    <div className={cx('care')}></div>
+                    <div className="row" style={{margin: '0 -6px', transition: 'all ease-out 0.5s 0.1s', overflow: 'hidden',  ...typeMovieStyleConfig}}>
+                        {dataTypeMovie.map((item, index) => 
+                            {
+                                if(index+1 > 6) {
+                                    return (
+                                        <div className="col l-4" style={{marginTop: '12px', padding: '0 6px', position: 'relative'}} key={index}>
+                                            <div className={cx('item')}>
+                                                <Image
+                                                    alt="Movie"
+                                                    src={require(`../../assets/images/type_movie/${item.img}`)}
+                                                    className={cx('item-image')}
+                                                />
+                                                <span className={cx('item-title')}>{item.name}</span>
+                                            </div>
+                                        </div>
+                                    )
+                                }
+                            }
+                        )}
+                    </div>
+
+                    <div className={cx('see-more')} onClick={() => setSeeMore(!seeMore)}>
+                        {
+                            seeMore 
+                            ? 
+                            <>
+                                <ArrowUpIcon width='1.6rem' />
+                                <p>Thu gọn</p>
+                            </>
+                            :
+                            <>
+                                <ArrowDownIcon width='1.6rem' />
+                                <p>Xem thêm</p>
+                            </>
+                        }
+                    </div>
+
+                    <div className={cx('suggest')}>
+                        <div className={cx('suggest-title')}>Có thể bạn quan tâm</div>
+                        <div className={cx('suggest-list')}>
+                            <div className={cx('list-left')}>
+                                {
+                                    dataSuggestMovie.map((item, index) => {
+                                        if(index+1 <= 5) {
+                                            return <p key={index} className={cx('suggest-item')}><span>{item.id}{`. `}</span>{item.name}</p>
+                                        }
+                                    })
+                                }
+                            </div>
+                            <div className={cx('list-right')}>
+                                {
+                                    dataSuggestMovie.map((item, index) => {
+                                        if(index+1 >= 6) {
+                                            return (
+                                                <p key={index} className={cx('suggest-item')}><span>{item.id}{`. `}</span>{item.name}</p>
+                                            )
+                                        }
+                                    })
+                                }
+                            </div>
+                        </div>
+                    </div>
                 </Wrapper>
             </motion.div>
         );
@@ -61,16 +131,18 @@ function Search({
 
     const handleSearch = () => {
         if(!inputSearch) {
-            setInputSearch(true)
-            setVisible(true)
+            setInputSearch(true);
+            inputRef.current.focus();
+            setVisible(true);
         } else {
             // console.log('Search') 
         }
     }
 
     const handleClickOutside = () => {
-        setInputSearch(false)
-        setVisible(false)
+        setInputSearch(false);
+        setVisible(false);
+        setSeeMore(false)
     }
 
     const handleMount = () => {

@@ -1,20 +1,35 @@
 import { Link } from 'react-router-dom';
 import styles from './Header.module.scss';
 import classNames from 'classnames/bind';
-import { AccountIcon, AnnouncementIcon, LanguageIcon, LogOutIcon, SearchIcon, SettingIcon, ThemeIcon, WishlistIcon, NoNotifiIcon } from '../../../components/Icons';
+import { useEffect, useState } from 'react';
 
-import { useState } from 'react';
+import { AccountIcon, AnnouncementIcon, LanguageIcon, LogOutIcon, SearchIcon, SettingIcon, ThemeIcon, WishlistIcon, NoNotifiIcon } from '../../../components/Icons';
+import Notification from '../../../components/Popper/Notification'; 
 import Menu from '../../../components/Popper/Menu';
 import Search from '../../../components/Search';
 import { publicRoutes } from '../../../routes/routes';
 import Image from '../../../components/Image'
 
-import Notification from '../../../components/Popper/Notification'; 
+import {typeMovieApi} from '../../../apiServices/typeMovieApi'
 
 const cx = classNames.bind(styles)
 
 function Header() {
     const [itemActive, setItemActive] = useState(0);
+    const [dataTypeMovie, setDataTypeMovie] = useState([])
+
+    useEffect(() => {
+        const fetchApi = async () => {
+            try {
+                const result = await typeMovieApi();
+                setDataTypeMovie(result)
+            } catch (error) {
+                console.log(error);
+            }
+        }
+
+        fetchApi()
+    }, [])
 
     const userMenu = [
         {
@@ -96,73 +111,48 @@ function Header() {
         },
     ];
 
-    const typeMovies = [
+    const suggestList = [
         {
-            id: 1,
-            name: 'Gia đình',
-            img: 'giadinh.png',
+          "id": 1,
+          "name": "Nhà Bà Nữ"
         },
         {
-            id: 2,
-            name: 'Tâm lý',
-            img: 'tamly.png',
+          "id": 2,
+          "name": "Hùng Long Phong Bá"
         },
         {
-            id: 3,
-            name: 'Hành động',
-            img: 'hanhdong.png',
+          "id": 3,
+          "name": "Chị Chị Em Em 2"
         },
         {
-            id: 4,
-            name: 'Hài',
-            img: 'hai.png',
+          "id": 4,
+          "name": "Mất Tích"
         },
         {
-            id: 5,
-            name: 'Phim Việt',
-            img: 'phimviet.png',
+          "id": 5,
+          "name": "Hôn Lễ Của Em"
         },
         {
-            id: 6,
-            name: 'Kiếm hiệp',
-            img: 'kiemhiep.png',
+          "id": 6,
+          "name": "Đại Chiến TiTan: Mùa Cuối Cùng Phần 2"
         },
         {
-            id: 7,
-            name: 'Lãng mạn',
-            img: 'langman.png',
+          "id": 7,
+          "name": "Bỗng Dưng Trúng Số"
         },
         {
-            id: 8,
-            name: 'Tài liệu',
-            img: 'tailieu.png',
+          "id": 8,
+          "name": "Tân Ỷ Thiên Đồ Long Ký 2019"
         },
         {
-            id: 9,
-            name: 'Cổ trang',
-            img: 'cotrang.png',
+          "id": 9,
+          "name": "Những Đứa Trẻ Trong Sương"
         },
         {
-            id: 10,
-            name: 'Kinh dị',
-            img: 'kinhdi.png',
-        },
-        {
-            id: 11,
-            name: 'Anime',
-            img: 'anime.png',
-        },
-        {
-            id: 12,
-            name: 'Khoa học viễn tưởng',
-            img: 'khoahoc.png',
-        },
-        {
-            id: 13,
-            name: 'Tiểu sử',
-            img: 'tieusu.png',
-        },
-    ];
+          "id": 10,
+          "name": "Gia Đình Điệp Viên 2"
+        }
+      ]
 
     return (
         <div className={cx('wrapper')}>
@@ -199,7 +189,7 @@ function Header() {
             </div>
 
             <div className={cx('options')}>
-                <Search data={typeMovies}/>
+                <Search dataTypeMovie={dataTypeMovie} dataSuggestMovie={suggestList}/>
 
                 <div className={cx('announcement-icon')}>
                     <Notification hideOnClick data={notificationList}>
