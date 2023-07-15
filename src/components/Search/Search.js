@@ -30,12 +30,6 @@ function Search({
     const transform = useSpring(transformDefault, springConfig);
     const opacity = useSpring(0, springConfig);
 
-    useEffect(() => {
-        if(inputSearch) {
-            inputRef.current.focus()
-        }
-    }, [inputSearch])
-
     const renderResult = ({attrs}) => {
         return (
             <motion.div {...attrs} style={{opacity, y: transform}}>
@@ -61,8 +55,9 @@ function Search({
 
     const handleSearch = () => {
         if(!inputSearch) {
-            setInputSearch(true)
-            setVisible(true)
+            setInputSearch(true);
+            inputRef.current.focus();
+            setVisible(true);
         } else {
             // console.log('Search') 
         }
