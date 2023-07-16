@@ -10,19 +10,22 @@ import Search from '../../../components/Search';
 import { publicRoutes } from '../../../routes/routes';
 import Image from '../../../components/Image'
 
-import {typeMovieApi} from '../../../apiServices/typeMovieApi'
+import {typeMovieApi, suggestMovie} from '../../../apiServices';
 
 const cx = classNames.bind(styles)
 
 function Header() {
     const [itemActive, setItemActive] = useState(0);
     const [dataTypeMovie, setDataTypeMovie] = useState([])
+    const [suggestList, setSuggestList] = useState([])
 
     useEffect(() => {
         const fetchApi = async () => {
             try {
-                const result = await typeMovieApi();
-                setDataTypeMovie(result)
+                const resTypeMovie = await typeMovieApi();
+                const resSuggestMovie = await suggestMovie();
+                setDataTypeMovie(resTypeMovie);
+                setSuggestList(resSuggestMovie);
             } catch (error) {
                 console.log(error);
             }
@@ -110,49 +113,6 @@ function Header() {
             time: '2 giờ trước',
         },
     ];
-
-    const suggestList = [
-        {
-          "id": 1,
-          "name": "Nhà Bà Nữ"
-        },
-        {
-          "id": 2,
-          "name": "Hùng Long Phong Bá"
-        },
-        {
-          "id": 3,
-          "name": "Chị Chị Em Em 2"
-        },
-        {
-          "id": 4,
-          "name": "Mất Tích"
-        },
-        {
-          "id": 5,
-          "name": "Hôn Lễ Của Em"
-        },
-        {
-          "id": 6,
-          "name": "Đại Chiến TiTan: Mùa Cuối Cùng Phần 2"
-        },
-        {
-          "id": 7,
-          "name": "Bỗng Dưng Trúng Số"
-        },
-        {
-          "id": 8,
-          "name": "Tân Ỷ Thiên Đồ Long Ký 2019"
-        },
-        {
-          "id": 9,
-          "name": "Những Đứa Trẻ Trong Sương"
-        },
-        {
-          "id": 10,
-          "name": "Gia Đình Điệp Viên 2"
-        }
-      ]
 
     return (
         <div className={cx('wrapper')}>

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import styles from './Search.module.scss';
 import classNames from 'classnames/bind';
 import { ArrowDownIcon, ArrowUpIcon, CloseIcon, LoadingIcon, SearchIcon } from '../Icons';
@@ -22,26 +22,25 @@ function Search({
 
     const searchWrapRef = useRef()
     const inputRef = useRef();
-    const typeMovieRef = useRef();
 
     const springConfig = {
         damping: 200,
         stiffness: 1400,
     };
-    
-    const typeMovieStyleConfig = {
-        height: seeMore ? '184px' : 0
-    }
 
+    const typeMovieStyleConfig = {
+        maxHeight: seeMore ? `200px` : 0
+    }
+    
     const transformDefault = -8;
     const transform = useSpring(transformDefault, springConfig);
     const opacity = useSpring(0, springConfig);
-
+    
     const renderResult = ({attrs}) => {
         return (
             <motion.div {...attrs} style={{opacity, y: transform}}>
                 <Wrapper className={cx('wrapper')}>
-                    <div className="row" ref={typeMovieRef} style={{margin: '0 -6px', transition: 'all ease-out 0.5s'}}>
+                    <div className="row" style={{margin: '0 -6px', transition: 'all ease-out 0.5s'}}>
                         {dataTypeMovie.map((item, index) => 
                             {
                                 if(index+1 <= 6) {

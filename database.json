@@ -136,5 +136,33 @@
       "id": 10,
       "name": "Gia Đình Điệp Viên 2"
     }
+  ],
+
+  "slider-main": [
+    {
+      "id": 1,
+      "img": "1.jpg",
+      "description": "Hội con ngoan được ba mẹ thưởng nóng một kỳ nghỉ tự do tại căn biệt thự ngoại ô vì thành tích tốt. Khi bốn đứa nhóc “hiện nguyên hình” với những trò quái đản cũng là lúc rắc rối bắt đầu."
+    },
+    {
+      "id": 2,
+      "img": "2.jpg",
+      "description": "Hội con ngoan được ba mẹ thưởng nóng một kỳ nghỉ tự do tại căn biệt thự ngoại ô vì thành tích tốt. Khi bốn đứa nhóc “hiện nguyên hình” với những trò quái đản cũng là lúc rắc rối bắt đầu."
+    },
+    {
+      "id": 3,
+      "img": "3.jpg",
+      "description": "Hội con ngoan được ba mẹ thưởng nóng một kỳ nghỉ tự do tại căn biệt thự ngoại ô vì thành tích tốt. Khi bốn đứa nhóc “hiện nguyên hình” với những trò quái đản cũng là lúc rắc rối bắt đầu."
+    },
+    {
+      "id": 4,
+      "img": "4.jpg",
+      "description": "Hội con ngoan được ba mẹ thưởng nóng một kỳ nghỉ tự do tại căn biệt thự ngoại ô vì thành tích tốt. Khi bốn đứa nhóc “hiện nguyên hình” với những trò quái đản cũng là lúc rắc rối bắt đầu."
+    },
+    {
+      "id": 5,
+      "img": "5.jpg",
+      "description": "Hội con ngoan được ba mẹ thưởng nóng một kỳ nghỉ tự do tại căn biệt thự ngoại ô vì thành tích tốt. Khi bốn đứa nhóc “hiện nguyên hình” với những trò quái đản cũng là lúc rắc rối bắt đầu."
+    }
   ]
 }
