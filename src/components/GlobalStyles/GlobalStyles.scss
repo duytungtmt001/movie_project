@@ -8,6 +8,8 @@
     // Default layout
     --white-color: #fff;
     --font-family: 'Quicksand', 'san-serif';
+
+    --header-height: 70px;
 }
 
 * {
@@ -45,7 +47,7 @@ body {
     line-height: 1.5;
     color: var(--text-color);
     overflow-y: overlay;
-    height: 1000px;
+    height: 1500px;
 }
 
 button {
