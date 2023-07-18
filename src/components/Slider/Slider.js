@@ -3,56 +3,68 @@ import styles from './Slider.module.scss';
 
 import Image from '../Image'
 import { ArrowLeftIcon, ArrowRightIcon } from "../Icons/Icons";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const cx = classNames.bind(styles);
+const defaultFn = () => {}
 
 function Slider({
     data = [],
     dragable = false,
 }) {
-    const sliderWidthDefault = 900;
+    const sliderWidthDefault = 700;
+    const wrapperSliderRef = useRef();
+    const prevBtnRef = useRef();
+    const nextBtnRef = useRef();
+
     const [sliderActive, setSliderActive] = useState(2);
     const [sliderActiveForwarding, setSliderActiveForwarding] = useState(null)
     const [transitionSlider, setTransitionSlider] = useState(true)
-    const wrapperSliderRef = useRef();
-
-    const [ableClick, setAbleClick] = useState(false)
 
     const transitionWrapper = {
         transition: transitionSlider ? `all ease-out .5s` : 'none',
     };
 
-    const handlePrev = () => {
-        sliderActiveForwarding && setSliderActiveForwarding(null);
-        setSliderActive(sliderActive - 1);
-        setTransitionSlider(true);
-        if (sliderActive <= 2) {
-            setSliderActiveForwarding(data.length / 2);
-        }
-        setAbleClick((prev) => () => {}); 
-    }
-
-    const handleNext = () => {
-        ableClick || setAbleClick(prev => () => {})
-        sliderActiveForwarding && setSliderActiveForwarding(null);
-        setSliderActive(sliderActive + 1);
-        setTransitionSlider(true)
-        if(sliderActive >= (data.length/2)) {
-            setSliderActiveForwarding(2)
-        }
-    }
+    console.log(sliderActive);
     
-    const handleTransitionEnd = () => {
-        if (sliderActive >= data.length / 2 + 1) {
-            setTransitionSlider(false)
-            setSliderActive(2);
-        } else if (sliderActive <= 1) {
-            setTransitionSlider(false);
-            setSliderActive(data.length/2);
+    useEffect(() => {
+        const wrapperSliderElement = wrapperSliderRef.current;
+        const prevBtn = prevBtnRef.current;
+        const nextBtn = nextBtnRef.current;
+
+        const handlePrev = () => {
+            sliderActiveForwarding && setSliderActiveForwarding(null);
+            setSliderActive(sliderActive - 1);
+            setTransitionSlider(true);
+            if (sliderActive <= 2) {
+                setSliderActiveForwarding(data.length / 2);
+            }
         }
-        setAbleClick(false);
-    }
+    
+        const handleNext = () => {
+            sliderActiveForwarding && setSliderActiveForwarding(null);
+            setSliderActive(sliderActive + 1);
+            setTransitionSlider(true)
+            if(sliderActive >= (data.length/2)) {
+                setSliderActiveForwarding(2)
+            }
+        }
+        
+        // const handleTransitionEnd = () => {
+        //     if (sliderActive >= data.length / 2 + 1) {
+        //         setTransitionSlider(false)
+        //         setSliderActive(2);
+        //     } else if (sliderActive <= 1) {
+        //         setTransitionSlider(false);
+        //         setSliderActive(data.length/2);
+        //     }
+        // }
+
+        // wrapperSliderElement.addEventListener('transitionend', handleTransitionEnd);
+        prevBtn.addEventListener('click', handlePrev);
+        nextBtn.addEventListener('click', handleNext);
+
+    }, [])
 
     return (
         <div className={cx('box')}>
@@ -65,7 +77,6 @@ function Slider({
                             transform: `translateX(-${sliderActive * sliderWidthDefault}px)`,
                             ...transitionWrapper,
                         }}
-                        onTransitionEnd={handleTransitionEnd}
                     >
                         {data.map((item, index) => {
                             return (
@@ -91,10 +102,10 @@ function Slider({
                     </div>
                 </div>
 
-                <span className={cx('prev')} onClick={ableClick || handlePrev}>
+                <span className={cx('prev')} ref={prevBtnRef}>
                     <ArrowLeftIcon width="3.2rem" height="3.2rem" />
                 </span>
-                <span className={cx('next')} onClick={ableClick || handleNext}>
+                <span className={cx('next')} ref={nextBtnRef}>
                     <ArrowRightIcon width="3.2rem" height="3.2rem" />
                 </span>
 
