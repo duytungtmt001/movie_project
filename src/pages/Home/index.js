@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import Slider from '../../components/Slider';
+import SliderMain from '../../components/Slider';
 
 import { sliderMain } from '../../apiServices';
 
@@ -10,16 +10,16 @@ function Home() {
         const fetchApi = async () => {
             try {
                 let data = await sliderMain();
-                if(data !== []) {
-                    const prev1 = data[data.length-1];
-                    const prev2 = data[data.length-2];
-                    data = [
-                        prev2,
-                        prev1,
-                        ...data,
-                        ...data,
-                    ]
-                }
+                // if(data !== []) {
+                //     const prev1 = data[data.length-1];
+                //     const prev2 = data[data.length-2];
+                //     data = [
+                //         prev2,
+                //         prev1,
+                //         ...data,
+                //         ...data,
+                //     ]
+                // }
                 setDataSliderMain(data);
             } catch (error) {
                 console.log(error);
@@ -29,7 +29,9 @@ function Home() {
         fetchApi();
     }, []);
 
-    return <Slider data={dataSliderMain} />;
+    return (
+        <SliderMain data={dataSliderMain} />
+    );
 }
 
 export default Home;

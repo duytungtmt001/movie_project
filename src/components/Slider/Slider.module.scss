@@ -1,5 +1,5 @@
 :root {
-    --slide-width: 900px;
+    --slide-width: 500px;
     --wrapper-width: calc(var(--slide-width) * 12);
 }
 
@@ -55,8 +55,6 @@
 }
 
 .slider-active {
-    user-select: none;
-    
     .wrap-item {
         opacity: 1;
         margin: 0;
