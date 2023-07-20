@@ -10,16 +10,16 @@ function Home() {
         const fetchApi = async () => {
             try {
                 let data = await sliderMain();
-                // if(data !== []) {
-                //     const prev1 = data[data.length-1];
-                //     const prev2 = data[data.length-2];
-                //     data = [
-                //         prev2,
-                //         prev1,
-                //         ...data,
-                //         ...data,
-                //     ]
-                // }
+                if(data !== []) {
+                    const prev1 = data[data.length-1];
+                    const prev2 = data[data.length-2];
+                    data = [
+                        prev2,
+                        prev1,
+                        ...data,
+                        ...data,
+                    ]
+                }
                 setDataSliderMain(data);
             } catch (error) {
                 console.log(error);
@@ -30,7 +30,7 @@ function Home() {
     }, []);
 
     return (
-        <SliderMain data={dataSliderMain} />
+        dataSliderMain.length > 0 && <SliderMain data={dataSliderMain} />
     );
 }
 
