@@ -2,7 +2,6 @@ import { Fragment } from 'react';
 import { Defaultlayout } from './layouts';
 import {publicRoutes} from './routes'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
 
 function App() {
 
