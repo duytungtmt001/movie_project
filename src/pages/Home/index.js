@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import Slider from '../../components/Slider';
+import SliderMain from '../../components/Slider';
 
 import { sliderMain } from '../../apiServices';
 
@@ -29,7 +29,9 @@ function Home() {
         fetchApi();
     }, []);
 
-    return <Slider data={dataSliderMain} />;
+    return (
+        dataSliderMain.length > 0 && <SliderMain data={dataSliderMain} />
+    );
 }
 
 export default Home;
