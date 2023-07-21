@@ -1,15 +1,15 @@
-import classNames from "classnames/bind";
+import classNames from 'classnames/bind';
 import styles from './Slider.module.scss';
 
-import Image from '../Image'
-import { ArrowLeftIcon, ArrowRightIcon } from "../Icons/Icons";
-import { useRef, useState } from "react";
+import Image from '../Image';
+import { ArrowLeftIcon, ArrowRightIcon } from '../Icons/Icons';
+import { useRef, useState } from 'react';
 
 const cx = classNames.bind(styles);
-const defaultFn = () => {}
+const defaultFn = () => {};
 
-function SliderMain({ data = [], dragable = false, slideWidth = 300}) {
-    const sliderWidthDefault = slideWidth;
+function SliderMain({ data = [], dragable = false, sliderWidth = 300 }) {
+    const sliderWidthDefault = sliderWidth;
     const [sliderActive, setSliderActive] = useState(2);
     const [sliderActiveForwarding, setSliderActiveForwarding] = useState(null);
     const [transitionSlider, setTransitionSlider] = useState(true);
@@ -42,16 +42,15 @@ function SliderMain({ data = [], dragable = false, slideWidth = 300}) {
             setSliderActive(data.length / 2);
         } else {
             setAbleClick(false);
-        }
+        }        
     };
 
     const renderSlides = () => (
-        data.map((item, index) => 
+        data.map((item, index) => (
             <div
                 className={cx('slide', {
-                        "slider-active": index === sliderActive || index === sliderActiveForwarding
-                    }
-                )}
+                    'slider-active': index === sliderActive || index === sliderActiveForwarding,
+                })}
                 key={index}
             >
                 <div className={cx('wrap-item')}>
@@ -62,12 +61,25 @@ function SliderMain({ data = [], dragable = false, slideWidth = 300}) {
                     />
                 </div>
             </div>
-        )
+        ))
     )
 
+    const handleClickDot = (index) => {
+        setSliderActive(index+2);
+        setTransitionSlider(true);
+    }
+
     const renderDots = () => (
-        data.map((item, index) => index + 1 < data.length / 2 && <button key={index} className={cx('dot', {"active": index===sliderActive-2})}></button>)
-    )
+        data.map((item, index) =>
+            index + 1 < data.length / 2 && (
+                <button
+                    key={index}
+                    onClick={() => handleClickDot(index)}
+                    className={cx('dot', { active: index === sliderActive - 2 || index === ((sliderActive-2)>(data.length/2-2) && 0) || index === (sliderActive<2 && data.length/2-2) })}
+                ></button>
+            ),
+        )
+    );
 
     return (
         <div className={cx('box')}>
@@ -102,4 +114,4 @@ function SliderMain({ data = [], dragable = false, slideWidth = 300}) {
     );
 }
 
-export default SliderMain
+export default SliderMain;

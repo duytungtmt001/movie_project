@@ -8,11 +8,11 @@ import ResponsiveStyle from './components/ResponsiveStyle'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     // <React.StrictMode>
-        <GlobalStyles>
+        // <GlobalStyles>
             <ResponsiveStyle>
                 <App />
             </ResponsiveStyle>
-        </GlobalStyles>
+        // </GlobalStyles>
     // </React.StrictMode>,
 );
 
