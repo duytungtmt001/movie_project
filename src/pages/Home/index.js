@@ -30,7 +30,7 @@ function Home() {
     }, []);
 
     return (
-        dataSliderMain.length > 0 && <SliderMain data={dataSliderMain} />
+        dataSliderMain.length > 0 && <SliderMain data={dataSliderMain} sliderWidth={600} />
     );
 }
 
