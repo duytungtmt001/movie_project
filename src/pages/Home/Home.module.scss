@@ -1,0 +1,14 @@
+.wrapper {
+    min-height: 100vh;
+    width: 100vw;
+    background-image: url('../../assets/images/slider/background.jpg');
+    background-size: cover;
+}
+
+.title {
+    width: 100%;
+    text-align: center;
+    font-size: 4.4rem;
+    display: inline-block;
+    margin: calc(var(--header-height) + 20px) 0 20px;
+}

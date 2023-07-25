@@ -1,0 +1,17 @@
+.slick-list {
+    overflow: visible !important;
+}
+
+.slide-wrapper {
+    opacity: 0.6;
+    border-radius: 12px;
+    transition: all ease-out .5s;
+    overflow: hidden;
+}
+
+.slick-center .slide-wrapper {
+    transform: scale(1.2);
+    opacity: 1;
+    -webkit-box-shadow: 0 0 140px 0 hsla(0,0%,100%,.3), 0 0 10px 0 hsla(0,0%,100%,.2);
+    box-shadow: 0 0 140px 0 hsla(0,0%,100%,.3), 0 0 10px 0 hsla(0,0%,100%,.2);
+}
