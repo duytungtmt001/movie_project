@@ -7,18 +7,28 @@ import './Slider.scss';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-function SliderCarousel({ data = [], dots = () => {} }) {
+function SliderCarousel({ 
+    data = [], 
+    dots = false, 
+    centerMode = false, 
+    slidesToShow = 1
+ }) {
+
+    const props = {
+        customPaging: () => dots ? slideDots() : (<div style={{display: "none"}}></div>),
+        centerMode,
+    }
+
     const settings = {
         dots: true,
         infinite: true,
-        slidesToShow: 1,
+        slidesToShow,
         slidesToScroll: 1,
-        centerMode: true,
         easing: 'easeOut',
         variableWidth: true,
         nextArrow: <ArrowRight />,
         prevArrow: <ArrowLeft />,
-        customPaging: () => dots && slideDots(),
+        ...props
     };
 
     return (

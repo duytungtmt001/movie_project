@@ -26,7 +26,7 @@ function Home() {
     return (
         <div className={cx('wrapper')}>
             <h1 className={cx('title')}>Giải trí hay - Thưởng thức ngay</h1>
-            <SliderCarousel data={dataSliderMain}/>
+            <SliderCarousel data={dataSliderMain}  centerMode />
         </div>
     );
 }
