@@ -48,7 +48,6 @@ body {
     line-height: 1.5;
     color: var(--text-color);
     overflow-y: overlay;
-    height: 1500px;
 }
 
 button {
@@ -75,7 +74,7 @@ a {
 // Tippy tooltip
 body {
     .tippy-box {
-        font-weight: 6000;
+        font-weight: 600;
         font-size: 1.4rem;
         line-height: 22px;
         padding: 4px 0;

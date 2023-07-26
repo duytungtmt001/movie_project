@@ -306,38 +306,42 @@ export const ArrowUpIcon = ({ width = '3rem', height = '3rem', classname }) => (
 
 export const ArrowLeftIcon = ({ width = '3rem', height = '3rem', classname }) => (
     <svg
+        xmlns="http://www.w3.org/2000/svg"
         width={width}
         height={height}
         className={cx('icon', { [classname]: classname })}
-        viewBox="0 0 24 24"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 40 40"
     >
-        <path
-            d="M20 12H4M4 12L10 6M4 12L10 18"
-            stroke="#1C274C"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-        />
+        <g fill="currentColor" fillRule="evenodd" opacity=".652">
+            <g fill="currentColor">
+                <g>
+                    <path
+                        d="M23.821 8.821c.651-.65 1.707-.65 2.358 0 .6.601.647 1.547.138 2.2l-.138.158L17.359 20l8.82 8.821c.6.601.647 1.547.138 2.2l-.138.158c-.601.6-1.547.647-2.2.138l-.158-.138-10-10c-.6-.601-.647-1.547-.138-2.2l.138-.158 10-10z"
+                        transform="translate(-24.000000, -440.000000) translate(24.000000, 440.000000)"
+                    ></path>
+                </g>
+            </g>
+        </g>
     </svg>
 );
 
 export const ArrowRightIcon = ({ width = '3rem', height = '3rem', classname }) => (
     <svg
+        xmlns="http://www.w3.org/2000/svg"
         width={width}
         height={height}
         className={cx('icon', { [classname]: classname })}
-        viewBox="0 0 24 24"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 40 40"
     >
-        <path
-            d="M4 12H20M20 12L14 6M20 12L14 18"
-            stroke="#1C274C"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-        />
+        <g fill="currentColor" fillRule="evenodd" opacity=".652">
+            <g fill="currentColor">
+                <g>
+                    <path
+                        d="M23.821 8.821c.651-.65 1.707-.65 2.358 0 .6.601.647 1.547.138 2.2l-.138.158L17.359 20l8.82 8.821c.6.601.647 1.547.138 2.2l-.138.158c-.601.6-1.547.647-2.2.138l-.158-.138-10-10c-.6-.601-.647-1.547-.138-2.2l.138-.158 10-10z"
+                        transform="translate(-1376.000000, -440.000000) translate(1376.000000, 440.000000) translate(20.000000, 20.000000) scale(-1, 1) translate(-20.000000, -20.000000)"
+                    ></path>
+                </g>
+            </g>
+        </g>
     </svg>
 );
