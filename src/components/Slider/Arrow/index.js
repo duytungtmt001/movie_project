@@ -1,1 +1,2 @@
-export * from './Arrow'
+export * from './ArrowMain'
+export * from './ArrowFade'

@@ -1,1 +1,1 @@
-export {default} from './Dot'
+export {default} from './DotMain'

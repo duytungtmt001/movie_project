@@ -1,17 +1,17 @@
 import { ArrowLeftIcon, ArrowRightIcon } from "../../Icons/Icons";
 
-export const ArrowLeft = ({ className, style, onClick }) => {
+export const ArrowLeftMain = ({ className, style, onClick, width, height }) => {
     return (
         <div className={className} style={{ ...style }} onClick={onClick}>
-            <ArrowLeftIcon width="4.6rem" height="4.6rem" />
+            <ArrowLeftIcon width={width} height={height} />
         </div>
     );
 };
 
-export const ArrowRight = ({ className, style, onClick }) => {
+export const ArrowRightMain = ({ className, style, onClick, width, height }) => {
     return (
         <div className={className} style={{ ...style }} onClick={onClick}>
-            <ArrowRightIcon width="4.6rem" height="4.6rem" />
+            <ArrowRightIcon width={width} height={height} />
         </div>
     );
 };

@@ -92,6 +92,11 @@
       "id": 12,
       "name": "Tiểu sử",
       "img": "tieusu.png"
+    },
+    {
+        "id": 13,
+        "name": "Hoạt hình",
+        "img": "hoathinh.png"
     }
   ],
 

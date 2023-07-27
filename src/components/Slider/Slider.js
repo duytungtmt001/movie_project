@@ -1,5 +1,4 @@
-import Image from '../Image';
-import {ArrowLeft, ArrowRight} from './Arrow'
+import {ArrowLeftFade, ArrowLeftMain, ArrowRightFade, ArrowRightMain} from './Arrow'
 import slideDots from './Dot';
 
 import Slider from 'react-slick';
@@ -7,39 +6,44 @@ import './Slider.scss';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-function SliderCarousel({ 
-    data = [], 
-    dots = false, 
-    centerMode = false, 
-    slidesToShow = 1
- }) {
-
-    const props = {
-        customPaging: () => dots ? slideDots() : (<div style={{display: "none"}}></div>),
-        centerMode,
-    }
-
+function SliderCarousel({
+    data = [],
+    img,
+    classNameSlide = 'slide',
+    variableWidth = false,
+    slideWidth = 700,
+    infinite = false,
+    dots = false,
+    fade = false,
+    centerMode = false,
+    arrowFade = false,
+    slidesToShow = 1,
+    slidesToScroll = 1,
+}) {
     const settings = {
-        dots: true,
-        infinite: true,
+        dots,
+        fade,
+        centerMode,
         slidesToShow,
-        slidesToScroll: 1,
+        infinite,
         easing: 'easeOut',
-        variableWidth: true,
-        nextArrow: <ArrowRight />,
-        prevArrow: <ArrowLeft />,
-        ...props
+        slidesToScroll,
+        variableWidth,
+        customPaging: () => slideDots(),
+        nextArrow: arrowFade ? <ArrowRightFade /> : <ArrowRightMain />,
+        prevArrow: arrowFade ? <ArrowLeftFade /> : <ArrowLeftMain />,
     };
 
     return (
         <Slider {...settings}>
             {data.map((item, index) => (
-                <div key={index} className='slide' style={{ width: 700 }}>
+                <div key={index} className={classNameSlide} style={{ width: slideWidth }}>
                     <div className="slide-wrapper">
                         <img
+                            className="slide-wrapper__img"
                             alt=""
                             width="100%"
-                            src={require(`../../assets/images/slider/${item.img}`)}
+                            src={require(`../../assets/images/${img}/${item.img}`)}
                         />
                     </div>
                 </div>

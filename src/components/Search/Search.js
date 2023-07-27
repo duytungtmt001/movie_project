@@ -1,7 +1,7 @@
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import styles from './Search.module.scss';
 import classNames from 'classnames/bind';
-import { ArrowDownIcon, ArrowUpIcon, CloseIcon, LoadingIcon, SearchIcon } from '../Icons';
+import { ArrowDownIcon, ArrowUpIcon, CloseIcon, SearchIcon } from '../Icons';
 
 import {motion, useSpring} from 'framer-motion'
 import Tippy from '@tippyjs/react/headless';
@@ -28,8 +28,8 @@ function Search({
         stiffness: 1400,
     };
 
-    const typeMovieStyleConfig = {
-        maxHeight: seeMore ? `200px` : 0
+    const typeMovieStyleConfig = {  
+        maxHeight: seeMore ? `300px` : 0
     }
     
     const transformDefault = -8;
