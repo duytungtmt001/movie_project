@@ -12,23 +12,29 @@ function SliderCarousel({
     classNameSlide = 'slide',
     variableWidth = false,
     slideWidth = 700,
+    draggable = false,
     infinite = false,
     dots = false,
     fade = false,
+    easing = 'easeOut',
+    speed = 500,
     centerMode = false,
     arrowFade = false,
+    slideOpacity = false,
     slidesToShow = 1,
     slidesToScroll = 1,
 }) {
     const settings = {
         dots,
         fade,
+        speed,
+        easing,
+        infinite,
+        draggable,
         centerMode,
         slidesToShow,
-        infinite,
-        easing: 'easeOut',
-        slidesToScroll,
         variableWidth,
+        slidesToScroll,
         customPaging: () => slideDots(),
         nextArrow: arrowFade ? <ArrowRightFade /> : <ArrowRightMain />,
         prevArrow: arrowFade ? <ArrowLeftFade /> : <ArrowLeftMain />,
@@ -38,7 +44,7 @@ function SliderCarousel({
         <Slider {...settings}>
             {data.map((item, index) => (
                 <div key={index} className={classNameSlide} style={{ width: slideWidth }}>
-                    <div className="slide-wrapper">
+                    <div className="slide-wrapper" style={{opacity: slideOpacity ? '0.6' : '1'}}>
                         <img
                             className="slide-wrapper__img"
                             alt=""
