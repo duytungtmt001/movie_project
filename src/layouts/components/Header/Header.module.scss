@@ -1,8 +1,6 @@
 .wrapper {
     width: 100%;
     height: var(--header-height);
-    // background-color: var(--background-color);
-    background-color: transparent;
     padding: 6px 52px;
     display: flex;
     justify-content: space-between;
@@ -12,6 +10,7 @@
     top: 0;
     left: 0;
     right: 0;
+    transition: all ease-out .2s;
 }
 
 // Logo

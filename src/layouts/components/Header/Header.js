@@ -18,6 +18,7 @@ function Header() {
     const [itemActive, setItemActive] = useState(0);
     const [dataTypeMovie, setDataTypeMovie] = useState([])
     const [suggestList, setSuggestList] = useState([])
+    const [showBackGroundHeader, setShowBackGroundHeader] = useState(false)
 
     useEffect(() => {
         const fetchApi = async () => {
@@ -32,6 +33,18 @@ function Header() {
         }
 
         fetchApi()
+    }, [])
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setShowBackGroundHeader(window.scrollY >= 70);
+        }
+
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll)
+        }
     }, [])
 
     const userMenu = [
@@ -115,7 +128,10 @@ function Header() {
     ];
 
     return (
-        <div className={cx('wrapper')}>
+        <div
+            className={cx('wrapper')}
+            style={{ backgroundColor: showBackGroundHeader ? '#030612' : 'transparent' }}
+        >
             <div className={cx('logo')}>
                 <Link to={'/'} onClick={() => setItemActive(0)}>
                     <img
@@ -149,11 +165,13 @@ function Header() {
             </div>
 
             <div className={cx('options')}>
-                <Search dataTypeMovie={dataTypeMovie} dataSuggestMovie={suggestList}/>
+                <Search dataTypeMovie={dataTypeMovie} dataSuggestMovie={suggestList} />
 
                 <div className={cx('announcement-icon')}>
                     <Notification hideOnClick data={notificationList}>
-                        <div><AnnouncementIcon /></div>
+                        <div>
+                            <AnnouncementIcon />
+                        </div>
                     </Notification>
                 </div>
             </div>

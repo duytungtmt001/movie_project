@@ -377,3 +377,51 @@ export const ArrowRightFadeIcon = ({ width = '3rem', height = '3rem', className 
         ></path>
     </svg>
 );
+
+export const TrailerIcon = ({ width = '3rem', height = '3rem', className }) => (
+    <svg
+        width={width}
+        height={height}
+        className={cx('icon', { [className]: className })}
+        id="icon-trailer"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+    >
+        <path
+            d="M21 2c1.103 0 2 .896 2 2v16c0 1.103-.897 2-2 2H3c-1.103 0-2-.897-2-2V4c0-1.104.897-2 2-2zm.5 1.5h-19v17h19.001l-.001-17zM7 17v2H5v-2h2zm4 0v2H9v-2h2zm4 0v2h-2v-2h2zm4 0v2h-2v-2h2zm-9-8l6 3-6 3V9zM7 5v2H5V5h2zm4 0v2H9V5h2zm4 0v2h-2V5h2zm4 0v2h-2V5h2z"
+            fill="currentColor"
+            fillRule="evenodd"
+        ></path>
+    </svg>
+);
+
+export const PlusIcon = ({ width = '3rem', height = '3rem', className }) => (
+    <svg
+        viewBox="0 0 448 448"
+        id="add-list-icon"
+        width={width}
+        height={height}
+        className={cx('icon', { [className]: className })}
+    >
+        <path
+            fill="currentColor"
+            d="m408 184h-136c-4.417969 0-8-3.582031-8-8v-136c0-22.089844-17.910156-40-40-40s-40 17.910156-40 40v136c0 4.417969-3.582031 8-8 8h-136c-22.089844 0-40 17.910156-40 40s17.910156 40 40 40h136c4.417969 0 8 3.582031 8 8v136c0 22.089844 17.910156 40 40 40s40-17.910156 40-40v-136c0-4.417969 3.582031-8 8-8h136c22.089844 0 40-17.910156 40-40s-17.910156-40-40-40zm0 0"
+        ></path>
+    </svg>
+);
+
+export const PlayIcon = ({ width = '3rem', height = '3rem', className }) => (
+    <svg
+        version="1.1"
+        viewBox="0 0 41.999 41.999"
+        id="icon-play"
+        width={width}
+        height={height}
+        className={cx('icon', { [className]: className })}
+    >
+        <path
+            fill="currentColor"
+            d="M36.068,20.176l-29-20C6.761-0.035,6.363-0.057,6.035,0.114C5.706,0.287,5.5,0.627,5.5,0.999v40 c0,0.372,0.206,0.713,0.535,0.886c0.146,0.076,0.306,0.114,0.465,0.114c0.199,0,0.397-0.06,0.568-0.177l29-20 c0.271-0.187,0.432-0.494,0.432-0.823S36.338,20.363,36.068,20.176z"
+        ></path>
+    </svg>
+);

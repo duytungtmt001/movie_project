@@ -1,5 +1,6 @@
 import {ArrowLeftFade, ArrowLeftMain, ArrowRightFade, ArrowRightMain} from './Arrow'
 import slideDots from './Dot';
+import Slide from './Slide'
 
 import Slider from 'react-slick';
 import './Slider.scss';
@@ -8,10 +9,11 @@ import 'slick-carousel/slick/slick-theme.css';
 
 function SliderCarousel({
     data = [],
-    img,
+    SlideComponent = Slide,
+    sourceImg,
     classNameSlide = 'slide',
     variableWidth = false,
-    slideWidth = 700,
+    slideWidth = 780,
     draggable = false,
     infinite = false,
     dots = false,
@@ -23,6 +25,7 @@ function SliderCarousel({
     slideOpacity = false,
     slidesToShow = 1,
     slidesToScroll = 1,
+    slideLarge = false
 }) {
     const settings = {
         dots,
@@ -44,13 +47,11 @@ function SliderCarousel({
         <Slider {...settings}>
             {data.map((item, index) => (
                 <div key={index} className={classNameSlide} style={{ width: slideWidth }}>
-                    <div className="slide-wrapper" style={{opacity: slideOpacity ? '0.6' : '1'}}>
-                        <img
-                            className="slide-wrapper__img"
-                            alt=""
-                            width="100%"
-                            src={require(`../../assets/images/${img}/${item.img}`)}
-                        />
+                    <div
+                        className={`slide-wrapper`}
+                        style={{ opacity: slideOpacity ? '0.6' : '1' }}
+                    >
+                        {<SlideComponent sourceImg={sourceImg} item={item} slideLarge={slideLarge} />}
                     </div>
                 </div>
             ))}

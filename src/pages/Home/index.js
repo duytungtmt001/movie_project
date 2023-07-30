@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import SliderCarousel from '../../components/Slider';
+import SlideWithDescription from '../../components/Slider/SlideWithDescription';
 
 import { sliderMain } from '../../apiServices';
 
@@ -58,42 +59,54 @@ function Home() {
         },
         {
             img: 'end.jpg',
+            title: "Xem Tất Cả"
         },
     ];
 
     const dataTrend = [
         {
             img: '1.jpg',
+            name: '1a.jpg'
         },
         {
             img: '2.jpg',
+            name: '2a.jpg'
         },
         {
             img: '3.jpg',
+            name: '3a.jpg'
         },
         {
             img: '4.jpg',
+            name: '4a.jpg'
         },
         {
             img: '5.jpg',
+            name: '5a.jpg'
         },
         {
             img: '6.jpg',
+            name: '6a.jpg'
         },
         {
             img: '7.jpg',
+            name: '7a.jpg'
         },
         {
             img: '8.jpg',
+            name: '8a.jpg'
         },
         {
             img: '9.jpg',
+            name: '9a.jpg'
         },
         {
             img: '10.jpg',
+            name: '10a.jpg'
         },
         {
             img: 'endBig.jpg',
+            title: "Xem Tất Cả"
         },
     ];
 
@@ -116,7 +129,8 @@ function Home() {
                 <h1 className={cx('carousel-title')}>Giải trí hay - Thưởng thức ngay</h1>
                 <SliderCarousel
                     data={dataSliderMain}
-                    img="slider"
+                    sourceImg="slider"
+                    SlideComponent={SlideWithDescription}
                     centerMode
                     dots
                     infinite
@@ -139,16 +153,19 @@ function Home() {
                     <div className={cx('list-slider')}>
                         <SliderCarousel
                             data={dataTrend}
-                            img="Home_Slider_Trend"
+                            sourceImg="Home_Slider_Trend"
                             classNameSlide={cx('list-slide-padding')}
                             slidesToShow={5.2}
                             slidesToScroll={5}
                             slideWidth="auto"
+                            slideLarge="true"
                             easing="ease"
                             speed={1100}
+                            zoomWhenHover
                         />
                     </div>
                 </div>
+
                 <div className={cx('list-movie', 'list-release')}>
                     <div className={cx('list-title')}>
                         <h1 className={cx('title-head')}>Phim Chiếu Rạp Mới Nhất</h1>
@@ -161,16 +178,17 @@ function Home() {
                     <div className={cx('list-slider')}>
                         <SliderCarousel
                             data={dataTest}
-                            img="Home_Slider_Trend"
+                            sourceImg="Home_Slider_Trend"
                             classNameSlide={cx('list-slide-padding')}
-                            slidesToShow={5.2}
-                            slidesToScroll={5}
+                            slidesToShow={4.2}
+                            slidesToScroll={4}
                             slideWidth="auto"
                             easing="ease"
                             speed={1100}
                         />
                     </div>
                 </div>
+
                 <div className={cx('list-movie', 'list-odd')}>
                     <div className={cx('list-title')}>
                         <h1 className={cx('title-head')}>Phim Lẻ Hay Nhất</h1>
@@ -183,16 +201,17 @@ function Home() {
                     <div className={cx('list-slider')}>
                         <SliderCarousel
                             data={dataTest}
-                            img="Home_Slider_Trend"
+                            sourceImg="Home_Slider_Trend"
                             classNameSlide={cx('list-slide-padding')}
-                            slidesToShow={5.2}
-                            slidesToScroll={5}
+                            slidesToShow={4.2}
+                            slidesToScroll={4}
                             slideWidth="auto"
                             easing="ease"
                             speed={1100}
                         />
                     </div>
                 </div>
+
                 <div className={cx('list-banner')}>
                     <div className={cx('list-banner-left')}>
                         <img
@@ -204,11 +223,9 @@ function Home() {
                             src={require('../../assets/images/Home_List_Banner/mat_biec.jpg')}
                         />
                     </div>
-                    <img
-                        alt=""
-                        src={require('../../assets/images/Home_List_Banner/3.jpg')}
-                    />
+                    <img alt="" src={require('../../assets/images/Home_List_Banner/3.jpg')} />
                 </div>
+
                 <div className={cx('list-movie', 'list-series')}>
                     <div className={cx('list-title')}>
                         <h1 className={cx('title-head')}>Phim Bộ Hot Nhất</h1>
@@ -221,16 +238,17 @@ function Home() {
                     <div className={cx('list-slider')}>
                         <SliderCarousel
                             data={dataTest}
-                            img="Home_Slider_Trend"
+                            sourceImg="Home_Slider_Trend"
                             classNameSlide={cx('list-slide-padding')}
-                            slidesToShow={5.2}
-                            slidesToScroll={5}
+                            slidesToShow={4.2}
+                            slidesToScroll={4}
                             slideWidth="auto"
                             easing="ease"
                             speed={1100}
                         />
                     </div>
                 </div>
+
                 <div className={cx('list-movie', 'list-series')}>
                     <div className={cx('list-title')}>
                         <h1 className={cx('title-head')}>Phim Sắp Chiếu</h1>
@@ -243,10 +261,10 @@ function Home() {
                     <div className={cx('list-slider')}>
                         <SliderCarousel
                             data={dataTest}
-                            img="Home_Slider_Trend"
+                            sourceImg="Home_Slider_Trend"
                             classNameSlide={cx('list-slide-padding')}
-                            slidesToShow={5.2}
-                            slidesToScroll={5}
+                            slidesToShow={4.2}
+                            slidesToScroll={4}
                             slideWidth="auto"
                             easing="ease"
                             speed={1100}
