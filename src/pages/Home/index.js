@@ -180,8 +180,8 @@ function Home() {
                             data={dataTest}
                             sourceImg="Home_Slider_Trend"
                             classNameSlide={cx('list-slide-padding')}
-                            slidesToShow={4.2}
-                            slidesToScroll={4}
+                            slidesToShow={5.2}
+                            slidesToScroll={5}
                             slideWidth="auto"
                             easing="ease"
                             speed={1100}
@@ -203,8 +203,8 @@ function Home() {
                             data={dataTest}
                             sourceImg="Home_Slider_Trend"
                             classNameSlide={cx('list-slide-padding')}
-                            slidesToShow={4.2}
-                            slidesToScroll={4}
+                            slidesToShow={5.2}
+                            slidesToScroll={5}
                             slideWidth="auto"
                             easing="ease"
                             speed={1100}
@@ -240,8 +240,8 @@ function Home() {
                             data={dataTest}
                             sourceImg="Home_Slider_Trend"
                             classNameSlide={cx('list-slide-padding')}
-                            slidesToShow={4.2}
-                            slidesToScroll={4}
+                            slidesToShow={5.2}
+                            slidesToScroll={5}
                             slideWidth="auto"
                             easing="ease"
                             speed={1100}
@@ -263,8 +263,8 @@ function Home() {
                             data={dataTest}
                             sourceImg="Home_Slider_Trend"
                             classNameSlide={cx('list-slide-padding')}
-                            slidesToShow={4.2}
-                            slidesToScroll={4}
+                            slidesToShow={5.2}
+                            slidesToScroll={5}
                             slideWidth="auto"
                             easing="ease"
                             speed={1100}
