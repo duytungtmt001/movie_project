@@ -16,9 +16,9 @@
 .carousel-title {
     width: 100%;
     text-align: center;
-    font-size: 4.4rem;
+    font-size: 4.2rem;
     display: inline-block;
-    margin: calc(var(--header-height) + 50px) 0 20px;
+    margin: calc(var(--header-height) + 30px) 0 20px;
 }
 
 .list {
@@ -26,17 +26,19 @@
     z-index: 3;
     
     .list-movie {
-        padding-left: 7.6rem;
+        padding-left: 6rem;
         padding-bottom: 5rem;
     }
     
     .list-title {
-        padding-left: 10px;
+        padding-left: 1rem;
         color: #fff;
         display: flex;
         align-items: center;
         
         .title-head {
+            font-size: 2.8rem;
+            font-weight: 600;
             line-height: 2;
         }
         

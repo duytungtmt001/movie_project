@@ -143,7 +143,7 @@ function Home() {
             <div className={cx('list')}>
                 <div className={cx('list-movie', 'list-trend')}>
                     <div className={cx('list-title')}>
-                        <h1 className={cx('title-head')}>Phim Mới Thịnh Hành Trên Phim Free</h1>
+                        <p className={cx('title-head')}>Phim Mới Thịnh Hành Trên Phim Free</p>
                         <ArrowRightIcon
                             width="4.4rem"
                             height="4.4rem"
@@ -155,8 +155,6 @@ function Home() {
                             data={dataTrend}
                             sourceImg="Home_Slider_Trend"
                             classNameSlide={cx('list-slide-padding')}
-                            slidesToShow={5.2}
-                            slidesToScroll={5}
                             slideWidth="auto"
                             slideLarge="true"
                             easing="ease"
@@ -168,7 +166,7 @@ function Home() {
 
                 <div className={cx('list-movie', 'list-release')}>
                     <div className={cx('list-title')}>
-                        <h1 className={cx('title-head')}>Phim Chiếu Rạp Mới Nhất</h1>
+                        <p className={cx('title-head')}>Phim Chiếu Rạp Mới Nhất</p>
                         <ArrowRightIcon
                             width="4.4rem"
                             height="4.4rem"
@@ -180,8 +178,6 @@ function Home() {
                             data={dataTest}
                             sourceImg="Home_Slider_Trend"
                             classNameSlide={cx('list-slide-padding')}
-                            slidesToShow={5.2}
-                            slidesToScroll={5}
                             slideWidth="auto"
                             easing="ease"
                             speed={1100}
@@ -191,7 +187,7 @@ function Home() {
 
                 <div className={cx('list-movie', 'list-odd')}>
                     <div className={cx('list-title')}>
-                        <h1 className={cx('title-head')}>Phim Lẻ Hay Nhất</h1>
+                        <p className={cx('title-head')}>Phim Lẻ Hay Nhất</p>
                         <ArrowRightIcon
                             width="4.4rem"
                             height="4.4rem"
@@ -203,8 +199,6 @@ function Home() {
                             data={dataTest}
                             sourceImg="Home_Slider_Trend"
                             classNameSlide={cx('list-slide-padding')}
-                            slidesToShow={5.2}
-                            slidesToScroll={5}
                             slideWidth="auto"
                             easing="ease"
                             speed={1100}
@@ -212,7 +206,7 @@ function Home() {
                     </div>
                 </div>
 
-                <div className={cx('list-banner')}>
+                {/* <div className={cx('list-banner')}>
                     <div className={cx('list-banner-left')}>
                         <img
                             alt=""
@@ -224,11 +218,11 @@ function Home() {
                         />
                     </div>
                     <img alt="" src={require('../../assets/images/Home_List_Banner/3.jpg')} />
-                </div>
+                </div> */}
 
                 <div className={cx('list-movie', 'list-series')}>
                     <div className={cx('list-title')}>
-                        <h1 className={cx('title-head')}>Phim Bộ Hot Nhất</h1>
+                        <p className={cx('title-head')}>Phim Bộ Hot Nhất</p>
                         <ArrowRightIcon
                             width="4.4rem"
                             height="4.4rem"
@@ -240,8 +234,6 @@ function Home() {
                             data={dataTest}
                             sourceImg="Home_Slider_Trend"
                             classNameSlide={cx('list-slide-padding')}
-                            slidesToShow={5.2}
-                            slidesToScroll={5}
                             slideWidth="auto"
                             easing="ease"
                             speed={1100}
@@ -251,7 +243,7 @@ function Home() {
 
                 <div className={cx('list-movie', 'list-series')}>
                     <div className={cx('list-title')}>
-                        <h1 className={cx('title-head')}>Phim Sắp Chiếu</h1>
+                        <p className={cx('title-head')}>Phim Sắp Chiếu</p>
                         <ArrowRightIcon
                             width="4.4rem"
                             height="4.4rem"
@@ -263,8 +255,6 @@ function Home() {
                             data={dataTest}
                             sourceImg="Home_Slider_Trend"
                             classNameSlide={cx('list-slide-padding')}
-                            slidesToShow={5.2}
-                            slidesToScroll={5}
                             slideWidth="auto"
                             easing="ease"
                             speed={1100}
