@@ -66,7 +66,7 @@ function SliderCarousel({
     };
 
     const [widthScreen, setWidthScreen] = useState(window.innerWidth);
-
+    
     const slideWidthDefault = () => {
         if(window.innerWidth > 1536) {
             return 800;
@@ -76,8 +76,8 @@ function SliderCarousel({
             return 600;
         }
     }
-
-    const [slideWidth, setSlideWidth] = useState(slideWidthDefault)
+    
+    const [slideWidth, setSlideWidth] = useState(slideWidthDefault);
 
     useEffect(() => {
         const handleWindowResize = () => setWidthScreen(window.innerWidth);

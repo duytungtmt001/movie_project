@@ -169,5 +169,21 @@
       "img": "5.webp",
       "description": "Ba câu chuyện, ba án mạng bí ẩn được tổng hợp dựa trên những truyền thuyết tâm linh rùng rợn của Thái Lan, bộ phim kinh dị không đao to búa lớn nhưng vẫn mang lại cảm giác ảm ảnh đáng sợ."
     }
+  ],
+
+  "list-movie": [
+    {
+      "id": 1,
+      "name": "Sisu: Già gân báo thù",
+      "description": "Bị bọn Phát Xít tàn ác cướp lấy kho báu vàng mình cất công tìm được, cựu binh già Aatami quyết đòi lại tất cả, từ nợ cho đến thù, cho dù phải tàn sát hết lính Phát Xít.",
+      "time": 88,
+      "year": 2023,
+      "age": 18,
+      "actor": "Jorma Tommila, Aksel Hennie, Jack Doolan",
+      "director": "Jalmari Helander",
+      "award": false,
+      "img": "sisu.jpg",
+      "trailer": ""
+    }
   ]
 }
