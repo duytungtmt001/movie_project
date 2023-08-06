@@ -1,3 +1,61 @@
 .wrapper {
-    background-image: url(../../../assets//images/Slider_Odd/1.jpg);
+    position: relative;
+    z-index: 5;
+}
+
+.info {
+    position: absolute;
+    max-width: 35%;
+    padding-left: 80px;
+    left: 0;
+    top: 25%;
+
+    .info-button {
+        display: flex;
+        margin: 30px 0;
+        
+        .button-left {
+            margin-right: 12px;
+        }
+    }
+
+    .info-description {
+        text-align: justify;
+        font-size: 2.2rem;
+
+        .description-detail {
+            cursor: pointer;
+            margin-left: 12px;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: rgba(255,255,255,0.55);
+            display: inline-flex;
+            align-items: center;
+
+            .detail-icon {
+                transition: all ease-out .2s;
+            }
+
+            &:hover {
+                .detail-icon {
+                    transform: translateX(4px);
+                }
+            }
+        }
+    }
+}
+
+.age {
+    position: absolute;
+    right: 0;
+    bottom: 22%;
+    background-color: rgba(0,0,0,0.5);
+    border-left: 3px solid #DDE2E5;
+    padding: 0 18px;
+    width: 124px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    font-size: 1.8rem;
+    font-weight: 600;
 }

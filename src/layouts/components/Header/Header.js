@@ -15,7 +15,7 @@ import {typeMovieApi, suggestMovie} from '../../../apiServices';
 const cx = classNames.bind(styles)
 
 function Header() {
-    const [itemActive, setItemActive] = useState(0);
+    const [itemActive, setItemActive] = useState(`/${window.location.href.split('/')[3]}`);
     const [dataTypeMovie, setDataTypeMovie] = useState([])
     const [suggestList, setSuggestList] = useState([])
     const [showBackGroundHeader, setShowBackGroundHeader] = useState(false)
@@ -130,7 +130,11 @@ function Header() {
     return (
         <div
             className={cx('wrapper')}
-            style={{ backgroundColor: showBackGroundHeader ? '#030612' : 'transparent' }}
+            style={{
+                background: showBackGroundHeader
+                    ? '#030612'
+                    : 'linear-gradient(rgb(16, 16, 16), rgba(16, 16, 16, 0))',
+            }}
         >
             <div className={cx('logo')}>
                 <Link to={'/'} onClick={() => setItemActive(0)}>
@@ -151,9 +155,9 @@ function Header() {
                         return (
                             <li
                                 className={cx('navbar-item', {
-                                    active: index === itemActive,
+                                    active: route.path === (itemActive || '/'),
                                 })}
-                                onClick={() => setItemActive(index)}
+                                onClick={() => setItemActive(route.path)}
                                 key={index}
                             >
                                 <Link to={route.path}>{route.linkName}</Link>

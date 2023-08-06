@@ -172,41 +172,41 @@
   ],
 
   "slider-odd": [
-    {
-      "id": 1,
-      "img": "1.jpg",
-      "img_name": "11.jpg",
-      "age": 13,
-      "description": "Mười lăm năm, Châu Tiêu Tề luôn giữ trong tim hình bóng của Vưu Vịnh Từ như lần đầu gặp gỡ. Nhưng tình yêu là thứ khó nắm bắt, sẽ thế nào khi người nắm tay em ở cuối con đường... không phải anh?"
-    },
-    {
-      "id": 2,
-      "img": "2.jpg",
-      "img_name": "22.jpg",
-      "age": 16,
-      "description": "Siêu phẩm phim Việt thành công nhất vào dịp Tết 2020 với doanh thu 168 tỷ đồng, phần 3 của bộ phim kể về hành trình ra mắt gia đình chồng đầy khó khăn của cô nàng tai tiếng bậc nhất showbiz."
-    },
-    {
-      "id": 3,
-      "img": "3.jpg",
-      "img_name": "33.jpg",
-      "age": 18,
-      "description": "Lấy bối cảnh Triều Tiên những năm 30, khi văn hóa Nhật xâm nhập vào một bộ phận quý tộc Hàn, một cô hầu gái được chọn để phục vụ nữ tiểu thư người Nhật nhằm chiếm đoạt khối tài sản mà cô ta thừa kế."
-    },
-    {
-      "id": 4,
-      "img": "4.jpg",
-      "img_name": "4.jpg",
-      "age": 13,
-      "description": "Lỗ Kỳ chế tạo đạn pháo để chống quân Nhật, nào biết có một ngày gia đình anh phải đối diện hiểm nguy. Đứng giữa sứ mệnh bảo vệ đất nước và mái ấm của mình, Lỗ Kỳ phải chọn gì và buông bỏ gì?"
-    },
-    {
-      "id": 5,
-      "img": "5.jpg",
-      "img_name": "55.jpg",
-      "age": 16,
-      "description": "Ba Trân phải chịu đựng những quy củ hà khắc của nhà chồng. Sức ép của việc gìn giữ và duy trì nề nếp dòng họ khiến cô trút bi kịch của mình lên những người phụ nữ khác khi chính cô trở thành mẹ chồng."
-    }
+      {
+          "id": 1,
+          "img": "1.jpg",
+          "img_name": "11.jpg",
+          "age": 13,
+          "description": "Mười lăm năm, Châu Tiêu Tề luôn giữ trong tim hình bóng của Vưu Vịnh Từ như lần đầu gặp gỡ. Nhưng tình yêu là thứ khó nắm bắt, sẽ thế nào khi người nắm tay em ở cuối con đường... không phải anh?"
+      },
+      {
+          "id": 2,
+          "img": "2.jpg",
+          "img_name": "22.jpg",
+          "age": 16,
+          "description": "Siêu phẩm phim Việt thành công nhất vào dịp Tết 2020 với doanh thu 168 tỷ đồng, phần 3 của bộ phim kể về hành trình ra mắt gia đình chồng đầy khó khăn của cô nàng tai tiếng bậc nhất showbiz."
+      },
+      {
+          "id": 3,
+          "img": "3.jpg",
+          "img_name": "33.jpg",
+          "age": 18,
+          "description": "Lấy bối cảnh Triều Tiên những năm 30, khi văn hóa Nhật xâm nhập vào một bộ phận quý tộc Hàn, một cô hầu gái được chọn để phục vụ nữ tiểu thư người Nhật nhằm chiếm đoạt khối tài sản mà cô ta thừa kế."
+      },
+      {
+          "id": 4,
+          "img": "4.jpg",
+          "img_name": "44.jpg",
+          "age": 13,
+          "description": "Lỗ Kỳ chế tạo đạn pháo để chống quân Nhật, nào biết có một ngày gia đình anh phải đối diện hiểm nguy. Đứng giữa sứ mệnh bảo vệ đất nước và mái ấm của mình, Lỗ Kỳ phải chọn gì và buông bỏ gì?"
+      },
+      {
+          "id": 5,
+          "img": "5.jpg",
+          "img_name": "55.jpg",
+          "age": 16,
+          "description": "Ba Trân phải chịu đựng những quy củ hà khắc của nhà chồng. Sức ép của việc gìn giữ và duy trì nề nếp dòng họ khiến cô trút bi kịch của mình lên những người phụ nữ khác khi chính cô trở thành mẹ chồng."
+      }
   ],
 
   "list-movie": [

@@ -25,8 +25,28 @@ function SliderCarousel({
     slideOpacity = false,
     slidesToShow = 1,
     slidesToScroll = 1,
-    slideLarge = false
+    slideLarge = false,
+    responsive = false,
+    dotsFade = false
 }) {
+    const appenDotsFn = dotsFade
+        ? (dots) => (
+              <div
+                  style={{
+                      bottom: '17%',
+                      right: '11%',
+                      width: 'unset',
+                  }}
+              >
+                  <ul style={{ margin: '0px' }}> {dots} </ul>
+              </div>
+          )
+        : () => (
+              <div>
+                  
+              </div>
+          );
+
     const settings = {
         dots,
         fade,
@@ -36,33 +56,36 @@ function SliderCarousel({
         draggable,
         centerMode,
         variableWidth,
+        appendDots: (dots) => appenDotsFn(dots),
         customPaging: () => slideDots(),
         nextArrow: arrowFade ? <ArrowRightFade /> : <ArrowRightMain />,
         prevArrow: arrowFade ? <ArrowLeftFade /> : <ArrowLeftMain />,
 
-        responsive: variableWidth ? [] : [
-            {
-                breakpoint: 10000,   
-                settings: {
-                    slidesToShow: 5.2,
-                    slidesToScroll: 5,
-                }
-            },
-            {
-                breakpoint: 1537,   
-                settings: {
-                    slidesToShow: 4.2,
-                    slidesToScroll: 4,
-                }
-            },
-            {
-                breakpoint: 1281,
-                settings: {
-                    slidesToShow: 3.2,
-                    slidesToScroll: 3
-                }
-            }
-        ]
+        responsive: !responsive
+            ? []
+            : [
+                  {
+                      breakpoint: 10000,
+                      settings: {
+                          slidesToShow: 5.2,
+                          slidesToScroll: 5,
+                      },
+                  },
+                  {
+                      breakpoint: 1537,
+                      settings: {
+                          slidesToShow: 4.2,
+                          slidesToScroll: 4,
+                      },
+                  },
+                  {
+                      breakpoint: 1281,
+                      settings: {
+                          slidesToShow: 3.2,
+                          slidesToScroll: 3,
+                      },
+                  },
+              ],
     };
 
     const [widthScreen, setWidthScreen] = useState(window.innerWidth);
