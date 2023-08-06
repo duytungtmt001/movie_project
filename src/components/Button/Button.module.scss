@@ -29,6 +29,15 @@
     }
 }
 
+.blue {
+    color: #fff;
+    background-color: #0A75FF;
+
+    &:hover {
+        background-color: #12A7FF;
+    }
+}
+
 .circle {
     width: var(--button-height);
     border-radius: 99999999px;
@@ -41,14 +50,16 @@
 }
 
 .light, 
-.dark {
+.dark,
+.blue {
     padding: 0 40px;
     border-radius: 32px;
 }
 
 .light,
 .dark,
-.circle {
+.circle,
+.blue {
     transition: all ease-out .2s;
 }
 

@@ -129,7 +129,7 @@ function Home() {
                 <h1 className={cx('carousel-title')}>Giải trí hay - Thưởng thức ngay</h1>
                 <SliderCarousel
                     data={dataSliderMain}
-                    sourceImg="slider"
+                    sourceImg="Slider_Main"
                     SlideComponent={SlideWithDescription}
                     centerMode
                     dots
@@ -162,6 +162,10 @@ function Home() {
                             zoomWhenHover
                         />
                     </div>
+                </div>
+
+                <div className={cx('list-banner')}>
+                    <img alt="" src={require('../../assets/images/Home_List_Banner/2.jpg')} />
                 </div>
 
                 <div className={cx('list-movie', 'list-release')}>
@@ -206,19 +210,9 @@ function Home() {
                     </div>
                 </div>
 
-                {/* <div className={cx('list-banner')}>
-                    <div className={cx('list-banner-left')}>
-                        <img
-                            alt=""
-                            src={require('../../assets/images/Home_List_Banner/bannder_NVBKT.jpg')}
-                        />
-                        <img
-                            alt=""
-                            src={require('../../assets/images/Home_List_Banner/mat_biec.jpg')}
-                        />
-                    </div>
-                    <img alt="" src={require('../../assets/images/Home_List_Banner/3.jpg')} />
-                </div> */}
+                <div className={cx('list-banner')}>
+                    <img alt="" src={require('../../assets/images/Home_List_Banner/1.jpg')} />
+                </div>
 
                 <div className={cx('list-movie', 'list-series')}>
                     <div className={cx('list-title')}>

@@ -425,3 +425,42 @@ export const PlayIcon = ({ width = '3rem', height = '3rem', className }) => (
         ></path>
     </svg>
 );
+
+export const PlayIconBorder = ({ width = '3rem', height = '3rem', className }) => (
+    <svg
+        width={width}
+        height={height}
+        className={cx('icon', { [className]: className })}
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+    >
+        <path
+            d="M5 3v18a1 1 0 0 0 1.54.841l14-9a1 1 0 0 0 0-1.682l-14-9A1 1 0 0 0 5 3zm2 1.832L18.15 12 7 19.167V4.832z"
+            fill="#FFF"
+            fillRule="evenodd"
+        ></path>
+    </svg>
+);
+
+export const AddListIcon = ({ width = '3rem', height = '3rem', className }) => (
+    <svg
+        width={width}
+        height={height}
+        className={cx('icon', { [className]: className })}
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+    >
+        <g clipPath="url(#bookmark_icon)">
+            <path
+                d="M18.5 19.2a.24.24 0 0 1-.42.17l-4.31-4.3a2.5 2.5 0 0 0-3.53 0l-4.31 4.3a.25.25 0 0 1-.43-.17V3.99a.5.5 0 0 1 .49-.5h12a.5.5 0 0 1 .5.5l.01 15.21Zm.49-17.21h-14a1 1 0 0 0-1 1v18a1 1 0 0 0 1 1 1 1 0 0 0 .7-.3l5.59-5.58a1 1 0 0 1 1.41 0l5.59 5.58a1 1 0 0 0 .7.3 1 1 0 0 0 1-1v-18a1 1 0 0 0-1-1h.01Z"
+                fill="#fff"
+            ></path>
+        </g>
+        <defs>
+            <clipPath id="bookmark_icon">
+                <path fill="#fff" transform="translate(4 1.99)" d="M0 0h16v20.02H0z"></path>
+            </clipPath>
+        </defs>
+    </svg>
+);

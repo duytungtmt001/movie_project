@@ -23,7 +23,7 @@ function SlideWithDescription({sourceImg, item}) {
                         <Button to="/">
                             <img
                                 alt=""
-                                src={require('../../../assets/images/slider/icon-info.png')}
+                                src={require('../../../assets/images/Slider_Main/icon-info.png')}
                             />
                         </Button>
                     </div>
@@ -34,7 +34,7 @@ function SlideWithDescription({sourceImg, item}) {
                         <Button to="/">
                             <img
                                 alt=""
-                                src={require('../../../assets/images/slider/icon-trailer.png')}
+                                src={require('../../../assets/images/Slider_Main/icon-trailer.png')}
                             />
                         </Button>
                     </div>
