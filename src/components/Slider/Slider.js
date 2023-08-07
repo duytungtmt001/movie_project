@@ -29,23 +29,20 @@ function SliderCarousel({
     responsive = false,
     dotsFade = false
 }) {
-    const appenDotsFn = dotsFade
-        ? (dots) => (
-              <div
-                  style={{
-                      bottom: '17%',
-                      right: '11%',
-                      width: 'unset',
-                  }}
-              >
-                  <ul style={{ margin: '0px' }}> {dots} </ul>
-              </div>
-          )
-        : () => (
-              <div>
-                  
-              </div>
-          );
+    const appenDotsFn = dotsFade ? {
+        appendDots: (dots) => (
+            <div
+                style={{
+                    top: 'calc(100vh - 80px)',
+                    right: '5%',
+                    marginRight: "120px",
+                    width: 'unset',
+                }}
+            >
+                <ul style={{ margin: '0px' }}> {dots} </ul>
+            </div>
+        )
+    } : {}
 
     const settings = {
         dots,
@@ -56,7 +53,7 @@ function SliderCarousel({
         draggable,
         centerMode,
         variableWidth,
-        appendDots: (dots) => appenDotsFn(dots),
+        ...appenDotsFn,
         customPaging: () => slideDots(),
         nextArrow: arrowFade ? <ArrowRightFade /> : <ArrowRightMain />,
         prevArrow: arrowFade ? <ArrowLeftFade /> : <ArrowLeftMain />,
