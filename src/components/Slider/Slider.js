@@ -27,7 +27,12 @@ function SliderCarousel({
     slidesToScroll = 1,
     slideLarge = false,
     responsive = false,
-    dotsFade = false
+    dotsFade = false,
+    autoplay = false,
+    autoplaySpeed = 9000,
+    pauseOnHover = false,
+    pauseOnDotsHover = true,
+    typeMovie = []
 }) {
     const appenDotsFn = dotsFade ? {
         appendDots: (dots) => (
@@ -50,8 +55,14 @@ function SliderCarousel({
         speed,
         easing,
         infinite,
+        autoplay,
         draggable,
         centerMode,
+        slidesToShow,
+        pauseOnHover,
+        autoplaySpeed,
+        pauseOnDotsHover,
+        slidesToScroll,
         variableWidth,
         ...appenDotsFn,
         customPaging: () => slideDots(),
@@ -127,7 +138,7 @@ function SliderCarousel({
                         className={`slide-wrapper`}
                         style={{ opacity: slideOpacity ? '0.6' : '1' }}
                     >
-                        {<SlideComponent sourceImg={sourceImg} item={item} slideLarge={slideLarge} />}
+                        {<SlideComponent sourceImg={sourceImg} item={item} typeMovie={typeMovie} slideLarge={slideLarge} />}
                     </div>
                 </div>
             ))}

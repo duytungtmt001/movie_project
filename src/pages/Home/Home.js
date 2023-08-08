@@ -66,43 +66,43 @@ function Home() {
     const dataTrend = [
         {
             img: '1.jpg',
-            name: '1a.jpg',
+            img_name: '1a.jpg',
         },
         {
             img: '2.jpg',
-            name: '2a.jpg',
+            img_name: '2a.jpg',
         },
         {
             img: '3.jpg',
-            name: '3a.jpg',
+            img_name: '3a.jpg',
         },
         {
             img: '4.jpg',
-            name: '4a.jpg',
+            img_name: '4a.jpg',
         },
         {
             img: '5.jpg',
-            name: '5a.jpg',
+            img_name: '5a.jpg',
         },
         {
             img: '6.jpg',
-            name: '6a.jpg',
+            img_name: '6a.jpg',
         },
         {
             img: '7.jpg',
-            name: '7a.jpg',
+            img_name: '7a.jpg',
         },
         {
             img: '8.jpg',
-            name: '8a.jpg',
+            img_name: '8a.jpg',
         },
         {
             img: '9.jpg',
-            name: '9a.jpg',
+            img_name: '9a.jpg',
         },
         {
             img: '10.jpg',
-            name: '10a.jpg',
+            img_name: '10a.jpg',
         },
         {
             img: 'endBig.jpg',

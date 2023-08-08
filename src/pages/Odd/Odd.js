@@ -71,6 +71,7 @@ function Odd() {
                         dots
                         dotsFade
                         arrowFade
+                        autoplay
                         classArrowFadeLeft={cx('arrow-left')}
                         classArrowFadeRight={cx('arrow-right')}
                     />
@@ -78,30 +79,36 @@ function Odd() {
             </div>
 
             <div className={cx('list')}>
-                {typeMovie.map((type, index) => (
-                    <div key={index} className={cx('list-movie')}>
-                        <div className={cx('list-title')}>
-                            <p className={cx('title-head')}>{`Phim ${type.name}`}</p>
-                            <ArrowRightIcon
-                                width="4.4rem"
-                                height="4.4rem"
-                                className={cx('title-icon')}
-                            />
+                {typeMovie.map((type, index) => {
+                    const listMovie = dataListMovie.reduce((result, currentItem, index) => {
+                        return currentItem.typeMovie_id === type.id ? [...result, currentItem] : result;
+                    }, []);
+                    return (
+                        <div key={index} className={cx('list-movie')}>
+                            <div className={cx('list-title')}>
+                                <p className={cx('title-head')}>{`Phim ${type.name}`}</p>
+                                <ArrowRightIcon
+                                    width="4.4rem"
+                                    height="4.4rem"
+                                    className={cx('title-icon')}
+                                />
+                            </div>
+                            <div className={cx('list-slider')}>
+                                <SliderCarousel 
+                                    data={listMovie} 
+                                    typeMovie={typeMovie}
+                                    sourceImg="List_Movie"
+                                    classNameSlide={cx('list-slide-padding')}
+                                    responsive
+                                    slideWidth="auto"
+                                    easing="ease"
+                                    speed={1100}
+                                    zoomWhenHover
+                                />
+                            </div>
                         </div>
-                        <div className={cx('list-slider')}>
-                            <SliderCarousel 
-                                data={dataCarousel} 
-                                sourceImg="Slider_Odd"
-                                classNameSlide={cx('list-slide-padding')}
-                                responsive
-                                slideWidth="auto"
-                                easing="ease"
-                                speed={1100}
-                                zoomWhenHover
-                            />
-                        </div>
-                    </div>
-                ))}
+                    )
+                })}
             </div>
         </div>
     );
