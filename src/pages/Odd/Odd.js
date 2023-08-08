@@ -60,19 +60,21 @@ function Odd() {
     return (
         <div className={cx('wrapper')}>
             <div className={cx('carousel')}>
-                <SliderCarousel
-                    data={dataCarousel}
-                    SlideComponent={SlideBig}
-                    classNameSlide={cx('carousel-slide-padding')}
-                    sourceImg="Slider_Odd"
-                    infinite
-                    fade
-                    dots
-                    dotsFade
-                    arrowFade
-                    classArrowFadeLeft={cx('arrow-left')}
-                    classArrowFadeRight={cx('arrow-right')}
-                />
+                <div className={cx("carousel-wrapper")}>
+                    <SliderCarousel
+                        data={dataCarousel}
+                        SlideComponent={SlideBig}
+                        classNameSlide={cx('carousel-slide-padding')}
+                        sourceImg="Slider_Odd"
+                        infinite
+                        fade
+                        dots
+                        dotsFade
+                        arrowFade
+                        classArrowFadeLeft={cx('arrow-left')}
+                        classArrowFadeRight={cx('arrow-right')}
+                    />
+                </div>
             </div>
 
             <div className={cx('list')}>

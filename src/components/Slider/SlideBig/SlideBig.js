@@ -27,6 +27,7 @@ function SlideBig({item}) {
           <div className={cx('age')}>
               <p>T{item.age}</p>
           </div>
+          <div className={cx('overlay')}></div>
       </div>
   );
 }

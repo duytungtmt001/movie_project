@@ -33,7 +33,7 @@ function SliderCarousel({
         appendDots: (dots) => (
             <div
                 style={{
-                    top: 'calc(100vh - 80px)',
+                    bottom: '18%',
                     right: '5%',
                     marginRight: "120px",
                     width: 'unset',
@@ -46,7 +46,7 @@ function SliderCarousel({
 
     const settings = {
         dots,
-        fade,
+        fade,   
         speed,
         easing,
         infinite,

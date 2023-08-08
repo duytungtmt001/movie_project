@@ -2,6 +2,10 @@
     position: relative;
     margin-bottom: -200px;
     z-index: 2;
+
+    .carousel-wrapper {
+        position: relative;
+    }
 }
 
 .carousel-slide-padding {
@@ -11,7 +15,7 @@
     
 .list {
     position: relative;
-    z-index: 3;
+    z-index: 3; 
 
     .list-movie {
         padding-left: 6rem;
