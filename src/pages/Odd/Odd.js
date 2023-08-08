@@ -66,8 +66,8 @@ function Odd() {
                         SlideComponent={SlideBig}
                         classNameSlide={cx('carousel-slide-padding')}
                         sourceImg="Slider_Odd"
-                        infinite
                         fade
+                        infinite
                         dots
                         dotsFade
                         arrowFade
