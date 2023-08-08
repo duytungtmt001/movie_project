@@ -63,7 +63,7 @@ function Slide({ sourceImg, item, slideLarge, typeMovie }) {
                         </Tippy>
                     </div>
 
-                    <div className={cx('overlay-info')} style={{ left: slideLarge && 0 }}>
+                    {/* <div className={cx('overlay-info')} style={{ left: slideLarge && 0 }}>
                         <p
                             className={cx('info-name')}
                             style={{
@@ -94,7 +94,7 @@ function Slide({ sourceImg, item, slideLarge, typeMovie }) {
                             <div className={cx('dot')}></div>
                             <div className={cx('info-year')}>{item.year}</div>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             )}
         </div>

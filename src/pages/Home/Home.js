@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import SliderCarousel from '../../components/Slider';
 import SlideWithDescription from '../../components/Slider/SlideWithDescription';
 
-import { sliderMain } from '../../apiServices';
+import { sliderMain, typeMovieApi } from '../../apiServices';
 
 import classNames from 'classnames/bind';
 import styles from './Home.module.scss';
@@ -11,51 +11,69 @@ const cx = classNames.bind(styles);
 
 function Home() {
     const [dataSliderMain, setDataSliderMain] = useState([]);
+    const [typeMovie, setTypeMovie] = useState([]);
+    const [dataListMovie, setDataListMovie] = useState([]);
+    
     const dataTest = [
         {
             img: 'ok.jpg',
+            name: "Bố Già",
         },
         {
             img: 'listTest.jpg',
+            name: "Bố Già",
         },
         {
             img: 'ok2.jpg',
+            name: "Bố Già",
         },
         {
             img: 'ok.jpg',
+            name: "Bố Già",
         },
         {
             img: 'listTest.jpg',
+            name: "Bố Già",
         },
         {
             img: 'ok2.jpg',
+            name: "Bố Già",
         },
         {
             img: 'ok.jpg',
+            name: "Bố Già",
         },
         {
             img: 'listTest.jpg',
+            name: "Bố Già",
         },
         {
             img: 'ok2.jpg',
+            name: "Bố Già",
         },
         {
             img: 'ok.jpg',
+            name: "Bố Già",
         },
         {
             img: 'listTest.jpg',
+            name: "Bố Già",
         },
         {
             img: 'ok2.jpg',
+            name: "Bố Già",
         },
         {
             img: 'ok.jpg',
+            name: "Bố Già",
         },
         {
             img: 'listTest.jpg',
+            name: "Bố Già",
         },
         {
             img: 'ok2.jpg',
+            name: "Bố Già",
         },
         {
             img: 'end.jpg',
@@ -123,6 +141,19 @@ function Home() {
         fetchApi();
     }, []);
 
+    useEffect(() => {
+        const fetchApi = async () => {
+            try {
+                let data = await typeMovieApi();
+                setTypeMovie(data);
+            } catch (error) {
+                console.log(error);
+            }
+        };
+
+        fetchApi();
+    }, []);
+
     return (
         <div className={cx('wrapper')}>
             <div className={cx('carousel')}>
@@ -156,6 +187,7 @@ function Home() {
                             sourceImg="Home_Slider_Trend"
                             classNameSlide={cx('list-slide-padding')}
                             responsive
+                            typeMovie={typeMovie}
                             slideWidth="auto"
                             slideLarge="true"
                             easing="ease"
@@ -184,6 +216,7 @@ function Home() {
                             sourceImg="Home_Slider_Trend"
                             classNameSlide={cx('list-slide-padding')}
                             responsive
+                            typeMovie={typeMovie}
                             slideWidth="auto"
                             easing="ease"
                             speed={1100}
@@ -206,6 +239,7 @@ function Home() {
                             sourceImg="Home_Slider_Trend"
                             classNameSlide={cx('list-slide-padding')}
                             responsive
+                            typeMovie={typeMovie}
                             slideWidth="auto"
                             easing="ease"
                             speed={1100}
@@ -232,6 +266,7 @@ function Home() {
                             sourceImg="Home_Slider_Trend"
                             classNameSlide={cx('list-slide-padding')}
                             responsive
+                            typeMovie={typeMovie}
                             slideWidth="auto"
                             easing="ease"
                             speed={1100}
@@ -254,6 +289,7 @@ function Home() {
                             sourceImg="Home_Slider_Trend"
                             classNameSlide={cx('list-slide-padding')}
                             responsive
+                            typeMovie={typeMovie}
                             slideWidth="auto"
                             easing="ease"
                             speed={1100}
