@@ -97,7 +97,7 @@ function Odd() {
                                 <SliderCarousel 
                                     data={listMovie} 
                                     typeMovie={typeMovie}
-                                    sourceImg="List_Movie"
+                                    sourceImg="List_Movie_Odd"
                                     classNameSlide={cx('list-slide-padding')}
                                     responsive
                                     slideWidth="auto"
