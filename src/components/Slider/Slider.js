@@ -24,7 +24,7 @@ function SliderCarousel({
     centerMode = false,
     arrowFade = false,
     slideOpacity = false,
-    slidesToShow = 1,
+    slidesToShow,
     slidesToScroll = 1,
     slideLarge = false,
     responsive = false,
@@ -84,7 +84,7 @@ function SliderCarousel({
                   {
                       breakpoint: 10000,
                       settings: {
-                          slidesToShow: 5.2,
+                          slidesToShow: slidesToShow || 5.2,
                           slidesToScroll: 5,
                       },
                   },

@@ -41,7 +41,8 @@ function Release() {
         const fetchApi = async () => {
             try {
                 const dataType = await typeMovieApi();
-                setTypeMovie(dataType);
+                const result = dataType.filter((item) => item.category === 'PCR');
+                setTypeMovie(result);
             } catch (error) {
                 console.log(error);
             }
@@ -56,7 +57,7 @@ function Release() {
             dataListMovie={dataListMovie}
             typeMovie={typeMovie}
             sourceSliderImg="Slider_Release"
-            sourceListImg="List_Movie_Release"
+            sourceListImg="List_Movie_Img"
         />
     );
 }

@@ -20,12 +20,14 @@ function Header() {
     const [suggestList, setSuggestList] = useState([])
     const [showBackGroundHeader, setShowBackGroundHeader] = useState(false)
 
+    // Call API get type movie
     useEffect(() => {
         const fetchApi = async () => {
             try {
                 const resTypeMovie = await typeMovieApi();
+                const resullt = resTypeMovie.filter((item) => item.category==="PL")
                 const resSuggestMovie = await suggestMovie();
-                setDataTypeMovie(resTypeMovie);
+                setDataTypeMovie(resullt);
                 setSuggestList(resSuggestMovie);
             } catch (error) {
                 console.log(error);

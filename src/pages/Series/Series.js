@@ -41,7 +41,8 @@ function Series() {
         const fetchApi = async () => {
             try {
                 const dataType = await typeMovieApi();
-                setTypeMovie(dataType);
+                const result = dataType.filter((item) => item.category === 'PB');
+                setTypeMovie(result);
             } catch (error) {
                 console.log(error);
             }
@@ -56,7 +57,7 @@ function Series() {
             dataListMovie={dataListMovie}
             typeMovie={typeMovie}
             sourceSliderImg="Slider_Series"
-            sourceListImg="List_Movie_Series"
+            sourceListImg="List_Movie_Img"
         />
     );
 }

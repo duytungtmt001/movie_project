@@ -103,6 +103,7 @@ function Home() {
                     <SliderCarousel
                         data={dataSliderMain}
                         sourceSliderImg="Slider_Main"
+                        slidesToShow={1}
                         SlideComponent={SlideWithDescription}
                         centerMode
                         dots
@@ -156,7 +157,7 @@ function Home() {
                         <div className={cx('list-slider')}>
                             <SliderCarousel
                                 data={dataMovieRelease}
-                                sourceListImg="List_Movie_Release"
+                                sourceListImg="List_Movie_Img"
                                 classNameSlide={cx('list-slide-padding')}
                                 responsive
                                 slideEnd
@@ -180,7 +181,7 @@ function Home() {
                         <div className={cx('list-slider')}>
                             <SliderCarousel
                                 data={dataMovieOdd}
-                                sourceListImg="List_Movie_Odd"
+                                sourceListImg="List_Movie_Img"
                                 classNameSlide={cx('list-slide-padding')}
                                 responsive
                                 slideEnd
@@ -208,7 +209,7 @@ function Home() {
                         <div className={cx('list-slider')}>
                             <SliderCarousel
                                 data={dataMovieSeries}
-                                sourceListImg="List_Movie_Series"
+                                sourceListImg="List_Movie_Img"
                                 classNameSlide={cx('list-slide-padding')}
                                 responsive
                                 slideEnd
@@ -232,7 +233,7 @@ function Home() {
                         <div className={cx('list-slider')}>
                             <SliderCarousel
                                 data={dataMovieSeries}
-                                sourceListImg="List_Movie_Series"
+                                sourceListImg="List_Movie_Img"
                                 classNameSlide={cx('list-slide-padding')}
                                 responsive
                                 slideEnd

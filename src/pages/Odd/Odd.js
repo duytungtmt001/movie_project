@@ -41,7 +41,8 @@ function Odd() {
         const fetchApi = async () => {
             try {
                 const dataType = await typeMovieApi();
-                setTypeMovie(dataType);
+                const result = dataType.filter((item) => item.category==="PL")
+                setTypeMovie(result);
             } catch (error) {
                 console.log(error);
             }
@@ -56,7 +57,7 @@ function Odd() {
             dataListMovie={dataListMovie}
             typeMovie={typeMovie}
             sourceSliderImg="Slider_Odd"
-            sourceListImg="List_Movie_Odd"
+            sourceListImg="List_Movie_Img"
         />
     );
 }

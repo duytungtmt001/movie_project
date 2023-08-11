@@ -36,91 +36,110 @@
         {
             "id": 1,
             "name": "Gia đình",
+            "category": "PL",
             "img": "giadinh.png"
         },
         {
             "id": 2,
             "name": "Tâm lý",
+            "category": "PL",
             "img": "tamly.png"
         },
         {
             "id": 3,
             "name": "Hành động",
+            "category": "PL",
             "img": "hanhdong.png"
         },
         {
             "id": 4,
             "name": "Hài",
+            "category": "PL",
             "img": "hai.png"
         },
         {
             "id": 5,
             "name": "Phim Việt",
+            "category": "PL",
             "img": "phimviet.png"
         },
         {
             "id": 6,
             "name": "Kiếm hiệp",
+            "category": "PL",
             "img": "kiemhiep.png"
         },
         {
             "id": 7,
             "name": "Lãng mạn",
+            "category": "PL",
             "img": "langman.png"
         },
         {
             "id": 8,
             "name": "Tài liệu",
+            "category": "PL",
             "img": "tailieu.png"
         },
         {
             "id": 9,
             "name": "Cổ trang",
+            "category": "PL",
             "img": "cotrang.png"
         },
         {
             "id": 10,
             "name": "Kinh dị",
+            "category": "PL",
             "img": "kinhdi.png"
         },
         {
             "id": 11,
             "name": "Khoa học viễn tưởng",
+            "category": "PL",
             "img": "khoahoc.png"
         },
         {
             "id": 12,
             "name": "Tiểu sử",
+            "category": "PL",
             "img": "tieusu.png"
         },
         {
             "id": 13,
             "name": "Hoạt hình",
+            "category": "PL",
             "img": "hoathinh.png"
         },
         {
             "id": 14,
-            "name": "Bộ Việt Hay Nhất"
+            "name": "Bộ Việt Hay Nhất",
+            "category": "PB"
         },
         {
             "id": 15,
-            "name": "Bộ Châu Á Hot"
+            "name": "Bộ Châu Á Hot",
+            "category": "PB"
         },
         {
             "id": 16,
-            "name": "Bộ Đáng Xem Nhất"
+            "name": "Bộ Đáng Xem Nhất",
+            "category": "PB"
         },
         {
             "id": 17,
-            "name": "Mới Cập Nhật"
+            "name": "Mới Cập Nhật",
+            "category": "PCR"
         },
         {
             "id": 18,
-            "name": "Hay Nhất 2022"
+            "name": "Hay Nhất 2022",
+            "category": "PCR"
         },
         {
             "id": 19,
-            "name": "Hay Nhất 2021"
+            "name": "Hay Nhất 2021",
+            "category": "PCR"
         }
     ],
 
@@ -3888,57 +3907,57 @@
         },
         {
             "id": 4,
-            "name": "Người Môi Giới",
-            "description": "Lấy cảm hứng từ mô hình hộp em bé có thật ở Hàn Quốc, hai người đàn ông buôn bán trẻ em trên danh nghĩa tìm nhà mới cho bé bị bỏ rơi. Nhưng sự xuất hiện của mẹ con Woo Sung đã làm thay đổi tất cả.",
-            "time": 130,
-            "year": 2022,
-            "age": 16,
-            "actor": "Song Kang Ho, Gang Dong Won, IU",
-            "director": "Hirokazu Koreeda",
-            "award": "Đoạt giải Cannes cho hạng mục Nam diễn viên chính xuất sắc nhất 2022 (Song Kang Ho).",
-            "img": "nguoimoigioi.jpg",
-            "img_name": "nguoimoigioi_name.jpg",
+            "name": "Vạn Dặm Nhân Sinh",
+            "description": "Vốn không hòa thuận, không khí gia đình ông Ba trở nên căng thẳng khi bà Mỹ - trụ cột chính trong nhà mất đi. Từ đó, mọi con mắt đổ dồn về tài sản bà để lại, tương lai gia đình này sẽ đi về đâu?",
+            "episode": 80,
+            "year": 2023,
+            "age": 13,
+            "actor": "NSND Thanh Nam, Thanh Trúc, Thanh Bình",
+            "director": "Quách Khoa Nam",
+            "award": "",
+            "img": "vandam.jpg",
+            "img_name": "vandam_name.jpg",
             "trailer": "1.mp4",
             "video": "1.mp4",
             "isMonopoly": true,
             "callouts": "TM",
-            "typeMovie_id": 1
+            "typeMovie_id": 14
         },
         {
             "id": 5,
-            "name": "Ngọt Ngào Điên Dại",
-            "description": "Một chàng trai bị người vợ sắp cưới bỏ rơi, một cô gái mới chia tay người yêu vì bị lừa dối, định mệnh đưa họ gặp nhau và ngã rẻ mới có đưa họ đến bên nhau khi đã trải qua quá nhiều vết thương lòng?",
-            "time": 110,
-            "year": 2019,
+            "name": "Thế Thái Nhân Tình",
+            "description": "Ngô Minh Tâm vốn là người tài đức vẹn toàn. Nhưng 'chữ tài đi với chữ tai một vần', cuộc đời ông là chuỗi thăng trầm, vô vàn sóng gió. Thế mà ông vẫn bình thản sống và trao đi sự thiện lương.",
+            "episode": 43,
+            "year": 2016,
             "age": 13,
-            "actor": "Kim Rae Won, Kong Hyo Jin, Kang Ki Young",
-            "director": "Kim Han Kyul",
+            "actor": "Trí Quang, Như Phúc, Cao Minh Đạt",
+            "director": "Võ Việt Hùng",
             "award": "",
-            "img": "ngotngao.jpg",
-            "img_name": "ngotngao_name.jpg",
+            "img": "thethai.jpg",
+            "img_name": "thethai_name.jpg",
             "trailer": "1.mp4",
             "video": "1.mp4",
             "isMonopoly": true,
             "callouts": "TM",
-            "typeMovie_id": 1
+            "typeMovie_id": 14
         },
         {
             "id": 6,
-            "name": "Hàng Xóm Kế Bên",
-            "description": "Nhận chỉ thị của chính phủ, một đội nghe trộm được thành lập để theo dõi ứng cử viên tổng thống Lee Ui Sik. Vô số nội dung nghe lén được thu thập và bí mật về tính cách của Ui Sik dần lộ ra.",
-            "time": 131,
-            "year": 2021,
+            "name": "Bữa Tối Của Diều Hâu",
+            "description": "Từ một cô bé lam lũ, cha rượu chè và mẹ khắc khổ, Quyên bất chấp mọi thứ để được trở thành tiểu thư cao quý. Nhưng sự ham mê giàu sang quá đỗi điên cuồng khiến Quyên mỗi lúc một chìm sâu vào tội ác.",
+            "episode": 42,
+            "year": 2014,
             "age": 13,
-            "actor": "Jung Woo, Oh Dal Su, Kim Byung Chul",
-            "director": "Lee Hwan Kyung",
+            "actor": "Phan Như Thảo, Huy Khánh, NSUT Mỹ Duyên",
+            "director": "Nguyễn Lê Minh",
             "award": "",
-            "img": "hangxom.jpg",
-            "img_name": "hangxom_name.jpg",
+            "img": "buatoi.jpg",
+            "img_name": "buatoi_name.jpg",
             "trailer": "1.mp4",
             "video": "1.mp4",
             "isMonopoly": true,
             "callouts": "TM",
-            "typeMovie_id": 1
+            "typeMovie_id": 14
         },
         {
             "id": 7,
@@ -4014,21 +4033,39 @@
         },
         {
             "id": 11,
-            "name": "Đường Ống",
-            "description": "Một băng cướp được thành lập để thực hiện kế hoạch bất khả thi - trộm dầu ở đường ống dài 1200 mét dưới lòng đất. Tuy nhiên, phi vụ kim cương đen buộc phải trì hoãn do cảnh sát bắt đầu phát giác.",
-            "time": 1108,
+            "name": "Hàng Xóm Kế Bên",
+            "description": "Nhận chỉ thị của chính phủ, một đội nghe trộm được thành lập để theo dõi ứng cử viên tổng thống Lee Ui Sik. Vô số nội dung nghe lén được thu thập và bí mật về tính cách của Ui Sik dần lộ ra.",
+            "time": 131,
             "year": 2021,
             "age": 13,
-            "actor": "Seo In Guk, Lee Soo Hyuk, Bae Da Bin",
-            "director": "Ha Yu",
+            "actor": "Jung Woo, Oh Dal Su, Kim Byung Chul",
+            "director": "Lee Hwan Kyung",
             "award": "",
-            "img": "duongong.jpg",
-            "img_name": "duongong_name.jpg",
+            "img": "hangxom.jpg",
+            "img_name": "hangxom_name.jpg",
             "trailer": "1.mp4",
             "video": "1.mp4",
             "isMonopoly": true,
             "callouts": "TM",
-            "typeMovie_id": 1
+            "typeMovie_id": 17
+        },
+        {
+            "id": 12,
+            "name": "Những Kẻ Khờ Mộng Mơ",
+            "description": "Một chàng nghệ sĩ piano tài hoa, một cô diễn viên đang tìm chỗ đứng cho sự nghiệp, cả hai vô tình va vào nhau trong những tháng ngày rực rỡ của tuổi trẻ, để sống, để yêu và để cùng ước mơ.",
+            "time": 128,
+            "year": 2016,
+            "age": 13,
+            "actor": "Ryan Gosling, Emma Stone, Rosemarie DeWitt",
+            "director": "Damien Chazelle",
+            "award": "Đoạt sáu giải Oscars 2017 trong đó có hạng mục: Nữ diễn viên chính và Đạo diễn xuất sắc nhất.",
+            "img": "lalaland.jpg",
+            "img_name": "lalaland_name.jpg",
+            "trailer": "1.mp4",
+            "video": "1.mp4",
+            "isMonopoly": true,
+            "callouts": "TM",
+            "typeMovie_id": 19
         }
     ]
 }

@@ -1,4 +1,5 @@
 export * from './typeMovieApi';
+export * from './typeMovieSuggest';
 export * from './suggestMovie';
 export * from './sliderMain';
 export * from './sliderOdd';
