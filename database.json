@@ -103,7 +103,7 @@
     "type_movie_series": [
         {
             "id": 1,
-            "name": "Việt Hay Nhất Trên Phim Free"
+            "name": "Việt Hay Nhất"
         },
         {
             "id": 2,
@@ -318,43 +318,93 @@
     "home_list_trend": [
         {
             "img": "1.jpg",
-            "img_name": "1a.jpg"
+            "name": "Cô gái từ quá khứ",
+            "time": 105,
+            "age": 16,
+            "year": 2022,
+            "typeMovie_id": 5,
+            "img_title": "1a.jpg"
         },
         {
             "img": "2.jpg",
-            "img_name": "2a.jpg"
+            "name": "Bỗng Dưng Trúng Số",
+            "time": 114,
+            "age": 13,
+            "year": 2022,
+            "typeMovie_id": 4,
+            "img_title": "2a.jpg"
         },
         {
             "img": "3.jpg",
-            "img_name": "3a.jpg"
+            "name": "Bố Già",
+            "time": 128,
+            "age": 13,
+            "year": 2021,
+            "typeMovie_id": 1,
+            "img_title": "3a.jpg"
         },
         {
             "img": "4.jpg",
-            "img_name": "4a.jpg"
+            "name": "Khắc Tinh Của Quỷ",
+            "time": 100,
+            "age": 16,
+            "year": 2023,
+            "typeMovie_id": 10,
+            "img_title": "4a.jpg"
         },
         {
             "img": "5.jpg",
-            "img_name": "5a.jpg"
+            "name": "Yêu Như Lần Đầu",
+            "time": 100,
+            "age": 13,
+            "year": 2023,
+            "typeMovie_id": 7,
+            "img_title": "5a.jpg"
         },
         {
             "img": "6.jpg",
-            "img_name": "6a.jpg"
+            "name": "Con Nhót Mót Chồng",
+            "time": 114,
+            "age": 16,
+            "year": 2023,
+            "typeMovie_id": 4,
+            "img_title": "6a.jpg"
         },
         {
             "img": "7.jpg",
-            "img_name": "7a.jpg"
+            "name": "Thiện Ác Đối Đầu 2",
+            "time": 116,
+            "age": 16,
+            "year": 2018,
+            "typeMovie_id": 3,
+            "img_title": "7a.jpg"
         },
         {
             "img": "8.jpg",
-            "img_name": "8a.jpg"
+            "name": "Người nhện: Vũ Trụ Mới",
+            "time": 112,
+            "age": 13,
+            "year": 2018,
+            "typeMovie_id": 13,
+            "img_title": "8a.jpg"
         },
         {
             "img": "9.jpg",
-            "img_name": "9a.jpg"
+            "name": "Người Nhện: Người Nhện Xa Nhà",
+            "time": 130,
+            "age": 13,
+            "year": 2019,
+            "typeMovie_id": 13,
+            "img_title": "9a.jpg"
         },
         {
             "img": "10.jpg",
-            "img_name": "10a.jpg"
+            "name": "Nhà Ga Nuốt Chửng",
+            "time": 82,
+            "age": 16,
+            "year": 2022,
+            "typeMovie_id": 10,
+            "img_title": "10a.jpg"
         },
         {
             "img": "endBig.jpg",
@@ -2702,6 +2752,10 @@
             "isMonopoly": false,
             "typeMovie_id": 5,
             "callouts": "TM"
+        },
+        {
+            "img": "end.jpg",
+            "title": "Xem Tất Cả"
         }
     ],
 
@@ -3245,6 +3299,10 @@
             "isMonopoly": true,
             "callouts": "TM",
             "typeMovie_id": 3
+        },
+        {
+            "img": "end.jpg",
+            "title": "Xem Tất Cả"
         }
     ],
 
@@ -3271,7 +3329,7 @@
             "id": 2,
             "name": "Đêm Tối Cuối Cùng Ở Địa Cầu",
             "description": "Đã nhiều năm trôi qua, người đàn ông trở lại quê hương vẫn không thể ngưng dòng suy nghĩ về người phụ nữ ấy, người anh chưa từng biết tên nhưng luôn hy vọng được hội ngộ, dù chỉ là ảo mộng.",
-            "time": 1138,
+            "time": 138,
             "year": 2018,
             "age": 16,
             "actor": "Thang Duy, Hoàng Giác, Trương Ngải Gia",
@@ -3788,6 +3846,10 @@
             "isMonopoly": true,
             "callouts": "TM",
             "typeMovie_id": 3
+        },
+        {
+            "img": "end.jpg",
+            "title": "Xem Tất Cả"
         }
     ]
 }

@@ -9,6 +9,7 @@ import { TrailerIcon, PlusIcon, PlayIcon } from '../../Icons';
 const cx = classNames.bind(styles);
 
 function Slide({ sourceImg, item, slideLarge, typeMovie }) {
+
     return (
         <div className={cx('wrapper')}>
             <img
@@ -17,11 +18,11 @@ function Slide({ sourceImg, item, slideLarge, typeMovie }) {
                 src={require(`../../../assets/images/${sourceImg}/${item.img}`)}
                 width="100%"
             />
-            {item.img_name && (
+            {item.img_title && (
                 <div className={cx('img-name')}>
                     <img
                         alt=""
-                        src={require(`../../../assets/images/Home_Slider_Trend/${item.img_name}`)}
+                        src={require(`../../../assets/images/Home_Slider_Trend/${item.img_title}`)}
                         width="90%"
                     />
                 </div>
@@ -63,7 +64,7 @@ function Slide({ sourceImg, item, slideLarge, typeMovie }) {
                         </Tippy>
                     </div>
 
-                    {/* <div className={cx('overlay-info')} style={{ left: slideLarge && 0 }}>
+                    <div className={cx('overlay-info')} style={{ left: slideLarge && 0 }}>
                         <p
                             className={cx('info-name')}
                             style={{
@@ -80,21 +81,26 @@ function Slide({ sourceImg, item, slideLarge, typeMovie }) {
                                 fontSize: slideLarge ? '1.5rem' : '1.3rem',
                             }}
                         >
-                            <div className={cx('info-type')}>
-                                {
-                                    typeMovie.find((type, index) => {
+                            {item.typeMovie_id && (
+                                <div className={cx('info-type')}>
+                                    {typeMovie.find((type, index) => {
                                         return item.typeMovie_id === type.id;
-                                    }).name
-                                }
-                            </div>
+                                    }).name}
+                                </div>
+                            )}
                             <div className={cx('dot')}></div>
-                            <div className={cx('info-time')}>{`${item.time} phút`}</div>
+                            {item.episode && (
+                                <div className={cx('info-time')}>{`${item.episode} tập`}</div>
+                            )}
+                            {item.time && (
+                                <div className={cx('info-time')}>{`${item.time} phút`}</div>
+                            )}
                             <div className={cx('dot')}></div>
                             <div className={cx('info-age')}>{`T${item.age}`}</div>
                             <div className={cx('dot')}></div>
                             <div className={cx('info-year')}>{item.year}</div>
                         </div>
-                    </div> */}
+                    </div>
                 </div>
             )}
         </div>

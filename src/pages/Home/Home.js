@@ -2,7 +2,16 @@ import { useEffect, useState } from 'react';
 import SliderCarousel from '../../components/Slider';
 import SlideWithDescription from '../../components/Slider/SlideWithDescription';
 
-import { sliderMain, typeMovieApi, listTrendHome, listMovieOdd } from '../../apiServices';
+import {
+    sliderMain,
+    typeMovieApi,
+    listTrendHome,
+    listMovieOdd,
+    listMovieRelease,
+    listMovieSeries,
+    typeMovieSeriesApi,
+    typeMovieReleaseApi,
+} from '../../apiServices';
 
 import classNames from 'classnames/bind';
 import styles from './Home.module.scss';
@@ -12,76 +21,14 @@ const cx = classNames.bind(styles);
 function Home() {
     const [dataSliderMain, setDataSliderMain] = useState([]);
     const [typeMovie, setTypeMovie] = useState([]);
+    const [typeMovieSeries, setTypeMovieSeries] = useState([]);
+    const [typeMovieRelease, setTypeMovieRelease] = useState([]);
     const [dataTrend, setDataTrend] = useState([]);
-    const [dataMovieOdd, setDataMovieOdd] = useState([]) 
-    
-    const dataTest = [
-        {
-            img: 'ok.jpg',
-            name: "Bố Già",
-        },
-        {
-            img: 'listTest.jpg',
-            name: "Bố Già",
-        },
-        {
-            img: 'ok2.jpg',
-            name: "Bố Già",
-        },
-        {
-            img: 'ok.jpg',
-            name: "Bố Già",
-        },
-        {
-            img: 'listTest.jpg',
-            name: "Bố Già",
-        },
-        {
-            img: 'ok2.jpg',
-            name: "Bố Già",
-        },
-        {
-            img: 'ok.jpg',
-            name: "Bố Già",
-        },
-        {
-            img: 'listTest.jpg',
-            name: "Bố Già",
-        },
-        {
-            img: 'ok2.jpg',
-            name: "Bố Già",
-        },
-        {
-            img: 'ok.jpg',
-            name: "Bố Già",
-        },
-        {
-            img: 'listTest.jpg',
-            name: "Bố Già",
-        },
-        {
-            img: 'ok2.jpg',
-            name: "Bố Già",
-        },
-        {
-            img: 'ok.jpg',
-            name: "Bố Già",
-        },
-        {
-            img: 'listTest.jpg',
-            name: "Bố Già",
-        },
-        {
-            img: 'ok2.jpg',
-            name: "Bố Già",
-        },
-        {
-            img: 'end.jpg',
-            title: 'Xem Tất Cả',
-        },
-    ];
+    const [dataMovieOdd, setDataMovieOdd] = useState([]) ;
+    const [dataMovieSeries, setDataMovieSeries] = useState([]);
+    const [dataMovieRelease, setDataMovieRelease] = useState([]);
 
+    // Call API get data Slider Main
     useEffect(() => {
         const fetchApi = async () => {
             try {
@@ -95,11 +42,16 @@ function Home() {
         fetchApi();
     }, []);
 
+    // Call API get data Type Movie Odd & Series & Release 
     useEffect(() => {
         const fetchApi = async () => {
             try {
-                let data = await typeMovieApi();
-                setTypeMovie(data);
+                let typeOdd = await typeMovieApi();
+                let typeSeries = await typeMovieSeriesApi();
+                let typeRelease = await typeMovieReleaseApi();
+                setTypeMovie(typeOdd);
+                setTypeMovieSeries(typeSeries);
+                setTypeMovieRelease(typeRelease);
             } catch (error) {
                 console.log(error);
             }
@@ -108,6 +60,7 @@ function Home() {
         fetchApi();
     }, []);
 
+    // Call API get data Trend
     useEffect(() => {
         const fetchApi = async () => {
             try {
@@ -121,15 +74,24 @@ function Home() {
         fetchApi();
     }, []);
 
+    // Call API get data List Movie Odd & Series & Release
     useEffect(() => {
         const fetchApi = async () => {
             try {
-                let data = await listMovieOdd();
-                let result = [];
+                let dataOdds = await listMovieOdd();
+                let dataSeries = await listMovieSeries();
+                let dataRelease = await listMovieRelease();
+                let odds = [];
+                let series = [];
+                let release = [];
                 for(let i = 0; i<10; i++) {
-                    result.push(data[i])
+                    odds.push(dataOdds[i]);
+                    series.push(dataSeries[i]);
+                    release.push(dataRelease[i]);
                 }
-                setDataMovieOdd(result);
+                setDataMovieOdd([...odds, {"img": "end.jpg", "title": "Xem Tất Cả"}]);
+                setDataMovieSeries([...series, {"img": "end.jpg", "title": "Xem Tất Cả"}]);
+                setDataMovieRelease([...release, {"img": "end.jpg", "title": "Xem Tất Cả"}]);
             } catch (error) {
                 console.log(error);
             }
@@ -139,7 +101,10 @@ function Home() {
     }, [])
 
     return (
-        dataSliderMain.length > 1 && typeMovie.length > 1 && dataTrend.length > 1 && dataMovieOdd.length > 1 && (
+        dataSliderMain.length > 1 &&
+        typeMovie.length > 1 &&
+        dataTrend.length > 1 &&
+        dataMovieOdd.length > 1 && (
             <div className={cx('wrapper')}>
                 <div className={cx('carousel')}>
                     <h1 className={cx('carousel-title')}>Giải trí hay - Thưởng thức ngay</h1>
@@ -197,11 +162,11 @@ function Home() {
                         </div>
                         <div className={cx('list-slider')}>
                             <SliderCarousel
-                                data={dataTest}
-                                sourceImg="Home_Slider_Trend"
+                                data={dataMovieRelease}
+                                sourceImg="List_Movie_Release"
                                 classNameSlide={cx('list-slide-padding')}
                                 responsive
-                                typeMovie={typeMovie}
+                                typeMovie={typeMovieRelease}
                                 slideWidth="auto"
                                 easing="ease"
                                 speed={1100}
@@ -247,11 +212,11 @@ function Home() {
                         </div>
                         <div className={cx('list-slider')}>
                             <SliderCarousel
-                                data={dataTest}
-                                sourceImg="Home_Slider_Trend"
+                                data={dataMovieSeries}
+                                sourceImg="List_Movie_Series"
                                 classNameSlide={cx('list-slide-padding')}
                                 responsive
-                                typeMovie={typeMovie}
+                                typeMovie={typeMovieSeries}
                                 slideWidth="auto"
                                 easing="ease"
                                 speed={1100}
@@ -259,9 +224,9 @@ function Home() {
                         </div>
                     </div>
 
-                    <div className={cx('list-movie', 'list-series')}>
+                    <div className={cx('list-movie', 'list-wishlist')}>
                         <div className={cx('list-title')}>
-                            <p className={cx('title-head')}>Phim Sắp Chiếu</p>
+                            <p className={cx('title-head')}>Danh Sách Phim Yêu Thích</p>
                             <ArrowRightIcon
                                 width="4.4rem"
                                 height="4.4rem"
@@ -270,11 +235,11 @@ function Home() {
                         </div>
                         <div className={cx('list-slider')}>
                             <SliderCarousel
-                                data={dataTest}
-                                sourceImg="Home_Slider_Trend"
+                                data={dataMovieSeries}
+                                sourceImg="List_Movie_Series"
                                 classNameSlide={cx('list-slide-padding')}
                                 responsive
-                                typeMovie={typeMovie}
+                                typeMovie={typeMovieSeries}
                                 slideWidth="auto"
                                 easing="ease"
                                 speed={1100}
