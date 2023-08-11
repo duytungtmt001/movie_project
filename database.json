@@ -97,35 +97,29 @@
             "id": 13,
             "name": "Hoạt hình",
             "img": "hoathinh.png"
-        }
-    ],
-
-    "type_movie_series": [
-        {
-            "id": 1,
-            "name": "Việt Hay Nhất"
         },
         {
-            "id": 2,
-            "name": "Châu Á Hot"
+            "id": 14,
+            "name": "Bộ Việt Hay Nhất"
         },
         {
-            "id": 3,
-            "name": "Đáng Xem Nhất"
-        }
-    ],
-
-    "type_movie_release": [
+            "id": 15,
+            "name": "Bộ Châu Á Hot"
+        },
         {
-            "id": 1,
+            "id": 16,
+            "name": "Bộ Đáng Xem Nhất"
+        },
+        {
+            "id": 17,
             "name": "Mới Cập Nhật"
         },
         {
-            "id": 2,
+            "id": 18,
             "name": "Hay Nhất 2022"
         },
         {
-            "id": 3,
+            "id": 19,
             "name": "Hay Nhất 2021"
         }
     ],
@@ -405,10 +399,6 @@
             "year": 2022,
             "typeMovie_id": 10,
             "img_title": "10a.jpg"
-        },
-        {
-            "img": "endBig.jpg",
-            "title": "Xem Tất Cả"
         }
     ],
 
@@ -2752,10 +2742,6 @@
             "isMonopoly": false,
             "typeMovie_id": 5,
             "callouts": "TM"
-        },
-        {
-            "img": "end.jpg",
-            "title": "Xem Tất Cả"
         }
     ],
 
@@ -2776,7 +2762,7 @@
             "video": "1.mp4",
             "isMonopoly": true,
             "callouts": "TM",
-            "typeMovie_id": 1
+            "typeMovie_id": 14
         },
         {
             "id": 2,
@@ -2794,7 +2780,7 @@
             "video": "1.mp4",
             "isMonopoly": true,
             "callouts": "TM",
-            "typeMovie_id": 1
+            "typeMovie_id": 14
         },
         {
             "id": 3,
@@ -2812,7 +2798,7 @@
             "video": "1.mp4",
             "isMonopoly": true,
             "callouts": "TM",
-            "typeMovie_id": 1
+            "typeMovie_id": 14
         },
         {
             "id": 4,
@@ -2830,7 +2816,7 @@
             "video": "1.mp4",
             "isMonopoly": true,
             "callouts": "TM",
-            "typeMovie_id": 1
+            "typeMovie_id": 14
         },
         {
             "id": 5,
@@ -2848,7 +2834,7 @@
             "video": "1.mp4",
             "isMonopoly": true,
             "callouts": "TM",
-            "typeMovie_id": 1
+            "typeMovie_id": 14
         },
         {
             "id": 6,
@@ -2866,7 +2852,7 @@
             "video": "1.mp4",
             "isMonopoly": true,
             "callouts": "TM",
-            "typeMovie_id": 1
+            "typeMovie_id": 14
         },
         {
             "id": 7,
@@ -2884,7 +2870,7 @@
             "video": "1.mp4",
             "isMonopoly": true,
             "callouts": "TM",
-            "typeMovie_id": 1
+            "typeMovie_id": 14
         },
         {
             "id": 8,
@@ -2902,7 +2888,7 @@
             "video": "1.mp4",
             "isMonopoly": true,
             "callouts": "TM",
-            "typeMovie_id": 1
+            "typeMovie_id": 14
         },
         {
             "id": 9,
@@ -2920,7 +2906,7 @@
             "video": "1.mp4",
             "isMonopoly": true,
             "callouts": "TM",
-            "typeMovie_id": 1
+            "typeMovie_id": 14
         },
         {
             "id": 10,
@@ -2938,7 +2924,7 @@
             "video": "1.mp4",
             "isMonopoly": true,
             "callouts": "TM",
-            "typeMovie_id": 1
+            "typeMovie_id": 14
         },
         {
             "id": 11,
@@ -2956,7 +2942,7 @@
             "video": "1.mp4",
             "isMonopoly": true,
             "callouts": "TM",
-            "typeMovie_id": 2
+            "typeMovie_id": 15
         },
         {
             "id": 12,
@@ -2974,7 +2960,7 @@
             "video": "1.mp4",
             "isMonopoly": true,
             "callouts": "TM",
-            "typeMovie_id": 2
+            "typeMovie_id": 15
         },
         {
             "id": 13,
@@ -2992,7 +2978,7 @@
             "video": "1.mp4",
             "isMonopoly": true,
             "callouts": "TM",
-            "typeMovie_id": 2
+            "typeMovie_id": 15
         },
         {
             "id": 14,
@@ -3010,7 +2996,7 @@
             "video": "1.mp4",
             "isMonopoly": true,
             "callouts": "TM",
-            "typeMovie_id": 2
+            "typeMovie_id": 15
         },
         {
             "id": 15,
@@ -3028,7 +3014,7 @@
             "video": "1.mp4",
             "isMonopoly": true,
             "callouts": "TM",
-            "typeMovie_id": 2
+            "typeMovie_id": 15
         },
         {
             "id": 16,
@@ -3046,7 +3032,7 @@
             "video": "1.mp4",
             "isMonopoly": true,
             "callouts": "TM",
-            "typeMovie_id": 2
+            "typeMovie_id": 15
         },
         {
             "id": 17,
@@ -3064,7 +3050,7 @@
             "video": "1.mp4",
             "isMonopoly": true,
             "callouts": "TM",
-            "typeMovie_id": 2
+            "typeMovie_id": 15
         },
         {
             "id": 18,
@@ -3082,7 +3068,7 @@
             "video": "1.mp4",
             "isMonopoly": true,
             "callouts": "TM",
-            "typeMovie_id": 2
+            "typeMovie_id": 15
         },
         {
             "id": 19,
@@ -3100,7 +3086,7 @@
             "video": "1.mp4",
             "isMonopoly": true,
             "callouts": "TM",
-            "typeMovie_id": 2
+            "typeMovie_id": 15
         },
         {
             "id": 20,
@@ -3118,7 +3104,7 @@
             "video": "1.mp4",
             "isMonopoly": true,
             "callouts": "TM",
-            "typeMovie_id": 2
+            "typeMovie_id": 15
         },
         {
             "id": 21,
@@ -3130,13 +3116,13 @@
             "actor": "Huỳnh Tông Trạch, Viên Vĩ Hào, Thái Tư Bối",
             "director": "Huỳnh Quốc Huy",
             "award": "",
-            "img": "banngchung.jpg",
+            "img": "bangchung.jpg",
             "img_name": "bangchung_name.jpg",
             "trailer": "1.mp4",
             "video": "1.mp4",
             "isMonopoly": true,
             "callouts": "TM",
-            "typeMovie_id": 3
+            "typeMovie_id": 16
         },
         {
             "id": 22,
@@ -3154,7 +3140,7 @@
             "video": "1.mp4",
             "isMonopoly": true,
             "callouts": "TM",
-            "typeMovie_id": 3
+            "typeMovie_id": 16
         },
         {
             "id": 23,
@@ -3172,7 +3158,7 @@
             "video": "1.mp4",
             "isMonopoly": true,
             "callouts": "TM",
-            "typeMovie_id": 3
+            "typeMovie_id": 16
         },
         {
             "id": 24,
@@ -3190,7 +3176,7 @@
             "video": "1.mp4",
             "isMonopoly": true,
             "callouts": "TM",
-            "typeMovie_id": 3
+            "typeMovie_id": 16
         },
         {
             "id": 25,
@@ -3208,7 +3194,7 @@
             "video": "1.mp4",
             "isMonopoly": true,
             "callouts": "TM",
-            "typeMovie_id": 3
+            "typeMovie_id": 16
         },
         {
             "id": 26,
@@ -3226,7 +3212,7 @@
             "video": "1.mp4",
             "isMonopoly": true,
             "callouts": "TM",
-            "typeMovie_id": 3
+            "typeMovie_id": 16
         },
         {
             "id": 27,
@@ -3244,7 +3230,7 @@
             "video": "1.mp4",
             "isMonopoly": true,
             "callouts": "TM",
-            "typeMovie_id": 3
+            "typeMovie_id": 16
         },
         {
             "id": 28,
@@ -3262,7 +3248,7 @@
             "video": "1.mp4",
             "isMonopoly": true,
             "callouts": "TM",
-            "typeMovie_id": 3
+            "typeMovie_id": 16
         },
         {
             "id": 29,
@@ -3280,7 +3266,7 @@
             "video": "1.mp4",
             "isMonopoly": true,
             "callouts": "TM",
-            "typeMovie_id": 3
+            "typeMovie_id": 16
         },
         {
             "id": 30,
@@ -3298,15 +3284,554 @@
             "video": "1.mp4",
             "isMonopoly": true,
             "callouts": "TM",
-            "typeMovie_id": 3
-        },
-        {
-            "img": "end.jpg",
-            "title": "Xem Tất Cả"
+            "typeMovie_id": 16
         }
     ],
 
     "list_movie_release": [
+        {
+            "id": 1,
+            "name": "Chồng Cũ Tình Mới",
+            "description": "Một cặp vợ chồng tổ chức tiệc ly hôn để chính thức đường ai nấy đi. Ấy vậy mà chưa kịp tận hưởng cuộc sống độc thân thì duyên nợ lại kéo họ về với nhau bởi tình huống dở khóc dở cười.",
+            "time": 113,
+            "year": 2018,
+            "age": 16,
+            "actor": "Kwon Sang Woo, Lee Jong Hyuk, Ava",
+            "director": "Park Yong Jib",
+            "award": "",
+            "img": "chongcu.jpg",
+            "img_name": "chongcu_name.jpg",
+            "trailer": "1.mp4",
+            "video": "1.mp4",
+            "isMonopoly": true,
+            "callouts": "TM",
+            "typeMovie_id": 17
+        },
+        {
+            "id": 2,
+            "name": "Đêm Tối Cuối Cùng Ở Địa Cầu",
+            "description": "Đã nhiều năm trôi qua, người đàn ông trở lại quê hương vẫn không thể ngưng dòng suy nghĩ về người phụ nữ ấy, người anh chưa từng biết tên nhưng luôn hy vọng được hội ngộ, dù chỉ là ảo mộng.",
+            "time": 138,
+            "year": 2018,
+            "age": 16,
+            "actor": "Thang Duy, Hoàng Giác, Trương Ngải Gia",
+            "director": "Tất Cống",
+            "award": "",
+            "img": "demcuoi.jpg",
+            "img_name": "demcuoi_name.jpg",
+            "trailer": "1.mp4",
+            "video": "1.mp4",
+            "isMonopoly": true,
+            "callouts": "TM",
+            "typeMovie_id": 17
+        },
+        {
+            "id": 3,
+            "name": "Ainbo: Nữ Chiến Binh Amazon",
+            "description": "Lớn lên trong rừng, Ainbo phẫn nộ khi phát hiện một thế lực xấu xa đang phá hoại thiên nhiên để trục lợi. Quyết tâm cứu nhà, cô bé lên đường đi tìm sự giúp đỡ của vị thần quyền năng nhất Amazon.",
+            "time": 85,
+            "year": 2021,
+            "age": 0,
+            "actor": "Dino Andrade, Lola Raie, Naomi Serrano",
+            "director": "Richard Claus",
+            "award": "",
+            "img": "ainbo.jpg",
+            "img_name": "ainbo_name.jpg",
+            "trailer": "1.mp4",
+            "video": "1.mp4",
+            "isMonopoly": true,
+            "callouts": "TM",
+            "typeMovie_id": 17
+        },
+        {
+            "id": 4,
+            "name": "Người Môi Giới",
+            "description": "Lấy cảm hứng từ mô hình hộp em bé có thật ở Hàn Quốc, hai người đàn ông buôn bán trẻ em trên danh nghĩa tìm nhà mới cho bé bị bỏ rơi. Nhưng sự xuất hiện của mẹ con Woo Sung đã làm thay đổi tất cả.",
+            "time": 130,
+            "year": 2022,
+            "age": 16,
+            "actor": "Song Kang Ho, Gang Dong Won, IU",
+            "director": "Hirokazu Koreeda",
+            "award": "Đoạt giải Cannes cho hạng mục Nam diễn viên chính xuất sắc nhất 2022 (Song Kang Ho).",
+            "img": "nguoimoigioi.jpg",
+            "img_name": "nguoimoigioi_name.jpg",
+            "trailer": "1.mp4",
+            "video": "1.mp4",
+            "isMonopoly": true,
+            "callouts": "TM",
+            "typeMovie_id": 17
+        },
+        {
+            "id": 5,
+            "name": "Ngọt Ngào Điên Dại",
+            "description": "Một chàng trai bị người vợ sắp cưới bỏ rơi, một cô gái mới chia tay người yêu vì bị lừa dối, định mệnh đưa họ gặp nhau và ngã rẻ mới có đưa họ đến bên nhau khi đã trải qua quá nhiều vết thương lòng?",
+            "time": 110,
+            "year": 2019,
+            "age": 13,
+            "actor": "Kim Rae Won, Kong Hyo Jin, Kang Ki Young",
+            "director": "Kim Han Kyul",
+            "award": "",
+            "img": "ngotngao.jpg",
+            "img_name": "ngotngao_name.jpg",
+            "trailer": "1.mp4",
+            "video": "1.mp4",
+            "isMonopoly": true,
+            "callouts": "TM",
+            "typeMovie_id": 17
+        },
+        {
+            "id": 6,
+            "name": "Hàng Xóm Kế Bên",
+            "description": "Nhận chỉ thị của chính phủ, một đội nghe trộm được thành lập để theo dõi ứng cử viên tổng thống Lee Ui Sik. Vô số nội dung nghe lén được thu thập và bí mật về tính cách của Ui Sik dần lộ ra.",
+            "time": 131,
+            "year": 2021,
+            "age": 13,
+            "actor": "Jung Woo, Oh Dal Su, Kim Byung Chul",
+            "director": "Lee Hwan Kyung",
+            "award": "",
+            "img": "hangxom.jpg",
+            "img_name": "hangxom_name.jpg",
+            "trailer": "1.mp4",
+            "video": "1.mp4",
+            "isMonopoly": true,
+            "callouts": "TM",
+            "typeMovie_id": 17
+        },
+        {
+            "id": 7,
+            "name": "Cuộc Đàm Phán Sinh Tử",
+            "description": "Chưa hết ám ảnh tâm lý vì vụ án trước, chuyên gia Chae Youn lại phải tiếp tục lao vào cuộc chiến cân não với tên tội phạm khét tiếng Tae Gu khi hắn bắt cóc con tin và chỉ định cô là người đàm phán.",
+            "time": 113,
+            "year": 2018,
+            "age": 18,
+            "actor": "Hyun Bin, Son Ye Jin, Kim Sang Ho",
+            "director": "Lee Jung Suk",
+            "award": "",
+            "img": "cuocdamphan.jpg",
+            "img_name": "cuocdamphan_name.jpg",
+            "trailer": "1.mp4",
+            "video": "1.mp4",
+            "isMonopoly": true,
+            "callouts": "TM",
+            "typeMovie_id": 17
+        },
+        {
+            "id": 8,
+            "name": "Ký Sinh Trùng",
+            "description": "Đứng ở đáy xã hội, gia đình ông Ki Taek lên kế hoạch thâm nhập vào nội bộ của gia đình trâm anh thế phiệt. Thế nhưng, trải nghiệm giàu sang đã khiến họ rơi vào một tình huống không thể ngờ tới.",
+            "time": 132,
+            "year": 2019,
+            "age": 18,
+            "actor": "Song Kang Ho, Choi Woo Sik, Lee Sun Kyun",
+            "director": "Bong Joon Ho",
+            "award": "Đoạt bốn giải Oscar 2019 trong đó có hạng mục: Phim xuất sắc nhất và Đạo diễn xuất sắc nhất.",
+            "img": "kysinh.jpg",
+            "img_name": "kysinh_name.jpg",
+            "trailer": "1.mp4",
+            "video": "1.mp4",
+            "isMonopoly": true,
+            "callouts": "TM",
+            "typeMovie_id": 17
+        },
+        {
+            "id": 9,
+            "name": "Thế Giới Vô Danh",
+            "description": "Trong một thế giới được kiểm soát chặt chẽ và mọi thông tin đều được mã hóa thành những con số, sự xuất hiện của một kẻ vô danh có phải là khởi đầu mới cho một kỷ nguyên tội phạm?",
+            "time": 98,
+            "year": 2018,
+            "age": 16,
+            "actor": "Clive Owen, Afiya Bennett, Morgan Allen",
+            "director": "Andrew Niccol",
+            "award": "",
+            "img": "thegioi.jpg",
+            "img_name": "thegioi_name.jpg",
+            "trailer": "1.mp4",
+            "video": "1.mp4",
+            "isMonopoly": true,
+            "callouts": "TM",
+            "typeMovie_id": 17
+        },
+        {
+            "id": 10,
+            "name": "Đường Ống",
+            "description": "Một băng cướp được thành lập để thực hiện kế hoạch bất khả thi - trộm dầu ở đường ống dài 1200 mét dưới lòng đất. Tuy nhiên, phi vụ kim cương đen buộc phải trì hoãn do cảnh sát bắt đầu phát giác.",
+            "time": 1108,
+            "year": 2021,
+            "age": 13,
+            "actor": "Seo In Guk, Lee Soo Hyuk, Bae Da Bin",
+            "director": "Ha Yu",
+            "award": "",
+            "img": "duongong.jpg",
+            "img_name": "duongong_name.jpg",
+            "trailer": "1.mp4",
+            "video": "1.mp4",
+            "isMonopoly": true,
+            "callouts": "TM",
+            "typeMovie_id": 17
+        },
+        {
+            "id": 11,
+            "name": "Hạnh Phúc Của Mẹ",
+            "description": "Cuộc sống của một người mẹ nghèo chỉ gói gọn xung quanh đứa con bị tự kỷ. Hai mẹ con nỗ lực vượt qua tháng ngày gian khổ cùng với sự giúp sức của chàng trai hay lo chuyện bao đồng.",
+            "time": 87,
+            "year": 2019,
+            "age": 0,
+            "actor": "Kiều Minh Tuấn, Cát Phượng, Huy Khang",
+            "director": "Huỳnh Đông",
+            "award": "Đoạt giải Cánh Diều Vàng 2019 & chiến thắng hạng mục Đạo diễn và Nữ diễn viên chính xuất sắc.",
+            "img": "hanhphuc.jpg",
+            "img_name": "hanhphuc_name.jpg",
+            "trailer": "1.mp4",
+            "video": "1.mp4",
+            "isMonopoly": true,
+            "callouts": "TM",
+            "typeMovie_id": 18
+        },
+        {
+            "id": 12,
+            "name": "Ống Kính Sát Nhân",
+            "description": "Phim Việt hiếm hoi về thể loại trinh thám, Ống Kính Sát Nhân theo chân thanh tra K điều tra một vụ án mạng, khám phá ra bí mật kinh hoàng liên quan đến hàng loạt vụ bắt cóc trẻ em trong thị trấn.",
+            "time": 102,
+            "year": 2018,
+            "age": 16,
+            "actor": "Hứa Vĩ Văn, Khương Ngọc, Diễm My 9x",
+            "director": "Nguyễn Hữu Hoàng",
+            "award": "",
+            "img": "ongkinh.jpg",
+            "img_name": "ongkinh_name.jpg",
+            "trailer": "1.mp4",
+            "video": "1.mp4",
+            "isMonopoly": true,
+            "callouts": "TM",
+            "typeMovie_id": 18
+        },
+        {
+            "id": 13,
+            "name": "Gái Già Lắm Chiêu 2",
+            "description": "Những bất cập trong cuộc sống và công việc ập đến, Ms Q tìm đến dịch vụ tình một đêm để giải tỏa căng thẳng. Không may, trai ngành sau đó lại trở thành nhân viên dưới quyền của cô.",
+            "time": 106,
+            "year": 2018,
+            "age": 16,
+            "actor": "Ninh Dương Lan Ngọc, Lê Xuân Tiền, Hứa Minh Đạt",
+            "director": "Bảo Nhân, Nam Cito",
+            "award": "",
+            "img": "gaigia2.jpg",
+            "img_name": "gaigia2_name.jpg",
+            "trailer": "1.mp4",
+            "video": "1.mp4",
+            "isMonopoly": true,
+            "callouts": "TM",
+            "typeMovie_id": 18
+        },
+        {
+            "id": 14,
+            "name": "Tèo Em",
+            "description": "Lập kỷ lục doanh thu phòng vé năm 2013, bộ phim hài này đã đưa tên tuổi Thái Hòa trở thành ông hoàng phòng vé Việt Nam. Phim xoay quanh cuộc phiêu lưu đầy hài hước và ý nghĩa của Tí và Tèo.",
+            "time": 98,
+            "year": 2013,
+            "age": 13,
+            "actor": "Thái Hòa, Johnny Trí Nguyễn, Ninh Dương Lan Ngọc",
+            "director": "Charlie Nguyễn",
+            "award": "",
+            "img": "teoem.jpg",
+            "img_name": "teoem_name.jpg",
+            "trailer": "1.mp4",
+            "video": "1.mp4",
+            "isMonopoly": true,
+            "callouts": "TM",
+            "typeMovie_id": 18
+        },
+        {
+            "id": 15,
+            "name": "Lật Mặt 3",
+            "description": "Hành trình tìm lại người thân của ba người bạn Tâm, Đức, Lộc tuy kém may mắn phải chịu khuyết tật trên cơ thể và bị cha mẹ bỏ rơi từ nhỏ nhưng luôn lạc quan với cuộc đời.",
+            "time": 103,
+            "year": 2018,
+            "age": 13,
+            "actor": "Kiều Minh Tuấn, Huy Khánh, Song Luân",
+            "director": "Lý Hải",
+            "award": "",
+            "img": "latmat3.jpg",
+            "img_name": "latmat3_name.jpg",
+            "trailer": "1.mp4",
+            "video": "1.mp4",
+            "isMonopoly": true,
+            "callouts": "TM",
+            "typeMovie_id": 18
+        },
+        {
+            "id": 16,
+            "name": "Chí Phèo Ngoại Truyện",
+            "description": "Được ví như Thị Nở, Na làm lao công trong văn phòng thám tử với mong muốn điều tra về cái chết của anh trai. Vô tình đụng độ Chí – tay giang hồ khét tiếng, họ hợp tác với nhau để tìm ra sự thật.",
+            "time": 96,
+            "year": 2017,
+            "age": 13,
+            "actor": "Thu Trang, Tiến Luật, Kiều Minh Tuấn",
+            "director": "Danny Đỗ",
+            "award": "",
+            "img": "chipheo.jpg",
+            "img_name": "chipheo_name.jpg",
+            "trailer": "1.mp4",
+            "video": "1.mp4",
+            "isMonopoly": true,
+            "callouts": "TM",
+            "typeMovie_id": 18
+        },
+        {
+            "id": 17,
+            "name": "Siêu Nhân",
+            "description": "Nhóm cướp khét tiếng Sài Gòn bỗng nhiên thất bại trong việc đánh cắp viên kim cương của tiểu thư Kỳ Kỳ. Nguyên nhân đến từ một tên siêu anh hùng dở hơi có tên gọi Siêu nhân X.",
+            "time": 81,
+            "year": 2014,
+            "age": 13,
+            "actor": "Ngô Kiến Huy, Thanh Hằng, Lâm Vinh Hải",
+            "director": "Nguyễn Quang Dũng",
+            "award": "",
+            "img": "sieunhan.jpg",
+            "img_name": "sieunhan_name.jpg",
+            "trailer": "1.mp4",
+            "video": "1.mp4",
+            "isMonopoly": true,
+            "callouts": "TM",
+            "typeMovie_id": 18
+        },
+        {
+            "id": 18,
+            "name": "Vòng Eo 56",
+            "description": "Thu hút truyền thông bởi sự tham gia của nữ hoàng nội y Ngọc Trinh, do Vũ Ngọc Đãng đạo diễn.Với Vòng Eo 56, cuộc đời của cô sẽ được kể lại như một dòng tâm sự của bản thân cô với khán giả.",
+            "time": 99,
+            "year": 2016,
+            "age": 13,
+            "actor": "Ngọc Trinh, Lương Mạnh Hải, Hồ Vĩnh Khoa",
+            "director": "Vũ Ngọc Đãng",
+            "award": "",
+            "img": "vongeo.jpg",
+            "img_name": "vongeo_name.jpg",
+            "trailer": "1.mp4",
+            "video": "1.mp4",
+            "isMonopoly": true,
+            "callouts": "TM",
+            "typeMovie_id": 18
+        },
+        {
+            "id": 19,
+            "name": "Xưởng 131",
+            "description": "Quyết tâm có một clip để đời triệu view, một nhóm bạn trẻ mạo hiểm tìm kiếm sự thật trong một nhà xưởng, nơi từng có người chết và người dân quanh đó thường xuyên thấy những hiện tượng kỳ lạ.",
+            "time": 84,
+            "year": 2018,
+            "age": 16,
+            "actor": "Tuấn Trần, Trương Mỹ Nhân, Brian Trần",
+            "director": "Phan Minh",
+            "award": "Là bộ phim kinh dị Việt Nam đầu tiên đặt bối cảnh chính ở xưởng may.",
+            "img": "xuong13.jpg",
+            "img_name": "xuong13_name.jpg",
+            "trailer": "1.mp4",
+            "video": "1.mp4",
+            "isMonopoly": true,
+            "callouts": "TM",
+            "typeMovie_id": 18
+        },
+        {
+            "id": 20,
+            "name": "Vai Diễn Đổi Đời",
+            "description": "Vô tình đọc được mẩu tin tuyển diễn viên của Vũ với thù lao cao ngất ngưởng, Mai, một diễn viên Việt Kiều đang sống chật vật ở California dấn thân vào vai diễn thay đổi cuộc đời cô mãi mãi.",
+            "time": 82,
+            "year": 2018,
+            "age": 16,
+            "actor": "Long Nguyễn, Thiên Nguyễn, Isabelle Du",
+            "director": "Nguyễn Đức Minh",
+            "award": "",
+            "img": "vaidien.jpg",
+            "img_name": "vaidien_name.jpg",
+            "trailer": "1.mp4",
+            "video": "1.mp4",
+            "isMonopoly": true,
+            "callouts": "TM",
+            "typeMovie_id": 18
+        },
+        {
+            "id": 21,
+            "name": "Hừng Đông 2",
+            "description": "Sau sự ra đời của Renesmee, con gái của Bella và Edward, nhà Cullen thu thập các gia tộc ma cà rồng khác để bảo vệ cô bé khỏi một cáo buộc sai lầm đang đẩy cả gia đình đối đầu gia tộc Volturi.",
+            "time": 116,
+            "year": 2012,
+            "age": 16,
+            "actor": "Kristen Stewart, Robert Pattinson, Taylor Lautner",
+            "director": "Bill Condon",
+            "award": "",
+            "img": "hungdong.jpg",
+            "img_name": "hungdong_name.jpg",
+            "trailer": "1.mp4",
+            "video": "1.mp4",
+            "isMonopoly": true,
+            "callouts": "TM",
+            "typeMovie_id": 19
+        },
+        {
+            "id": 22,
+            "name": "Chuyện Ngày Mưa Ở New York",
+            "description": "Quy tụ dàn sao trẻ danh tiếng: Timothée Chalamet, Elle Fanning và Selena Gomez. Phim kể về chuyến đi đến New York khiến cuộc đời của đôi bạn trẻ biến động theo một cách không ngờ.",
+            "time": 93,
+            "year": 2019,
+            "age": 13,
+            "actor": "Timothée Chalamet, Elle Fanning, Liev Schreiber",
+            "director": "Woody Allen",
+            "award": "",
+            "img": "ngaymua.jpg",
+            "img_name": "ngaymua_name.jpg",
+            "trailer": "1.mp4",
+            "video": "1.mp4",
+            "isMonopoly": true,
+            "callouts": "TM",
+            "typeMovie_id": 19
+        },
+        {
+            "id": 23,
+            "name": "Lời Thề Ước",
+            "description": "Dựa trên câu chuyện có thật về một người đàn ông tìm cách chinh phục tình yêu của cuộc đời mình một lần nữa, sau khi vị hôn thê bị mất trí nhớ sau tai nạn.",
+            "time": 100,
+            "year": 2012,
+            "age": 16,
+            "actor": "Rachel McAdams, Channing Tatum, Jessica Lange",
+            "director": "Michael Sucsy",
+            "award": "",
+            "img": "loitheuoc.jpg",
+            "img_name": "loitheuoc_name.jpg",
+            "trailer": "1.mp4",
+            "video": "1.mp4",
+            "isMonopoly": true,
+            "callouts": "TM",
+            "typeMovie_id": 19
+        },
+        {
+            "id": 24,
+            "name": "Tình Yêu Zombie",
+            "description": "R là một thây ma khác thường khi có tình cảm với một cô gái và sẵn sàng liều mình giải cứu cô. Liệu tình yêu của họ có đủ sức mạnh để vượt qua sự đối lập và cách biệt của hai thế giới?",
+            "time": 98,
+            "year": 2013,
+            "age": 13,
+            "actor": "Nicholas Hoult, Teresa Palmer, John Malkovich",
+            "director": "Jonathan Levine",
+            "award": "Phim được chuyển thể từ cuốn tiểu thuyết cùng tên, và lấy cảm hứng từ Romeo – Juliet.",
+            "img": "tinhyeu.jpg",
+            "img_name": "tinhyeu_name.jpg",
+            "trailer": "1.mp4",
+            "video": "1.mp4",
+            "isMonopoly": true,
+            "callouts": "TM",
+            "typeMovie_id": 19
+        },
+        {
+            "id": 25,
+            "name": "Trăng Non",
+            "description": "Mang về cho nhà sản xuất 710 triệu đô. Edward đưa ra quyết định rời xa người yêu khiến Bella vô cùng đau khổ. Cô tự đẩy mình vào những tình huống nguy hiểm hòng có thể tái ngộ người yêu.",
+            "time": 131,
+            "year": 2009,
+            "age": 13,
+            "actor": "Kristen Stewart, Robert Pattinson, Taylor Lautner",
+            "director": "Chris Weitz",
+            "award": "",
+            "img": "trangnon.jpg",
+            "img_name": "trangnon_name.jpg",
+            "trailer": "1.mp4",
+            "video": "1.mp4",
+            "isMonopoly": true,
+            "callouts": "TM",
+            "typeMovie_id": 19
+        },
+        {
+            "id": 26,
+            "name": "Sắc Đẹp Vĩnh Cửu",
+            "description": "Sau một biến cố, Adaline Bowman vô tình sở hữu điều mọi người luôn ao ước là sắc đẹp vĩnh cửu. Nhưng sự bất tử nghĩa là chiến thắng thời gian hay bị thời gian bỏ rơi?",
+            "time": 113,
+            "year": 2015,
+            "age": 13,
+            "actor": "Blake Lively, Michiel Huisman, Harrison Ford",
+            "director": "Lee Toland Krieger",
+            "award": "",
+            "img": "sacdep.jpg",
+            "img_name": "sacdep_name.jpg",
+            "trailer": "1.mp4",
+            "video": "1.mp4",
+            "isMonopoly": true,
+            "callouts": "TM",
+            "typeMovie_id": 19
+        },
+        {
+            "id": 27,
+            "name": "Chạng Vạng",
+            "description": "Sau khi chuyển đến thị trấn Forks với cha, Bella tình cờ quen biết được anh chàng đẹp trai Edward. Nhưng cũng từ đây, cô liên tục gặp phải nguy hiểm mà cô không rõ lý do.",
+            "time": 122,
+            "year": 2008,
+            "age": 16,
+            "actor": "Kristen Stewart, Robert Pattinson, Matt Bushell",
+            "director": "Catherine Hardwicke",
+            "award": "Mở đầu thành công cho loạt phim Chạng Vạng với doanh thu gần 400 triệu đô.",
+            "img": "changvang.jpg",
+            "img_name": "changvang_name.jpg",
+            "trailer": "1.mp4",
+            "video": "1.mp4",
+            "isMonopoly": true,
+            "callouts": "TM",
+            "typeMovie_id": 19
+        },
+        {
+            "id": 28,
+            "name": "Nhật Thực",
+            "description": "Mang về doanh thu gần 700 triệu đô.Bella phải chọn lựa giữa ma cà rồng Edward hoặc chàng người sói Jacob. Và quyết định của cô có thể châm ngòi cho cuộc chiến giữa người sói và ma cà rồng.",
+            "time": 124,
+            "year": 2010,
+            "age": 13,
+            "actor": "Kristen Stewart, Robert Pattinson, Taylor Lautner",
+            "director": "David Slade",
+            "award": "Mang về doanh thu gần 700 triệu đô.",
+            "img": "nhatthuc.jpg",
+            "img_name": "nhatthuc_name.jpg",
+            "trailer": "1.mp4",
+            "video": "1.mp4",
+            "isMonopoly": true,
+            "callouts": "TM",
+            "typeMovie_id": 19
+        },
+        {
+            "id": 29,
+            "name": "Những Kẻ Khờ Mộng Mơ",
+            "description": "Một chàng nghệ sĩ piano tài hoa, một cô diễn viên đang tìm chỗ đứng cho sự nghiệp, cả hai vô tình va vào nhau trong những tháng ngày rực rỡ của tuổi trẻ, để sống, để yêu và để cùng ước mơ.",
+            "time": 128,
+            "year": 2016,
+            "age": 13,
+            "actor": "Ryan Gosling, Emma Stone, Rosemarie DeWitt",
+            "director": "Damien Chazelle",
+            "award": "Đoạt sáu giải Oscars 2017 trong đó có hạng mục: Nữ diễn viên chính và Đạo diễn xuất sắc nhất.",
+            "img": "lalaland.jpg",
+            "img_name": "lalaland_name.jpg",
+            "trailer": "1.mp4",
+            "video": "1.mp4",
+            "isMonopoly": true,
+            "callouts": "TM",
+            "typeMovie_id": 19
+        },
+        {
+            "id": 30,
+            "name": "Mặt Trời Nửa Đêm",
+            "description": "Katie mắc một căn bệnh kì lạ, khiến cô không thể tiếp xúc với ánh sáng mặt trời. Thế nhưng, định mệnh sắp đặt cho cô gặp Charlie, chàng trai cô yêu thầm và ngắm nhìn hàng ngày qua khung cửa sổ.",
+            "time": 92,
+            "year": 2018,
+            "age": 13,
+            "actor": "Bella Thorne, Patrick Schwarzenegger, Rob Riggle",
+            "director": "Scott Speer",
+            "award": "",
+            "img": "mattroi.jpg",
+            "img_name": "mattroi_name.jpg",
+            "trailer": "1.mp4",
+            "video": "1.mp4",
+            "isMonopoly": true,
+            "callouts": "TM",
+            "typeMovie_id": 19
+        }
+    ],
+
+    "wishlist": [
         {
             "id": 1,
             "name": "Chồng Cũ Tình Mới",
@@ -3489,367 +4014,21 @@
         },
         {
             "id": 11,
-            "name": "Hạnh Phúc Của Mẹ",
-            "description": "Cuộc sống của một người mẹ nghèo chỉ gói gọn xung quanh đứa con bị tự kỷ. Hai mẹ con nỗ lực vượt qua tháng ngày gian khổ cùng với sự giúp sức của chàng trai hay lo chuyện bao đồng.",
-            "time": 87,
-            "year": 2019,
-            "age": 0,
-            "actor": "Kiều Minh Tuấn, Cát Phượng, Huy Khang",
-            "director": "Huỳnh Đông",
-            "award": "Đoạt giải Cánh Diều Vàng 2019 & chiến thắng hạng mục Đạo diễn và Nữ diễn viên chính xuất sắc.",
-            "img": "hanhphuc.jpg",
-            "img_name": "hanhphuc_name.jpg",
-            "trailer": "1.mp4",
-            "video": "1.mp4",
-            "isMonopoly": true,
-            "callouts": "TM",
-            "typeMovie_id": 2
-        },
-        {
-            "id": 12,
-            "name": "Ống Kính Sát Nhân",
-            "description": "Phim Việt hiếm hoi về thể loại trinh thám, Ống Kính Sát Nhân theo chân thanh tra K điều tra một vụ án mạng, khám phá ra bí mật kinh hoàng liên quan đến hàng loạt vụ bắt cóc trẻ em trong thị trấn.",
-            "time": 102,
-            "year": 2018,
-            "age": 16,
-            "actor": "Hứa Vĩ Văn, Khương Ngọc, Diễm My 9x",
-            "director": "Nguyễn Hữu Hoàng",
-            "award": "",
-            "img": "ongkinh.jpg",
-            "img_name": "ongkinh_name.jpg",
-            "trailer": "1.mp4",
-            "video": "1.mp4",
-            "isMonopoly": true,
-            "callouts": "TM",
-            "typeMovie_id": 2
-        },
-        {
-            "id": 13,
-            "name": "Gái Già Lắm Chiêu 2",
-            "description": "Những bất cập trong cuộc sống và công việc ập đến, Ms Q tìm đến dịch vụ tình một đêm để giải tỏa căng thẳng. Không may, trai ngành sau đó lại trở thành nhân viên dưới quyền của cô.",
-            "time": 106,
-            "year": 2018,
-            "age": 16,
-            "actor": "Ninh Dương Lan Ngọc, Lê Xuân Tiền, Hứa Minh Đạt",
-            "director": "Bảo Nhân, Nam Cito",
-            "award": "",
-            "img": "gaigia2.jpg",
-            "img_name": "gaigia2_name.jpg",
-            "trailer": "1.mp4",
-            "video": "1.mp4",
-            "isMonopoly": true,
-            "callouts": "TM",
-            "typeMovie_id": 2
-        },
-        {
-            "id": 14,
-            "name": "Tèo Em",
-            "description": "Lập kỷ lục doanh thu phòng vé năm 2013, bộ phim hài này đã đưa tên tuổi Thái Hòa trở thành ông hoàng phòng vé Việt Nam. Phim xoay quanh cuộc phiêu lưu đầy hài hước và ý nghĩa của Tí và Tèo.",
-            "time": 98,
-            "year": 2013,
+            "name": "Đường Ống",
+            "description": "Một băng cướp được thành lập để thực hiện kế hoạch bất khả thi - trộm dầu ở đường ống dài 1200 mét dưới lòng đất. Tuy nhiên, phi vụ kim cương đen buộc phải trì hoãn do cảnh sát bắt đầu phát giác.",
+            "time": 1108,
+            "year": 2021,
             "age": 13,
-            "actor": "Thái Hòa, Johnny Trí Nguyễn, Ninh Dương Lan Ngọc",
-            "director": "Charlie Nguyễn",
+            "actor": "Seo In Guk, Lee Soo Hyuk, Bae Da Bin",
+            "director": "Ha Yu",
             "award": "",
-            "img": "teoem.jpg",
-            "img_name": "teoem_name.jpg",
+            "img": "duongong.jpg",
+            "img_name": "duongong_name.jpg",
             "trailer": "1.mp4",
             "video": "1.mp4",
             "isMonopoly": true,
             "callouts": "TM",
-            "typeMovie_id": 2
-        },
-        {
-            "id": 15,
-            "name": "Lật Mặt 3",
-            "description": "Hành trình tìm lại người thân của ba người bạn Tâm, Đức, Lộc tuy kém may mắn phải chịu khuyết tật trên cơ thể và bị cha mẹ bỏ rơi từ nhỏ nhưng luôn lạc quan với cuộc đời.",
-            "time": 103,
-            "year": 2018,
-            "age": 13,
-            "actor": "Kiều Minh Tuấn, Huy Khánh, Song Luân",
-            "director": "Lý Hải",
-            "award": "",
-            "img": "latmat3.jpg",
-            "img_name": "latmat3_name.jpg",
-            "trailer": "1.mp4",
-            "video": "1.mp4",
-            "isMonopoly": true,
-            "callouts": "TM",
-            "typeMovie_id": 2
-        },
-        {
-            "id": 16,
-            "name": "Chí Phèo Ngoại Truyện",
-            "description": "Được ví như Thị Nở, Na làm lao công trong văn phòng thám tử với mong muốn điều tra về cái chết của anh trai. Vô tình đụng độ Chí – tay giang hồ khét tiếng, họ hợp tác với nhau để tìm ra sự thật.",
-            "time": 96,
-            "year": 2017,
-            "age": 13,
-            "actor": "Thu Trang, Tiến Luật, Kiều Minh Tuấn",
-            "director": "Danny Đỗ",
-            "award": "",
-            "img": "chipheo.jpg",
-            "img_name": "chipheo_name.jpg",
-            "trailer": "1.mp4",
-            "video": "1.mp4",
-            "isMonopoly": true,
-            "callouts": "TM",
-            "typeMovie_id": 2
-        },
-        {
-            "id": 17,
-            "name": "Siêu Nhân",
-            "description": "Nhóm cướp khét tiếng Sài Gòn bỗng nhiên thất bại trong việc đánh cắp viên kim cương của tiểu thư Kỳ Kỳ. Nguyên nhân đến từ một tên siêu anh hùng dở hơi có tên gọi Siêu nhân X.",
-            "time": 81,
-            "year": 2014,
-            "age": 13,
-            "actor": "Ngô Kiến Huy, Thanh Hằng, Lâm Vinh Hải",
-            "director": "Nguyễn Quang Dũng",
-            "award": "",
-            "img": "sieunhan.jpg",
-            "img_name": "sieunhan_name.jpg",
-            "trailer": "1.mp4",
-            "video": "1.mp4",
-            "isMonopoly": true,
-            "callouts": "TM",
-            "typeMovie_id": 2
-        },
-        {
-            "id": 18,
-            "name": "Vòng Eo 56",
-            "description": "Thu hút truyền thông bởi sự tham gia của nữ hoàng nội y Ngọc Trinh, do Vũ Ngọc Đãng đạo diễn.Với Vòng Eo 56, cuộc đời của cô sẽ được kể lại như một dòng tâm sự của bản thân cô với khán giả.",
-            "time": 99,
-            "year": 2016,
-            "age": 13,
-            "actor": "Ngọc Trinh, Lương Mạnh Hải, Hồ Vĩnh Khoa",
-            "director": "Vũ Ngọc Đãng",
-            "award": "",
-            "img": "vongeo.jpg",
-            "img_name": "vongeo_name.jpg",
-            "trailer": "1.mp4",
-            "video": "1.mp4",
-            "isMonopoly": true,
-            "callouts": "TM",
-            "typeMovie_id": 2
-        },
-        {
-            "id": 19,
-            "name": "Xưởng 131",
-            "description": "Quyết tâm có một clip để đời triệu view, một nhóm bạn trẻ mạo hiểm tìm kiếm sự thật trong một nhà xưởng, nơi từng có người chết và người dân quanh đó thường xuyên thấy những hiện tượng kỳ lạ.",
-            "time": 84,
-            "year": 2018,
-            "age": 16,
-            "actor": "Tuấn Trần, Trương Mỹ Nhân, Brian Trần",
-            "director": "Phan Minh",
-            "award": "Là bộ phim kinh dị Việt Nam đầu tiên đặt bối cảnh chính ở xưởng may.",
-            "img": "xuong13.jpg",
-            "img_name": "xuong13_name.jpg",
-            "trailer": "1.mp4",
-            "video": "1.mp4",
-            "isMonopoly": true,
-            "callouts": "TM",
-            "typeMovie_id": 2
-        },
-        {
-            "id": 20,
-            "name": "Vai Diễn Đổi Đời",
-            "description": "Vô tình đọc được mẩu tin tuyển diễn viên của Vũ với thù lao cao ngất ngưởng, Mai, một diễn viên Việt Kiều đang sống chật vật ở California dấn thân vào vai diễn thay đổi cuộc đời cô mãi mãi.",
-            "time": 82,
-            "year": 2018,
-            "age": 16,
-            "actor": "Long Nguyễn, Thiên Nguyễn, Isabelle Du",
-            "director": "Nguyễn Đức Minh",
-            "award": "",
-            "img": "vaidien.jpg",
-            "img_name": "vaidien_name.jpg",
-            "trailer": "1.mp4",
-            "video": "1.mp4",
-            "isMonopoly": true,
-            "callouts": "TM",
-            "typeMovie_id": 2
-        },
-        {
-            "id": 21,
-            "name": "Hừng Đông 2",
-            "description": "Sau sự ra đời của Renesmee, con gái của Bella và Edward, nhà Cullen thu thập các gia tộc ma cà rồng khác để bảo vệ cô bé khỏi một cáo buộc sai lầm đang đẩy cả gia đình đối đầu gia tộc Volturi.",
-            "time": 116,
-            "year": 2012,
-            "age": 16,
-            "actor": "Kristen Stewart, Robert Pattinson, Taylor Lautner",
-            "director": "Bill Condon",
-            "award": "",
-            "img": "hungdong.jpg",
-            "img_name": "hungdong_name.jpg",
-            "trailer": "1.mp4",
-            "video": "1.mp4",
-            "isMonopoly": true,
-            "callouts": "TM",
-            "typeMovie_id": 3
-        },
-        {
-            "id": 22,
-            "name": "Chuyện Ngày Mưa Ở New York",
-            "description": "Quy tụ dàn sao trẻ danh tiếng: Timothée Chalamet, Elle Fanning và Selena Gomez. Phim kể về chuyến đi đến New York khiến cuộc đời của đôi bạn trẻ biến động theo một cách không ngờ.",
-            "time": 93,
-            "year": 2019,
-            "age": 13,
-            "actor": "Timothée Chalamet, Elle Fanning, Liev Schreiber",
-            "director": "Woody Allen",
-            "award": "",
-            "img": "ngaymua.jpg",
-            "img_name": "ngaymua_name.jpg",
-            "trailer": "1.mp4",
-            "video": "1.mp4",
-            "isMonopoly": true,
-            "callouts": "TM",
-            "typeMovie_id": 3
-        },
-        {
-            "id": 23,
-            "name": "Lời Thề Ước",
-            "description": "Dựa trên câu chuyện có thật về một người đàn ông tìm cách chinh phục tình yêu của cuộc đời mình một lần nữa, sau khi vị hôn thê bị mất trí nhớ sau tai nạn.",
-            "time": 100,
-            "year": 2012,
-            "age": 16,
-            "actor": "Rachel McAdams, Channing Tatum, Jessica Lange",
-            "director": "Michael Sucsy",
-            "award": "",
-            "img": "loithe.jpg",
-            "img_name": "loithe_name.jpg",
-            "trailer": "1.mp4",
-            "video": "1.mp4",
-            "isMonopoly": true,
-            "callouts": "TM",
-            "typeMovie_id": 3
-        },
-        {
-            "id": 24,
-            "name": "Tình Yêu Zombie",
-            "description": "R là một thây ma khác thường khi có tình cảm với một cô gái và sẵn sàng liều mình giải cứu cô. Liệu tình yêu của họ có đủ sức mạnh để vượt qua sự đối lập và cách biệt của hai thế giới?",
-            "time": 98,
-            "year": 2013,
-            "age": 13,
-            "actor": "Nicholas Hoult, Teresa Palmer, John Malkovich",
-            "director": "Jonathan Levine",
-            "award": "Phim được chuyển thể từ cuốn tiểu thuyết cùng tên, và lấy cảm hứng từ Romeo – Juliet.",
-            "img": "tinhyeu.jpg",
-            "img_name": "tinhyeu_name.jpg",
-            "trailer": "1.mp4",
-            "video": "1.mp4",
-            "isMonopoly": true,
-            "callouts": "TM",
-            "typeMovie_id": 3
-        },
-        {
-            "id": 25,
-            "name": "Trăng Non",
-            "description": "Mang về cho nhà sản xuất 710 triệu đô. Edward đưa ra quyết định rời xa người yêu khiến Bella vô cùng đau khổ. Cô tự đẩy mình vào những tình huống nguy hiểm hòng có thể tái ngộ người yêu.",
-            "time": 131,
-            "year": 2009,
-            "age": 13,
-            "actor": "Kristen Stewart, Robert Pattinson, Taylor Lautner",
-            "director": "Chris Weitz",
-            "award": "",
-            "img": "trangnon.jpg",
-            "img_name": "trangnon_name.jpg",
-            "trailer": "1.mp4",
-            "video": "1.mp4",
-            "isMonopoly": true,
-            "callouts": "TM",
-            "typeMovie_id": 3
-        },
-        {
-            "id": 26,
-            "name": "Sắc Đẹp Vĩnh Cửu",
-            "description": "Sau một biến cố, Adaline Bowman vô tình sở hữu điều mọi người luôn ao ước là sắc đẹp vĩnh cửu. Nhưng sự bất tử nghĩa là chiến thắng thời gian hay bị thời gian bỏ rơi?",
-            "time": 113,
-            "year": 2015,
-            "age": 13,
-            "actor": "Blake Lively, Michiel Huisman, Harrison Ford",
-            "director": "Lee Toland Krieger",
-            "award": "",
-            "img": "sacdep.jpg",
-            "img_name": "sacdep_name.jpg",
-            "trailer": "1.mp4",
-            "video": "1.mp4",
-            "isMonopoly": true,
-            "callouts": "TM",
-            "typeMovie_id": 3
-        },
-        {
-            "id": 27,
-            "name": "Chạng Vạng",
-            "description": "Sau khi chuyển đến thị trấn Forks với cha, Bella tình cờ quen biết được anh chàng đẹp trai Edward. Nhưng cũng từ đây, cô liên tục gặp phải nguy hiểm mà cô không rõ lý do.",
-            "time": 122,
-            "year": 2008,
-            "age": 16,
-            "actor": "Kristen Stewart, Robert Pattinson, Matt Bushell",
-            "director": "Catherine Hardwicke",
-            "award": "Mở đầu thành công cho loạt phim Chạng Vạng với doanh thu gần 400 triệu đô.",
-            "img": "changvang.jpg",
-            "img_name": "changvang_name.jpg",
-            "trailer": "1.mp4",
-            "video": "1.mp4",
-            "isMonopoly": true,
-            "callouts": "TM",
-            "typeMovie_id": 3
-        },
-        {
-            "id": 28,
-            "name": "Nhật Thực",
-            "description": "Mang về doanh thu gần 700 triệu đô.Bella phải chọn lựa giữa ma cà rồng Edward hoặc chàng người sói Jacob. Và quyết định của cô có thể châm ngòi cho cuộc chiến giữa người sói và ma cà rồng.",
-            "time": 124,
-            "year": 2010,
-            "age": 13,
-            "actor": "Kristen Stewart, Robert Pattinson, Taylor Lautner",
-            "director": "David Slade",
-            "award": "Mang về doanh thu gần 700 triệu đô.",
-            "img": "nhatthuc.jpg",
-            "img_name": "nhatthuc_name.jpg",
-            "trailer": "1.mp4",
-            "video": "1.mp4",
-            "isMonopoly": true,
-            "callouts": "TM",
-            "typeMovie_id": 3
-        },
-        {
-            "id": 29,
-            "name": "Những Kẻ Khờ Mộng Mơ",
-            "description": "Một chàng nghệ sĩ piano tài hoa, một cô diễn viên đang tìm chỗ đứng cho sự nghiệp, cả hai vô tình va vào nhau trong những tháng ngày rực rỡ của tuổi trẻ, để sống, để yêu và để cùng ước mơ.",
-            "time": 128,
-            "year": 2016,
-            "age": 13,
-            "actor": "Ryan Gosling, Emma Stone, Rosemarie DeWitt",
-            "director": "Damien Chazelle",
-            "award": "Đoạt sáu giải Oscars 2017 trong đó có hạng mục: Nữ diễn viên chính và Đạo diễn xuất sắc nhất.",
-            "img": "lalaland.jpg",
-            "img_name": "lalaland_name.jpg",
-            "trailer": "1.mp4",
-            "video": "1.mp4",
-            "isMonopoly": true,
-            "callouts": "TM",
-            "typeMovie_id": 3
-        },
-        {
-            "id": 30,
-            "name": "Mặt Trời Nửa Đêm",
-            "description": "Katie mắc một căn bệnh kì lạ, khiến cô không thể tiếp xúc với ánh sáng mặt trời. Thế nhưng, định mệnh sắp đặt cho cô gặp Charlie, chàng trai cô yêu thầm và ngắm nhìn hàng ngày qua khung cửa sổ.",
-            "time": 92,
-            "year": 2018,
-            "age": 13,
-            "actor": "Bella Thorne, Patrick Schwarzenegger, Rob Riggle",
-            "director": "Scott Speer",
-            "award": "",
-            "img": "mattroi.jpg",
-            "img_name": "mattroi_name.jpg",
-            "trailer": "1.mp4",
-            "video": "1.mp4",
-            "isMonopoly": true,
-            "callouts": "TM",
-            "typeMovie_id": 3
-        },
-        {
-            "img": "end.jpg",
-            "title": "Xem Tất Cả"
+            "typeMovie_id": 1
         }
     ]
 }

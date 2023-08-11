@@ -8,12 +8,12 @@ import Button from '../../Button';
 
 const cx = classNames.bind(styles)
 
-function SlideWithDescription({sourceImg, item}) {
+function SlideWithDescription({sourceSliderImg, item}) {
     return (
         <div className={cx('wrapper')}>
             <img
                 alt=""
-                src={require(`../../../assets/images/${sourceImg}/${item.img}`)}
+                src={require(`../../../assets/images/${sourceSliderImg}/${item.img}`)}
                 width="100%"
             />
             <div className={cx('description')}>{item.description}</div>

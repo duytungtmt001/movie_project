@@ -8,14 +8,14 @@ import { TrailerIcon, PlusIcon, PlayIcon } from '../../Icons';
 
 const cx = classNames.bind(styles);
 
-function Slide({ sourceImg, item, slideLarge, typeMovie }) {
+function Slide({ sourceListImg, item, slideLarge, typeMovie }) {
 
     return (
         <div className={cx('wrapper')}>
             <img
                 alt=""
                 className={cx('img-main')}
-                src={require(`../../../assets/images/${sourceImg}/${item.img}`)}
+                src={require(`../../../assets/images/${sourceListImg}/${item.img}`)}
                 width="100%"
             />
             {item.img_title && (

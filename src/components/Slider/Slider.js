@@ -6,12 +6,13 @@ import Slider from 'react-slick';
 import './Slider.scss';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { useEffect, useLayoutEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function SliderCarousel({
     data = [],
     SlideComponent = Slide,
-    sourceImg,
+    sourceListImg,
+    sourceSliderImg,
     classNameSlide = 'slide',
     variableWidth = false,
     draggable = false,
@@ -32,7 +33,9 @@ function SliderCarousel({
     autoplaySpeed = 9000,
     pauseOnHover = false,
     pauseOnDotsHover = true,
-    typeMovie = []
+    typeMovie = [],
+    slideEnd = false,
+    slideEndBig = false,
 }) {
     const appenDotsFn = dotsFade ? {
         appendDots: (dots) => (
@@ -48,6 +51,12 @@ function SliderCarousel({
             </div>
         )
     } : {}
+
+    if(slideEnd) {
+        data = [...data, { img: "slideEnd.jpg", title: "Xem Tất Cả" }]
+    } else if(slideEndBig) {
+        data = [...data, { img: "slideEndBig.jpg", title: "Xem Tất Cả" }]
+    }
 
     const settings = {
         dots,
@@ -138,7 +147,7 @@ function SliderCarousel({
                         className={`slide-wrapper`}
                         style={{ opacity: slideOpacity ? '0.6' : '1' }}
                     >
-                        {<SlideComponent sourceImg={sourceImg} item={item} typeMovie={typeMovie} slideLarge={slideLarge} />}
+                        {<SlideComponent sourceListImg={sourceListImg} item={item} typeMovie={typeMovie} slideLarge={slideLarge} sourceSliderImg={sourceSliderImg} />}
                     </div>
                 </div>
             ))}

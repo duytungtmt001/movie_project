@@ -8,9 +8,7 @@ import {
     listTrendHome,
     listMovieOdd,
     listMovieRelease,
-    listMovieSeries,
-    typeMovieSeriesApi,
-    typeMovieReleaseApi,
+    listMovieSeries
 } from '../../apiServices';
 
 import classNames from 'classnames/bind';
@@ -21,8 +19,6 @@ const cx = classNames.bind(styles);
 function Home() {
     const [dataSliderMain, setDataSliderMain] = useState([]);
     const [typeMovie, setTypeMovie] = useState([]);
-    const [typeMovieSeries, setTypeMovieSeries] = useState([]);
-    const [typeMovieRelease, setTypeMovieRelease] = useState([]);
     const [dataTrend, setDataTrend] = useState([]);
     const [dataMovieOdd, setDataMovieOdd] = useState([]) ;
     const [dataMovieSeries, setDataMovieSeries] = useState([]);
@@ -46,12 +42,8 @@ function Home() {
     useEffect(() => {
         const fetchApi = async () => {
             try {
-                let typeOdd = await typeMovieApi();
-                let typeSeries = await typeMovieSeriesApi();
-                let typeRelease = await typeMovieReleaseApi();
-                setTypeMovie(typeOdd);
-                setTypeMovieSeries(typeSeries);
-                setTypeMovieRelease(typeRelease);
+                let type = await typeMovieApi();
+                setTypeMovie(type);
             } catch (error) {
                 console.log(error);
             }
@@ -89,9 +81,9 @@ function Home() {
                     series.push(dataSeries[i]);
                     release.push(dataRelease[i]);
                 }
-                setDataMovieOdd([...odds, {"img": "end.jpg", "title": "Xem Tất Cả"}]);
-                setDataMovieSeries([...series, {"img": "end.jpg", "title": "Xem Tất Cả"}]);
-                setDataMovieRelease([...release, {"img": "end.jpg", "title": "Xem Tất Cả"}]);
+                setDataMovieOdd(odds);
+                setDataMovieSeries(series);
+                setDataMovieRelease(release);
             } catch (error) {
                 console.log(error);
             }
@@ -110,7 +102,7 @@ function Home() {
                     <h1 className={cx('carousel-title')}>Giải trí hay - Thưởng thức ngay</h1>
                     <SliderCarousel
                         data={dataSliderMain}
-                        sourceImg="Slider_Main"
+                        sourceSliderImg="Slider_Main"
                         SlideComponent={SlideWithDescription}
                         centerMode
                         dots
@@ -134,11 +126,12 @@ function Home() {
                         <div className={cx('list-slider')}>
                             <SliderCarousel
                                 data={dataTrend}
-                                sourceImg="Home_Slider_Trend"
+                                sourceListImg="Home_Slider_Trend"
                                 classNameSlide={cx('list-slide-padding')}
                                 responsive
                                 typeMovie={typeMovie}
                                 slideWidth="auto"
+                                slideEndBig
                                 slideLarge="true"
                                 easing="ease"
                                 speed={1100}
@@ -163,10 +156,11 @@ function Home() {
                         <div className={cx('list-slider')}>
                             <SliderCarousel
                                 data={dataMovieRelease}
-                                sourceImg="List_Movie_Release"
+                                sourceListImg="List_Movie_Release"
                                 classNameSlide={cx('list-slide-padding')}
                                 responsive
-                                typeMovie={typeMovieRelease}
+                                slideEnd
+                                typeMovie={typeMovie}
                                 slideWidth="auto"
                                 easing="ease"
                                 speed={1100}
@@ -186,9 +180,10 @@ function Home() {
                         <div className={cx('list-slider')}>
                             <SliderCarousel
                                 data={dataMovieOdd}
-                                sourceImg="List_Movie_Odd"
+                                sourceListImg="List_Movie_Odd"
                                 classNameSlide={cx('list-slide-padding')}
                                 responsive
+                                slideEnd
                                 typeMovie={typeMovie}
                                 slideWidth="auto"
                                 easing="ease"
@@ -213,10 +208,11 @@ function Home() {
                         <div className={cx('list-slider')}>
                             <SliderCarousel
                                 data={dataMovieSeries}
-                                sourceImg="List_Movie_Series"
+                                sourceListImg="List_Movie_Series"
                                 classNameSlide={cx('list-slide-padding')}
                                 responsive
-                                typeMovie={typeMovieSeries}
+                                slideEnd
+                                typeMovie={typeMovie}
                                 slideWidth="auto"
                                 easing="ease"
                                 speed={1100}
@@ -236,10 +232,11 @@ function Home() {
                         <div className={cx('list-slider')}>
                             <SliderCarousel
                                 data={dataMovieSeries}
-                                sourceImg="List_Movie_Series"
+                                sourceListImg="List_Movie_Series"
                                 classNameSlide={cx('list-slide-padding')}
                                 responsive
-                                typeMovie={typeMovieSeries}
+                                slideEnd
+                                typeMovie={typeMovie}
                                 slideWidth="auto"
                                 easing="ease"
                                 speed={1100}

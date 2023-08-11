@@ -1,9 +1,9 @@
-import { sliderOdd, listMovieOdd, typeMovieApi } from '../../apiServices';
+import { sliderSeries, listMovieSeries, typeMovieApi } from '../../apiServices';
 import ListMovieByCategory from '../../components/ListMovieByCategory';
 
 import { useEffect, useState } from 'react';
 
-function Odd() {
+function Series() {
     const [dataCarousel, setDataCarousel] = useState([]);
     const [dataListMovie, setDataListMovie] = useState([]);
     const [typeMovie, setTypeMovie] = useState([]);
@@ -12,7 +12,7 @@ function Odd() {
     useEffect(() => {
         const fetchApi = async () => {
             try {
-                const data = await sliderOdd();
+                const data = await sliderSeries();
                 setDataCarousel(data);
             } catch (error) {
                 console.log(error);
@@ -26,7 +26,7 @@ function Odd() {
     useEffect(() => {
         const fetchApi = async () => {
             try {
-                const dataList = await listMovieOdd();
+                const dataList = await listMovieSeries();
                 setDataListMovie(dataList);
             } catch (error) {
                 console.log(error);
@@ -55,10 +55,10 @@ function Odd() {
             dataCarousel={dataCarousel}
             dataListMovie={dataListMovie}
             typeMovie={typeMovie}
-            sourceSliderImg="Slider_Odd"
-            sourceListImg="List_Movie_Odd"
+            sourceSliderImg="Slider_Series"
+            sourceListImg="List_Movie_Series"
         />
     );
 }
 
-export default Odd;
+export default Series;

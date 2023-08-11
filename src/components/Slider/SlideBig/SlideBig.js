@@ -6,13 +6,13 @@ import { AddListIcon, ArrowRightIcon, PlayIconBorder } from '../../Icons';
 
 const cx = classNames.bind(styles)
 
-function SlideBig({item}) {
+function SlideBig({item, sourceSliderImg}) {
   return (
       <div className={cx('wrapper')}>
-          <img alt="" width="100%" src={require(`../../../assets/images/Slider_Odd/${item.img}`)} />
+          <img alt="" width="100%" src={require(`../../../assets/images/${sourceSliderImg}/${item.img}`)} />
           <div className={cx('info')}>
               <div className={cx('info-name')}>
-                  <img alt="" width="100%" src={require(`../../../assets/images/Slider_Odd/${item.img_name}`)} />
+                  <img alt="" width="100%" src={require(`../../../assets/images/${sourceSliderImg}/${item.img_name}`)} />
               </div>
               <div className={cx('info-button')}>
                   <Button to="/odd" blue leftIcon={<PlayIconBorder width="2rem" height="2rem" />} className={cx('button-left')}>
