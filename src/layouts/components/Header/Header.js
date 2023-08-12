@@ -10,7 +10,7 @@ import Search from '../../../components/Search';
 import { publicRoutes } from '../../../routes/routes';
 import Image from '../../../components/Image'
 
-import {typeMovieApi, suggestMovie} from '../../../apiServices';
+import {typeMovieApi, suggestMovie} from '../../../apiServices/Get/index';
 
 const cx = classNames.bind(styles)
 
@@ -25,7 +25,7 @@ function Header() {
         const fetchApi = async () => {
             try {
                 const resTypeMovie = await typeMovieApi();
-                const resullt = resTypeMovie.filter((item) => item.category==="PL")
+                const resullt = resTypeMovie.filter((item) => item.category==="odd")
                 const resSuggestMovie = await suggestMovie();
                 setDataTypeMovie(resullt);
                 setSuggestList(resSuggestMovie);

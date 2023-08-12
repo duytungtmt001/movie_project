@@ -24,7 +24,7 @@ function SliderCarousel({
     centerMode = false,
     arrowFade = false,
     slideOpacity = false,
-    slidesToShow,
+    slidesToShow = 1,
     slidesToScroll = 1,
     slideLarge = false,
     responsive = false,
@@ -60,7 +60,7 @@ function SliderCarousel({
 
     const settings = {
         dots,
-        fade,   
+        fade,
         speed,
         easing,
         infinite,
@@ -84,21 +84,21 @@ function SliderCarousel({
                   {
                       breakpoint: 10000,
                       settings: {
-                          slidesToShow: slidesToShow || 5.2,
+                          slidesToShow: slidesToShow,
                           slidesToScroll: 5,
                       },
                   },
                   {
                       breakpoint: 1537,
                       settings: {
-                          slidesToShow: 4.2,
+                          slidesToShow: slidesToShow - 1,
                           slidesToScroll: 4,
                       },
                   },
                   {
                       breakpoint: 1281,
                       settings: {
-                          slidesToShow: 3.2,
+                          slidesToShow: slidesToShow - 2,
                           slidesToScroll: 3,
                       },
                   },

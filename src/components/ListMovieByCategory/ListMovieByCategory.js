@@ -51,8 +51,8 @@ function ListMovieByCategory({ dataCarousel, typeMovie, dataListMovie, sourceSli
                                     sourceListImg={sourceListImg}
                                     classNameSlide={cx('list-slide-padding')}
                                     responsive
+                                    slidesToShow={5.2}
                                     slideEnd
-                                    slideWidth="auto"
                                     easing="ease"
                                     speed={1100}
                                     zoomWhenHover

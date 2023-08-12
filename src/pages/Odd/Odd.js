@@ -1,4 +1,4 @@
-import { sliderOdd, listMovieOdd, typeMovieApi } from '../../apiServices';
+import { sliderOdd, listMovieOdd, typeMovieApi } from '../../apiServices/Get';
 import ListMovieByCategory from '../../components/ListMovieByCategory';
 
 import { useEffect, useState } from 'react';
@@ -41,7 +41,7 @@ function Odd() {
         const fetchApi = async () => {
             try {
                 const dataType = await typeMovieApi();
-                const result = dataType.filter((item) => item.category==="PL")
+                const result = dataType.filter((item) => item.category==="odd")
                 setTypeMovie(result);
             } catch (error) {
                 console.log(error);

@@ -9,7 +9,7 @@ import {
     listMovieOdd,
     listMovieRelease,
     listMovieSeries
-} from '../../apiServices';
+} from '../../apiServices/Get';
 
 import classNames from 'classnames/bind';
 import styles from './Home.module.scss';
@@ -131,6 +131,7 @@ function Home() {
                                 classNameSlide={cx('list-slide-padding')}
                                 responsive
                                 typeMovie={typeMovie}
+                                slidesToShow={5.2}
                                 slideWidth="auto"
                                 slideEndBig
                                 slideLarge="true"
@@ -162,6 +163,7 @@ function Home() {
                                 responsive
                                 slideEnd
                                 typeMovie={typeMovie}
+                                slidesToShow={5.2}
                                 slideWidth="auto"
                                 easing="ease"
                                 speed={1100}
@@ -186,6 +188,7 @@ function Home() {
                                 responsive
                                 slideEnd
                                 typeMovie={typeMovie}
+                                slidesToShow={5.2}
                                 slideWidth="auto"
                                 easing="ease"
                                 speed={1100}
@@ -214,6 +217,7 @@ function Home() {
                                 responsive
                                 slideEnd
                                 typeMovie={typeMovie}
+                                slidesToShow={5.2}
                                 slideWidth="auto"
                                 easing="ease"
                                 speed={1100}
@@ -238,6 +242,7 @@ function Home() {
                                 responsive
                                 slideEnd
                                 typeMovie={typeMovie}
+                                slidesToShow={5.2}
                                 slideWidth="auto"
                                 easing="ease"
                                 speed={1100}

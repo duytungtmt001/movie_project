@@ -1,4 +1,4 @@
-import { sliderSeries, listMovieSeries, typeMovieApi } from '../../apiServices';
+import { sliderSeries, listMovieSeries, typeMovieApi } from '../../apiServices/Get';
 import ListMovieByCategory from '../../components/ListMovieByCategory';
 
 import { useEffect, useState } from 'react';

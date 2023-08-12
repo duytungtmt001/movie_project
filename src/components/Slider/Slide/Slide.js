@@ -4,11 +4,34 @@ import classNames from 'classnames/bind';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 
-import { TrailerIcon, PlusIcon, PlayIcon } from '../../Icons';
+import { TrailerIcon, PlusIcon, PlayIcon, TickIcon } from '../../Icons';
+import { addWishList, updateWishList, deleteWishList } from '../../../apiServices';
+
+import { useState } from 'react';
 
 const cx = classNames.bind(styles);
 
 function Slide({ sourceListImg, item, slideLarge, typeMovie }) {
+    const [wishListIcon, setWishListIcon] = useState(false);
+    
+    const handleAddWishLists = () => {
+        const pathTypeMovie = `${
+            typeMovie.find((type) => item.typeMovie_id === type.id).category
+        }/${item.id}`;
+        const { id, isLike, ...data } = item;
+        addWishList({ ...data, isLike: true });
+        updateWishList(pathTypeMovie, { isLike: true });
+        setWishListIcon(true);
+    };
+
+    const handleDeleteWishList = () => {
+        const pathTypeMovie = `${
+            typeMovie.find((type) => item.typeMovie_id === type.id).category
+        }/${item.id}`;
+        deleteWishList(`${item.id}`);
+        updateWishList(pathTypeMovie, { isLike: false });
+        setWishListIcon(false);
+    };
 
     return (
         <div className={cx('wrapper')}>
@@ -50,16 +73,34 @@ function Slide({ sourceListImg, item, slideLarge, typeMovie }) {
                                 <TrailerIcon />
                             </div>
                         </Tippy>
+
                         <div className={cx('seperate')}></div>
                         <Tippy content="Xem phim" placement="top" theme="light" offset={[0, 10]}>
                             <div className={cx('play')}>
                                 <PlayIcon width="2.6rem" height="2.6rem" />
                             </div>
                         </Tippy>
+
                         <div className={cx('seperate')}></div>
-                        <Tippy content="Yêu thích" placement="top" theme="light" offset={[0, 15]}>
-                            <div className={cx('add')}>
-                                <PlusIcon width="1.4rem" height="1.4rem" />
+                        <Tippy
+                            content={item.isLike || wishListIcon ? 'Đã thêm' : 'Yêu thích'}
+                            placement="top"
+                            theme="light"
+                            offset={[0, 15]}
+                        >
+                            <div
+                                className={cx('add')}
+                                onClick={
+                                    item.isLike || wishListIcon
+                                        ? handleDeleteWishList
+                                        : handleAddWishLists
+                                }
+                            >
+                                {item.isLike || wishListIcon ? (
+                                    <TickIcon width="1.4rem" height="1.4rem" />
+                                ) : (
+                                    <PlusIcon width="1.4rem" height="1.4rem" />
+                                )}
                             </div>
                         </Tippy>
                     </div>
@@ -83,9 +124,11 @@ function Slide({ sourceListImg, item, slideLarge, typeMovie }) {
                         >
                             {item.typeMovie_id && (
                                 <div className={cx('info-type')}>
-                                    {typeMovie.find((type, index) => {
-                                        return item.typeMovie_id === type.id;
-                                    }).name}
+                                    {
+                                        typeMovie.find((type, index) => {
+                                            return item.typeMovie_id === type.id;
+                                        }).name
+                                    }
                                 </div>
                             )}
                             <div className={cx('dot')}></div>

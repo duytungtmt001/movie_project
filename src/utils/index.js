@@ -1,2 +1,4 @@
-export {default} from './request';
-export * from './request'
+export * from './get';
+export * from './post';
+export * from './patch';
+export * from './delete';

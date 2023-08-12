@@ -1,4 +1,4 @@
-import * as request from '../utils'
+import * as request from '../../utils'
 
 export const wishlist = async () => {
     try {
