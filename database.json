@@ -430,7 +430,7 @@
       "isMonopoly": true,
       "typeMovie_id": 3,
       "callouts": "TM",
-      "isLike": true,
+      "isLike": false,
       "id": 1
     },
     {
@@ -447,7 +447,7 @@
       "img_name": "bearman_name.jpg",
       "trailer": "1.mp4",
       "video": "1.mp4",
-      "isLike": true,
+      "isLike": false,
       "isMonopoly": false,
       "typeMovie_id": 3,
       "callouts": "TM"
@@ -466,7 +466,7 @@
       "img_name": "cheoleo_name.jpg",
       "trailer": "1.mp4",
       "video": "1.mp4",
-      "isLike": true,
+      "isLike": false,
       "isMonopoly": false,
       "typeMovie_id": 3,
       "callouts": "TM"
@@ -485,7 +485,7 @@
       "img_name": "dacvu_name.jpg",
       "trailer": "1.mp4",
       "video": "1.mp4",
-      "isLike": true,
+      "isLike": false,
       "isMonopoly": false,
       "typeMovie_id": 3,
       "callouts": "TM"
@@ -2957,7 +2957,7 @@
       "img_name": "nhatro_name.jpg",
       "trailer": "1.mp4",
       "video": "1.mp4",
-      "isLike": true,
+      "isLike": false,
       "isMonopoly": true,
       "callouts": "TM",
       "typeMovie_id": 14
@@ -4029,82 +4029,5 @@
       "typeMovie_id": 19
     }
   ],
-  "wishlist": [
-    {
-      "name": "Sisu: Già Gân Báo Thù",
-      "description": "Bị bọn Phát Xít tàn ác cướp lấy kho báu vàng mình cất công tìm được, cựu binh già Aatami quyết đòi lại tất cả, từ nợ cho đến thù, cho dù phải tàn sát hết lính Phát Xít.",
-      "time": 88,
-      "year": 2023,
-      "age": 18,
-      "actor": "Jorma Tommila, Aksel Hennie, Jack Doolan",
-      "director": "Jalmari Helander",
-      "award": "",
-      "img": "sisu.jpg",
-      "img_name": "sisu_name.jpg",
-      "trailer": "1.mp4",
-      "video": "1.mp4",
-      "isMonopoly": true,
-      "typeMovie_id": 3,
-      "callouts": "TM",
-      "isLike": true,
-      "id": 1
-    },
-    {
-      "name": "Đầu Gấu Đụng Đầu Đất",
-      "description": "Dựa vào thân thoạt về hai chú gấu sinh đôi hóa người sau 100 ngày ăn tỏi và ngải cứu. Một chú được nhà khoa học nuôi nấng. Một chú lại trở thành 'đầu gấu'. Và rồi cả hai phải bất đắc dĩ đối đầu nhau.",
-      "time": 98,
-      "year": 2023,
-      "age": 13,
-      "actor": "Park Sung Woong, Yoon Je Moon, Choi Min-soo",
-      "director": "Park Sung-kwang",
-      "award": "",
-      "img": "bearman.jpg",
-      "img_name": "bearman_name.jpg",
-      "trailer": "1.mp4",
-      "video": "1.mp4",
-      "isMonopoly": false,
-      "typeMovie_id": 3,
-      "callouts": "TM",
-      "isLike": true,
-      "id": 2
-    },
-    {
-      "name": "Cheo Leo",
-      "description": "Chuyến leo núi của hai người bạn nhanh chóng trở thanh cơn ác mộng khi bị bốn kẻ sát nhân truy đuổi. Chọn đường nào để sống sót khi trước mặt là vực thẳm và bọn truy sat đã bao vây mọi đường lui?",
-      "time": 87,
-      "year": 2022,
-      "age": 16,
-      "actor": "Brittany Ashworth, Ben Lamb, Nathan Welsh",
-      "director": "Howard J. Ford",
-      "award": "",
-      "img": "cheoleo.jpg",
-      "img_name": "cheoleo_name.jpg",
-      "trailer": "1.mp4",
-      "video": "1.mp4",
-      "isMonopoly": false,
-      "typeMovie_id": 3,
-      "callouts": "TM",
-      "isLike": true,
-      "id": 3
-    },
-    {
-      "name": "Đặc Vụ Xuyên Quốc Gia",
-      "description": "Đặc vụ Triều Tiên Chul Ryung trở lại Hàn Quốc với nhiệm vụ đánh sập một tổ chức tội phạm quốc tế. Không chỉ tái ngộ cùng đặc vụ 'vướng tay' Jin Tae, anh còn hợp tác với một nhân tố mới.",
-      "time": 129,
-      "year": 2022,
-      "age": 16,
-      "actor": "Hyun Bin, Yoo Hae Jin, Dainel Henney",
-      "director": "Lee Seok Hoon",
-      "award": "",
-      "img": "dacvu.jpg",
-      "img_name": "dacvu_name.jpg",
-      "trailer": "1.mp4",
-      "video": "1.mp4",
-      "isMonopoly": false,
-      "typeMovie_id": 3,
-      "callouts": "TM",
-      "isLike": true,
-      "id": 4
-    }
-  ]
+  "wishlist": []
 }
