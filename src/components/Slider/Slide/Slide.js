@@ -31,7 +31,7 @@ function Slide({ sourceListImg, item, slideLarge, typeMovie }) {
         deleteWishList(`${item.id}`);
         updateWishList(pathTypeMovie, { isLike: false });
         setWishListIcon(false);
-    };
+    };  
 
     return (
         <div className={cx('wrapper')}>
@@ -41,6 +41,7 @@ function Slide({ sourceListImg, item, slideLarge, typeMovie }) {
                 src={require(`../../../assets/images/${sourceListImg}/${item.img}`)}
                 width="100%"
             />
+
             {item.img_title && (
                 <div className={cx('img-name')}>
                     <img
@@ -50,6 +51,7 @@ function Slide({ sourceListImg, item, slideLarge, typeMovie }) {
                     />
                 </div>
             )}
+
             {item.title && (
                 <div className={cx('see-all')}>
                     <span>{item.title}</span>
