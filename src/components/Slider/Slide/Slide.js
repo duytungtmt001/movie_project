@@ -21,19 +21,7 @@ function Slide({ sourceListImg, item, slideLarge, typeMovie }) {
         }/${item.id}`;
         const { id, isLike, ...data } = item;
         addWishList({ ...data, isLike: true });
-        // updateWishList(pathTypeMovie, { isLike: true });
-        const updateFn = async () => {
-            const a = await axios.patch(
-                `http://localhost:3000/list_movie_${pathTypeMovie}`,
-                { isLike: true },
-                {
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                },
-            );
-        }
-        updateFn()
+        updateWishList(pathTypeMovie, { isLike: true });
         setWishListIcon(true);
     };
 
@@ -42,13 +30,7 @@ function Slide({ sourceListImg, item, slideLarge, typeMovie }) {
             typeMovie.find((type) => item.typeMovie_id === type.id).category
         }/${item.id}`;
         deleteWishList(`${item.id}`);
-        // updateWishList(pathTypeMovie, { isLike: false });
-        const updateFn = async () => {
-            const a = await axios.patch(`http://localhost:3000/list_movie_${pathTypeMovie}`, {
-                "isLike": false,
-            });
-        };
-        updateFn()
+        updateWishList(pathTypeMovie, { isLike: false });
         setWishListIcon(false);
     };  
 
