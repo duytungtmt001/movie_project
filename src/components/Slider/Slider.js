@@ -147,7 +147,7 @@ function SliderCarousel({
                         className={`slide-wrapper`}
                         style={{ opacity: slideOpacity ? '0.6' : '1' }}
                     >
-                        {<SlideComponent sourceListImg={sourceListImg} item={item} typeMovie={typeMovie} slideLarge={slideLarge} sourceSliderImg={sourceSliderImg} />}
+                        {<SlideComponent sourceListImg={sourceListImg} item={item} typeMovie={typeMovie} slideLarge={slideLarge} sourceSliderImg={sourceSliderImg}/>}
                     </div>
                 </div>
             ))}
