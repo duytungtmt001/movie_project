@@ -41,7 +41,7 @@ function Series() {
         const fetchApi = async () => {
             try {
                 const dataType = await typeMovieApi();
-                const result = dataType.filter((item) => item.category === 'PB');
+                const result = dataType.filter((item) => item.category === 'series');
                 setTypeMovie(result);
             } catch (error) {
                 console.log(error);
@@ -50,6 +50,8 @@ function Series() {
 
         fetchApi();
     }, []);
+
+    console.log(typeMovie);
 
     return (
         <ListMovieByCategory

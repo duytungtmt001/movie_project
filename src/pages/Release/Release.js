@@ -41,7 +41,7 @@ function Release() {
         const fetchApi = async () => {
             try {
                 const dataType = await typeMovieApi();
-                const result = dataType.filter((item) => item.category === 'PCR');
+                const result = dataType.filter((item) => item.category === 'release');
                 setTypeMovie(result);
             } catch (error) {
                 console.log(error);
