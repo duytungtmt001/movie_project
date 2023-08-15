@@ -49,7 +49,8 @@ function Wishlish() {
     }, [])
 
     return (
-        typeMovie && (
+        typeMovie &&
+        sliders && (
             <div className={cx('wrapper')}>
                 <div className={cx('title')}>Danh sách phim yêu thích</div>
                 {sliders.map((item, index) => (
