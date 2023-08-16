@@ -1,62 +1,16 @@
-import { sliderSeries, listMovieSeries, typeMovieApi } from '../../apiServices/Get';
 import ListMovieByCategory from '../../components/ListMovieByCategory';
 
-import { useEffect, useState } from 'react';
+import { useContext } from 'react';
+import {ApiContext} from '../../context';
 
 function Series() {
-    const [dataCarousel, setDataCarousel] = useState([]);
-    const [dataListMovie, setDataListMovie] = useState([]);
-    const [typeMovie, setTypeMovie] = useState([]);
+    const apiData = useContext(ApiContext);
 
-    // Call API load data Carousel
-    useEffect(() => {
-        const fetchApi = async () => {
-            try {
-                const data = await sliderSeries();
-                setDataCarousel(data);
-            } catch (error) {
-                console.log(error);
-            }
-        };
-
-        fetchApi();
-    }, []);
-
-    // Call API load data list movie
-    useEffect(() => {
-        const fetchApi = async () => {
-            try {
-                const dataList = await listMovieSeries();
-                setDataListMovie(dataList);
-            } catch (error) {
-                console.log(error);
-            }
-        };
-
-        fetchApi();
-    }, []);
-
-    // Call API load data type movie
-    useEffect(() => {
-        const fetchApi = async () => {
-            try {
-                const dataType = await typeMovieApi();
-                const result = dataType.filter((item) => item.category === 'series');
-                setTypeMovie(result);
-            } catch (error) {
-                console.log(error);
-            }
-        };
-
-        fetchApi();
-    }, []);
-
-    console.log(typeMovie);
-
+    const typeMovie = apiData.typeMovie.filter((item) => item.category === "series");
     return (
         <ListMovieByCategory
-            dataCarousel={dataCarousel}
-            dataListMovie={dataListMovie}
+            dataCarousel={apiData.listSliderSeries}
+            dataListMovie={apiData.listDataMovieSeries}
             typeMovie={typeMovie}
             sourceSliderImg="Slider_Series"
             sourceListImg="List_Movie_Img"

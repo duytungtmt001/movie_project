@@ -4,7 +4,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import GlobalStyles from './components/GlobalStyles';
 import ResponsiveStyle from './components/ResponsiveStyle';
-import ApiProvider from './context'
+import {ApiProvider} from './context'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

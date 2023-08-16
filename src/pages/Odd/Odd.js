@@ -1,60 +1,17 @@
-import { sliderOdd, listMovieOdd, typeMovieApi } from '../../apiServices/Get';
 import ListMovieByCategory from '../../components/ListMovieByCategory';
 
-import { useEffect, useState } from 'react';
+import { useContext } from 'react';
+import {ApiContext} from '../../context';
 
 function Odd() {
-    const [dataCarousel, setDataCarousel] = useState([]);
-    const [dataListMovie, setDataListMovie] = useState([]);
-    const [typeMovie, setTypeMovie] = useState([]);
+    const apiData = useContext(ApiContext);
 
-    // Call API load data Carousel
-    useEffect(() => {
-        const fetchApi = async () => {
-            try {
-                const data = await sliderOdd();
-                setDataCarousel(data);
-            } catch (error) {
-                console.log(error);
-            }
-        };
-
-        fetchApi();
-    }, []);
-
-    // Call API load data list movie
-    useEffect(() => {
-        const fetchApi = async () => {
-            try {
-                const dataList = await listMovieOdd();
-                setDataListMovie(dataList);
-            } catch (error) {
-                console.log(error);
-            }
-        };
-
-        fetchApi();
-    }, []);
-
-    // Call API load data type movie
-    useEffect(() => {
-        const fetchApi = async () => {
-            try {
-                const dataType = await typeMovieApi();
-                const result = dataType.filter((item) => item.category==="odd")
-                setTypeMovie(result);
-            } catch (error) {
-                console.log(error);
-            }
-        };
-
-        fetchApi();
-    }, []);
+    const typeMovie = apiData.typeMovie.filter((item) => item.category === "odd");
 
     return (
         <ListMovieByCategory
-            dataCarousel={dataCarousel}
-            dataListMovie={dataListMovie}
+            dataCarousel={apiData.listSliderOdd}
+            dataListMovie={apiData.listDataMovieOdd}
             typeMovie={typeMovie}
             sourceSliderImg="Slider_Odd"
             sourceListImg="List_Movie_Img"

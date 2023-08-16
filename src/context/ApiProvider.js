@@ -1,8 +1,8 @@
 import { createContext, useEffect, useState } from 'react';
-import { suggestMovie, typeMovieApi, sliderMain, sliderOdd, sliderSeries, sliderRelease, listTrendHome, listMovieSeries, listMovieRelease, listMovieOdd } from '../apiServices/Get';
-const ApiContext = createContext();
+import { suggestMovie, typeMovieApi, sliderMain, sliderOdd, sliderSeries, sliderRelease, listTrendHome, listMovieSeries, listMovieRelease, listMovieOdd, wishlist } from '../apiServices/Get';
+export const ApiContext = createContext();
 
-function ApiProvider({ children }) {
+export function ApiProvider({ children }) {
     const [typeMovie, setTypeMovie] = useState([]);
     const [suggest, setSuggest] = useState([]);
     const [listSliderMain, setSliderMain] = useState([]);
@@ -13,7 +13,7 @@ function ApiProvider({ children }) {
     const [listDataMovieOdd, setListDataMovieOdd] = useState([]);
     const [listDataMovieSeries, setListDataMovieSeries] = useState([]);
     const [listDataMovieRelease, setListDataMovieRelease] = useState([]);
-    const [wishlist, setWishlist] = useState([]);
+    const [wishlistData, setWishlistData] = useState([]);
 
     useEffect(() => {
         const getApi = async () => {
@@ -39,7 +39,7 @@ function ApiProvider({ children }) {
                 setListDataMovieOdd(resListMovieOdd);
                 setListDataMovieSeries(resListMovieSeries);
                 setListDataMovieRelease(resListMovieRelease);
-                setWishlist(resWishlist);
+                setWishlistData(resWishlist);
             } catch (error) {
                 console.log(error);
             }
@@ -61,12 +61,10 @@ function ApiProvider({ children }) {
                 listDataMovieOdd,
                 listDataMovieSeries,
                 listDataMovieRelease,
-                wishlist,
+                wishlistData,
             }}
         >
             {children}
         </ApiContext.Provider>
     );
 }
-
-export default ApiProvider;
