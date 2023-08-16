@@ -1,73 +1,63 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import styles from './Wishlist.module.scss';
 import classNames from 'classnames/bind';
 
-import { typeMovieApi, wishlist } from '../../apiServices/Get';
-
 import SliderCarousel from '../../components/Slider'
+
+import { ApiContext } from '../../context';
+import { wishlist } from '../../apiServices';
 
 const cx = classNames.bind(styles);
 
 function Wishlish() {
-    const [sliders, setSliders] = useState([]);
-    const [typeMovie, setTypeMovie] = useState([]);
+    const apiData = useContext(ApiContext);
+    const [dataWishlist, setDataWishlist] = useState([])
+    
+    // Function split data
+    const splitData  = (list) => {
+        const a = [];
+        const lengthList = Math.ceil(list.length / 5);
+        for(let i=0; i<lengthList; i++) {
+            const b = [];
+            for(let j=1; j<=5; j++) {
+                list[0] && b.push(list.shift());
+            }
+            a.push(b)
+        }
+        return  a;
+    }
 
-    // Call API get Type movie
+    // Get wishlist
     useEffect(() => {
-        const fetchApi = async () => {
+        const getWishlist = async () => {
             try {
-                const dataType = await typeMovieApi();
-                setTypeMovie(dataType)
+                const res = await wishlist();
+                setDataWishlist(splitData(res));
             } catch (error) {
                 console.log(error);
             }
-        }
-        fetchApi();
-    }, [])
+        };
 
-    // Call API get data Wishlist
-    useEffect(() => {
-        const fetchApi = async () => {
-            try {
-                const data = await wishlist();
-                const a = [];
-                const lengthA = Math.ceil(data.length/5);
-                for(let i=0; i<lengthA; i++) {
-                    const b = [];
-                    for(let j=1; j<=5; j++) {
-                        data[0] && b.push(data.shift())
-                    }
-                    a.push(b)
-                }
-
-                setSliders(a)
-            } catch (error) {
-                console.log(error);
-            }
-        }
-        fetchApi();
-    }, [])
+        getWishlist()
+    }, []);
 
     return (
-        typeMovie &&
-        sliders && (
-            <div className={cx('wrapper')}>
-                <div className={cx('title')}>Danh sách phim yêu thích</div>
-                {sliders.map((item, index) => (
-                    <div className={cx('slider')} key={index}>
-                        <SliderCarousel
-                            data={item}
-                            typeMovie={typeMovie}
-                            sourceListImg="List_Movie_Img"
-                            classNameSlide={cx('padding')}
-                            slidesToShow={5}
-                            responsive
-                            draggable={false}
-                        />
-                    </div>
-                ))}
-            </div>
-        )
+        <div className={cx('wrapper')}>
+            <div className={cx('title')}>Danh sách phim yêu thích</div>
+            {dataWishlist.map((item, index) => (
+                <div className={cx('slider')} key={index}>
+                    <SliderCarousel
+                        data={item}
+                        typeMovie={apiData.typeMovie}
+                        sourceListImg="List_Movie_Img"
+                        classNameSlide={cx('padding')}
+                        slidesToShow={5}
+                        responsive
+                        draggable={false}
+                    />
+                </div>
+            ))}
+        </div>
     );
 }
 

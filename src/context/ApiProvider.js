@@ -1,19 +1,15 @@
 import { createContext, useEffect, useState } from 'react';
-import { suggestMovie, typeMovieApi, sliderMain, sliderOdd, sliderSeries, sliderRelease, listTrendHome, listMovieSeries, listMovieRelease, listMovieOdd, wishlist } from '../apiServices/Get';
+import { suggestMovie, typeMovieApi, sliderMain, sliderOdd, sliderSeries, sliderRelease, listTrendHome } from '../apiServices/Get';
 export const ApiContext = createContext();
 
 export function ApiProvider({ children }) {
-    const [typeMovie, setTypeMovie] = useState([]);
-    const [suggest, setSuggest] = useState([]);
-    const [listSliderMain, setSliderMain] = useState([]);
-    const [listSliderOdd, setSliderOdd] = useState([]);
-    const [listSliderSeries, setSliderSeries] = useState([]);
-    const [listSliderRelease, setSliderRelease] = useState([]);
-    const [listTrend, setListTrend] = useState([]);
-    const [listDataMovieOdd, setListDataMovieOdd] = useState([]);
-    const [listDataMovieSeries, setListDataMovieSeries] = useState([]);
-    const [listDataMovieRelease, setListDataMovieRelease] = useState([]);
-    const [wishlistData, setWishlistData] = useState([]);
+    const [typeMovie, setTypeMovie] = useState();
+    const [suggest, setSuggest] = useState();
+    const [listSliderMain, setSliderMain] = useState();
+    const [listSliderOdd, setSliderOdd] = useState();
+    const [listSliderSeries, setSliderSeries] = useState();
+    const [listSliderRelease, setSliderRelease] = useState();
+    const [listTrend, setListTrend] = useState();
 
     useEffect(() => {
         const getApi = async () => {
@@ -25,10 +21,6 @@ export function ApiProvider({ children }) {
                 const resSliderSeries = await sliderSeries(); 
                 const resSliderRelease = await sliderRelease(); 
                 const resListTrend = await listTrendHome(); 
-                const resListMovieOdd = await listMovieOdd(); 
-                const resListMovieSeries = await listMovieSeries(); 
-                const resListMovieRelease = await listMovieRelease(); 
-                const resWishlist = await wishlist(); 
                 setTypeMovie(resTypeMovie);
                 setSuggest(resSuggest);
                 setSliderMain(resSliderMain);
@@ -36,10 +28,6 @@ export function ApiProvider({ children }) {
                 setSliderSeries(resSliderSeries);
                 setSliderRelease(resSliderRelease);
                 setListTrend(resListTrend);
-                setListDataMovieOdd(resListMovieOdd);
-                setListDataMovieSeries(resListMovieSeries);
-                setListDataMovieRelease(resListMovieRelease);
-                setWishlistData(resWishlist);
             } catch (error) {
                 console.log(error);
             }
@@ -49,22 +37,26 @@ export function ApiProvider({ children }) {
     }, [])
 
     return (
-        <ApiContext.Provider
-            value={{
-                typeMovie,
-                suggest,
-                listSliderMain,
-                listSliderOdd,
-                listSliderSeries,
-                listSliderRelease,
-                listTrend,
-                listDataMovieOdd,
-                listDataMovieSeries,
-                listDataMovieRelease,
-                wishlistData,
-            }}
-        >
-            {children}
-        </ApiContext.Provider>
+        typeMovie &&
+        suggest &&
+        listSliderMain &&
+        listSliderOdd &&
+        listSliderSeries &&
+        listSliderRelease &&
+        listTrend && (
+            <ApiContext.Provider
+                value={{
+                    typeMovie,
+                    suggest,
+                    listSliderMain,
+                    listSliderOdd,
+                    listSliderSeries,
+                    listSliderRelease,
+                    listTrend,
+                }}
+            >
+                {children}
+            </ApiContext.Provider>
+        )
     );
 }
