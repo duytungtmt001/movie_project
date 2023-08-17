@@ -8,6 +8,7 @@ import { TrailerIcon, PlusIcon, PlayIcon, TickIcon } from '../../Icons';
 import { addWishList, updateWishList, deleteWishList } from '../../../apiServices';
 
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
@@ -132,7 +133,9 @@ function Slide({ sourceListImg, item, slideLarge, typeMovie, reRenderParent }) {
                                     fontSize: slideLarge ? '1.5rem' : '1.3rem',
                                 }}
                             >
-                                {item.name}
+                                <Link to={`/detail/${item.img.split(".")[0]}`}>
+                                    {item.name}
+                                </Link>
                             </p>
                             <div
                                 className={cx('info-rest')}
