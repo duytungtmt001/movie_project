@@ -9,6 +9,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import { useEffect, useState } from 'react';
 
 function SliderCarousel({
+    reRenderParent = () => {},
     data = [],
     SlideComponent = Slide,
     sourceListImg,
@@ -147,7 +148,7 @@ function SliderCarousel({
                         className={`slide-wrapper`}
                         style={{ opacity: slideOpacity ? '0.6' : '1' }}
                     >
-                        {<SlideComponent sourceListImg={sourceListImg} item={item} typeMovie={typeMovie} slideLarge={slideLarge} sourceSliderImg={sourceSliderImg}/>}
+                        {<SlideComponent sourceListImg={sourceListImg} item={item} typeMovie={typeMovie} slideLarge={slideLarge} sourceSliderImg={sourceSliderImg} reRenderParent={reRenderParent}/>}
                     </div>
                 </div>
             ))}

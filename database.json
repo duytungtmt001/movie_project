@@ -321,9 +321,9 @@
       "description": "Bộ phim kể về Dong Chul - gangster chính hiệu đã rửa tay gác kiếm và sống cuộc sống yên bình bên người vợ mình. Mọi chuyện trở nên đảo lộn khi một ngày có người đã bắt cóc vợ anh."
     }
   ],
-  "home_list_trend": [
+  "home_movie_trend": [
     {
-      "img": "1.jpg",
+      "img": "1_trend.jpg",
       "name": "Cô gái từ quá khứ",
       "time": 105,
       "age": 16,
@@ -332,7 +332,7 @@
       "img_title": "1a.jpg"
     },
     {
-      "img": "2.jpg",
+      "img": "2_trend.jpg",
       "name": "Bỗng Dưng Trúng Số",
       "time": 114,
       "age": 13,
@@ -341,7 +341,7 @@
       "img_title": "2a.jpg"
     },
     {
-      "img": "3.jpg",
+      "img": "3_trend.jpg",
       "name": "Bố Già",
       "time": 128,
       "age": 13,
@@ -350,7 +350,7 @@
       "img_title": "3a.jpg"
     },
     {
-      "img": "4.jpg",
+      "img": "4_trend.jpg",
       "name": "Khắc Tinh Của Quỷ",
       "time": 100,
       "age": 16,
@@ -359,7 +359,7 @@
       "img_title": "4a.jpg"
     },
     {
-      "img": "5.jpg",
+      "img": "5_trend.jpg",
       "name": "Yêu Như Lần Đầu",
       "time": 100,
       "age": 13,
@@ -368,7 +368,7 @@
       "img_title": "5a.jpg"
     },
     {
-      "img": "6.jpg",
+      "img": "6_trend.jpg",
       "name": "Con Nhót Mót Chồng",
       "time": 114,
       "age": 16,
@@ -377,7 +377,7 @@
       "img_title": "6a.jpg"
     },
     {
-      "img": "7.jpg",
+      "img": "7_trend.jpg",
       "name": "Thiện Ác Đối Đầu 2",
       "time": 116,
       "age": 16,
@@ -386,7 +386,7 @@
       "img_title": "7a.jpg"
     },
     {
-      "img": "8.jpg",
+      "img": "8_trend.jpg",
       "name": "Người nhện: Vũ Trụ Mới",
       "time": 112,
       "age": 13,
@@ -395,7 +395,7 @@
       "img_title": "8a.jpg"
     },
     {
-      "img": "9.jpg",
+      "img": "9_trend.jpg",
       "name": "Người Nhện: Người Nhện Xa Nhà",
       "time": 130,
       "age": 13,
@@ -404,7 +404,7 @@
       "img_title": "9a.jpg"
     },
     {
-      "img": "10.jpg",
+      "img": "10_trend.jpg",
       "name": "Nhà Ga Nuốt Chửng",
       "time": 82,
       "age": 16,
@@ -4029,7 +4029,5 @@
       "typeMovie_id": 19
     }
   ],
-  "wishlist": [
-    
-  ]
+  "wishlist": []
 }

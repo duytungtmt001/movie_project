@@ -8,12 +8,12 @@ import { TrailerIcon, PlusIcon, PlayIcon, TickIcon } from '../../Icons';
 import { addWishList, updateWishList, deleteWishList } from '../../../apiServices';
 
 import { useState } from 'react';
-import axios from 'axios';
 
 const cx = classNames.bind(styles);
 
-function Slide({ sourceListImg, item, slideLarge, typeMovie }) {
+function Slide({ sourceListImg, item, slideLarge, typeMovie, reRenderParent }) {
     const [wishListIcon, setWishListIcon] = useState(false);
+
     const handleAddWishLists = () => {
         const pathTypeMovie = `${
             typeMovie.find((type) => item.typeMovie_id === type.id).category
@@ -32,6 +32,7 @@ function Slide({ sourceListImg, item, slideLarge, typeMovie }) {
         deleteWishList(`${item.id}`);
         updateWishList(pathTypeMovie, { isLike: false });
         setWishListIcon(false);
+        reRenderParent()
         return false
     };  
 

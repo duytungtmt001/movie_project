@@ -7,12 +7,18 @@ import SliderCarousel from '../../components/Slider'
 import { ApiContext } from '../../context';
 import { wishlist } from '../../apiServices';
 
+
 const cx = classNames.bind(styles);
 
 function Wishlish() {
     const apiData = useContext(ApiContext);
-    const [dataWishlist, setDataWishlist] = useState([])
-    
+    const [dataWishlist, setDataWishlist] = useState([]);
+    const [updateData, setUpdateData] = useState(false);
+
+    const handleReRender = () => {
+        setUpdateData(!updateData)
+    }
+
     // Function split data
     const splitData  = (list) => {
         const a = [];
@@ -39,7 +45,7 @@ function Wishlish() {
         };
 
         getWishlist()
-    }, []);
+    }, [updateData]);
 
     return (
         <div className={cx('wrapper')}>
@@ -47,6 +53,7 @@ function Wishlish() {
             {dataWishlist.map((item, index) => (
                 <div className={cx('slider')} key={index}>
                     <SliderCarousel
+                        reRenderParent={handleReRender}
                         data={item}
                         typeMovie={apiData.typeMovie}
                         sourceListImg="List_Movie_Img"
