@@ -5,7 +5,7 @@ import {ApiContext} from '../../context';
 import { listMovieOdd } from '../../apiServices';
 
 function Odd() {
-    const [dataMovieOdd, setDataMovieOdd] = useState();
+    const [dataMovieOdd, setDataMovieOdd] = useState([]);
     
     const apiData = useContext(ApiContext);
     

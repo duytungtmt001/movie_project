@@ -6,6 +6,7 @@ import SliderCarousel from '../../components/Slider'
 
 import { ApiContext } from '../../context';
 import { wishlist } from '../../apiServices';
+import { ListEmpty } from '../../components/Icons';
 
 
 const cx = classNames.bind(styles);
@@ -18,6 +19,26 @@ function Wishlish() {
     const handleReRender = () => {
         setUpdateData(!updateData)
     }
+
+    const renderWishlist = () => (
+        <div className={cx('wrapper')}>
+            <div className={cx('title')}>Danh sách phim yêu thích</div>
+            {dataWishlist.map((item, index) => (
+                <div className={cx('slider')} key={index}>
+                    <SliderCarousel
+                        reRenderParent={handleReRender}
+                        data={item}
+                        typeMovie={apiData.typeMovie}
+                        sourceListImg="List_Movie_Img"
+                        classNameSlide={cx('padding')}
+                        slidesToShow={5}
+                        responsive
+                        draggable={false}
+                    />
+                </div>
+            ))}
+        </div>
+    )
 
     // Function split data
     const splitData  = (list) => {
@@ -47,23 +68,12 @@ function Wishlish() {
         getWishlist()
     }, [updateData]);
 
-    return (
-        <div className={cx('wrapper')}>
-            <div className={cx('title')}>Danh sách phim yêu thích</div>
-            {dataWishlist.map((item, index) => (
-                <div className={cx('slider')} key={index}>
-                    <SliderCarousel
-                        reRenderParent={handleReRender}
-                        data={item}
-                        typeMovie={apiData.typeMovie}
-                        sourceListImg="List_Movie_Img"
-                        classNameSlide={cx('padding')}
-                        slidesToShow={5}
-                        responsive
-                        draggable={false}
-                    />
-                </div>
-            ))}
+    return dataWishlist.length > 0 ? (
+        renderWishlist()
+    ) : (
+        <div className={cx('list-empty')}>
+            <ListEmpty width="30rem" height="30rem" />
+            <p className={cx('list-empty-text')}>Hãy thêm phim bạn yêu thích vào đây</p>
         </div>
     );
 }

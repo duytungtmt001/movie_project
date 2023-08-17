@@ -14,25 +14,25 @@ const cx = classNames.bind(styles);
 function Slide({ sourceListImg, item, slideLarge, typeMovie, reRenderParent }) {
     const [wishListIcon, setWishListIcon] = useState(false);
 
-    const handleAddWishLists = () => {
-        const pathTypeMovie = `${
-            typeMovie.find((type) => item.typeMovie_id === type.id).category
-        }/${item.id}`;
+    const handleAddWishLists = async () => {
+        const pathTypeMovie = item.exception
+            ? `${item.exception}/${item.id}`
+            : `${typeMovie.find((type) => item.typeMovie_id === type.id).category}/${item.id}`;
         const { id, isLike, ...data } = item;
-        addWishList({ ...data, isLike: true });
-        updateWishList(pathTypeMovie, { isLike: true });
+        await addWishList({ ...data, isLike: true });
+        await updateWishList(pathTypeMovie, { isLike: true });
         setWishListIcon(true);
         return false
     };
 
-    const handleDeleteWishList = () => {
-        const pathTypeMovie = `${
-            typeMovie.find((type) => item.typeMovie_id === type.id).category
-        }/${item.id}`;
-        deleteWishList(`${item.id}`);
-        updateWishList(pathTypeMovie, { isLike: false });
+    const handleDeleteWishList = async () => {
+        const pathTypeMovie = item.exception
+            ? `${item.exception}/${item.id}`
+            : `${typeMovie.find((type) => item.typeMovie_id === type.id).category}/${item.id}`;
+        await deleteWishList(`${item.id}`);
+        await updateWishList(pathTypeMovie, { isLike: false });
         setWishListIcon(false);
-        reRenderParent()
+        reRenderParent();
         return false
     };  
 

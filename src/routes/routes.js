@@ -7,6 +7,7 @@ import Series from '../pages/Series';
 import Wishlist from '../pages/Wishlist';
 import Login from '../pages/Login';
 import Donate from '../pages/Donate'
+import Detail from '../pages/Detail'
 
 export const publicRoutes = [
     { path: routes.home, component: Home, linkName: 'Trang chủ' },
@@ -15,5 +16,6 @@ export const publicRoutes = [
     { path: routes.series, component: Series, linkName: 'Phim bộ' },
     { path: routes.wishlist, component: Wishlist, linkName: 'Danh sách yêu thích' },
     { path: routes.donate, component: Donate, linkName: 'Donate me' },
+    { path: routes.detail, component: Detail },
     { path: routes.login, component: Login, layout: null },
 ];

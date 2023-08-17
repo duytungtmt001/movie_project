@@ -5,5 +5,6 @@ export const routes = {
     series: '/series',
     wishlist: '/wishlist',
     login: '/login',
-    donate: '/donate'
+    donate: '/donate',
+    detail: '/detail'
 }

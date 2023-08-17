@@ -7,11 +7,12 @@ import styles from './Home.module.scss';
 import { ArrowRightIcon } from '../../components/Icons';
 
 import { ApiContext } from '../../context';
-import { listMovieOdd, listMovieRelease, listMovieSeries } from '../../apiServices';
+import { listMovieOdd, listMovieRelease, listMovieSeries, listTrendHome } from '../../apiServices';
 
 const cx = classNames.bind(styles);
 
 function Home() {
+    const [dataMovieTrend, setDataMovieTrend] = useState()
     const [dataMovieOdd, setDataMovieOdd] = useState();
     const [dataMovieSeries, setDataMovieSeries] = useState();
     const [dataMovieRelease, setDataMovieRelease] = useState();
@@ -66,6 +67,18 @@ function Home() {
         getData();
     }, []);
 
+    useEffect(() => {
+        const getData = async () => {
+            try {
+                const res = await listTrendHome();
+                setDataMovieTrend(res);
+            } catch (error) {
+                console.log(error);
+            }
+        };
+        getData();
+    }, []);
+
     return (
         <div className={cx('wrapper')}>
             <div className={cx('carousel')}>
@@ -96,7 +109,7 @@ function Home() {
                     </div>
                     <div className={cx('list-slider')}>
                         <SliderCarousel
-                            data={apiData.listTrend}
+                            data={dataMovieTrend}
                             sourceListImg="Home_Slider_Trend"
                             classNameSlide={cx('list-slide-padding')}
                             responsive

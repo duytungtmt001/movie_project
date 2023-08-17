@@ -9,7 +9,6 @@ export function ApiProvider({ children }) {
     const [listSliderOdd, setSliderOdd] = useState();
     const [listSliderSeries, setSliderSeries] = useState();
     const [listSliderRelease, setSliderRelease] = useState();
-    const [listTrend, setListTrend] = useState();
 
     useEffect(() => {
         const getApi = async () => {
@@ -20,14 +19,12 @@ export function ApiProvider({ children }) {
                 const resSliderOdd = await sliderOdd(); 
                 const resSliderSeries = await sliderSeries(); 
                 const resSliderRelease = await sliderRelease(); 
-                const resListTrend = await listTrendHome(); 
                 setTypeMovie(resTypeMovie);
                 setSuggest(resSuggest);
                 setSliderMain(resSliderMain);
                 setSliderOdd(resSliderOdd);
                 setSliderSeries(resSliderSeries);
                 setSliderRelease(resSliderRelease);
-                setListTrend(resListTrend);
             } catch (error) {
                 console.log(error);
             }
@@ -42,8 +39,7 @@ export function ApiProvider({ children }) {
         listSliderMain &&
         listSliderOdd &&
         listSliderSeries &&
-        listSliderRelease &&
-        listTrend && (
+        listSliderRelease && (
             <ApiContext.Provider
                 value={{
                     typeMovie,
@@ -52,7 +48,6 @@ export function ApiProvider({ children }) {
                     listSliderOdd,
                     listSliderSeries,
                     listSliderRelease,
-                    listTrend,
                 }}
             >
                 {children}
