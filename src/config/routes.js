@@ -6,5 +6,6 @@ export const routes = {
     wishlist: '/wishlist',
     login: '/login',
     donate: '/donate',
-    detail: '/detail/:detailName'
+    detail: '/detail/:info',
+    other: '*'
 }

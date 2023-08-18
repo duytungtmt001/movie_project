@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from 'react';
-import { suggestMovie, typeMovieApi, sliderMain, sliderOdd, sliderSeries, sliderRelease, listTrendHome } from '../apiServices/Get';
+import { suggestMovie, typeMovieApi, sliderMain, sliderOdd, sliderSeries, sliderRelease } from '../apiServices/Get';
 export const ApiContext = createContext();
 
 export function ApiProvider({ children }) {

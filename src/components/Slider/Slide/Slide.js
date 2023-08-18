@@ -37,6 +37,18 @@ function Slide({ sourceListImg, item, slideLarge, typeMovie, reRenderParent }) {
         return false
     };  
 
+    const typeMovieItem = () => {
+        return typeMovie.find((type, index) => {
+            return item.typeMovie_id === type.id;
+        }).name
+    }
+
+    const categoryMovieItem = () => {
+        return typeMovie.find((type, index) => {
+            return item.typeMovie_id === type.id;
+        }).category;
+    };
+
     return (
         item && (
             <div className={cx('wrapper')}>
@@ -133,7 +145,9 @@ function Slide({ sourceListImg, item, slideLarge, typeMovie, reRenderParent }) {
                                     fontSize: slideLarge ? '1.5rem' : '1.3rem',
                                 }}
                             >
-                                <Link to={`/detail/${item.img.split(".")[0]}`}>
+                                <Link
+                                    to={`/detail/${categoryMovieItem()}-${item.name}`}
+                                >
                                     {item.name}
                                 </Link>
                             </p>
@@ -145,13 +159,7 @@ function Slide({ sourceListImg, item, slideLarge, typeMovie, reRenderParent }) {
                                 }}
                             >
                                 {item.typeMovie_id && (
-                                    <div className={cx('info-type')}>
-                                        {
-                                            typeMovie.find((type, index) => {
-                                                return item.typeMovie_id === type.id;
-                                            }).name
-                                        }
-                                    </div>
+                                    <div className={cx('info-type')}>{typeMovieItem()}</div>
                                 )}
                                 <div className={cx('dot')}></div>
                                 {item.episode && (

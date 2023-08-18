@@ -18,4 +18,5 @@ export const publicRoutes = [
     { path: routes.donate, component: Donate, linkName: 'Donate me' },
     { path: routes.detail, component: Detail },
     { path: routes.login, component: Login, layout: null },
+    { path: routes.other, component: Home },
 ];

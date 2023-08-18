@@ -3,7 +3,7 @@ import styles from './Header.module.scss';
 import classNames from 'classnames/bind';
 import { useEffect, useState } from 'react';
 
-import { AccountIcon, AnnouncementIcon, LanguageIcon, LogOutIcon, SearchIcon, SettingIcon, ThemeIcon, WishlistIcon, NoNotifiIcon } from '../../../components/Icons';
+import { AccountIcon, AnnouncementIcon, LanguageIcon, LogOutIcon, SettingIcon, ThemeIcon, WishlistIcon } from '../../../components/Icons';
 import Notification from '../../../components/Popper/Notification'; 
 import Menu from '../../../components/Popper/Menu';
 import Search from '../../../components/Search';
