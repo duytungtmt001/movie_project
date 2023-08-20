@@ -6,7 +6,7 @@ import Header from "../components/Header"
 function Defaultlayout({children}) {
     return (
         <div className={clsx(styles.wrapper)}>
-            <Header />
+            {children.type.name === 'Detail' ? <Header noStateHeaderColor/> : <Header />}
             {children}
         </div>
     )

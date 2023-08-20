@@ -1,5 +1,5 @@
 .wrapper {
-    height: var(--button-height);
+    min-height: var(--button-height);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -52,7 +52,7 @@
 .light, 
 .dark,
 .blue {
-    padding: 0 40px;
+    padding: 10px 40px;
     border-radius: 32px;
 }
 

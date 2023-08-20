@@ -14,40 +14,48 @@ import {typeMovieApi, suggestMovie} from '../../../apiServices/Get/index';
 
 const cx = classNames.bind(styles)
 
-function Header() {
+function Header({ noStateHeaderColor }) {
     const [itemActive, setItemActive] = useState(`/${window.location.href.split('/')[3]}`);
-    const [dataTypeMovie, setDataTypeMovie] = useState([])
-    const [suggestList, setSuggestList] = useState([])
-    const [showBackGroundHeader, setShowBackGroundHeader] = useState(false)
+    const [dataTypeMovie, setDataTypeMovie] = useState([]);
+    const [suggestList, setSuggestList] = useState([]);
+    const [showBackGroundHeader, setShowBackGroundHeader] = useState(false);
+
+    const backgroundColorHeader = noStateHeaderColor
+        ? { backgroundColor: '#030612' }
+        : {
+              background: showBackGroundHeader
+                  ? '#030612'
+                  : 'linear-gradient(rgb(16, 16, 16), rgba(16, 16, 16, 0))',
+          };
 
     // Call API get type movie
     useEffect(() => {
         const fetchApi = async () => {
             try {
                 const resTypeMovie = await typeMovieApi();
-                const resullt = resTypeMovie.filter((item) => item.category==="odd")
+                const resullt = resTypeMovie.filter((item) => item.category === 'odd');
                 const resSuggestMovie = await suggestMovie();
                 setDataTypeMovie(resullt);
                 setSuggestList(resSuggestMovie);
             } catch (error) {
                 console.log(error);
             }
-        }
+        };
 
-        fetchApi()
-    }, [])
+        fetchApi();
+    }, []);
 
     useEffect(() => {
         const handleScroll = () => {
             setShowBackGroundHeader(window.scrollY >= 70);
-        }
+        };
 
-        window.addEventListener("scroll", handleScroll);
+        window.addEventListener('scroll', handleScroll);
 
         return () => {
-            window.removeEventListener('scroll', handleScroll)
-        }
-    }, [])
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
     const userMenu = [
         {
@@ -133,9 +141,7 @@ function Header() {
         <div
             className={cx('wrapper')}
             style={{
-                background: showBackGroundHeader
-                    ? '#030612'
-                    : 'linear-gradient(rgb(16, 16, 16), rgba(16, 16, 16, 0))',
+                ...backgroundColorHeader,
             }}
         >
             <div className={cx('logo')}>
