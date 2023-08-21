@@ -1,14 +1,20 @@
 import styles from './DetailMovie.module.scss';
 import classNames from 'classnames/bind';
 
-import { PlayIconTransparent, AddWishlistDetail, ArrowRightIcon } from '../Icons/Icons';
+import { PlayIconTransparent, AddWishlistDetail, TrailerIcon } from '../Icons/Icons';
 import SliderCarousel from '../Slider';
 
-import Button from '../Button'
+import Button from '../Button';
 import Tippy from '@tippyjs/react';
+import { useMatch } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 function DetailMovie({ item, typeMovie, list }) {
+
+    const match = useMatch('/detail/:info');
+
+    console.log(match);
+
     const typeMovieItem = () => {
         return typeMovie.find((type, index) => {
             return item.typeMovie_id === type.id;
@@ -16,8 +22,14 @@ function DetailMovie({ item, typeMovie, list }) {
     };
 
     const listSlider = () => {
-        return list.reduce((result, currentMovie, index) => currentMovie.typeMovie_id === item.typeMovie_id ? [...result, currentMovie] : result, [])
-    }
+        return list.reduce(
+            (result, currentMovie, index) =>
+                currentMovie.typeMovie_id === item.typeMovie_id
+                    ? [...result, currentMovie]
+                    : result,
+            [],
+        );
+    };
 
     return (
         <div className={cx('wrapper')}>
@@ -41,7 +53,8 @@ function DetailMovie({ item, typeMovie, list }) {
                     <div className={cx('content-info')}>
                         <span>{item.year}</span>
                         <span className={cx('info-age')}>{`T${item.age}`}</span>
-                        <span>{`${item.time} phút`}</span>
+                        {item.time && <span>{`${item.time} phút`}</span>}
+                        {item.episode && <span>{`${item.episode} tập`}</span>}
                         <span className={cx('info-hd')}>HD</span>
                         <span className={cx('info-subtitle')}>{item.subtitle}</span>
                     </div>
@@ -81,6 +94,15 @@ function DetailMovie({ item, typeMovie, list }) {
                         >
                             Xem phim
                         </Button>
+
+                        <Tippy placement="top" content="Xem Trailer" theme="light">
+                            <div>
+                                <Button circle className={cx('button-trailer')}>
+                                    <TrailerIcon width="2.2rem" height="2.2rem" />
+                                </Button>
+                            </div>
+                        </Tippy>
+
                         <Tippy placement="top" content="Thêm vào yêu thích" theme="light">
                             <div>
                                 <Button circle>
@@ -88,6 +110,7 @@ function DetailMovie({ item, typeMovie, list }) {
                                 </Button>
                             </div>
                         </Tippy>
+
                     </div>
                 </div>
             </div>

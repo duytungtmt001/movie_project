@@ -39,34 +39,29 @@
             cursor: pointer;
             font-weight: 600;
             font-size: 1.7rem;
-            transition: all ease-out 0.2s;
-            opacity: 0.8;
 
-            &:hover {
-                opacity: 1;
+            .navbar-item-link {
+                transition: all ease-out .2s;
+
+                &:hover {
+                    opacity: 1 !important;
+                } 
             }
 
-            &:hover .bar-bottom {
+            .active ~ .bar-bottom {
                 width: 100%;
+            }
+
+            .bar-bottom {
+                height: 1px;
+                width: 0;
+                background-color: #fff;
+                border-radius: 1.2rem;
+                transition: all ease-out 0.4s 0.1s;
             }
         }
     }
 
-    .bar-bottom {
-        height: 1px;
-        width: 0;
-        background-color: #fff;
-        border-radius: 1.2rem;
-        transition: all ease-out 0.4s 0.1s;
-    }
-
-    .navbar-item.active {
-        opacity: 1;
-    }
-
-    .navbar-item.active .bar-bottom {
-        width: 100%;
-    }
 }
 
 //Search
@@ -99,3 +94,5 @@
 .wrap-user {
     min-width: 200px;
 }
+
+

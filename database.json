@@ -487,7 +487,7 @@
     {
       "id": 3,
       "name": "Cheo Leo",
-      "description": "Chuyến leo núi của hai người bạn nhanh chóng trở thanh cơn ác mộng khi bị bốn kẻ sát nhân truy đuổi. Chọn đường nào để sống sót khi trước mặt là vực thẳm và bọn truy sat đã bao vây mọi đường lui?",
+      "description": "Chuyến leo núi của hai người bạn nhanh chóng trở thanh cơn ác mộng khi bị bốn kẻ sát nhân truy đuổi. Chọn đường nào để sống sót khi trước mặt là vực thẳm và bọn truy sát đã bao vây mọi đường lui?",
       "time": 87,
       "year": 2022,
       "age": 16,
@@ -1462,7 +1462,7 @@
       "isLike": false,
       "isMonopoly": false,
       "typeMovie_id": 1,
-      "callouts": "LT"
+      "subtitle": "Lồng tiếng"
     },
     {
       "id": 52,
@@ -1482,7 +1482,7 @@
       "isLike": false,
       "isMonopoly": false,
       "typeMovie_id": 1,
-      "callouts": "LT"
+      "subtitle": "Lồng tiếng"
     },
     {
       "id": 53,
@@ -1502,7 +1502,7 @@
       "isLike": false,
       "isMonopoly": false,
       "typeMovie_id": 1,
-      "callouts": "LT"
+      "subtitle": "Lồng tiếng"
     },
     {
       "id": 54,
@@ -1522,7 +1522,7 @@
       "isLike": false,
       "isMonopoly": false,
       "typeMovie_id": 1,
-      "callouts": "LT"
+      "subtitle": "Lồng tiếng"
     },
     {
       "id": 55,
@@ -1542,7 +1542,7 @@
       "isLike": false,
       "isMonopoly": false,
       "typeMovie_id": 1,
-      "callouts": "LT"
+      "subtitle": "Lồng tiếng"
     },
     {
       "id": 56,
@@ -1562,7 +1562,7 @@
       "isLike": false,
       "isMonopoly": false,
       "typeMovie_id": 1,
-      "callouts": "LT"
+      "subtitle": "Lồng tiếng"
     },
     {
       "id": 57,
@@ -1582,7 +1582,7 @@
       "isLike": false,
       "isMonopoly": false,
       "typeMovie_id": 1,
-      "callouts": "LT"
+      "subtitle": "Lồng tiếng"
     },
     {
       "id": 58,
@@ -1602,7 +1602,7 @@
       "isLike": false,
       "isMonopoly": false,
       "typeMovie_id": 1,
-      "callouts": "LT"
+      "subtitle": "Lồng tiếng"
     },
     {
       "id": 59,
@@ -1622,7 +1622,7 @@
       "isLike": false,
       "isMonopoly": false,
       "typeMovie_id": 1,
-      "callouts": "LT"
+      "subtitle": "Lồng tiếng"
     },
     {
       "id": 60,
@@ -1642,7 +1642,7 @@
       "isLike": false,
       "isMonopoly": false,
       "typeMovie_id": 1,
-      "callouts": "LT"
+      "subtitle": "Lồng tiếng"
     },
     {
       "id": 61,
@@ -4272,7 +4272,7 @@
     },
     {
       "name": "Cheo Leo",
-      "description": "Chuyến leo núi của hai người bạn nhanh chóng trở thanh cơn ác mộng khi bị bốn kẻ sát nhân truy đuổi. Chọn đường nào để sống sót khi trước mặt là vực thẳm và bọn truy sat đã bao vây mọi đường lui?",
+      "description": "Chuyến leo núi của hai người bạn nhanh chóng trở thanh cơn ác mộng khi bị bốn kẻ sát nhân truy đuổi. Chọn đường nào để sống sót khi trước mặt là vực thẳm và bọn truy sát đã bao vây mọi đường lui?",
       "time": 87,
       "year": 2022,
       "age": 16,

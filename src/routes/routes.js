@@ -6,8 +6,8 @@ import Odd from '../pages/Odd';
 import Series from '../pages/Series';
 import Wishlist from '../pages/Wishlist';
 import Login from '../pages/Login';
-import Donate from '../pages/Donate'
-import Detail from '../pages/Detail'
+import Donate from '../pages/Donate';
+import Detail from '../pages/Detail';
 
 export const publicRoutes = [
     { path: routes.home, component: Home, linkName: 'Trang chủ' },

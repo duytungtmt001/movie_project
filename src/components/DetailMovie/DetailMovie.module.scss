@@ -1,14 +1,13 @@
 .wrapper {
-    width: 100vw;
     margin-top: var(--header-height);
 }
 
 .body {
     position: relative;
-
+    
     .background {
         display: flex;
-
+        
         .background-left {
             width: 25%;
             background-color: #000;
@@ -110,6 +109,7 @@
             }
 
             .actor-right-detail {
+                width: fit-content;
                 cursor: pointer;
                 transition: all linear .2s;
                 &:hover {
@@ -145,13 +145,16 @@
 
             
             .button-see {
-                margin-right: 12px;
                 &:hover {
                     .button-see-icon {
                         animation: Shaking ease-out .4s;
                         animation-iteration-count: 2;
                     }
                 }
+            }
+
+            .button-trailer {
+                margin: 0 12px;
             }
         }
     }

@@ -18,6 +18,7 @@ function Home() {
     const [dataMovieRelease, setDataMovieRelease] = useState();
 
     const apiData = useContext(ApiContext);
+    
 
     useEffect(() => {
         const getData = async () => {

@@ -1,23 +1,28 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import styles from './Header.module.scss';
 import classNames from 'classnames/bind';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useMemo, useState } from 'react';
 
-import { AccountIcon, AnnouncementIcon, LanguageIcon, LogOutIcon, SettingIcon, ThemeIcon, WishlistIcon } from '../../../components/Icons';
-import Notification from '../../../components/Popper/Notification'; 
+import {
+    AccountIcon,
+    AnnouncementIcon,
+    LanguageIcon,
+    LogOutIcon,
+    SettingIcon,
+    ThemeIcon,
+    WishlistIcon,
+} from '../../../components/Icons';
+import Notification from '../../../components/Popper/Notification';
 import Menu from '../../../components/Popper/Menu';
 import Search from '../../../components/Search';
 import { publicRoutes } from '../../../routes/routes';
-import Image from '../../../components/Image'
+import Image from '../../../components/Image';
 
-import {typeMovieApi, suggestMovie} from '../../../apiServices/Get/index';
+import { ApiContext } from '../../../context';
 
-const cx = classNames.bind(styles)
+const cx = classNames.bind(styles);
 
 function Header({ noStateHeaderColor }) {
-    const [itemActive, setItemActive] = useState(`/${window.location.href.split('/')[3]}`);
-    const [dataTypeMovie, setDataTypeMovie] = useState([]);
-    const [suggestList, setSuggestList] = useState([]);
     const [showBackGroundHeader, setShowBackGroundHeader] = useState(false);
 
     const backgroundColorHeader = noStateHeaderColor
@@ -28,23 +33,14 @@ function Header({ noStateHeaderColor }) {
                   : 'linear-gradient(rgb(16, 16, 16), rgba(16, 16, 16, 0))',
           };
 
-    // Call API get type movie
-    useEffect(() => {
-        const fetchApi = async () => {
-            try {
-                const resTypeMovie = await typeMovieApi();
-                const resullt = resTypeMovie.filter((item) => item.category === 'odd');
-                const resSuggestMovie = await suggestMovie();
-                setDataTypeMovie(resullt);
-                setSuggestList(resSuggestMovie);
-            } catch (error) {
-                console.log(error);
-            }
-        };
+    const { typeMovie, suggest } = useContext(ApiContext);
 
-        fetchApi();
-    }, []);
+    const dataTypeMovie = useMemo(() => 
+        typeMovie.filter((item) => item.category === 'odd'),
+        [typeMovie]
+    );
 
+    // Handle Scroll
     useEffect(() => {
         const handleScroll = () => {
             setShowBackGroundHeader(window.scrollY >= 70);
@@ -145,7 +141,7 @@ function Header({ noStateHeaderColor }) {
             }}
         >
             <div className={cx('logo')}>
-                <Link to={'/'} onClick={() => setItemActive(0)}>
+                <Link to={'/'}>
                     <img
                         src={require('../../../assets/images/logo/logo.png')}
                         alt=""
@@ -161,14 +157,21 @@ function Header({ noStateHeaderColor }) {
                             return false;
                         }
                         return (
-                            <li
-                                className={cx('navbar-item', {
-                                    active: route.path === (itemActive || '/'),
-                                })}
-                                onClick={() => setItemActive(route.path)}
-                                key={index}
-                            >
-                                <Link to={route.path}>{route.linkName}</Link>
+                            <li className={cx('navbar-item')} key={index}>
+                                <NavLink 
+                                    to={route.path}
+                                    style={({ isActive }) => {
+                                        return {
+                                          opacity: isActive ? "1" : "0.7",
+                                          fontWeight: isActive ? "800" : "600"
+                                        };
+                                    }}
+                                    className={({ isActive, isPending }) => {
+                                        return isActive ? cx("navbar-item-link","active") : cx("navbar-item-link");
+                                    }}
+                                >
+                                    {route.linkName}
+                                </NavLink>
                                 <div className={cx('bar-bottom')}></div>
                             </li>
                         );
@@ -177,7 +180,7 @@ function Header({ noStateHeaderColor }) {
             </div>
 
             <div className={cx('options')}>
-                <Search dataTypeMovie={dataTypeMovie} dataSuggestMovie={suggestList} />
+                <Search dataTypeMovie={dataTypeMovie} dataSuggestMovie={suggest} />
 
                 <div className={cx('announcement-icon')}>
                     <Notification hideOnClick data={notificationList}>
@@ -201,4 +204,4 @@ function Header({ noStateHeaderColor }) {
     );
 }
 
-export default Header
+export default Header;
