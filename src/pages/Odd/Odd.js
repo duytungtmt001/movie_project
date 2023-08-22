@@ -3,6 +3,7 @@ import ListMovieByCategory from '../../components/ListMovieByCategory';
 import { useContext, useEffect, useState } from 'react';
 import {ApiContext} from '../../context';
 import { listMovieOdd } from '../../apiServices';
+import { useNavigation } from 'react-router-dom';
 
 function Odd() {
     const [dataMovieOdd, setDataMovieOdd] = useState([]);
@@ -10,6 +11,7 @@ function Odd() {
     const apiData = useContext(ApiContext);
     
     const typeMovie = apiData.typeMovie.filter((item) => item.category === "odd");
+
 
     useEffect(() => {
         const getData = async () => {

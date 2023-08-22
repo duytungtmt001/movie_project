@@ -1,0 +1,13 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+
+    .icon {
+        animation: Rotate linear 1s infinite;
+    }
+}
+@keyframes Rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
