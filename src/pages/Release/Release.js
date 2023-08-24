@@ -1,33 +1,19 @@
 import ListMovieByCategory from '../../components/ListMovieByCategory';
 
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useState } from 'react';
 
 import {ApiContext} from '../../context';
-import { listMovieRelease } from '../../apiServices';
+import { useLoaderData } from 'react-router-dom';
 
 function Release() {
-    const [dataMovieRelease, setDataMovieRelease] = useState([]);
-    
     const apiData = useContext(ApiContext);
-    
-    const typeMovie = apiData.typeMovie.filter((item) => item.category === "release");
-    
-    useEffect(() => {
-        const getData = async () => {
-            try {
-                const res = await listMovieRelease();
-                setDataMovieRelease(res);
-            } catch (error) {
-                console.log(error);
-            }
-        };
-        getData();
-    }, []);
+    const dataLoader = useLoaderData()
+    const typeMovie = dataLoader.resType.filter((item) => item.category === 'release');
 
     return (
         <ListMovieByCategory
-            dataCarousel={apiData.listSliderRelease}
-            dataListMovie={dataMovieRelease}
+            dataCarousel={dataLoader.resListSlider}
+            dataListMovie={dataLoader.resListMovie}
             typeMovie={typeMovie}
             sourceSliderImg="Slider_Release"
             sourceListImg="List_Movie_Img"

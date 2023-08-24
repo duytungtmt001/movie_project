@@ -1,0 +1,21 @@
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding-top: 15%;
+    background-color: #fff !important;
+    color: #000;
+
+    .content {
+        text-align: center;
+
+        h1 {
+            font-size: 56px;
+        }
+
+        p {
+            font-size: 24px;
+        }
+    }
+}

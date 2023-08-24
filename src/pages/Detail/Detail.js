@@ -40,7 +40,7 @@ function Detail() {
         };
 
         callApi();
-    }, []);
+    }, [param.info]);
 
     return item.img_banner && <DetailMovie item={item} typeMovie={typeMovie} category={category} list={list} />;
 }

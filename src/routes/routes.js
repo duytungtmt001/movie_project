@@ -1,4 +1,4 @@
-import { routes } from '../config';
+import { routes, loaders } from '../config';
 
 import Home from '../pages/Home';
 import Release from '../pages/Release';
@@ -10,10 +10,15 @@ import Donate from '../pages/Donate';
 import Detail from '../pages/Detail';
 
 export const publicRoutes = [
-    { path: routes.home, component: Home, linkName: 'Trang chủ' },
-    { path: routes.release, component: Release, linkName: 'Phim chiếu rạp' },
-    { path: routes.odd, component: Odd, linkName: 'Phim lẻ' },
-    { path: routes.series, component: Series, linkName: 'Phim bộ' },
+    { path: routes.home, component: Home, linkName: 'Trang chủ', loader: loaders.home },
+    {
+        path: routes.release,
+        component: Release,
+        linkName: 'Phim chiếu rạp',
+        loader: loaders.release,
+    },
+    { path: routes.odd, component: Odd, linkName: 'Phim lẻ', loader: loaders.odd },
+    { path: routes.series, component: Series, linkName: 'Phim bộ', loader: loaders.series },
     { path: routes.wishlist, component: Wishlist, linkName: 'Danh sách yêu thích' },
     { path: routes.donate, component: Donate, linkName: 'Donate me' },
     { path: routes.detail, component: Detail },

@@ -2,37 +2,23 @@ import ListMovieByCategory from '../../components/ListMovieByCategory';
 
 import { useContext, useEffect, useState } from 'react';
 import {ApiContext} from '../../context';
-import { listMovieOdd } from '../../apiServices';
-import { useNavigation } from 'react-router-dom';
+import { useLoaderData, useNavigation } from 'react-router-dom';
 
 function Odd() {
-    const [dataMovieOdd, setDataMovieOdd] = useState([]);
-    
     const apiData = useContext(ApiContext);
+    const typeMovie = apiData.typeMovie.filter((item) => item.category === "odd");  
+    const dataLoader = useLoaderData();
     
-    const typeMovie = apiData.typeMovie.filter((item) => item.category === "odd");
-
-
-    useEffect(() => {
-        const getData = async () => {
-            try {
-                const res = await listMovieOdd();
-                setDataMovieOdd(res);
-            } catch (error) {
-                console.log(error);
-            }
-        };
-        getData();
-    }, []);
-
     return (
-        <ListMovieByCategory
-            dataCarousel={apiData.listSliderOdd}
-            dataListMovie={dataMovieOdd}
-            typeMovie={typeMovie}
-            sourceSliderImg="Slider_Odd"
-            sourceListImg="List_Movie_Img"
-        />
+        <div>
+            <ListMovieByCategory
+                dataCarousel={dataLoader.resListSlider}
+                dataListMovie={dataLoader.resListMovie}
+                typeMovie={typeMovie}
+                sourceSliderImg="Slider_Odd"
+                sourceListImg="List_Movie_Img"
+            />
+        </div>
     );
 }
 

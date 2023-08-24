@@ -6,15 +6,9 @@ import SliderCarousel from '../Slider';
 
 import Button from '../Button';
 import Tippy from '@tippyjs/react';
-import { useMatch } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 function DetailMovie({ item, typeMovie, list }) {
-
-    const match = useMatch('/detail/:info');
-
-    console.log(match);
-
     const typeMovieItem = () => {
         return typeMovie.find((type, index) => {
             return item.typeMovie_id === type.id;

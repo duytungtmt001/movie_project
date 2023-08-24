@@ -13,6 +13,7 @@ function SliderCarousel({
     data = [],
     SlideComponent = Slide,
     sourceListImg,
+    arrows = true,
     sourceSliderImg,
     classNameSlide = 'slide',
     variableWidth = false,
@@ -61,6 +62,7 @@ function SliderCarousel({
 
     const settings = {
         dots,
+        arrows,
         fade,
         speed,
         easing,

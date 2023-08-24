@@ -52,7 +52,8 @@ body {
     font-size: 1.6rem;
     line-height: 1.5;
     color: var(--text-color);
-    overflow-y: overlay;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 button {
@@ -89,5 +90,14 @@ body {
 
     .tippy-arrow {
         color: #131319;
+    }
+}
+
+@keyframes Opacity {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }

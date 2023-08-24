@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext } from 'react';
 import SliderCarousel from '../../components/Slider';
 import SlideWithDescription from '../../components/Slider/SlideWithDescription';
 
@@ -7,78 +7,14 @@ import styles from './Home.module.scss';
 import { ArrowRightIcon } from '../../components/Icons';
 
 import { ApiContext } from '../../context';
-import { listMovieOdd, listMovieRelease, listMovieSeries, listTrendHome } from '../../apiServices';
+import { useLoaderData } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
 function Home() {
-    const [dataMovieTrend, setDataMovieTrend] = useState()
-    const [dataMovieOdd, setDataMovieOdd] = useState();
-    const [dataMovieSeries, setDataMovieSeries] = useState();
-    const [dataMovieRelease, setDataMovieRelease] = useState();
-
     const apiData = useContext(ApiContext);
-    
 
-    useEffect(() => {
-        const getData = async () => {
-            try {
-                const res = await listMovieOdd();
-                let result = [];
-                for(let i = 0; i<10; i++) {
-                    result.push(res[i])
-                }
-                setDataMovieOdd(result);
-            } catch (error) {
-                console.log(error);
-            }
-        };
-        getData();
-    }, []);
-
-    useEffect(() => {
-        const getData = async () => {
-            try {
-                const res = await listMovieSeries();
-                let result = [];
-                for(let i = 0; i<10; i++) {
-                    result.push(res[i])
-                }
-                setDataMovieSeries(result);
-            } catch (error) {
-                console.log(error);
-            }
-        };
-        getData();
-    }, []);
-
-    useEffect(() => {
-        const getData = async () => {
-            try {
-                const res = await listMovieRelease();
-                let result = [];
-                for(let i = 0; i<10; i++) {
-                    result.push(res[i])
-                }
-                setDataMovieRelease(result);
-            } catch (error) {
-                console.log(error);
-            }
-        };
-        getData();
-    }, []);
-
-    useEffect(() => {
-        const getData = async () => {
-            try {
-                const res = await listTrendHome();
-                setDataMovieTrend(res);
-            } catch (error) {
-                console.log(error);
-            }
-        };
-        getData();
-    }, []);
+    const loaderData = useLoaderData()
 
     return (
         <div className={cx('wrapper')}>
@@ -110,7 +46,7 @@ function Home() {
                     </div>
                     <div className={cx('list-slider')}>
                         <SliderCarousel
-                            data={dataMovieTrend}
+                            data={loaderData.resultTrend}
                             sourceListImg="Home_Slider_Trend"
                             classNameSlide={cx('list-slide-padding')}
                             responsive
@@ -130,7 +66,6 @@ function Home() {
                     <img alt="" src={require('../../assets/images/Home_List_Banner/2.jpg')} />
                 </div>
 
-                
                 <div className={cx('list-movie', 'list-release')}>
                     <div className={cx('list-title')}>
                         <p className={cx('title-head')}>Phim Chiếu Rạp Mới Nhất</p>
@@ -142,7 +77,7 @@ function Home() {
                     </div>
                     <div className={cx('list-slider')}>
                         <SliderCarousel
-                            data={dataMovieRelease}
+                            data={loaderData.resultRelease}
                             sourceListImg="List_Movie_Img"
                             classNameSlide={cx('list-slide-padding')}
                             responsive
@@ -155,7 +90,6 @@ function Home() {
                         />
                     </div>
                 </div>
-                
 
                 <div className={cx('list-movie', 'list-odd')}>
                     <div className={cx('list-title')}>
@@ -168,7 +102,7 @@ function Home() {
                     </div>
                     <div className={cx('list-slider')}>
                         <SliderCarousel
-                            data={dataMovieOdd}
+                            data={loaderData.resultOdd}
                             sourceListImg="List_Movie_Img"
                             classNameSlide={cx('list-slide-padding')}
                             responsive
@@ -197,7 +131,7 @@ function Home() {
                     </div>
                     <div className={cx('list-slider')}>
                         <SliderCarousel
-                            data={dataMovieSeries}
+                            data={loaderData.resultSeries}
                             sourceListImg="List_Movie_Img"
                             classNameSlide={cx('list-slide-padding')}
                             responsive
@@ -222,7 +156,7 @@ function Home() {
                     </div>
                     <div className={cx('list-slider')}>
                         <SliderCarousel
-                            data={dataMovieSeries}
+                            data={loaderData.resultSeries}
                             sourceListImg="List_Movie_Img"
                             classNameSlide={cx('list-slide-padding')}
                             responsive
