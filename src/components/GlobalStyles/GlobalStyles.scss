@@ -36,23 +36,26 @@ body {
 html *::-webkit-scrollbar {
     border-radius: 0;
     width: 10px;
+    transition: all linear 1s;
 }
 
 html *::-webkit-scrollbar-thumb {
     border-radius: 4px;
     background-color: rgba(255, 255, 255, 0.8);
+    transition: all linear 1s;
 }
 
 html *::-webkit-scrollbar-track {
     border-radius: 0;
     background-color: rgba(0, 0, 0, 0);
+    transition: all linear 1s;
 }
 
 body {
     font-size: 1.6rem;
     line-height: 1.5;
     color: var(--text-color);
-    overflow-y: auto;
+    overflow-y: scroll;
     overflow-x: hidden;
 }
 

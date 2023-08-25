@@ -6,9 +6,16 @@ import SliderCarousel from '../Slider';
 
 import Button from '../Button';
 import Tippy from '@tippyjs/react';
+import { useEffect, useState } from 'react';
+import { redirect, useParams } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
-function DetailMovie({ item, typeMovie, list }) {
+function DetailMovie({ item, typeMovie, list, type }) {
+
+    useEffect(() => {
+        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    }, [item])
+
     const typeMovieItem = () => {
         return typeMovie.find((type, index) => {
             return item.typeMovie_id === type.id;

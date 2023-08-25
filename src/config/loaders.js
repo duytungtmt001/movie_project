@@ -1,16 +1,20 @@
-import { listMovieOdd, listMovieRelease, listMovieSeries, listTrendHome, sliderOdd, sliderRelease, sliderSeries, typeMovieApi } from "../apiServices";
-
-const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+import {
+    getMovieById,
+    listMovieOdd,
+    listMovieRelease,
+    listMovieSeries,
+    listTrendHome,
+    sliderOdd,
+    sliderRelease,
+    sliderSeries,
+    typeMovieApi,
+} from '../apiServices';
 
 export const loaders = {
     odd: async () => {
         try {
             const resListMovie = await listMovieOdd();
-            const resListSlider = await sliderOdd();
-            return {
-                resListMovie,
-                resListSlider,
-            };
+            return resListMovie;
         } catch (error) {
             console.log(error);
         }
@@ -18,11 +22,7 @@ export const loaders = {
     series: async () => {
         try {
             const resListMovie = await listMovieSeries();
-            const resListSlider = await sliderSeries();
-            return {
-                resListMovie,
-                resListSlider,
-            };
+            return resListMovie;
         } catch (error) {
             console.log(error);
         }
@@ -30,13 +30,31 @@ export const loaders = {
     release: async () => {
         try {
             const resListMovie = await listMovieRelease();
-            const resListSlider = await sliderRelease();
-            const resType = await typeMovieApi();
-            return {
-                resListMovie,
-                resListSlider,
-                resType,
-            };
+            return resListMovie;
+        } catch (error) {
+            console.log(error);
+        }
+    },
+    detail: async ({ params }) => {
+        const [type, id] = params.info.split('-');
+        let listMovie;
+        switch (type) {
+            case 'odd':
+                listMovie = listMovieOdd;
+                break;
+            case 'series':
+                listMovie = listMovieSeries;
+                break;
+            case 'release':
+                listMovie = listMovieRelease;
+                break;
+            default:
+                console.error('Category không hợp lệ');
+        }
+        try {
+            const resListMovie = await listMovie();
+            const resMovie = await getMovieById(type, id);
+            return { resListMovie, resMovie, type };
         } catch (error) {
             console.log(error);
         }
@@ -59,7 +77,7 @@ export const loaders = {
                 resultTrend,
                 resultOdd,
                 resultSeries,
-                resultRelease
+                resultRelease,
             };
         } catch (error) {
             console.log(error);

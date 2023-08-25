@@ -11,8 +11,8 @@ function Series() {
     
     return (
         <ListMovieByCategory
-            dataCarousel={dataLoader.resListSlider}
-            dataListMovie={dataLoader.resListMovie}
+            dataCarousel={apiData.listSliderSeries}
+            dataListMovie={dataLoader}
             typeMovie={typeMovie}
             sourceSliderImg="Slider_Series"
             sourceListImg="List_Movie_Img"

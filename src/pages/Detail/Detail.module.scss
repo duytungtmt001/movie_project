@@ -1,0 +1,12 @@
+.wrapper {
+    animation: Opacity linear 1s;
+}
+
+@keyframes Opacity {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

@@ -1,48 +1,26 @@
-import { useParams } from 'react-router-dom';
+import { useLoaderData } from 'react-router-dom';
 import DetailMovie from '../../components/DetailMovie';
-import { useContext, useState, useEffect } from 'react';
+import { useContext } from 'react';
 import { ApiContext } from '../../context/ApiProvider';
-import { listMovieOdd, listMovieSeries, listMovieRelease } from '../../apiServices';
+
+import classNames from 'classnames/bind';
+import styles from './Detail.module.scss';
+const cx = classNames.bind(styles);
 
 function Detail() {
-    const param = useParams();
-    const [category, nameMovie] = param.info.split('-');
-
+    const dataLoader = useLoaderData();
     const { typeMovie } = useContext(ApiContext);
-    const [item, setItem] = useState({});
-    const [list, setList] = useState([])
 
-    useEffect(() => {
-        let listMovie;
-        switch (category) {
-            case 'odd':
-                listMovie = listMovieOdd;
-                break;
-            case 'series':
-                listMovie = listMovieSeries;
-                break;
-            case 'release':
-                listMovie = listMovieRelease;
-                break;
-            default:
-                console.error('Category không hợp lệ');
-        }
-
-        const callApi = async () => {
-            try {
-                const res = await listMovie();
-                const result = res.find((child, index) => child.name === nameMovie);
-                setList(res);
-                setItem(result);
-            } catch (error) {
-                console.log(error);
-            }
-        };
-
-        callApi();
-    }, [param.info]);
-
-    return item.img_banner && <DetailMovie item={item} typeMovie={typeMovie} category={category} list={list} />;
+    return (
+        <div className={cx('wrapper')}>
+            <DetailMovie
+                item={dataLoader.resMovie}
+                typeMovie={typeMovie}
+                list={dataLoader.resListMovie}
+                type={dataLoader.type}
+            />
+        </div>
+    );
 }
 
 export default Detail;

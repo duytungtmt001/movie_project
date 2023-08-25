@@ -12,8 +12,8 @@ function Odd() {
     return (
         <div>
             <ListMovieByCategory
-                dataCarousel={dataLoader.resListSlider}
-                dataListMovie={dataLoader.resListMovie}
+                dataCarousel={apiData.listSliderOdd}
+                dataListMovie={dataLoader}
                 typeMovie={typeMovie}
                 sourceSliderImg="Slider_Odd"
                 sourceListImg="List_Movie_Img"

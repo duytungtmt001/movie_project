@@ -146,7 +146,7 @@ function Slide({ sourceListImg, item, slideLarge, typeMovie, reRenderParent }) {
                                 }}
                             >
                                 <Link
-                                    to={`/detail/${categoryMovieItem()}-${item.name}`}
+                                    to={`/detail/${categoryMovieItem()}-${item.id}`}
                                 >
                                     {item.name}
                                 </Link>
