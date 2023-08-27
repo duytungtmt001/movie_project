@@ -107,7 +107,6 @@
             margin: 20px 0;
             
             .actor-right {
-                padding-left: 12px;
                 font-weight: 600;
                 color: #A0A0A0;
             }
@@ -115,12 +114,19 @@
             .actor-left {
                 color: #C7C7C7;
                 font-weight: 700;
+                width: 20%;
             }
 
             .actor-right-detail {
                 width: fit-content;
                 cursor: pointer;
                 transition: all linear .2s;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                display: -webkit-box;
+                overflow: hidden;
+                text-overflow: ellipsis;
+
                 &:hover {
                     color: #fff
                 }

@@ -61,9 +61,9 @@ function DetailMovie({ item, typeMovie, list, type }) {
 
                     <div className={cx('content-actor')}>
                         <div className={cx('actor-left')}>
-                            <p>{`Diễn viên :`}</p>
-                            <p>{`Đạo diễn :`}</p>
-                            <p>{`Thể loại :`}</p>
+                            <p><span>Diễn viên</span> <span>:</span></p>
+                            <p><span>Đạo diễn</span> <span>:</span></p>
+                            <p><span>Thể loại</span> <span>:</span></p>
                         </div>
                         <div className={cx('actor-right')}>
                             <div className={cx('actor-right-detail')}>{item.actor}</div>

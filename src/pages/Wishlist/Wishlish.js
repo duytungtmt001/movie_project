@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import styles from './Wishlist.module.scss';
 import classNames from 'classnames/bind';
 
@@ -7,6 +7,8 @@ import SliderCarousel from '../../components/Slider'
 import { ApiContext } from '../../context';
 import { wishlist } from '../../apiServices';
 import { ListEmpty } from '../../components/Icons';
+import ReactPlayer from 'react-player';
+import Video from '../../components/Video';
 
 
 const cx = classNames.bind(styles);
@@ -20,10 +22,15 @@ function Wishlish() {
         setUpdateData(!updateData)
     }
 
+    const itemDemo = {
+        video: "2.mp4"
+    }
+
     const renderWishlist = () => (
         <div className={cx('wrapper')}>
-            <div className={cx('title')}>Danh sách phim yêu thích</div>
-            {dataWishlist.map((item, index) => (
+            {/* <div className={cx('title')}>Danh sách phim yêu thích</div> */}
+            <div style={{position: "fixed", top: 0, left: 0, right: 0, bottom: 0, zIndex: 99999999999999999999}}><Video item={itemDemo} controls width='100%' height='80vh'/></div>
+            {/* {dataWishlist.map((item, index) => (
                 <div className={cx('slider')} key={index}>
                     <SliderCarousel
                         reRenderParent={handleReRender}
@@ -36,7 +43,7 @@ function Wishlish() {
                         draggable={false}
                     />
                 </div>
-            ))}
+            ))} */}
         </div>
     )
 
