@@ -9,8 +9,8 @@ function Defaultlayout({children}) {
     const navigation = useNavigation()
     return (
         <div className={clsx(styles.wrapper)}>
-            {navigation.state === 'loading' && <Loading />}
-            {children.type.name === 'Detail' ? <Header noStateHeaderColor /> : <Header />}
+            {/* {navigation.state === 'loading' && <Loading />}
+            {children.type.name === 'Detail' ? <Header noStateHeaderColor /> : <Header />} */}
             {children}
         </div>
     );

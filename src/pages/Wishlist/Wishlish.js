@@ -1,15 +1,13 @@
-import { useContext, useEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import styles from './Wishlist.module.scss';
 import classNames from 'classnames/bind';
 
-import SliderCarousel from '../../components/Slider'
+import SliderCarousel from '../../components/Slider';
 
 import { ApiContext } from '../../context';
 import { wishlist } from '../../apiServices';
 import { ListEmpty } from '../../components/Icons';
-import ReactPlayer from 'react-player';
 import Video from '../../components/Video';
-
 
 const cx = classNames.bind(styles);
 
@@ -19,47 +17,43 @@ function Wishlish() {
     const [updateData, setUpdateData] = useState(false);
 
     const handleReRender = () => {
-        setUpdateData(!updateData)
-    }
-
-    const itemDemo = {
-        video: "2.mp4"
-    }
+        setUpdateData(!updateData);
+    };
 
     const renderWishlist = () => (
-        <div className={cx('wrapper')}>
-            {/* <div className={cx('title')}>Danh sách phim yêu thích</div> */}
-            <div style={{position: "fixed", top: 0, left: 0, right: 0, bottom: 0, zIndex: 99999999999999999999}}><Video item={itemDemo} controls width='100%' height='80vh'/></div>
-            {/* {dataWishlist.map((item, index) => (
-                <div className={cx('slider')} key={index}>
-                    <SliderCarousel
-                        reRenderParent={handleReRender}
-                        data={item}
-                        typeMovie={apiData.typeMovie}
-                        sourceListImg="List_Movie_Img"
-                        classNameSlide={cx('padding')}
-                        slidesToShow={5}
-                        responsive
-                        draggable={false}
-                    />
-                </div>
-            ))} */}
-        </div>
-    )
+        // <div className={cx('wrapper')}>
+        //     <div className={cx('title')}>Danh sách phim yêu thích</div>
+        //     {dataWishlist.map((item, index) => (
+        //         <div className={cx('slider')} key={index}>
+        //             <SliderCarousel
+        //                 reRenderParent={handleReRender}
+        //                 data={item}
+        //                 typeMovie={apiData.typeMovie}
+        //                 sourceListImg="List_Movie_Img"
+        //                 classNameSlide={cx('padding')}
+        //                 slidesToShow={5}
+        //                 responsive
+        //                 draggable={false}
+        //             />
+        //         </div>
+        //     ))}
+        // </div>
+        <Video />
+    );
 
     // Function split data
-    const splitData  = (list) => {
+    const splitData = (list) => {
         const a = [];
         const lengthList = Math.ceil(list.length / 5);
-        for(let i=0; i<lengthList; i++) {
+        for (let i = 0; i < lengthList; i++) {
             const b = [];
-            for(let j=1; j<=5; j++) {
+            for (let j = 1; j <= 5; j++) {
                 list[0] && b.push(list.shift());
             }
-            a.push(b)
+            a.push(b);
         }
-        return  a;
-    }
+        return a;
+    };
 
     // Get wishlist
     useEffect(() => {
@@ -72,7 +66,7 @@ function Wishlish() {
             }
         };
 
-        getWishlist()
+        getWishlist();
     }, [updateData]);
 
     return dataWishlist.length > 0 ? (
@@ -85,4 +79,4 @@ function Wishlish() {
     );
 }
 
-export default Wishlish
+export default Wishlish;
