@@ -10,6 +10,8 @@ import {
     typeMovieApi,
 } from '../apiServices';
 
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
 export const loaders = {
     odd: async () => {
         try {

@@ -11,10 +11,9 @@ import { redirect, useParams } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 function DetailMovie({ item, typeMovie, list, type }) {
-
     useEffect(() => {
         window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-    }, [item])
+    }, [item]);
 
     const typeMovieItem = () => {
         return typeMovie.find((type, index) => {
@@ -23,13 +22,12 @@ function DetailMovie({ item, typeMovie, list, type }) {
     };
 
     const listSlider = () => {
-        return list.reduce(
-            (result, currentMovie, index) =>
+        return list.reduce((result, currentMovie, index) => {
+            return currentMovie.name !== item.name &&
                 currentMovie.typeMovie_id === item.typeMovie_id
-                    ? [...result, currentMovie]
-                    : result,
-            [],
-        );
+                ? [...result, currentMovie]
+                : result;
+        }, []);
     };
 
     return (
@@ -111,7 +109,6 @@ function DetailMovie({ item, typeMovie, list, type }) {
                                 </Button>
                             </div>
                         </Tippy>
-
                     </div>
                 </div>
             </div>
