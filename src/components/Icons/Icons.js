@@ -5,11 +5,12 @@ import { memo } from 'react';
 
 const cx = classNames.bind(styles);
 
-export const AnnouncementIcon = ({ width = '3rem', height = '3rem', className }) => (
+export const AnnouncementIcon = ({ width = '3rem', height = '3rem', className, onClick }) => (
     <svg
         width={width}
         height={height}
         className={cx('icon', { [className]: className })}
+        onClick={onClick}
         viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"
     >
@@ -21,7 +22,7 @@ export const AnnouncementIcon = ({ width = '3rem', height = '3rem', className })
     </svg>
 );
 
-export const SearchIcon = memo(({ width = '3rem', height = '3rem', className }) => {
+export const SearchIcon = memo(({ width = '3rem', height = '3rem', className, onClick }) => {
     return (
         <svg
             width={width}
@@ -39,7 +40,7 @@ export const SearchIcon = memo(({ width = '3rem', height = '3rem', className }) 
     );
 });
 
-export const BackIcon = ({ width = '3rem', height = '3rem', className }) => (
+export const BackIcon = ({ width = '3rem', height = '3rem', className, onClick }) => (
     <svg
         className={cx('icon', { [className]: className })}
         width={width}
@@ -56,7 +57,7 @@ export const BackIcon = ({ width = '3rem', height = '3rem', className }) => (
     </svg>
 );
 
-export const AccountIcon = ({ width = '3rem', height = '3rem', className }) => (
+export const AccountIcon = ({ width = '3rem', height = '3rem', className, onClick }) => (
     <svg
         className={cx('icon', { [className]: className })}
         width={width}
@@ -77,7 +78,7 @@ export const AccountIcon = ({ width = '3rem', height = '3rem', className }) => (
     </svg>
 );
 
-export const ThemeIcon = ({ width = '3rem', height = '3rem', className }) => (
+export const ThemeIcon = ({ width = '3rem', height = '3rem', className, onClick }) => (
     <svg
         className={cx('icon', { [className]: className })}
         width={width}
@@ -96,7 +97,7 @@ export const ThemeIcon = ({ width = '3rem', height = '3rem', className }) => (
     </svg>
 );
 
-export const LogOutIcon = ({ width = '3rem', height = '3rem', className }) => (
+export const LogOutIcon = ({ width = '3rem', height = '3rem', className, onClick }) => (
     <svg
         className={cx('icon', { [className]: className })}
         width={width}
@@ -115,7 +116,7 @@ export const LogOutIcon = ({ width = '3rem', height = '3rem', className }) => (
     </svg>
 );
 
-export const WishlistIcon = ({ width = '3rem', height = '3rem', className }) => (
+export const WishlistIcon = ({ width = '3rem', height = '3rem', className, onClick }) => (
     <svg
         className={cx('icon', { [className]: className })}
         fill="currentColor"
@@ -146,7 +147,7 @@ export const WishlistIcon = ({ width = '3rem', height = '3rem', className }) => 
     </svg>
 );
 
-export const LanguageIcon = ({ width = '3rem', height = '3rem', className }) => (
+export const LanguageIcon = ({ width = '3rem', height = '3rem', className, onClick }) => (
     <svg
         className={cx('icon', { [className]: className })}
         width={width}
@@ -171,7 +172,7 @@ export const LanguageIcon = ({ width = '3rem', height = '3rem', className }) => 
     </svg>
 );
 
-export const SettingIcon = ({ width = '3rem', height = '3rem', className }) => (
+export const SettingIcon = ({ width = '3rem', height = '3rem', className, onClick }) => (
     <svg
         className={cx('icon', { [className]: className })}
         width={width}
@@ -195,7 +196,7 @@ export const SettingIcon = ({ width = '3rem', height = '3rem', className }) => (
     </svg>
 );
 
-export const NoNotifiIcon = ({ width = '3rem', height = '3rem', className }) => (
+export const NoNotifiIcon = ({ width = '3rem', height = '3rem', className, onClick }) => (
     <svg
         width={width}
         height={height}
@@ -227,10 +228,10 @@ export const CloseIcon = ({ width = '3rem', height = '3rem', className, onClick 
         width={width}
         height={height}
         className={cx('icon', { [className]: className })}
+        onClick={onClick}
         viewBox="0 0 24 24"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        onClick={onClick}
     >
         <rect width="24" height="24" fill="transparent" />
         <path
@@ -248,11 +249,12 @@ export const CloseIcon = ({ width = '3rem', height = '3rem', className, onClick 
     </svg>
 );
 
-export const LoadingIcon = ({ width = '3rem', height = '3rem', className }) => (
+export const LoadingIcon = ({ width = '3rem', height = '3rem', className, onClick }) => (
     <svg
         width={width}
         height={height}
         className={cx('icon', { [className]: className })}
+        onClick={onClick}
         viewBox="0 0 20 20"
         xmlns="http://www.w3.org/2000/svg"
     >
@@ -264,12 +266,13 @@ export const LoadingIcon = ({ width = '3rem', height = '3rem', className }) => (
     </svg>
 );
 
-export const ArrowDownIcon = ({ width = '3rem', height = '3rem', className }) => (
+export const ArrowDownIcon = ({ width = '3rem', height = '3rem', className, onClick }) => (
     <svg
         fill="currentColor"
         width={width}
         height={height}
         className={cx('icon', { [className]: className })}
+        onClick={onClick}
         viewBox="0 0 32 32"
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
@@ -278,11 +281,12 @@ export const ArrowDownIcon = ({ width = '3rem', height = '3rem', className }) =>
     </svg>
 );
 
-export const ArrowUpIcon = ({ width = '3rem', height = '3rem', className }) => (
+export const ArrowUpIcon = ({ width = '3rem', height = '3rem', className, onClick }) => (
     <svg
         width={width}
         height={height}
         className={cx('icon', { [className]: className })}
+        onClick={onClick}
         viewBox="0 -4.5 20 20"
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
@@ -304,12 +308,13 @@ export const ArrowUpIcon = ({ width = '3rem', height = '3rem', className }) => (
     </svg>
 );
 
-export const ArrowLeftIcon = ({ width = '3rem', height = '3rem', className }) => (
+export const ArrowLeftIcon = ({ width = '3rem', height = '3rem', className, onClick }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         width={width}
         height={height}
         className={cx('icon', { [className]: className })}
+        onClick={onClick}
         viewBox="0 0 40 40"
     >
         <g fill="currentColor" fillRule="evenodd" opacity=".652">
@@ -325,12 +330,13 @@ export const ArrowLeftIcon = ({ width = '3rem', height = '3rem', className }) =>
     </svg>
 );
 
-export const ArrowRightIcon = ({ width = '3rem', height = '3rem', className }) => (
+export const ArrowRightIcon = ({ width = '3rem', height = '3rem', className, onClick }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         width={width}
         height={height}
         className={cx('icon', { [className]: className })}
+        onClick={onClick}
         viewBox="0 0 40 40"
     >
         <g fill="currentColor" fillRule="evenodd">
@@ -346,13 +352,14 @@ export const ArrowRightIcon = ({ width = '3rem', height = '3rem', className }) =
     </svg>
 );
 
-export const ArrowLeftFadeIcon = ({ width = '3rem', height = '3rem', className }) => (
+export const ArrowLeftFadeIcon = ({ width = '3rem', height = '3rem', className, onClick }) => (
     <svg
         fill="currentColor"
         xmlns="http://www.w3.org/2000/svg"
         width={width}
         height={height}
         className={cx('icon', { [className]: className })}
+        onClick={onClick}
         viewBox="0 0 36 36"
     >
         <path
@@ -362,13 +369,14 @@ export const ArrowLeftFadeIcon = ({ width = '3rem', height = '3rem', className }
     </svg>
 );
 
-export const ArrowRightFadeIcon = ({ width = '3rem', height = '3rem', className }) => (
+export const ArrowRightFadeIcon = ({ width = '3rem', height = '3rem', className, onClick }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="currentColor"
         width={width}
         height={height}
         className={cx('icon', { [className]: className })}
+        onClick={onClick}
         viewBox="0 0 36 36"
     >
         <path
@@ -378,11 +386,12 @@ export const ArrowRightFadeIcon = ({ width = '3rem', height = '3rem', className 
     </svg>
 );
 
-export const TrailerIcon = ({ width = '3rem', height = '3rem', className }) => (
+export const TrailerIcon = ({ width = '3rem', height = '3rem', className, onClick }) => (
     <svg
         width={width}
         height={height}
         className={cx('icon', { [className]: className })}
+        onClick={onClick}
         id="icon-trailer"
         viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"
@@ -395,13 +404,14 @@ export const TrailerIcon = ({ width = '3rem', height = '3rem', className }) => (
     </svg>
 );
 
-export const PlusIcon = ({ width = '3rem', height = '3rem', className }) => (
+export const PlusIcon = ({ width = '3rem', height = '3rem', className, onClick }) => (
     <svg
         viewBox="0 0 448 448"
         id="add-list-icon"
         width={width}
         height={height}
         className={cx('icon', { [className]: className })}
+        onClick={onClick}
     >
         <path
             fill="currentColor"
@@ -410,7 +420,7 @@ export const PlusIcon = ({ width = '3rem', height = '3rem', className }) => (
     </svg>
 );
 
-export const PlayIcon = ({ width = '3rem', height = '3rem', className }) => (
+export const PlayIcon = ({ width = '3rem', height = '3rem', className, onClick }) => (
     <svg
         version="1.1"
         viewBox="0 0 41.999 41.999"
@@ -418,6 +428,7 @@ export const PlayIcon = ({ width = '3rem', height = '3rem', className }) => (
         width={width}
         height={height}
         className={cx('icon', { [className]: className })}
+        onClick={onClick}
     >
         <path
             fill="currentColor"
@@ -426,11 +437,12 @@ export const PlayIcon = ({ width = '3rem', height = '3rem', className }) => (
     </svg>
 );
 
-export const PlayIconBorder = ({ width = '3rem', height = '3rem', className }) => (
+export const PlayIconBorder = ({ width = '3rem', height = '3rem', className, onClick }) => (
     <svg
         width={width}
         height={height}
         className={cx('icon', { [className]: className })}
+        onClick={onClick}
         viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"
     >
@@ -442,11 +454,12 @@ export const PlayIconBorder = ({ width = '3rem', height = '3rem', className }) =
     </svg>
 );
 
-export const AddListIcon = ({ width = '3rem', height = '3rem', className }) => (
+export const AddListIcon = ({ width = '3rem', height = '3rem', className, onClick }) => (
     <svg
         width={width}
         height={height}
         className={cx('icon', { [className]: className })}
+        onClick={onClick}
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
@@ -465,11 +478,12 @@ export const AddListIcon = ({ width = '3rem', height = '3rem', className }) => (
     </svg>
 );
 
-export const TickIcon = ({ width = '3rem', height = '3rem', className }) => (
+export const TickIcon = ({ width = '3rem', height = '3rem', className, onClick }) => (
     <svg
         width={width}
         height={height}
         className={cx('icon', { [className]: className })}
+        onClick={onClick}
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         fill="currentColor"
@@ -478,11 +492,12 @@ export const TickIcon = ({ width = '3rem', height = '3rem', className }) => (
     </svg>
 );
 
-export const ListEmpty = ({ width = '3rem', height = '3rem', className }) => (
+export const ListEmpty = ({ width = '3rem', height = '3rem', className, onClick }) => (
     <svg
         width={width}
         height={height}
         className={cx('icon', { [className]: className })}
+        onClick={onClick}
         viewBox="0 0 299 194"
         xmlns="http://www.w3.org/2000/svg"
     >
@@ -608,11 +623,12 @@ export const ListEmpty = ({ width = '3rem', height = '3rem', className }) => (
     </svg>
 );
 
-export const PlayIconTransparent = ({ width = '3rem', height = '3rem', className }) => (
+export const PlayIconTransparent = ({ width = '3rem', height = '3rem', className, onClick }) => (
     <svg
         width={width}
         height={height}
         className={cx('icon', { [className]: className })}
+        onClick={onClick}
         viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"
     >
@@ -624,11 +640,12 @@ export const PlayIconTransparent = ({ width = '3rem', height = '3rem', className
     </svg>
 );
 
-export const AddWishlistDetail = ({ width = '3rem', height = '3rem', className }) => (
+export const AddWishlistDetail = ({ width = '3rem', height = '3rem', className, onClick }) => (
     <svg
         width={width}
         height={height}
         className={cx('icon', { [className]: className })}
+        onClick={onClick}
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
@@ -647,11 +664,12 @@ export const AddWishlistDetail = ({ width = '3rem', height = '3rem', className }
     </svg>
 );
 
-export const BackVideoIcon = ({ width = '3rem', height = '3rem', className }) => (
+export const BackVideoIcon = ({ width = '3rem', height = '3rem', className, onClick }) => (
     <svg
         width={width}
         height={height}
         className={cx('icon', { [className]: className })}
+        onClick={onClick}
         id="Capa_1"
         fill="#ffffff"
         enableBackground="new 0 0 482.239 482.239"
@@ -662,11 +680,12 @@ export const BackVideoIcon = ({ width = '3rem', height = '3rem', className }) =>
     </svg>
 );
 
-export const RewindIconVideo = ({ width = '3rem', height = '3rem', className }) => (
+export const RewindIconVideo = ({ width = '3rem', height = '3rem', className, onClick }) => (
     <svg
         width={width}
         height={height}
         className={cx('icon', { [className]: className })}
+        onClick={onClick}
         viewBox="0 0 40 40"
         xmlns="http://www.w3.org/2000/svg"
     >
@@ -678,11 +697,12 @@ export const RewindIconVideo = ({ width = '3rem', height = '3rem', className }) 
     </svg>
 );
 
-export const PlayIconVideo = ({ width = '3rem', height = '3rem', className }) => (
+export const PlayIconVideo = ({ width = '3rem', height = '3rem', className, onClick }) => (
     <svg
         width={width}
         height={height}
         className={cx('icon', { [className]: className })}
+        onClick={onClick}
         viewBox="0 0 40 40"
         xmlns="http://www.w3.org/2000/svg"
     >
@@ -694,11 +714,12 @@ export const PlayIconVideo = ({ width = '3rem', height = '3rem', className }) =>
     </svg>
 );
 
-export const PauseIconVideo = ({ width = '3rem', height = '3rem', className }) => (
+export const PauseIconVideo = ({ width = '3rem', height = '3rem', className, onClick }) => (
     <svg
         width={width}
         height={height}
         className={cx('icon', { [className]: className })}
+        onClick={onClick}
         viewBox="0 0 40 40"
         xmlns="http://www.w3.org/2000/svg"
     >
@@ -710,11 +731,12 @@ export const PauseIconVideo = ({ width = '3rem', height = '3rem', className }) =
     </svg>
 );
 
-export const FowardIconVideo = ({ width = '3rem', height = '3rem', className }) => (
+export const FowardIconVideo = ({ width = '3rem', height = '3rem', className, onClick }) => (
     <svg
         width={width}
         height={height}
         className={cx('icon', { [className]: className })}
+        onClick={onClick}
         viewBox="0 0 40 40"
         xmlns="http://www.w3.org/2000/svg"
     >
@@ -726,11 +748,12 @@ export const FowardIconVideo = ({ width = '3rem', height = '3rem', className }) 
     </svg>
 );
 
-export const MutedIconVideo = ({ width = '3rem', height = '3rem', className }) => (
+export const MutedIconVideo = ({ width = '3rem', height = '3rem', className, onClick }) => (
     <svg
         width={width}
         height={height}
         className={cx('icon', { [className]: className })}
+        onClick={onClick}
         viewBox="0 0 40 40"
         xmlns="http://www.w3.org/2000/svg"
     >
@@ -742,12 +765,13 @@ export const MutedIconVideo = ({ width = '3rem', height = '3rem', className }) =
     </svg>
 );
 
-export const MaxVolumeIcon = ({ width = '3rem', height = '3rem', className }) => (
+export const MaxVolumeIcon = ({ width = '3rem', height = '3rem', className, onClick }) => (
     <svg
         id="icon-volume-on"
         width={width}
         height={height}
         className={cx('icon', { [className]: className })}
+        onClick={onClick}
         viewBox="0 0 40 40"
         xmlns="http://www.w3.org/2000/svg"
     >
@@ -759,12 +783,13 @@ export const MaxVolumeIcon = ({ width = '3rem', height = '3rem', className }) =>
     </svg>
 );
 
-export const MinVolumeIcon = ({ width = '3rem', height = '3rem', className }) => (
+export const MinVolumeIcon = ({ width = '3rem', height = '3rem', className, onClick }) => (
     <svg
         id="icon-volume-medium"
         width={width}
         height={height}
         className={cx('icon', { [className]: className })}
+        onClick={onClick}
         viewBox="0 0 40 40"
         xmlns="http://www.w3.org/2000/svg"
     >
@@ -776,11 +801,12 @@ export const MinVolumeIcon = ({ width = '3rem', height = '3rem', className }) =>
     </svg>
 );
 
-export const OptionsIconVideo = ({ width = '3rem', height = '3rem', className }) => (
+export const OptionsIconVideo = ({ width = '3rem', height = '3rem', className, onClick }) => (
     <svg
         width={width}
         height={height}
         className={cx('icon', { [className]: className })}
+        onClick={onClick}
         viewBox="0 0 40 40"
         xmlns="http://www.w3.org/2000/svg"
     >
@@ -792,11 +818,12 @@ export const OptionsIconVideo = ({ width = '3rem', height = '3rem', className })
     </svg>
 );
 
-export const SpeedIconVideo = ({ width = '3rem', height = '3rem', className }) => (
+export const SpeedIconVideo = ({ width = '3rem', height = '3rem', className, onClick }) => (
     <svg
         width={width}
         height={height}
         className={cx('icon', { [className]: className })}
+        onClick={onClick}
         viewBox="0 0 40 40"
         xmlns="http://www.w3.org/2000/svg"
     >
@@ -808,11 +835,12 @@ export const SpeedIconVideo = ({ width = '3rem', height = '3rem', className }) =
     </svg>
 );
 
-export const FeedbackIconVideo = ({ width = '3rem', height = '3rem', className }) => (
+export const FeedbackIconVideo = ({ width = '3rem', height = '3rem', className, onClick }) => (
     <svg
         width={width}
         height={height}
         className={cx('icon', { [className]: className })}
+        onClick={onClick}
         viewBox="0 0 40 40"
         xmlns="http://www.w3.org/2000/svg"
     >
@@ -824,11 +852,12 @@ export const FeedbackIconVideo = ({ width = '3rem', height = '3rem', className }
     </svg>
 );
 
-export const ZoomOutIcon = ({ width = '3rem', height = '3rem', className }) => (
+export const ZoomOutIcon = ({ width = '3rem', height = '3rem', className, onClick }) => (
     <svg
         width={width}
         height={height}
         className={cx('icon', { [className]: className })}
+        onClick={onClick}
         viewBox="0 0 40 40"
         xmlns="http://www.w3.org/2000/svg"
     >
@@ -840,11 +869,12 @@ export const ZoomOutIcon = ({ width = '3rem', height = '3rem', className }) => (
     </svg>
 );
 
-export const ZoomInIcon = ({ width = '3rem', height = '3rem', className }) => (
+export const ZoomInIcon = ({ width = '3rem', height = '3rem', className, onClick }) => (
     <svg
         width={width}
         height={height}
         className={cx('icon', { [className]: className })}
+        onClick={onClick}
         viewBox="0 0 40 40"
         xmlns="http://www.w3.org/2000/svg"
     >

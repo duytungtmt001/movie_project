@@ -34,7 +34,7 @@
         .icon {
             padding-left: 8px;
             cursor: pointer;
-            transition: all linear .2s;
+            transition: all linear 0.2s;
 
             &:hover {
                 transform: translateX(-4px);
@@ -54,7 +54,7 @@
     }
 }
 
-.video  {
+.video {
     position: relative;
     z-index: 1;
 }
@@ -65,28 +65,52 @@
     bottom: 0;
     left: 0;
     right: 0;
-}
-
-.control {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     padding: 0 20px 28px;
+    transition: all ease-in-out .4s;
 
-    .control-left,
-    .control-right {
+    .time-progress {
+        padding: 12px 20px;
         display: flex;
         align-items: center;
-        max-width: 20%;
+        justify-content: space-between;
+
+        .time-current,
+        .time-duration {
+            padding: 0 12px;
+        }
+
+        .range {
+            flex: 1;
+
+            input {
+                width: 100%;
+                height: 5px;
+                display: block;
+                cursor: pointer;
+            }
+        }
     }
 
-    .control-icon {
-        transition: all linear .2s;
-        padding: 0 18px;
-        cursor: pointer;
+    .control {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
 
-        &:hover {
-            transform: scale(1.4);
+        .control-left,
+        .control-right {
+            display: flex;
+            align-items: center;
+            max-width: 20%;
+        }
+
+        .control-icon {
+            padding: 0 18px;
+            transition: all linear 0.2s;
+            cursor: pointer;
+
+            &:hover {
+                transform: scale(1.4);
+            }
         }
     }
 }
