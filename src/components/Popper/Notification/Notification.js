@@ -1,10 +1,9 @@
 import classNames from 'classnames/bind'
 import styles from './Notification.module.scss'
 import Tippy from '@tippyjs/react/headless'
-import Image from '../../Image'
 import { NoNotifiIcon } from '../../Icons'
 
-import {motion, useSpring, useTransform} from 'framer-motion'
+import {motion, useSpring} from 'framer-motion'
 
 import Wrapper from '../Wrapper'
 

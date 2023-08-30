@@ -11,11 +11,17 @@ import {
     PauseIconVideo,
     PlayIconVideo,
     RewindIconVideo,
+    SizeIconVideo,
     SpeedIconVideo,
+    SubtitleIconVideo,
     ZoomInIcon,
+    ZoomOutIcon,
 } from '../Icons';
+import PopperVideo from '../Popper/PopperVideo';
+import Tippy from '@tippyjs/react';
 
 const cx = classNames.bind(styles);
+
 
 function Video({
     item = {},
@@ -36,14 +42,15 @@ function Video({
     const [playedVideo, setPlayedVideo] = useState(0);
     const [rangeValue, setRangeValue] = useState(0);
     const [playing, setPlaying] = useState(false);
+    const [zoom, setZoom] = useState(false);
     const [showControl, setShowControl] = useState(true);
-    const [movePageX, setMovePageX] = useState(0)
 
+    
     // const state = {
-    //     item,
-    //     playing,
-    //     loop,
-    //     controls,
+        //     item,
+        //     playing,
+        //     loop,
+        //     controls,
     //     light,
     //     volume,
     //     playbackRate,
@@ -54,11 +61,14 @@ function Video({
     //     playIcon,
     //     config,
     // };
+    let timerId = useRef();
+    
+    const handleChangeRangeValue = () => {};
 
     const styleControl = showControl
         ? {
               opacity: 1,
-          }
+            }
         : { opacity: 0 };
 
     function secondsToHms(d) {
@@ -66,7 +76,7 @@ function Video({
         var h = Math.floor(d / 3600);
         var m = Math.floor((d % 3600) / 60);
         var s = Math.floor((d % 3600) % 60);
-
+        
         var hDisplay = h > 0 ? `${h}:` : '0';
         var mDisplay = m > 0 ? `${m}:` : '0:';
         var sDisplay = s >= 0 && s < 10 ? `0${s}` : s < 0 ? '' : `${s}`;
@@ -76,19 +86,18 @@ function Video({
     const handleDuration = (duration) => {
         setVideoDuration(duration);
     };
-
+    
     const handleProgress = (progress) => {
         setPlayedVideo(progress.playedSeconds.toFixed());
         setRangeValue(progress.played * 100);
     };
 
-    const handleChangeRangeValue = () => {};
-
+    
     const handlePlayVideo = () => {
         setPlaying(!playing);
         setShowControl(playing);
     };
-
+    
     const handleRewindVideo = () => {
         videoRef.current.seekTo(videoRef.current.getCurrentTime() - 10);
     };
@@ -99,26 +108,113 @@ function Video({
 
     const handleMouseOver = () => {
         setShowControl(true);
-        // setTimeout(() => {
-        //     showControl && playing && setShowControl(false);
-        // }, 3000);
     };
 
     const handleMouseMove = (e) => {
         setShowControl(true);
-        setMovePageX(e.pageX)
+        timerId.current && clearTimeout(timerId.current);
         if (playing) {
-            setTimeout(() => {
-                console.log("e:" ,e.pageX);
-                console.log("move" ,movePageX);
+            timerId.current = setTimeout(() => {
                 showControl && setShowControl(false);
-            }, 5000);
+            }, 3000);
         }
     };
 
     const handleMountLeave = () => {
         playing && setShowControl(false);
     };
+
+    const handleZoomVideo = () => {
+        if (
+            (document.fullScreenElement !== undefined && document.fullScreenElement === null) ||
+            (document.msFullscreenElement !== undefined && document.msFullscreenElement === null) ||
+            (document.mozFullScreen !== undefined && !document.mozFullScreen) ||
+            (document.webkitIsFullScreen !== undefined && !document.webkitIsFullScreen)
+        ) {
+            if (document.body.requestFullScreen) {
+                document.body.requestFullScreen();
+            } else if (document.body.mozRequestFullScreen) {
+                document.body.mozRequestFullScreen();
+            } else if (document.body.webkitRequestFullScreen) {
+                document.body.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+            } else if (document.body.msRequestFullscreen) {
+                document.body.msRequestFullscreen();
+            }
+            setZoom(true);
+        } else {
+            if (document.cancelFullScreen) {
+                document.cancelFullScreen();
+            } else if (document.mozCancelFullScreen) {
+                document.mozCancelFullScreen();
+            } else if (document.webkitCancelFullScreen) {
+                document.webkitCancelFullScreen();
+            } else if (document.msExitFullscreen) {
+                document.msExitFullscreen();
+            }
+            setZoom(false);
+        }
+    }
+
+    const renderSubtitle = () => (
+        <div className={cx('subtitle-container')}>
+            <div className={cx('subtitle-item')}>
+                <div className={cx('subtitle-header')}>
+                    <SubtitleIconVideo />
+                    <p>Phụ đề</p>
+                </div>
+                <div className={cx('subtitle-content')}>
+                    <p className={cx('subtitle-content-item')}>Tiếng Việt</p>
+                    <p className={cx('subtitle-content-item')}>English</p>
+                    <p className={cx('subtitle-content-item')}>Tắt</p>
+                </div>
+            </div>
+            <div className={cx('subtitle-item')}>
+                <div className={cx('subtitle-header')}>
+                    <SizeIconVideo />
+                    <p>Kích thước</p>
+                </div>
+                <div className={cx('subtitle-content')}>
+                    <p className={cx('subtitle-content-item')}>Nhỏ</p>
+                    <p className={cx('subtitle-content-item')}>Vừa</p>
+                    <p className={cx('subtitle-content-item')}>Lớn</p>
+                </div>
+            </div>
+            <div className={cx('subtitle-item')}>
+                <div className={cx('subtitle-header')}>
+                    <SubtitleIconVideo />
+                    <p>Âm thanh</p>
+                </div>
+                <div className={cx('subtitle-content')}>
+                    <p className={cx('subtitle-content-item')}>Tiếng Việt</p>
+                </div>
+            </div>
+        </div>
+    );
+
+    const renderSpeed = () => (
+        <div className={cx('speed-container')}>
+            <div className={cx('speed-title')}>
+                <p>Tốc độ</p>
+            </div>
+            <div className={cx('speed-bar')}>
+                <div className={cx('speed-item')}>
+                    <div className={cx('speed-item-text')}>0,5x</div>
+                </div>
+                <div className={cx('speed-item')}>
+                    <div className={cx('speed-item-text')}>0,75x</div>
+                </div>
+                <div className={cx('speed-item')}>
+                    <div className={cx('speed-item-text')}>Bình thường</div>
+                </div>
+                <div className={cx('speed-item')}>
+                    <div className={cx('speed-item-text')}>1,25x</div>
+                </div>
+                <div className={cx('speed-item')}>
+                    <div className={cx('speed-item-text')}>1,5x</div>
+                </div>
+            </div>
+        </div>
+    );
 
     return (
         <div
@@ -136,7 +232,7 @@ function Video({
                     <img alt="" src={require('../../assets/images/logo/logo.png')} width="100%" />
                 </div>
             </div>
-            <div className={cx('video')} onClick={handlePlayVideo} onMouseMove={handleMouseMove}>
+            <div className={cx('video')} onClick={handlePlayVideo} onDoubleClick={handleZoomVideo} onMouseMove={handleMouseMove}>
                 <ReactPlayer
                     ref={videoRef}
                     url={require(`../../assets/videos/3.mp4`)}
@@ -199,19 +295,45 @@ function Video({
                         <div className={cx('control-icon')}>
                             <MaxVolumeIcon width="4rem" height="4rem" />
                         </div>
+                        <input
+                            className={cx('icon-volumn')}
+                            type="range"
+                            min="0"
+                            max="1"
+                            step="0.05"
+                            value="1"
+                            onChange={handleChangeRangeValue}
+                        />
                     </div>
                     <div className={cx('control-right')}>
-                        <div className={cx('control-icon')}>
-                            <OptionsIconVideo width="4rem" height="4rem" />
+                        <div>
+                            <PopperVideo renderContent={renderSubtitle}>
+                                <div className={cx('control-icon')}>
+                                    <OptionsIconVideo width="4rem" height="4rem" />
+                                </div>
+                            </PopperVideo>
                         </div>
-                        <div className={cx('control-icon')}>
-                            <SpeedIconVideo width="4rem" height="4rem" />
+
+                        <div>
+                            <PopperVideo renderContent={renderSpeed}>
+                                <div className={cx('control-icon')}>
+                                    <SpeedIconVideo width="4rem" height="4rem" />
+                                </div>
+                            </PopperVideo>
                         </div>
-                        <div className={cx('control-icon')}>
-                            <FeedbackIconVideo width="4rem" height="4rem" />
-                        </div>
-                        <div className={cx('control-icon')}>
-                            <ZoomInIcon width="4rem" height="4rem" />
+
+                        <Tippy placement="top" content="Phản hồi" offset={[0, 15]}>
+                            <div className={cx('control-icon')}>
+                                <FeedbackIconVideo width="4rem" height="4rem" />
+                            </div>
+                        </Tippy>
+
+                        <div className={cx('control-icon')} onClick={handleZoomVideo}>
+                            {zoom ? (
+                                <ZoomOutIcon width="4rem" height="4rem" />
+                            ) : (
+                                <ZoomInIcon width="4rem" height="4rem" />
+                            )}
                         </div>
                     </div>
                 </div>
