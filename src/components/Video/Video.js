@@ -1,12 +1,14 @@
 import ReactPlayer from 'react-player';
 import styles from './Video.module.scss';
 import classNames from 'classnames/bind';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
     BackVideoIcon,
     FeedbackIconVideo,
     FowardIconVideo,
     MaxVolumeIcon,
+    MinVolumeIcon,
+    MutedIconVideo,
     OptionsIconVideo,
     PauseIconVideo,
     PlayIconVideo,
@@ -22,8 +24,10 @@ import Tippy from '@tippyjs/react';
 
 const cx = classNames.bind(styles);
 
-
 function Video({
+    pathVideo,
+    isPlaying,
+    reRenderParent,
     item = {},
     loop = false,
     controls = false,
@@ -40,17 +44,23 @@ function Video({
     const videoRef = useRef(null);
     const [videoDuration, setVideoDuration] = useState(null);
     const [playedVideo, setPlayedVideo] = useState(0);
-    const [rangeValue, setRangeValue] = useState(0);
-    const [playing, setPlaying] = useState(false);
+    const [timeVideoValue, setTimeVideoValue] = useState(0);
+    const [playing, setPlaying] = useState(isPlaying);
     const [zoom, setZoom] = useState(false);
     const [showControl, setShowControl] = useState(true);
+    const [volumeValue, setVolumeValue] = useState(1);
 
-    
+    let timerId = useRef();
+    const inputVolumeRef = useRef();
+    const inputTimeRef = useRef();
+    let preVolumeValue = useRef(0);
+
+    const styleControl = showControl ? {opacity: 1} : { opacity: 0 };
     // const state = {
-        //     item,
-        //     playing,
-        //     loop,
-        //     controls,
+    //     item,
+    //     playing,
+    //     loop,
+    //     controls,
     //     light,
     //     volume,
     //     playbackRate,
@@ -61,43 +71,54 @@ function Video({
     //     playIcon,
     //     config,
     // };
-    let timerId = useRef();
-    
-    const handleChangeRangeValue = () => {};
 
-    const styleControl = showControl
-        ? {
-              opacity: 1,
-            }
-        : { opacity: 0 };
+    const handleKeyDown = (e) => {
+        if(e.keyCode === 32) {
+            setPlaying(!playing);
+            setShowControl(playing);
+        } else if(e.keyCode === 39) {
+            handleFowardVideo();
+        } else if(e.keyCode === 37) {
+            handleRewindVideo();
+        }
+    };
+
+    const handleChangeTimeValue = () => {
+        const inputTimeRefValue = Number(inputTimeRef.current.value);
+        setTimeVideoValue(inputTimeRefValue)
+        videoRef.current.seekTo((inputTimeRefValue * videoRef.current.getDuration())/100)
+    };
+
+    const handleChangeVolumeValue = () => {
+        setVolumeValue(Number(inputVolumeRef.current.value));
+    };
 
     function secondsToHms(d) {
         d = Number(d);
-        var h = Math.floor(d / 3600);
-        var m = Math.floor((d % 3600) / 60);
-        var s = Math.floor((d % 3600) % 60);
-        
-        var hDisplay = h > 0 ? `${h}:` : '0';
-        var mDisplay = m > 0 ? `${m}:` : '0:';
-        var sDisplay = s >= 0 && s < 10 ? `0${s}` : s < 0 ? '' : `${s}`;
+        const h = Math.floor(d / 3600);
+        const m = Math.floor((d % 3600) / 60);
+        const s = Math.floor((d % 3600) % 60);
+
+        const hDisplay = h > 0 ? `${h}:` : '0';
+        const mDisplay = m > 0 ? `${m}:` : '0:';
+        const sDisplay = s >= 0 && s < 10 ? `0${s}` : s < 0 ? '' : `${s}`;
         return hDisplay + mDisplay + sDisplay;
-    }
+    };
 
     const handleDuration = (duration) => {
         setVideoDuration(duration);
     };
-    
+
     const handleProgress = (progress) => {
-        setPlayedVideo(progress.playedSeconds.toFixed());
-        setRangeValue(progress.played * 100);
+        setPlayedVideo(progress.playedSeconds);
+        setTimeVideoValue(progress.played * 100);
     };
 
-    
     const handlePlayVideo = () => {
         setPlaying(!playing);
         setShowControl(playing);
     };
-    
+
     const handleRewindVideo = () => {
         videoRef.current.seekTo(videoRef.current.getCurrentTime() - 10);
     };
@@ -153,7 +174,7 @@ function Video({
             }
             setZoom(false);
         }
-    }
+    };
 
     const renderSubtitle = () => (
         <div className={cx('subtitle-container')}>
@@ -221,25 +242,34 @@ function Video({
             className={cx('wrapper')}
             onMouseLeave={handleMountLeave}
             onMouseOver={handleMouseOver}
+            onKeyDown={handleKeyDown}
+            tabIndex={-1}
         >
             <div className={cx('header')}>
                 <div className={cx('header-left')}>
                     <div className={cx('age')}>T16</div>
-                    <BackVideoIcon className={cx('icon')} width="4.2rem" height="4.2rem" />
+                    <BackVideoIcon className={cx('icon')} width="4.2rem" height="4.2rem" onClick={reRenderParent} />
                 </div>
                 <div className={cx('header-name')}>Transformer 7</div>
                 <div className={cx('header-logo')}>
                     <img alt="" src={require('../../assets/images/logo/logo.png')} width="100%" />
                 </div>
             </div>
-            <div className={cx('video')} onClick={handlePlayVideo} onDoubleClick={handleZoomVideo} onMouseMove={handleMouseMove}>
+            <div
+                className={cx('video')}
+                onClick={handlePlayVideo}
+                onDoubleClick={handleZoomVideo}
+                onMouseMove={handleMouseMove}
+            >
                 <ReactPlayer
                     ref={videoRef}
-                    url={require(`../../assets/videos/3.mp4`)}
+                    url={require(`../../assets/videos/${pathVideo}`)}
                     width="100%"
                     height="100vh"
+                    volume={volumeValue}
                     onDuration={handleDuration}
                     onProgress={handleProgress}
+                    // playbackRate={}
                     playing={playing}
                 />
             </div>
@@ -248,13 +278,14 @@ function Video({
                     <div className={cx('time-current')}>{secondsToHms(playedVideo)}</div>
                     <div className={cx('range')}>
                         <input
+                            ref={inputTimeRef}
                             id="time"
                             type="range"
                             min="0"
                             max="100"
                             step="0.01"
-                            value={rangeValue}
-                            onChange={handleChangeRangeValue}
+                            value={timeVideoValue}
+                            onChange={handleChangeTimeValue}
                         />
                     </div>
                     <div className={cx('time-duration')}>
@@ -263,14 +294,14 @@ function Video({
                 </div>
                 <div className={cx('control')}>
                     <div className={cx('control-left')}>
-                        <div className={cx('control-icon')}>
+                        <div className={cx('control-icon')} tabIndex={1}>
                             <RewindIconVideo
                                 width="4rem"
                                 height="4rem"
                                 onClick={handleRewindVideo}
                             />
                         </div>
-                        <div className={cx('control-icon')}>
+                        <div className={cx('control-icon')} tabIndex={2}>
                             {playing ? (
                                 <PlayIconVideo
                                     width="4rem"
@@ -285,24 +316,32 @@ function Video({
                                 />
                             )}
                         </div>
-                        <div className={cx('control-icon')}>
+                        <div className={cx('control-icon')} tabIndex={3}>
                             <FowardIconVideo
                                 width="4rem"
                                 height="4rem"
                                 onClick={handleFowardVideo}
                             />
                         </div>
-                        <div className={cx('control-icon')}>
-                            <MaxVolumeIcon width="4rem" height="4rem" />
+                        <div className={cx('control-icon')} tabIndex={4}>
+                            {volumeValue == 1 ? (
+                                <MaxVolumeIcon width="4rem" height="4rem" onClick={() => {setVolumeValue(0); preVolumeValue.current = volumeValue}} />
+                            ) : volumeValue == 0 ? (
+                                <MutedIconVideo width="4rem" height="4rem" onClick={() => setVolumeValue(preVolumeValue.current)}/>
+                            ) : (
+                                <MinVolumeIcon width="4rem" height="4rem" onClick={() => {setVolumeValue(0); preVolumeValue.current = volumeValue}} />
+                            )}
                         </div>
                         <input
+                            ref={inputVolumeRef}
                             className={cx('icon-volumn')}
                             type="range"
+                            id="volume"
                             min="0"
                             max="1"
                             step="0.05"
-                            value="1"
-                            onChange={handleChangeRangeValue}
+                            value={volumeValue}
+                            onChange={handleChangeVolumeValue}
                         />
                     </div>
                     <div className={cx('control-right')}>

@@ -7,7 +7,6 @@ import SliderCarousel from '../../components/Slider';
 import { ApiContext } from '../../context';
 import { wishlist } from '../../apiServices';
 import { ListEmpty } from '../../components/Icons';
-import Video from '../../components/Video';
 
 const cx = classNames.bind(styles);
 
@@ -21,24 +20,23 @@ function Wishlish() {
     };
 
     const renderWishlist = () => (
-        // <div className={cx('wrapper')}>
-        //     <div className={cx('title')}>Danh sách phim yêu thích</div>
-        //     {dataWishlist.map((item, index) => (
-        //         <div className={cx('slider')} key={index}>
-        //             <SliderCarousel
-        //                 reRenderParent={handleReRender}
-        //                 data={item}
-        //                 typeMovie={apiData.typeMovie}
-        //                 sourceListImg="List_Movie_Img"
-        //                 classNameSlide={cx('padding')}
-        //                 slidesToShow={5}
-        //                 responsive
-        //                 draggable={false}
-        //             />
-        //         </div>
-        //     ))}
-        // </div>
-        <Video />
+        <div className={cx('wrapper')}>
+            <div className={cx('title')}>Danh sách phim yêu thích</div>
+            {dataWishlist.map((item, index) => (
+                <div className={cx('slider')} key={index}>
+                    <SliderCarousel
+                        reRenderParent={handleReRender}
+                        data={item}
+                        typeMovie={apiData.typeMovie}
+                        sourceListImg="List_Movie_Img"
+                        classNameSlide={cx('padding')}
+                        slidesToShow={5}
+                        responsive
+                        draggable={false}
+                    />
+                </div>
+            ))}
+        </div>
     );
 
     // Function split data

@@ -97,7 +97,7 @@ function Slide({ sourceListImg, item, slideLarge, typeMovie, reRenderParent }) {
                                 offset={[0, 15]}
                             >
                                 <div className={cx('trailer')}>
-                                    <TrailerIcon />
+                                    <TrailerIcon onClick={() => reRenderParent(item.trailer)}/>
                                 </div>
                             </Tippy>
 

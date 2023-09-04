@@ -1,8 +1,20 @@
 .wrapper {
+    position: fixed;
     width: 100vw;
     height: 100vh;
     background-color: #000;
     overflow: hidden;
+    z-index: 9999999999;
+    animation: Opacity linear 2s;
+}
+
+@keyframes Opacity {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .header {
@@ -19,7 +31,7 @@
 
     .header-left,
     .header-logo {
-        width: 150px;
+        width: 140px;
     }
 
     .header-left {
