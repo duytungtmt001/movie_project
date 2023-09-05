@@ -105,3 +105,9 @@ body {
         opacity: 1;
     }
 }
+
+@keyframes Scale {
+    100% {
+        transform: scale(1.1);
+    }
+}

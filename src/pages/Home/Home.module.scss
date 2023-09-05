@@ -1,6 +1,7 @@
 .wrapper {
     overflow: hidden;
     animation: Opacity linear .6s;
+    transition: all linear .6s;
 }
 
 @keyframes Opacity {

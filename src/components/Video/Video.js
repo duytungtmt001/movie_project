@@ -46,31 +46,22 @@ function Video({
     const [playedVideo, setPlayedVideo] = useState(0);
     const [timeVideoValue, setTimeVideoValue] = useState(0);
     const [playing, setPlaying] = useState(isPlaying);
+    const [speedVideo, setSpeedVideo] = useState(1)
     const [zoom, setZoom] = useState(false);
     const [showControl, setShowControl] = useState(true);
     const [volumeValue, setVolumeValue] = useState(1);
+    const [itemSpeedActive, setItemSpeedActive] = useState(2)
 
     let timerId = useRef();
     const inputVolumeRef = useRef();
     const inputTimeRef = useRef();
     let preVolumeValue = useRef(0);
 
+    const speedOptions = [
+        0.5, 0.75, 1.0, 1.25, 1.5 
+    ]
+
     const styleControl = showControl ? {opacity: 1} : { opacity: 0 };
-    // const state = {
-    //     item,
-    //     playing,
-    //     loop,
-    //     controls,
-    //     light,
-    //     volume,
-    //     playbackRate,
-    //     width,
-    //     height,
-    //     style,
-    //     fallback,
-    //     playIcon,
-    //     config,
-    // };
 
     const handleKeyDown = (e) => {
         if(e.keyCode === 32) {
@@ -212,27 +203,22 @@ function Video({
         </div>
     );
 
+    const handleSpeedActive = (item, index) => {
+        setItemSpeedActive(index)
+        setSpeedVideo(item);
+    }
+
     const renderSpeed = () => (
         <div className={cx('speed-container')}>
             <div className={cx('speed-title')}>
                 <p>Tốc độ</p>
             </div>
             <div className={cx('speed-bar')}>
-                <div className={cx('speed-item')}>
-                    <div className={cx('speed-item-text')}>0,5x</div>
-                </div>
-                <div className={cx('speed-item')}>
-                    <div className={cx('speed-item-text')}>0,75x</div>
-                </div>
-                <div className={cx('speed-item')}>
-                    <div className={cx('speed-item-text')}>Bình thường</div>
-                </div>
-                <div className={cx('speed-item')}>
-                    <div className={cx('speed-item-text')}>1,25x</div>
-                </div>
-                <div className={cx('speed-item')}>
-                    <div className={cx('speed-item-text')}>1,5x</div>
-                </div>
+                {speedOptions.map((item, index) => (
+                    <div className={cx('speed-item', itemSpeedActive === index ? 'speed-active' : '')} onClick={() => handleSpeedActive(item, index)} key={index}>
+                        <div className={cx('speed-item-text')}>{item === 1 ? '1.0' : item}x</div>
+                    </div>
+                ))}
             </div>
         </div>
     );
@@ -246,11 +232,18 @@ function Video({
             tabIndex={-1}
         >
             <div className={cx('header')}>
-                <div className={cx('header-left')}>
+                <div className={cx('header-left')} style={{ ...styleControl }}>
                     <div className={cx('age')}>T16</div>
-                    <BackVideoIcon className={cx('icon')} width="4.2rem" height="4.2rem" onClick={reRenderParent} />
+                    <BackVideoIcon
+                        className={cx('icon')}
+                        width="4.2rem"
+                        height="4.2rem"
+                        onClick={reRenderParent}
+                    />
                 </div>
-                <div className={cx('header-name')}>Transformer 7</div>
+                <div className={cx('header-name')} style={{ ...styleControl }}>
+                    Transformer 7
+                </div>
                 <div className={cx('header-logo')}>
                     <img alt="" src={require('../../assets/images/logo/logo.png')} width="100%" />
                 </div>
@@ -269,7 +262,7 @@ function Video({
                     volume={volumeValue}
                     onDuration={handleDuration}
                     onProgress={handleProgress}
-                    // playbackRate={}
+                    playbackRate={speedVideo}
                     playing={playing}
                 />
             </div>
@@ -325,11 +318,29 @@ function Video({
                         </div>
                         <div className={cx('control-icon')} tabIndex={4}>
                             {volumeValue == 1 ? (
-                                <MaxVolumeIcon width="4rem" height="4rem" onClick={() => {setVolumeValue(0); preVolumeValue.current = volumeValue}} />
+                                <MaxVolumeIcon
+                                    width="4rem"
+                                    height="4rem"
+                                    onClick={() => {
+                                        setVolumeValue(0);
+                                        preVolumeValue.current = volumeValue;
+                                    }}
+                                />
                             ) : volumeValue == 0 ? (
-                                <MutedIconVideo width="4rem" height="4rem" onClick={() => setVolumeValue(preVolumeValue.current)}/>
+                                <MutedIconVideo
+                                    width="4rem"
+                                    height="4rem"
+                                    onClick={() => setVolumeValue(preVolumeValue.current)}
+                                />
                             ) : (
-                                <MinVolumeIcon width="4rem" height="4rem" onClick={() => {setVolumeValue(0); preVolumeValue.current = volumeValue}} />
+                                <MinVolumeIcon
+                                    width="4rem"
+                                    height="4rem"
+                                    onClick={() => {
+                                        setVolumeValue(0);
+                                        preVolumeValue.current = volumeValue;
+                                    }}
+                                />
                             )}
                         </div>
                         <input
