@@ -1,0 +1,88 @@
+.wrapper {
+    background-color: #181A23;
+    padding: 3rem 16rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+
+    .footer-item {
+        flex: 4;
+        margin: 0 32px;
+    }
+
+    .footer-item:nth-child(1) {
+        flex: 5;
+    }
+
+    .info {
+        p {
+            text-align: justify;
+            margin: 8px 0;
+        }
+
+        .info-business,
+        .info-logo {
+            width: 150px;
+            cursor: pointer;
+        }
+
+        .info-business {
+            margin-top: 12px;
+        }
+    }
+
+    .title {
+        margin-bottom: 8px;
+        font-size: 2rem;
+    }
+
+    .item {
+        padding: 6px 0;
+        color: #9ea0a8;
+        cursor: pointer;
+        font-weight: 600;
+        transition: all linear .2s;
+
+        &:hover {
+            color: #fff;
+        }
+    }
+
+    
+
+    .contact {
+
+        .download {
+            margin-bottom: 24px;
+
+            .download-img {
+                display: flex;
+                justify-content: space-between;
+                cursor: pointer;
+
+                .img-download {
+                    width: 150px;
+                }
+            }
+        }
+
+        .connect {
+            .connect-img {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-top: 24px;
+
+                .connect-img-item {
+                    width: 40px;
+                    cursor: pointer;
+                    transition: all linear .2s;
+
+                    &:hover {
+                        transform: translateY(-4px);
+                    }
+                }
+            }
+        }
+    }
+}

@@ -97,7 +97,7 @@ function Slide({ sourceListImg, item, slideLarge, typeMovie, reRenderParent }) {
                                 offset={[0, 15]}
                             >
                                 <div className={cx('trailer')}>
-                                    <TrailerIcon onClick={() => reRenderParent(item.trailer)}/>
+                                    <TrailerIcon onClick={() => reRenderParent(item, 'trailer')} />
                                 </div>
                             </Tippy>
 
@@ -109,7 +109,11 @@ function Slide({ sourceListImg, item, slideLarge, typeMovie, reRenderParent }) {
                                 offset={[0, 10]}
                             >
                                 <div className={cx('play')}>
-                                    <PlayIcon width="2.6rem" height="2.6rem" />
+                                    <PlayIcon
+                                        width="2.6rem"
+                                        height="2.6rem"
+                                        onClick={() => reRenderParent(item, 'video')}
+                                    />
                                 </div>
                             </Tippy>
 
@@ -145,9 +149,7 @@ function Slide({ sourceListImg, item, slideLarge, typeMovie, reRenderParent }) {
                                     fontSize: slideLarge ? '1.5rem' : '1.3rem',
                                 }}
                             >
-                                <Link
-                                    to={`/detail/${categoryMovieItem()}-${item.id}`}
-                                >
+                                <Link to={`/detail/${categoryMovieItem()}-${item.id}`}>
                                     {item.name}
                                 </Link>
                             </p>

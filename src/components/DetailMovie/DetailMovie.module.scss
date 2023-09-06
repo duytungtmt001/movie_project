@@ -1,5 +1,6 @@
 .wrapper {
     margin-top: var(--header-height);
+    // transition: all linear .2s;
 }
 
 @keyframes Opacity {
@@ -178,7 +179,7 @@
 
 .list {
     padding-left: 6rem;
-    margin-top: 20px;
+    margin: 20px 0 62px;
 
     .list-title {
         padding-left: 1rem;

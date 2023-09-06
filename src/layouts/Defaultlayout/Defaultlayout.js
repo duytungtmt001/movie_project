@@ -1,8 +1,9 @@
 import clsx from "clsx"
 import styles from './Defaultlayout.module.scss'
+import { useNavigation } from "react-router-dom"
 
 import Header from "../components/Header"
-import { useNavigation } from "react-router-dom"
+import Footer from "../components/Footer"
 import Loading from "../../components/Loading"
 
 function Defaultlayout({children}) {
@@ -12,6 +13,7 @@ function Defaultlayout({children}) {
             {navigation.state === 'loading' && <Loading />}
             {children.type.name === 'Detail' ? <Header noStateHeaderColor /> : <Header />}
             {children}
+            <Footer />
         </div>
     );
 }

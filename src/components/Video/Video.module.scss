@@ -42,7 +42,7 @@
             padding-left: 8px;
             font-size: 2.4rem;
             font-weight: 600;
-            margin-bottom: 4px;
+            margin-bottom: 8px;
         }
 
         .icon {
@@ -69,9 +69,11 @@
     }
 }
 
-.video {
+.video-wrap {
     position: relative;
     z-index: 1;
+    // top: 50%;
+    // transform: translateY(-50%);
 }
 
 .control-wrapper {
@@ -119,12 +121,15 @@
         }
 
         .control-icon {
-            padding: 0 18px;
-            transition: all linear 0.2s;
             cursor: pointer;
+            
+            .icon-item {
+                padding: 0 18px;
+                transition: all linear 0.2s;
 
-            &:hover {
-                transform: scale(1.4);
+                &:hover {
+                    transform: scale(1.4);
+                }
             }
         }
 

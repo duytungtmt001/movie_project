@@ -7,5 +7,6 @@ export const routes = {
     login: '/login',
     donate: '/donate',
     detail: 'detail/:info',
+    watch: 'watch/:info',
     other: '*'
 }

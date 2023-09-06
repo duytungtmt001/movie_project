@@ -25,21 +25,10 @@ import Tippy from '@tippyjs/react';
 const cx = classNames.bind(styles);
 
 function Video({
-    pathVideo,
+    path,
+    item,
     isPlaying,
-    reRenderParent,
-    item = {},
-    loop = false,
-    controls = false,
-    light = false,
-    volume = null,
-    playbackRate = 1,
-    width = '100%',
-    height = '360px',
-    style = {},
-    fallback = null,
-    playIcon,
-    config,
+    reRenderParent = () => {}
 }) {
     const videoRef = useRef(null);
     const [videoDuration, setVideoDuration] = useState(null);
@@ -233,7 +222,7 @@ function Video({
         >
             <div className={cx('header')}>
                 <div className={cx('header-left')} style={{ ...styleControl }}>
-                    <div className={cx('age')}>T16</div>
+                    <div className={cx('age')}>{`T${item.age}`}</div>
                     <BackVideoIcon
                         className={cx('icon')}
                         width="4.2rem"
@@ -242,21 +231,22 @@ function Video({
                     />
                 </div>
                 <div className={cx('header-name')} style={{ ...styleControl }}>
-                    Transformer 7
+                    {item.name}
                 </div>
                 <div className={cx('header-logo')}>
                     <img alt="" src={require('../../assets/images/logo/logo.png')} width="100%" />
                 </div>
             </div>
             <div
-                className={cx('video')}
+                className={cx('video-wrap')}
                 onClick={handlePlayVideo}
                 onDoubleClick={handleZoomVideo}
                 onMouseMove={handleMouseMove}
             >
                 <ReactPlayer
                     ref={videoRef}
-                    url={require(`../../assets/videos/${pathVideo}`)}
+                    className={cx('video')}
+                    url={require(`../../assets/videos/${path}`)}
                     width="100%"
                     height="100vh"
                     volume={volumeValue}
@@ -289,57 +279,64 @@ function Video({
                     <div className={cx('control-left')}>
                         <div className={cx('control-icon')} tabIndex={1}>
                             <RewindIconVideo
-                                width="4rem"
-                                height="4rem"
+                                width="8rem"
+                                height="6rem"
                                 onClick={handleRewindVideo}
+                                className={cx('icon-item')}
                             />
                         </div>
                         <div className={cx('control-icon')} tabIndex={2}>
                             {playing ? (
                                 <PlayIconVideo
-                                    width="4rem"
-                                    height="4rem"
+                                    width="8rem"
+                                    height="6rem"
                                     onClick={handlePlayVideo}
+                                    className={cx('icon-item')}
                                 />
                             ) : (
                                 <PauseIconVideo
-                                    width="4rem"
-                                    height="4rem"
+                                    width="8rem"
+                                    height="6rem"
                                     onClick={handlePlayVideo}
+                                    className={cx('icon-item')}
                                 />
                             )}
                         </div>
                         <div className={cx('control-icon')} tabIndex={3}>
                             <FowardIconVideo
-                                width="4rem"
-                                height="4rem"
+                                width="8rem"
+                                height="6rem"
                                 onClick={handleFowardVideo}
+                                className={cx('icon-item')}
                             />
                         </div>
                         <div className={cx('control-icon')} tabIndex={4}>
                             {volumeValue == 1 ? (
                                 <MaxVolumeIcon
-                                    width="4rem"
-                                    height="4rem"
+                                    width="8rem"
+                                    height="6rem"
                                     onClick={() => {
                                         setVolumeValue(0);
                                         preVolumeValue.current = volumeValue;
                                     }}
+                                    className={cx('icon-item')}
                                 />
                             ) : volumeValue == 0 ? (
                                 <MutedIconVideo
-                                    width="4rem"
-                                    height="4rem"
+                                    width="8rem"
+                                    height="6rem"
                                     onClick={() => setVolumeValue(preVolumeValue.current)}
+                                    className={cx('icon-item')}
                                 />
                             ) : (
                                 <MinVolumeIcon
-                                    width="4rem"
-                                    height="4rem"
+                                    width="8rem"
+                                    height="6rem"
                                     onClick={() => {
                                         setVolumeValue(0);
                                         preVolumeValue.current = volumeValue;
                                     }}
+                                    className={cx('icon-item')}
                                 />
                             )}
                         </div>
@@ -359,7 +356,11 @@ function Video({
                         <div>
                             <PopperVideo renderContent={renderSubtitle}>
                                 <div className={cx('control-icon')}>
-                                    <OptionsIconVideo width="4rem" height="4rem" />
+                                    <OptionsIconVideo
+                                        width="8rem"
+                                        height="6rem"
+                                        className={cx('icon-item')}
+                                    />
                                 </div>
                             </PopperVideo>
                         </div>
@@ -367,22 +368,38 @@ function Video({
                         <div>
                             <PopperVideo renderContent={renderSpeed}>
                                 <div className={cx('control-icon')}>
-                                    <SpeedIconVideo width="4rem" height="4rem" />
+                                    <SpeedIconVideo
+                                        width="8rem"
+                                        height="6rem"
+                                        className={cx('icon-item')}
+                                    />
                                 </div>
                             </PopperVideo>
                         </div>
 
-                        <Tippy placement="top" content="Phản hồi" offset={[0, 15]}>
+                        <Tippy placement="top" content="Phản hồi" offset={[0, 4]}>
                             <div className={cx('control-icon')}>
-                                <FeedbackIconVideo width="4rem" height="4rem" />
+                                <FeedbackIconVideo
+                                    width="8rem"
+                                    height="6rem"
+                                    className={cx('icon-item')}
+                                />
                             </div>
                         </Tippy>
 
                         <div className={cx('control-icon')} onClick={handleZoomVideo}>
                             {zoom ? (
-                                <ZoomOutIcon width="4rem" height="4rem" />
+                                <ZoomOutIcon
+                                    width="8rem"
+                                    height="6rem"
+                                    className={cx('icon-item')}
+                                />
                             ) : (
-                                <ZoomInIcon width="4rem" height="4rem" />
+                                <ZoomInIcon
+                                    width="8rem"
+                                    height="6rem"
+                                    className={cx('icon-item')}
+                                />
                             )}
                         </div>
                     </div>
