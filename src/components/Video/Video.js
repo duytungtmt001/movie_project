@@ -280,7 +280,7 @@ function Video({
                         <div className={cx('control-icon')} tabIndex={1}>
                             <RewindIconVideo
                                 width="8rem"
-                                height="6rem"
+                                height="4rem"
                                 onClick={handleRewindVideo}
                                 className={cx('icon-item')}
                             />
@@ -289,14 +289,14 @@ function Video({
                             {playing ? (
                                 <PlayIconVideo
                                     width="8rem"
-                                    height="6rem"
+                                    height="4rem"
                                     onClick={handlePlayVideo}
                                     className={cx('icon-item')}
                                 />
                             ) : (
                                 <PauseIconVideo
                                     width="8rem"
-                                    height="6rem"
+                                    height="4rem"
                                     onClick={handlePlayVideo}
                                     className={cx('icon-item')}
                                 />
@@ -305,7 +305,7 @@ function Video({
                         <div className={cx('control-icon')} tabIndex={3}>
                             <FowardIconVideo
                                 width="8rem"
-                                height="6rem"
+                                height="4rem"
                                 onClick={handleFowardVideo}
                                 className={cx('icon-item')}
                             />
@@ -314,7 +314,7 @@ function Video({
                             {volumeValue == 1 ? (
                                 <MaxVolumeIcon
                                     width="8rem"
-                                    height="6rem"
+                                    height="4rem"
                                     onClick={() => {
                                         setVolumeValue(0);
                                         preVolumeValue.current = volumeValue;
@@ -324,14 +324,14 @@ function Video({
                             ) : volumeValue == 0 ? (
                                 <MutedIconVideo
                                     width="8rem"
-                                    height="6rem"
+                                    height="4rem"
                                     onClick={() => setVolumeValue(preVolumeValue.current)}
                                     className={cx('icon-item')}
                                 />
                             ) : (
                                 <MinVolumeIcon
                                     width="8rem"
-                                    height="6rem"
+                                    height="4rem"
                                     onClick={() => {
                                         setVolumeValue(0);
                                         preVolumeValue.current = volumeValue;
@@ -358,7 +358,7 @@ function Video({
                                 <div className={cx('control-icon')}>
                                     <OptionsIconVideo
                                         width="8rem"
-                                        height="6rem"
+                                        height="4rem"
                                         className={cx('icon-item')}
                                     />
                                 </div>
@@ -370,7 +370,7 @@ function Video({
                                 <div className={cx('control-icon')}>
                                     <SpeedIconVideo
                                         width="8rem"
-                                        height="6rem"
+                                        height="4rem"
                                         className={cx('icon-item')}
                                     />
                                 </div>
@@ -381,7 +381,7 @@ function Video({
                             <div className={cx('control-icon')}>
                                 <FeedbackIconVideo
                                     width="8rem"
-                                    height="6rem"
+                                    height="4rem"
                                     className={cx('icon-item')}
                                 />
                             </div>
@@ -391,13 +391,13 @@ function Video({
                             {zoom ? (
                                 <ZoomOutIcon
                                     width="8rem"
-                                    height="6rem"
+                                    height="4rem"
                                     className={cx('icon-item')}
                                 />
                             ) : (
                                 <ZoomInIcon
                                     width="8rem"
-                                    height="6rem"
+                                    height="4rem"
                                     className={cx('icon-item')}
                                 />
                             )}
