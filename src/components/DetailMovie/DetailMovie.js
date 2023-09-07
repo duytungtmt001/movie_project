@@ -6,27 +6,23 @@ import SliderCarousel from '../Slider';
 
 import Button from '../Button';
 import Tippy from '@tippyjs/react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Video from '../Video';
 
 const cx = classNames.bind(styles);
 function DetailMovie({ item, typeMovie, list, type }) {
     const [showVideo, setShowVideo] = useState(false);
-
+    
     const scaleAnimation = showVideo
-        ? {
-              animation: `Scale linear .6s`,
-              marginTop: 0
-          }
-        : {};
+    ? {
+        animation: `Scale linear .6s`,
+        marginTop: 0
+    }
+    : {};
 
-    const handleReRender = () => {
+    const handleReRenderVideo = () => {
         setShowVideo(!showVideo);
     };
-
-    useEffect(() => {
-        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-    }, [item]);
 
     const typeMovieItem = () => {
         return typeMovie.find((type, index) => {
@@ -50,7 +46,7 @@ function DetailMovie({ item, typeMovie, list, type }) {
                     path={item.video}
                     isPlaying={true}
                     item={item}
-                    reRenderParent={handleReRender}
+                    reRenderParent={handleReRenderVideo}
                 />
             )}
             <div className={cx('wrapper')} style={{ ...scaleAnimation }}>

@@ -1,13 +1,8 @@
 import {
-    getMovieById,
     listMovieOdd,
     listMovieRelease,
     listMovieSeries,
-    listTrendHome,
-    sliderOdd,
-    sliderRelease,
-    sliderSeries,
-    typeMovieApi,
+    listTrendHome
 } from '../apiServices';
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -38,7 +33,7 @@ export const loaders = {
         }
     },
     detail: async ({ params }) => {
-        const [type, id] = params.info.split('-');
+        const [type, name] = params.info.split('-');
         let listMovie;
         switch (type) {
             case 'odd':
@@ -55,7 +50,7 @@ export const loaders = {
         }
         try {
             const resListMovie = await listMovie();
-            const resMovie = await getMovieById(type, id);
+            const resMovie = resListMovie.find((item, index) => item.name === name);
             return { resListMovie, resMovie, type };
         } catch (error) {
             console.log(error);

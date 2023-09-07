@@ -1,6 +1,6 @@
 import { useLoaderData, useNavigation } from 'react-router-dom';
 import DetailMovie from '../../components/DetailMovie';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { ApiContext } from '../../context/ApiProvider';
 
 import classNames from 'classnames/bind';
@@ -12,11 +12,21 @@ function Detail() {
     const navigation = useNavigation();
     const dataLoader = useLoaderData();
     const { typeMovie } = useContext(ApiContext);
+    const [render, setRender] = useState(false)
+
+    const opacityAnimation = render ? {
+        animation: `Opacity linear .6s`,
+    } : {}
+
+    useEffect(() => {
+        setRender(!render)
+        window.scrollTo({ top: 0, left: 0 });
+    }, [dataLoader.resMovie])
     
     return (
         <div>
             {navigation.state === 'loading' && <Loading />}
-            <div className={cx('wrapper')}>
+            <div className={cx('wrapper')} style={{...opacityAnimation}}>
                 <DetailMovie
                     item={dataLoader.resMovie}
                     typeMovie={typeMovie}
