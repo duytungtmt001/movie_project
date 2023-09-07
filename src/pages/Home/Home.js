@@ -36,7 +36,9 @@ function Home() {
 
     return (
         <div>
-            {showVideo && <Video path={path} isPlaying={true} reRenderParent={handleReRender} item={item} />}
+            {showVideo && (
+                <Video path={path} isPlaying={true} reRenderParent={handleReRender} item={item} />
+            )}
             <div className={cx('wrapper')} style={{ ...scaleAnimation }}>
                 <div className={cx('carousel')}>
                     <h1 className={cx('carousel-title')}>Giải trí hay - Thưởng thức ngay</h1>
@@ -46,6 +48,7 @@ function Home() {
                         sourceSliderImg="Slider_Main"
                         slidesToShow={1}
                         SlideComponent={SlideWithDescription}
+                        typeMovie={apiData.typeMovie}
                         centerMode
                         dots
                         infinite

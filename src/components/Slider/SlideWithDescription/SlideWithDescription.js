@@ -8,7 +8,13 @@ import Button from '../../Button';
 
 const cx = classNames.bind(styles)
 
-function SlideWithDescription({sourceSliderImg, item}) {
+function SlideWithDescription({ sourceSliderImg, item, typeMovie, reRenderParent }) {
+    const categoryMovieItem = () => {
+        return typeMovie.find((type, index) => {
+            return item.typeMovie_id === type.id;
+        }).category;
+    };
+
     return (
         <div className={cx('wrapper')}>
             <img
@@ -20,7 +26,7 @@ function SlideWithDescription({sourceSliderImg, item}) {
             <div className={cx('icon')}>
                 <Tippy content="Chi tiết" placement="bottom" delay={[0, 100]}>
                     <div>
-                        <Button to="/">
+                        <Button to={`/detail/${categoryMovieItem()}-${item.name}`}>
                             <img
                                 alt=""
                                 src={require('../../../assets/images/Slider_Main/icon-info.png')}
@@ -31,12 +37,12 @@ function SlideWithDescription({sourceSliderImg, item}) {
 
                 <Tippy content="Xem Trailer" placement="bottom" delay={[0, 100]}>
                     <div>
-                        <Button to="/">
-                            <img
-                                alt=""
-                                src={require('../../../assets/images/Slider_Main/icon-trailer.png')}
-                            />
-                        </Button>
+                        <img
+                            alt=""
+                            src={require('../../../assets/images/Slider_Main/icon-trailer.png')}
+                            style={{cursor: 'pointer'}}
+                            onClick={() => reRenderParent(item, 'trailer')}
+                        />
                     </div>
                 </Tippy>
             </div>
