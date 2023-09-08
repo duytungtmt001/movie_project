@@ -9,10 +9,11 @@ import { addWishList, updateWishList, deleteWishList } from '../../../apiService
 
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Button from '../../Button';
 
 const cx = classNames.bind(styles);
 
-function Slide({ sourceListImg, item, slideLarge, typeMovie, reRenderParent }) {
+function Slide({ sourceListImg, item, slideLarge, typeMovie, reRenderParent, seeAllPath }) {
     const [wishListIcon, setWishListIcon] = useState(false);
 
     const handleAddWishLists = async () => {
@@ -59,7 +60,7 @@ function Slide({ sourceListImg, item, slideLarge, typeMovie, reRenderParent }) {
                     width="100%"
                 />
 
-                {item.img_title && (
+                {/* {item.img_title && (
                     <div className={cx('img-name')}>
                         <img
                             alt=""
@@ -67,12 +68,12 @@ function Slide({ sourceListImg, item, slideLarge, typeMovie, reRenderParent }) {
                             width="90%"
                         />
                     </div>
-                )}
+                )} */}
 
                 {item.title && (
-                    <div className={cx('see-all')}>
+                    <Button to={`${seeAllPath}`} className={cx('see-all')}>
                         <span>{item.title}</span>
-                    </div>
+                    </Button>
                 )}
 
                 {slideLarge && <div className={cx('overlayLarge')}></div>}

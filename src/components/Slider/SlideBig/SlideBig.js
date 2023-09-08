@@ -6,7 +6,7 @@ import { AddListIcon, ArrowRightIcon, PlayIconBorder } from '../../Icons';
 
 const cx = classNames.bind(styles)
 
-function SlideBig({item, sourceSliderImg}) {
+function SlideBig({item, sourceSliderImg, reRenderParent}) {
   return (
       <div className={cx('wrapper')}>
           <img alt="" width="100%" src={require(`../../../assets/images/${sourceSliderImg}/${item.img}`)} />
@@ -15,10 +15,10 @@ function SlideBig({item, sourceSliderImg}) {
                   <img alt="" width="100%" src={require(`../../../assets/images/${sourceSliderImg}/${item.img_name}`)} />
               </div>
               <div className={cx('info-button')}>
-                  <Button to="/odd" blue leftIcon={<PlayIconBorder width="2rem" height="2rem" />} className={cx('button-left')}>
+                  <Button href="" onClick={() => reRenderParent(item, 'video')} blue leftIcon={<PlayIconBorder width="2rem" height="2rem" />} className={cx('button-left')}>
                       Xem phim
                   </Button>
-                  <Button to="/odd" dark leftIcon={<AddListIcon width="2rem" height="2rem" />}>
+                  <Button href="" dark leftIcon={<AddListIcon width="2rem" height="2rem" />}>
                       Thêm vào yêu thích
                   </Button>
               </div>

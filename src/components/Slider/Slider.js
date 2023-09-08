@@ -38,6 +38,7 @@ function SliderCarousel({
     typeMovie = [],
     slideEnd = false,
     slideEndBig = false,
+    seeAllPath = '/'
 }) {
     const appenDotsFn = dotsFade ? {
         appendDots: (dots) => (
@@ -150,7 +151,7 @@ function SliderCarousel({
                         className={`slide-wrapper`}
                         style={{ opacity: slideOpacity ? '0.6' : '1' }}
                     >
-                        {<SlideComponent sourceListImg={sourceListImg} item={item} typeMovie={typeMovie} slideLarge={slideLarge} sourceSliderImg={sourceSliderImg} reRenderParent={reRenderParent}/>}
+                        {<SlideComponent seeAllPath={seeAllPath} sourceListImg={sourceListImg} item={item} typeMovie={typeMovie} slideLarge={slideLarge} sourceSliderImg={sourceSliderImg} reRenderParent={reRenderParent}/>}
                     </div>
                 </div>
             ))}

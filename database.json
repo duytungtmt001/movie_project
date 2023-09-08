@@ -234,6 +234,8 @@
     {
       "id": 1,
       "img": "1.jpg",
+      "video": "4.mp4",
+      "name": "Hôn Lễ Của Em",
       "img_name": "11.jpg",
       "age": 13,
       "description": "Mười lăm năm, Châu Tiêu Tề luôn giữ trong tim hình bóng của Vưu Vịnh Từ như lần đầu gặp gỡ. Nhưng tình yêu là thứ khó nắm bắt, sẽ thế nào khi người nắm tay em ở cuối con đường... không phải anh?"
@@ -241,6 +243,8 @@
     {
       "id": 2,
       "img": "2.jpg",
+      "video": "4.mp4",
+      "name": "Gái Già Lắm Chiêu",
       "img_name": "22.jpg",
       "age": 16,
       "description": "Siêu phẩm phim Việt thành công nhất vào dịp Tết 2020 với doanh thu 168 tỷ đồng, phần 3 của bộ phim kể về hành trình ra mắt gia đình chồng đầy khó khăn của cô nàng tai tiếng bậc nhất showbiz."
@@ -248,6 +252,8 @@
     {
       "id": 3,
       "img": "3.jpg",
+      "video": "4.mp4",
+      "name": "Người Hầu Gái",
       "img_name": "33.jpg",
       "age": 18,
       "description": "Lấy bối cảnh Triều Tiên những năm 30, khi văn hóa Nhật xâm nhập vào một bộ phận quý tộc Hàn, một cô hầu gái được chọn để phục vụ nữ tiểu thư người Nhật nhằm chiếm đoạt khối tài sản mà cô ta thừa kế."
@@ -255,6 +261,8 @@
     {
       "id": 4,
       "img": "4.jpg",
+      "video": "4.mp4",
+      "name": "Lỗ Kỳ",
       "img_name": "44.jpg",
       "age": 13,
       "description": "Lỗ Kỳ chế tạo đạn pháo để chống quân Nhật, nào biết có một ngày gia đình anh phải đối diện hiểm nguy. Đứng giữa sứ mệnh bảo vệ đất nước và mái ấm của mình, Lỗ Kỳ phải chọn gì và buông bỏ gì?"
@@ -262,6 +270,8 @@
     {
       "id": 5,
       "img": "5.jpg",
+      "video": "4.mp4",
+      "name": "Mẹ Chồng",
       "img_name": "55.jpg",
       "age": 16,
       "description": "Ba Trân phải chịu đựng những quy củ hà khắc của nhà chồng. Sức ép của việc gìn giữ và duy trì nề nếp dòng họ khiến cô trút bi kịch của mình lên những người phụ nữ khác khi chính cô trở thành mẹ chồng."
@@ -271,6 +281,8 @@
     {
       "id": 1,
       "img": "1.jpg",
+      "name": "Ai Là Kẻ Sát Nhân",
+      "video": "4.mp4",
       "img_name": "11.jpg",
       "age": 16,
       "description": "Với đề tài trả thù kịch tính, khán giả sẽ được theo chân những cuộc truy lùng căng thẳng của thám tử Oh Jin Sung nhằm đòi lại công lý cho em trai xấu số của mình."
@@ -278,6 +290,8 @@
     {
       "id": 2,
       "img": "2.jpg",
+      "name": "Vạn Dặm Nhân Sinh",
+      "video": "4.mp4",
       "img_name": "22.jpg",
       "age": 18,
       "description": "Nối tiếp cơn bão rating từ mùa 1, Taxi Driver 2 mạnh dạn khắc họa những vụ án vô nhân đạo đến mức khán giả tức đến nghiến răng, rồi lại cảm thấy cực kỳ hả hê, thỏa mãn khi nạn nhân đòi được công lý."
@@ -285,6 +299,8 @@
     {
       "id": 3,
       "img": "3.jpg",
+      "name": "Con Số Bí Mật",
+      "video": "4.mp4",
       "img_name": "33.jpg",
       "age": 13,
       "description": "Để cứu tam giới khỏi cảnh diệt thế, Lê Tô Tô nhận sứ mệnh quay về quá khứ ngăn Ma thần Đạm Đài Tẫn thức tỉnh. Dưới thân phận Diệp Tịch Vụ, cô phát hiện giữa mình và Ma thần có mối liên kết đặc biệt."
@@ -292,6 +308,8 @@
     {
       "id": 4,
       "img": "4.jpg",
+      "name": "Kén Mẹ Chồng",
+      "video": "4.mp4",
       "img_name": "44.jpg",
       "age": 16,
       "description": "Trở thành nhân viên cấp cao của công ty kế toán hàng đầu Hàn Quốc, cậu học sinh Jang Ho Woo đã phát hiện một hệ thống tham nhũng đáng sợ. Để diệt trừ nó, cậu phải chọn một nước cờ vô cùng liều lĩnh."
@@ -299,6 +317,8 @@
     {
       "id": 5,
       "img": "5.jpg",
+      "name": "Tân Ỷ Thiên Đồ Long Ký",
+      "video": "4.mp4",
       "img_name": "55.jpg",
       "age": 13,
       "description": "Tựa phim hot nhất năm 2018, xoay quanh Ngụy Anh Lạc, một thiếu nữ đa mưu túc, từng bước vượt qua con đường đầy chông gai và máu để có được ngôi vị thống lĩnh hậu cung."
@@ -309,6 +329,8 @@
       "id": 1,
       "img": "1.jpg",
       "img_name": "11.jpg",
+      "name": "Bỗng Dưng Trúng Số",
+      "video": "4.mp4",
       "age": 13,
       "description": "Thần đề gõ cửa, anh lính Hàn Quốc vô tình nhặt được tờ vé số trúng độc đắc. Vui chẳng được lâu, tờ vé số theo gió 'hạ cánh' biên giới Triều Tiên, mở ra cuộc đàm phán 'bất ổn' nhất lịch sử điện ảnh."
     },
@@ -316,6 +338,8 @@
       "id": 2,
       "img": "2.jpg",
       "img_name": "22.jpg",
+      "name": "Tiệc Trăng Máu",
+      "video": "4.mp4",
       "age": 16,
       "description": "Siêu phẩm phim Việt thành công nhất vào dịp Tết 2020 với doanh thu 168 tỷ đồng, phần 3 của bộ phim kể về hành trình ra mắt gia đình chồng đầy khó khăn của cô nàng tai tiếng bậc nhất showbiz."
     },
@@ -323,6 +347,8 @@
       "id": 3,
       "img": "3.jpg",
       "img_name": "33.jpg",
+      "name": "Điệp Vụ Đối Đầu 2",
+      "video": "4.mp4",
       "age": 16,
       "description": "Ba Trân phải chịu đựng những quy củ hà khắc của nhà chồng. Sức ép của việc gìn giữ và duy trì nề nếp dòng họ khiến cô trút bi kịch của mình lên những người phụ nữ khác khi chính cô trở thành mẹ chồng."
     },
@@ -330,6 +356,8 @@
       "id": 4,
       "img": "4.jpg",
       "img_name": "44.jpg",
+      "name": "Găng Tơ Tái Xuất",
+      "video": "4.mp4",
       "age": 16,
       "description": "Sau kế hoạch Hàn Chiến, mối quan hệ của Cục Trưởng và Cục Phó của Cục Cảnh Sát Hồng Kông trở nên căng thẳng khi con trai của Cục Phó trở thành nghi phạm của một vụ án giết người nghiêm trọng."
     },
@@ -337,6 +365,8 @@
       "id": 5,
       "img": "5.jpg",
       "img_name": "55.jpg",
+      "name": "Kẻ Đâm Lén",
+      "video": "4.mp4",
       "age": 16,
       "description": "Bộ phim kể về Dong Chul - gangster chính hiệu đã rửa tay gác kiếm và sống cuộc sống yên bình bên người vợ mình. Mọi chuyện trở nên đảo lộn khi một ngày có người đã bắt cóc vợ anh."
     }
@@ -501,7 +531,7 @@
       "isMonopoly": true,
       "typeMovie_id": 3,
       "subtitle": "Thuyết minh",
-      "isLike": true,
+      "isLike": false,
       "id": 1
     },
     {
@@ -539,7 +569,7 @@
       "img_name": "cheoleo_name.jpg",
       "trailer": "4.mp4",
       "video": "4.mp4",
-      "isLike": true,
+      "isLike": false,
       "isMonopoly": false,
       "typeMovie_id": 3,
       "subtitle": "Thuyết minh"
@@ -4289,66 +4319,5 @@
       "typeMovie_id": 19
     }
   ],
-  "wishlist": [
-    {
-      "name": "Sisu: Già Gân Báo Thù",
-      "description": "Bị bọn Phát Xít tàn ác cướp lấy kho báu vàng mình cất công tìm được, cựu binh già Aatami quyết đòi lại tất cả, từ nợ cho đến thù, cho dù phải tàn sát hết lính Phát Xít.",
-      "time": 88,
-      "year": 2023,
-      "age": 18,
-      "actor": "Jorma Tommila, Aksel Hennie, Jack Doolan",
-      "director": "Jalmari Helander",
-      "award": "",
-      "img": "sisu.jpg",
-      "img_banner": "sisu.jpg",
-      "img_name": "sisu_name.jpg",
-      "trailer": "4.mp4",
-      "video": "4.mp4",
-      "isMonopoly": true,
-      "typeMovie_id": 3,
-      "subtitle": "Thuyết minh",
-      "isLike": true,
-      "id": 1
-    },
-    {
-      "name": "Cheo Leo",
-      "description": "Chuyến leo núi của hai người bạn nhanh chóng trở thanh cơn ác mộng khi bị bốn kẻ sát nhân truy đuổi. Chọn đường nào để sống sót khi trước mặt là vực thẳm và bọn truy sát đã bao vây mọi đường lui?",
-      "time": 87,
-      "year": 2022,
-      "age": 16,
-      "actor": "Brittany Ashworth, Ben Lamb, Nathan Welsh",
-      "director": "Howard J. Ford",
-      "award": "",
-      "img": "cheoleo.jpg",
-      "img_banner": "cheoleo.jpg",
-      "img_name": "cheoleo_name.jpg",
-      "trailer": "4.mp4",
-      "video": "4.mp4",
-      "isMonopoly": false,
-      "typeMovie_id": 3,
-      "subtitle": "Thuyết minh",
-      "isLike": true,
-      "id": 3
-    },
-    {
-      "name": "Cô gái từ quá khứ",
-      "description": "Đang tất bật chuẩn bị cho đám cưới triệu đô, nữ hoàng showbiz Ms. Q bất ngờ gặp lại người bạn bí ẩn đã mất liên lạc từ 15 năm trước, kéo theo những bí mật đen tối của họ dần được hé lộ.",
-      "time": 105,
-      "year": 2022,
-      "age": 16,
-      "actor": "Ninh Dương Lan Ngọc, Kaity Nguyễn, NSND Lê Khanh",
-      "director": "Bảo Nhân, Nam Cito",
-      "award": "Thắng giải Mai Vàng năm 2022 cho hạng mục Nữ diễn viên điện ảnh được yêu thích nhất.",
-      "img": "ainbo.jpg",
-      "img_banner": "cogai.jpg",
-      "img_name": "cogai_name.jpg",
-      "trailer": "4.mp4",
-      "video": "4.mp4",
-      "isMonopoly": false,
-      "typeMovie_id": 5,
-      "subtitle": "Thuyết minh",
-      "isLike": true,
-      "id": 4
-    }
-  ]
+  "wishlist": []
 }

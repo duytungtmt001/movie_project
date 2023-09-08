@@ -108,6 +108,7 @@ function Home() {
                                 classNameSlide={cx('list-slide-padding')}
                                 responsive
                                 slideEnd
+                                seeAllPath={'/release'}
                                 typeMovie={apiData.typeMovie}
                                 slidesToShow={5.2}
                                 slideWidth="auto"
@@ -134,6 +135,7 @@ function Home() {
                                 classNameSlide={cx('list-slide-padding')}
                                 responsive
                                 slideEnd
+                                seeAllPath={'/odd'}
                                 typeMovie={apiData.typeMovie}
                                 slidesToShow={5.2}
                                 slideWidth="auto"
@@ -164,6 +166,7 @@ function Home() {
                                 classNameSlide={cx('list-slide-padding')}
                                 responsive
                                 slideEnd
+                                seeAllPath={'/series'}
                                 typeMovie={apiData.typeMovie}
                                 slidesToShow={5.2}
                                 slideWidth="auto"
@@ -190,6 +193,7 @@ function Home() {
                                 classNameSlide={cx('list-slide-padding')}
                                 responsive
                                 slideEnd
+                                seeAllPath={'/wishlist'}
                                 typeMovie={apiData.typeMovie}
                                 slidesToShow={5.2}
                                 slideWidth="auto"

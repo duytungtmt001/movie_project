@@ -1,9 +1,3 @@
-// import PropTypes from 'prop-types';
+export {default} from './Donate';
 
-const Donate = (props) => {
-    return <h1>Donate</h1>;
-};
 
-Donate.propTypes = {};
-
-export default Donate;

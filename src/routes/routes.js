@@ -8,6 +8,7 @@ import Wishlist from '../pages/Wishlist';
 import Login from '../pages/Login';
 import Donate from '../pages/Donate';
 import Detail from '../pages/Detail';
+import Ribbon from '../pages/Ribbon';
 
 export const publicRoutes = [
     { path: routes.home, component: Home, linkName: 'Trang chủ', loader: loaders.home },
@@ -22,6 +23,7 @@ export const publicRoutes = [
     { path: routes.wishlist, component: Wishlist, linkName: 'Danh sách yêu thích' },
     { path: routes.donate, component: Donate, linkName: 'Donate me' },
     { path: routes.detail, component: Detail, loader: loaders.detail },
+    { path: routes.ribbon, component: Ribbon, loader: loaders.ribbon },
     { path: routes.login, component: Login, layout: null },
     { path: routes.other, component: Home },
 ];

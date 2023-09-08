@@ -5,8 +5,6 @@ import {
     listTrendHome
 } from '../apiServices';
 
-const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-
 export const loaders = {
     odd: async () => {
         try {
@@ -52,6 +50,30 @@ export const loaders = {
             const resListMovie = await listMovie();
             const resMovie = resListMovie.find((item, index) => item.name === name);
             return { resListMovie, resMovie, type };
+        } catch (error) {
+            console.log(error);
+        }
+    },
+    ribbon: async ({ params }) => {
+        const [category, id] = params.info.split('-');
+        let listMovie;
+        switch (category) {
+            case 'odd':
+                listMovie = listMovieOdd;
+                break;
+            case 'series':
+                listMovie = listMovieSeries;
+                break;
+            case 'release':
+                listMovie = listMovieRelease;
+                break;
+            default:
+                console.error('Category không hợp lệ');
+        }
+        try {
+            const resListMovie = await listMovie();
+            const resMovie = resListMovie.filter((item, index) => item.typeMovie_id === Number(id));
+            return {resMovie, id}
         } catch (error) {
             console.log(error);
         }
