@@ -24,6 +24,6 @@ export const publicRoutes = [
     { path: routes.donate, component: Donate, linkName: 'Donate me' },
     { path: routes.detail, component: Detail, loader: loaders.detail },
     { path: routes.ribbon, component: Ribbon, loader: loaders.ribbon },
-    { path: routes.login, component: Login, layout: null },
+    { path: routes.login, component: Login, layout: null, loader: loaders.login },
     { path: routes.other, component: Home },
 ];

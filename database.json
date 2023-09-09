@@ -2,33 +2,9 @@
   "users": [
     {
       "id": 1,
-      "name": "Tùng",
-      "age": 22
-    },
-    {
-      "id": 2,
-      "name": "Tuyết",
-      "age": 22
-    },
-    {
-      "name": "Điệp",
-      "age": "20",
-      "id": 5
-    },
-    {
-      "name": "Kiên",
-      "age": "20",
-      "id": 6
-    },
-    {
-      "name": "Linh",
-      "age": "22",
-      "id": 7
-    },
-    {
-      "name": "Huy",
-      "age": "23",
-      "id": 8
+      "name": "duytungtmt",
+      "pass": "111111",
+      "img": ""
     }
   ],
   "suggest": [
@@ -389,12 +365,12 @@
     {
       "id": 2,
       "img": "2_trend.jpg",
+      "img_title": "2a.jpg",
       "name": "Bỗng Dưng Trúng Số",
       "time": 114,
       "age": 13,
       "year": 2022,
       "typeMovie_id": 4,
-      "img_title": "2a.jpg",
       "isLike": false,
       "exception": "trend",
       "trailer": "4.mp4",

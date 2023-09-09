@@ -90,6 +90,16 @@
     padding: 0 12px;
 }
 
+.login {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    .login-text {
+        margin-left: 8px;
+    }
+}
+
 // Dropdown user
 .wrap-user {
     min-width: 200px;

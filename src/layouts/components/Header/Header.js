@@ -8,6 +8,7 @@ import {
     AnnouncementIcon,
     LanguageIcon,
     LogOutIcon,
+    LoginIcon,
     SettingIcon,
     ThemeIcon,
     WishlistIcon,
@@ -19,11 +20,13 @@ import { publicRoutes } from '../../../routes/routes';
 import Image from '../../../components/Image';
 
 import { ApiContext } from '../../../context';
+import Button from '../../../components/Button';
 
 const cx = classNames.bind(styles);
 
 function Header({ noStateHeaderColor }) {
     const [showBackGroundHeader, setShowBackGroundHeader] = useState(false);
+    const [userLogin, setUserLogin] = useState(false);
 
     const backgroundColorHeader = noStateHeaderColor
         ? { backgroundColor: '#030612' }
@@ -191,15 +194,26 @@ function Header({ noStateHeaderColor }) {
                 </div>
             </div>
 
-            <Menu items={userMenu} hideOnClick>
-                <div className={cx('user')}>
-                    <Image
-                        src={require('../../../assets/images/avt/1.jpg')}
-                        alt={'error'}
-                        className="header-avt"
-                    />
-                </div>
-            </Menu>
+            {
+                userLogin ? (
+                    <Menu items={userMenu} hideOnClick>
+                        <div className={cx('user')}>
+                            <Image
+                                src={require('../../../assets/images/avt/1.jpg')}
+                                alt={'error'}
+                                className="header-avt"
+                            />
+                        </div>
+                    </Menu>
+                ) : (
+                    <Button to={'login'}>
+                        <div className={cx('login')}>
+                            <LoginIcon />
+                            <p className={cx('login-text')}>Đăng nhập</p>
+                        </div>
+                    </Button>
+                )
+            }
         </div>
     );
 }

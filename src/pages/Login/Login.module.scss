@@ -1,0 +1,104 @@
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../../assets/images/Background/bg_login.jpg');
+    position: relative;
+
+    .logo {
+        cursor: pointer;
+        width: 130px;
+        position: absolute;
+        top: 24px;
+        left: 30px;
+    }
+
+    .content {
+        width: 412px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        .title {
+            font-size: 3.2rem;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .regulation {
+            font-size: 15px;
+            margin: 20px 0;
+            text-align: center;
+
+            span {
+                color: rgb(0, 122, 252);
+                font-weight: 600;
+                cursor: pointer;
+            }
+        }
+
+        .header-input {
+            display: flex;
+            margin: 20px 0 8px;
+        }
+
+        .input-wrap input {
+            border: 1px solid rgb(169, 170, 173);
+            box-shadow: none;
+            border-radius: 0.5rem;
+            outline: none;
+            color: rgb(255, 255, 255);
+            font-size: 1.6rem;
+            width: 100%;
+            background-color: transparent;
+            height: 4.8rem;
+            padding: 0px 1.5rem;
+            transition: border 400ms ease 0s;
+        }
+
+        .form-button {
+            width: 100%;
+
+            .button-login {
+                width: 100%;
+            }
+        }
+
+        .register {
+            margin-top: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .toggle-login {
+                cursor: pointer;
+                color: rgb(0, 122, 252);
+                font-weight: 600;
+                padding: 8px;
+                transition: all linear .2s;
+                font-size: 17px;
+
+                &:hover {
+                    transform: translateY(-2px);
+                }
+            }
+        }
+
+        .forgot {
+            cursor: pointer;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgb(0, 122, 252);
+            font-weight: 600;
+            transition: all linear .2s;
+            text-align: center;
+
+            &:hover {
+                transform: translate(-50%, -2px);
+            }
+        }
+
+    }
+}

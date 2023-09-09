@@ -2,7 +2,8 @@ import {
     listMovieOdd,
     listMovieRelease,
     listMovieSeries,
-    listTrendHome
+    listTrendHome,
+    users
 } from '../apiServices';
 
 export const loaders = {
@@ -74,6 +75,14 @@ export const loaders = {
             const resListMovie = await listMovie();
             const resMovie = resListMovie.filter((item, index) => item.typeMovie_id === Number(id));
             return {resMovie, id}
+        } catch (error) {
+            console.log(error);
+        }
+    },
+    login: async () => {
+        try {
+            const resUsers = await users();
+            return resUsers
         } catch (error) {
             console.log(error);
         }

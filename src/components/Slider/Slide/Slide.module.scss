@@ -10,9 +10,14 @@
             visibility: visible;
             opacity: 1;
         }
+
+        .img-name {
+            opacity: 0;
+        }
     }
     
     .img-name {
+        opacity: 1;
         position: absolute;
         z-index: 2;
         bottom: 4%;

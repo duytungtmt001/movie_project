@@ -10,5 +10,6 @@ export * from './listMovieOdd';
 export * from './listMovieSeries';
 export * from './listMovieRelease';
 export * from './wishlist';
+export * from './users';
 
 

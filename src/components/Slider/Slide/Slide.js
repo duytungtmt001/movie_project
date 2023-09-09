@@ -60,7 +60,7 @@ function Slide({ sourceListImg, item, slideLarge, typeMovie, reRenderParent, see
                     width="100%"
                 />
 
-                {/* {item.img_title && (
+                {item.img_title && (
                     <div className={cx('img-name')}>
                         <img
                             alt=""
@@ -68,7 +68,7 @@ function Slide({ sourceListImg, item, slideLarge, typeMovie, reRenderParent, see
                             width="90%"
                         />
                     </div>
-                )} */}
+                )} 
 
                 {item.title && (
                     <Button to={`${seeAllPath}`} className={cx('see-all')}>
