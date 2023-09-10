@@ -26,7 +26,7 @@ const cx = classNames.bind(styles);
 
 function Header({ noStateHeaderColor }) {
     const [showBackGroundHeader, setShowBackGroundHeader] = useState(false);
-    const [userLogin, setUserLogin] = useState(false);
+    // const [userLogin, setUserLogin] = useState(false);
 
     const backgroundColorHeader = noStateHeaderColor
         ? { backgroundColor: '#030612' }
@@ -119,6 +119,9 @@ function Header({ noStateHeaderColor }) {
             icon: <LogOutIcon />,
             title: 'Đăng xuất',
             separate: true,
+            onClick: () => {
+                localStorage.clear()
+            },
             to: '/',
         },
     ];
@@ -195,7 +198,7 @@ function Header({ noStateHeaderColor }) {
             </div>
 
             {
-                userLogin ? (
+                localStorage.getItem("isLogin") ? (
                     <Menu items={userMenu} hideOnClick>
                         <div className={cx('user')}>
                             <Image
@@ -206,7 +209,7 @@ function Header({ noStateHeaderColor }) {
                         </div>
                     </Menu>
                 ) : (
-                    <Button to={'login'}>
+                    <Button to="/login">
                         <div className={cx('login')}>
                             <LoginIcon />
                             <p className={cx('login-text')}>Đăng nhập</p>

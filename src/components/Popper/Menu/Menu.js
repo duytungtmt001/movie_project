@@ -80,7 +80,7 @@ const Menu = ({
         const cleanup = opacity.on("change", (value) => {
             if (value <= 0) {
                 cleanup();
-                unmount();
+                // unmount();
             }
         });
 
