@@ -12,8 +12,6 @@ function FormLogin({users, handleToggleLogin}) {
     const [valuePass, setValuePass] = useState('');
     let navigate = useNavigate();
 
-    console.log(valueName);
-
     const handleLogin = (e) => {
         e.preventDefault();
         const result = users.find(

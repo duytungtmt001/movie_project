@@ -7,6 +7,9 @@ import InputGroup from './InputGroup';
 const cx = classNames.bind(styles);
 
 function FormRegister({handleToggleLogin}) {
+    const [nameValue, setNameValue] = useState('');
+    const [passValue, setPassValue] = useState('');
+    const [passAgainValue, setPassAgainValue] = useState('');
 
     const handleRegister = (e) => {
         e.preventDefault();
@@ -19,6 +22,8 @@ function FormRegister({handleToggleLogin}) {
                 labelText="Tên đăng nhập"
                 placeholder="Tên đăng nhập"
                 formMessage="Vui lòng nhập tên đăng nhập"
+                value={nameValue}
+                setValue={setNameValue}
             />
 
             <InputGroup
@@ -27,6 +32,8 @@ function FormRegister({handleToggleLogin}) {
                 type="password"
                 placeholder="Mật khẩu"
                 formMessage="Vui lòng nhập mật khẩu"
+                value={passValue}
+                setValue={setPassValue}
             />
 
             <InputGroup
@@ -35,6 +42,8 @@ function FormRegister({handleToggleLogin}) {
                 type="password"
                 placeholder="Nhập lại mật khẩu"
                 formMessage="Vui lòng nhập nhập lại mật khẩu"
+                value={passAgainValue}
+                setValue={setPassAgainValue}
             />
 
             <p className={cx('regulation')}>
