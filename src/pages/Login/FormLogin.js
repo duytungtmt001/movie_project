@@ -2,19 +2,22 @@ import { useState } from 'react';
 import Button from '../../components/Button';
 import styles from './Login.module.scss';
 import classNames from 'classnames/bind';
-import { useNavigate } from 'react-router-dom';
+import InputGroup from './InputGroup';
 
+import { useNavigate } from 'react-router-dom';
 const cx = classNames.bind(styles);
 
 function FormLogin({users, handleToggleLogin}) {
-    const [nameValue, setNameValue] = useState('');
-    const [passValue, setPassValue] = useState('');
+    const [valueName, setValueName] = useState('');
+    const [valuePass, setValuePass] = useState('');
     let navigate = useNavigate();
+
+    console.log(valueName);
 
     const handleLogin = (e) => {
         e.preventDefault();
         const result = users.find(
-            (user, index) => user.name === nameValue && user.pass === passValue,
+            (user, index) => user.name === valueName && user.pass === valuePass,
         );
         if (!!result) {
             localStorage.setItem('isLogin', 'true');
@@ -24,37 +27,24 @@ function FormLogin({users, handleToggleLogin}) {
 
     return (
         <form className={cx('form')} id="form-1">
-            <label htmlFor="phone" className={cx('header-input')}>
-                Tên đăng nhập
-            </label>
+            <InputGroup
+                id="name"
+                labelText="Tên đăng nhập"
+                placeholder="Tên đăng nhập"
+                formMessage="Vui lòng nhập tên đăng nhập"
+                value={valueName}
+                setValue={setValueName}
+            />
 
-            <div className={cx('input-wrap')}>
-                <input
-                    id="phone"
-                    name="phone"
-                    value={nameValue}
-                    onChange={(e) => setNameValue(e.target.value)}
-                    type="text"
-                    placeholder="Tên đăng nhập"
-                />
-                <span className={cx('form-message')}>Vui lòng nhập tài khoản</span>
-            </div>
-
-            <label htmlFor="password" className={cx('header-input')}>
-                Mật khẩu
-            </label>
-
-            <div className={cx('input-wrap')}>
-                <input
-                    id="password"
-                    name="pasword"
-                    type="password"
-                    placeholder="Nhập mật khẩu"
-                    value={passValue}
-                    onChange={(e) => setPassValue(e.target.value)}
-                />
-                <span className={cx('form-message')}>Vui lòng nhập mật khẩu</span>
-            </div>
+            <InputGroup
+                id="password"
+                labelText="Mật khẩu"
+                type="password"
+                placeholder="Mật khẩu"
+                formMessage="Vui lòng nhập mật khẩu"
+                value={valuePass}
+                setValue={setValuePass}
+            />
 
             <p className={cx('regulation')}>
                 Khi tiếp tục, bạn đã đồng ý <span>Quy chế sử dụng dịch vụ</span> của Phim Free.
