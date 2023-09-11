@@ -7,9 +7,11 @@ import InputGroup from './InputGroup';
 import { useNavigate } from 'react-router-dom';
 const cx = classNames.bind(styles);
 
-function FormLogin({users, handleToggleLogin}) {
+function FormLogin({users, handleToggleLogin, setFocus}) {
     const [valueName, setValueName] = useState('');
     const [valuePass, setValuePass] = useState('');
+    const [submit, setSubmit] = useState(false);
+    const [error, setError] = useState(false);
     let navigate = useNavigate();
 
     const handleLogin = (e) => {
@@ -20,11 +22,17 @@ function FormLogin({users, handleToggleLogin}) {
         if (!!result) {
             localStorage.setItem('isLogin', 'true');
             return navigate('/');
+        } else {
+            if(valueName === "" && valuePass === "") {
+                setSubmit(true)
+            } else {
+                setError(true)
+            }
         }
     };
 
     return (
-        <form className={cx('form')} id="form-1">
+        <form className={cx('form')} id="form-1" autoComplete="off">
             <InputGroup
                 id="name"
                 labelText="Tên đăng nhập"
@@ -32,6 +40,8 @@ function FormLogin({users, handleToggleLogin}) {
                 formMessage="Vui lòng nhập tên đăng nhập"
                 value={valueName}
                 setValue={setValueName}
+                setFocus={setFocus}
+                submit={submit}
             />
 
             <InputGroup
@@ -42,7 +52,11 @@ function FormLogin({users, handleToggleLogin}) {
                 formMessage="Vui lòng nhập mật khẩu"
                 value={valuePass}
                 setValue={setValuePass}
+                setFocus={setFocus}
+                submit={submit}
             />
+
+            {error && <span className={cx('form-message')}>Sai tên đăng nhập hoặc mật khẩu</span>}
 
             <p className={cx('regulation')}>
                 Khi tiếp tục, bạn đã đồng ý <span>Quy chế sử dụng dịch vụ</span> của Phim Free.

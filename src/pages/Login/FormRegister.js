@@ -16,7 +16,7 @@ function FormRegister({handleToggleLogin}) {
     };
 
     return (
-        <form className={cx('form')} id="form-2">
+        <form className={cx('form')} id="form-2" autoComplete="off">
             <InputGroup
                 id="name"
                 labelText="Tên đăng nhập"
