@@ -13,7 +13,12 @@ function InputGroup({ id, labelText, type = "text", placeholder, formMessage, va
     const borderInputStyle = showError ? {
         border: "1px solid red"
     } : {}
-
+    
+    useEffect(() => {
+        const result = users.find((item, index) => item.name === value);
+        setExist(!!result)
+    }, [value])
+    
     useEffect(() => {
         setShowError(submit);
     }, [submit])
@@ -23,11 +28,10 @@ function InputGroup({ id, labelText, type = "text", placeholder, formMessage, va
             setShowError(true) 
         }
     }
+    
 
     const handleInput = () => {
         setShowError(false)
-        const result = users.find((item, index) => item.name === value);
-        console.log(value);
     }
 
     return (

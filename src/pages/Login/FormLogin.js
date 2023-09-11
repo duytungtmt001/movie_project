@@ -15,6 +15,7 @@ function FormLogin({users, handleToggleLogin, setFocus}) {
     const [valuePass, setValuePass] = useState('');
     const [submit, setSubmit] = useState(false);
     const [error, setError] = useState(false);
+    const [success, setSuccess] = useState(false)
     let navigate = useNavigate();
 
     const MySwal = withReactContent(Swal);
@@ -26,6 +27,17 @@ function FormLogin({users, handleToggleLogin, setFocus}) {
         }).then(() => {
             setError(false)
         });
+
+    success &&
+        MySwal.fire({
+            icon: 'success',
+            title: 'Đăng nhập thành công',
+            showConfirmButton: false,
+            timer: 1500,
+        }).then(() => {
+            setSuccess(false);
+            return navigate('/');
+        });
         
 
     const handleLogin = (e) => {
@@ -34,8 +46,8 @@ function FormLogin({users, handleToggleLogin, setFocus}) {
             (user, index) => user.name === valueName && user.pass === valuePass,
         );
         if (!!result) {
-            localStorage.setItem('isLogin', 'true');
-            return navigate('/');
+            localStorage.setItem('isLogin', valueName);
+            setSuccess(true);
         } else {
             if(valueName === "" && valuePass === "") {
                 setSubmit(true)

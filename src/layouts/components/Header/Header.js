@@ -11,6 +11,7 @@ import {
     LoginIcon,
     SettingIcon,
     ThemeIcon,
+    UserIcon,
     WishlistIcon,
 } from '../../../components/Icons';
 import Notification from '../../../components/Popper/Notification';
@@ -164,16 +165,18 @@ function Header({ noStateHeaderColor }) {
                         }
                         return (
                             <li className={cx('navbar-item')} key={index}>
-                                <NavLink 
+                                <NavLink
                                     to={route.path}
                                     style={({ isActive }) => {
                                         return {
-                                          opacity: isActive ? "1" : "0.7",
-                                          fontWeight: isActive ? "800" : "600"
+                                            opacity: isActive ? '1' : '0.7',
+                                            fontWeight: isActive ? '800' : '600',
                                         };
                                     }}
                                     className={({ isActive, isPending }) => {
-                                        return isActive ? cx("navbar-item-link","active") : cx("navbar-item-link");
+                                        return isActive
+                                            ? cx('navbar-item-link', 'active')
+                                            : cx('navbar-item-link');
                                     }}
                                 >
                                     {route.linkName}
@@ -197,26 +200,26 @@ function Header({ noStateHeaderColor }) {
                 </div>
             </div>
 
-            {
-                localStorage.getItem("isLogin") ? (
-                    <Menu items={userMenu} hideOnClick>
-                        <div className={cx('user')}>
-                            <Image
+            {localStorage.getItem('isLogin') ? (
+                <Menu items={userMenu} hideOnClick>
+                    <div className={cx('user')}>
+                        {/* <Image
                                 src={require('../../../assets/images/avt/1.jpg')}
                                 alt={'error'}
                                 className="header-avt"
-                            />
-                        </div>
-                    </Menu>
-                ) : (
-                    <Button to="/login">
-                        <div className={cx('login')}>
-                            <LoginIcon />
-                            <p className={cx('login-text')}>Đăng nhập</p>
-                        </div>
-                    </Button>
-                )
-            }
+                            /> */}
+                        <UserIcon width="3.5rem" height="3.5rem" />
+                        <p className={cx('user-text')}>{localStorage.getItem('isLogin')}</p>
+                    </div>
+                </Menu>
+            ) : (
+                <Button to="/login">
+                    <div className={cx('login')}>
+                        <LoginIcon />
+                        <p className={cx('login-text')}>Đăng nhập</p>
+                    </div>
+                </Button>
+            )}
         </div>
     );
 }
