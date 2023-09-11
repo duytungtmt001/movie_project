@@ -1,16 +1,30 @@
-import { useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Button from '../../components/Button';
 import styles from './Login.module.scss';
 import classNames from 'classnames/bind';
 import { useLoaderData } from 'react-router-dom';
 import FormLogin from './FormLogin';
 import FormRegister from './FormRegister';
+import { listUsers } from '../../apiServices';
 
 const cx = classNames.bind(styles);
 
 function Login() {
     const [login, setLogin] = useState(true);
-    const users = useLoaderData();
+    const [users, setUsers] = useState([])
+    
+    useEffect(() => {
+        const getUsers = async () => {
+            try {
+                const resUsers = await listUsers();
+                setUsers(resUsers)
+                return resUsers;
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        getUsers();
+    }, [login]) 
 
     const handleToggleLogin = () => {
         setLogin(!login)
@@ -29,7 +43,7 @@ function Login() {
                     {login ? (
                         <FormLogin users={users} handleToggleLogin={handleToggleLogin} />
                     ) : (
-                        <FormRegister handleToggleLogin={handleToggleLogin} />
+                        <FormRegister users={users} handleToggleLogin={handleToggleLogin} />
                     )}
                 </div>
             </div>

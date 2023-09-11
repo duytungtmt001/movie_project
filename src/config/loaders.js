@@ -3,8 +3,10 @@ import {
     listMovieRelease,
     listMovieSeries,
     listTrendHome,
-    users
+    listUsers
 } from '../apiServices';
+
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 export const loaders = {
     odd: async () => {
@@ -81,7 +83,7 @@ export const loaders = {
     },
     login: async () => {
         try {
-            const resUsers = await users();
+            const resUsers = await listUsers();
             return resUsers
         } catch (error) {
             console.log(error);

@@ -1,10 +1,13 @@
 import { useEffect, useState } from 'react';
 import styles from './Login.module.scss';
 import classNames from 'classnames/bind';
+import { useLoaderData } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
-function InputGroup({ id, labelText, type = "text", placeholder, formMessage, value, setValue, submit}) {
+function InputGroup({ id, labelText, type = "text", placeholder, formMessage, value, setValue, submit, existRule}) {
+    const users = useLoaderData()
+    const [exist, setExist] = useState(false)
     const [showError, setShowError] = useState(false);
 
     const borderInputStyle = showError ? {
@@ -23,6 +26,8 @@ function InputGroup({ id, labelText, type = "text", placeholder, formMessage, va
 
     const handleInput = () => {
         setShowError(false)
+        const result = users.find((item, index) => item.name === value);
+        console.log(value);
     }
 
     return (
@@ -33,8 +38,8 @@ function InputGroup({ id, labelText, type = "text", placeholder, formMessage, va
 
             <div className={cx('input-wrap')}>
                 <input
-                    style={{...borderInputStyle}}
-                    id={id} 
+                    style={{ ...borderInputStyle }}
+                    id={id}
                     onBlur={handleBlur}
                     onInput={handleInput}
                     value={value}
@@ -42,7 +47,10 @@ function InputGroup({ id, labelText, type = "text", placeholder, formMessage, va
                     type={type}
                     placeholder={placeholder}
                 />
-                { showError &&  <span className={cx('form-message')}>{formMessage}</span>}
+                {showError && <span className={cx('form-message')}>{formMessage}</span>}
+                {existRule && exist && (
+                    <span className={cx('form-message')}>Tên đăng nhập đã tồn tại</span>
+                )}
             </div>
         </div>
     );

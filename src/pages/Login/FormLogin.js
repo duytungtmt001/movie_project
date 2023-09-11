@@ -4,6 +4,9 @@ import styles from './Login.module.scss';
 import classNames from 'classnames/bind';
 import InputGroup from './InputGroup';
 
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
+
 import { useNavigate } from 'react-router-dom';
 const cx = classNames.bind(styles);
 
@@ -13,6 +16,17 @@ function FormLogin({users, handleToggleLogin, setFocus}) {
     const [submit, setSubmit] = useState(false);
     const [error, setError] = useState(false);
     let navigate = useNavigate();
+
+    const MySwal = withReactContent(Swal);
+
+    error &&
+        MySwal.fire({
+            icon: 'error',
+            title: 'Sai tên đăng nhập hoặc mật khẩu'
+        }).then(() => {
+            setError(false)
+        });
+        
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -55,8 +69,6 @@ function FormLogin({users, handleToggleLogin, setFocus}) {
                 setFocus={setFocus}
                 submit={submit}
             />
-
-            {error && <span className={cx('form-message')}>Sai tên đăng nhập hoặc mật khẩu</span>}
 
             <p className={cx('regulation')}>
                 Khi tiếp tục, bạn đã đồng ý <span>Quy chế sử dụng dịch vụ</span> của Phim Free.

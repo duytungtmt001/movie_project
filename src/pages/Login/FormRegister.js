@@ -3,16 +3,49 @@ import Button from '../../components/Button';
 import styles from './Login.module.scss';
 import classNames from 'classnames/bind';
 import InputGroup from './InputGroup';
+import {addUser} from '../../apiServices/Post'
+
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 
 const cx = classNames.bind(styles);
 
-function FormRegister({handleToggleLogin}) {
+function FormRegister({users, handleToggleLogin, setFocus }) {
     const [nameValue, setNameValue] = useState('');
     const [passValue, setPassValue] = useState('');
     const [passAgainValue, setPassAgainValue] = useState('');
+    const [submit, setSubmit] = useState(false);
+    const [success, setSuccess] = useState(false);
+    const [exist, setExist] = useState(false)
+
+    const MySwal = withReactContent(Swal);
+
+    success &&
+        MySwal.fire({
+            icon: 'success',
+            title: 'Đăng ký thành công',
+            confirmButtonText: 'Đăng nhập ngay',
+        }).then(() => {
+            setSuccess(false);
+            handleToggleLogin();
+        });
 
     const handleRegister = (e) => {
         e.preventDefault();
+        const result = users.find((item, index) => item.name === nameValue);
+        if(!!result) {
+            setExist(true)
+        } else {
+            if (nameValue === '' && passValue === '') {
+                setSubmit(true);
+            } else {
+                const handleAddUser = async () => {
+                    await addUser({ name: nameValue, pass: passValue, img: '' });
+                };
+                handleAddUser();
+                setSuccess(true);
+            }
+        }
     };
 
     return (
@@ -24,6 +57,9 @@ function FormRegister({handleToggleLogin}) {
                 formMessage="Vui lòng nhập tên đăng nhập"
                 value={nameValue}
                 setValue={setNameValue}
+                setFocus={setFocus}
+                submit={submit}
+                existRule
             />
 
             <InputGroup
@@ -34,6 +70,8 @@ function FormRegister({handleToggleLogin}) {
                 formMessage="Vui lòng nhập mật khẩu"
                 value={passValue}
                 setValue={setPassValue}
+                setFocus={setFocus}
+                submit={submit}
             />
 
             <InputGroup
@@ -44,6 +82,8 @@ function FormRegister({handleToggleLogin}) {
                 formMessage="Vui lòng nhập nhập lại mật khẩu"
                 value={passAgainValue}
                 setValue={setPassAgainValue}
+                setFocus={setFocus}
+                submit={submit}
             />
 
             <p className={cx('regulation')}>

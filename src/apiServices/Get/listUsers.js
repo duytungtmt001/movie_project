@@ -1,6 +1,6 @@
 import * as request from '../../utils';
 
-export const users = async () => {
+export const listUsers = async () => {
     try {
         const data = await request.get('users');
         return data;

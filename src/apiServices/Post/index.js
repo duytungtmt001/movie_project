@@ -1,1 +1,2 @@
-export * from './addWishList'
+export * from './addWishList';
+export * from './addUser';
