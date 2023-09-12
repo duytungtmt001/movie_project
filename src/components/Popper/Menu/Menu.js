@@ -15,7 +15,7 @@ const cx = classNames.bind(styles);
 
 const defaultFn = () => {}
 
-const Menu = ({
+const Menu = ({ 
     children, 
     items = [], 
     onChange = defaultFn, 
@@ -36,6 +36,7 @@ const Menu = ({
     const renderItems = () => (
         current.data.map((item, index) => {
             const isParent = !!item.children;
+            const isOnClick = !!item.onClick;
             return (
                 <MenuItem
                     key={index}
@@ -43,7 +44,9 @@ const Menu = ({
                     onClick={() => {
                         if (isParent) {
                             setHistory((prev) => [...prev, item.children]);
-                        } else {
+                        } else if (isOnClick) {
+                            item.onClick()
+                        } else {    
                             onChange(item);
                         }
                     }}
