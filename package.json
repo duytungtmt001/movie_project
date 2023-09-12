@@ -37,7 +37,9 @@
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "customize-cra": "^1.0.0",
+    "gh-pages": "^6.0.0",
     "react-app-rewired": "^2.0.0"
   },
   "scripts": {
@@ -45,7 +47,9 @@
     "database": "json-server --watch database.json",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "react-scripts build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
