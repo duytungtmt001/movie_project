@@ -3109,7 +3109,7 @@
       "subtitle": "Thuyết minh"
     }
   ],
-  "list_movie_series": [
+  "list_movie_series" : [
     {
       "id": 1,
       "name": "Vạn Dặm Nhân Sinh",

@@ -4,10 +4,9 @@ import SlideWithDescription from '../../components/Slider/SlideWithDescription';
 
 import classNames from 'classnames/bind';
 import styles from './Home.module.scss';
-import { ArrowRightIcon } from '../../components/Icons';
 
 import { ApiContext } from '../../context';
-import { useLoaderData } from 'react-router-dom';
+// import { useLoaderData } from 'react-router-dom';
 
 import Video from '../../components/Video'
 
@@ -15,7 +14,7 @@ const cx = classNames.bind(styles);
 
 function Home() {
     const apiData = useContext(ApiContext);
-    const loaderData = useLoaderData();
+    // const loaderData = useLoaderData();
 
     const [showVideo, setShowVideo] = useState(false);
     const [path, setPath] = useState('3.mp4');
@@ -58,7 +57,7 @@ function Home() {
                     />
                 </div>
 
-                <div className={cx('list')}>
+                {/* <div className={cx('list')}>
                     <div className={cx('list-movie', 'list-trend')}>
                         <div className={cx('list-title')}>
                             <p className={cx('title-head')}>Phim Mới Thịnh Hành Trên Phim Free</p>
@@ -202,7 +201,7 @@ function Home() {
                             />
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
         </div>
     );
