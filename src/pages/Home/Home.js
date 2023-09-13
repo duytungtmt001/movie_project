@@ -15,6 +15,7 @@ const cx = classNames.bind(styles);
 
 function Home() {
     const apiData = useContext(ApiContext);
+    const loaderData = useLoaderData();
 
     const [showVideo, setShowVideo] = useState(false);
     const [path, setPath] = useState('3.mp4');
@@ -32,7 +33,6 @@ function Home() {
         setItem(item);
     }
 
-    const loaderData = useLoaderData();
 
     return (
         <div>
@@ -58,7 +58,7 @@ function Home() {
                     />
                 </div>
 
-                <div className={cx('list')}>
+                {/* <div className={cx('list')}>
                     <div className={cx('list-movie', 'list-trend')}>
                         <div className={cx('list-title')}>
                             <p className={cx('title-head')}>Phim Mới Thịnh Hành Trên Phim Free</p>
@@ -202,7 +202,7 @@ function Home() {
                             />
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
         </div>
     );

@@ -27,7 +27,6 @@ const cx = classNames.bind(styles);
 
 function Header({ noStateHeaderColor }) {
     const [showBackGroundHeader, setShowBackGroundHeader] = useState(false);
-    // const [userLogin, setUserLogin] = useState(false);
 
     const backgroundColorHeader = noStateHeaderColor
         ? { backgroundColor: '#030612' }
