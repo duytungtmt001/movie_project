@@ -58,7 +58,7 @@ function Home() {
                     />
                 </div>
 
-                {/* <div className={cx('list')}>
+                <div className={cx('list')}>
                     <div className={cx('list-movie', 'list-trend')}>
                         <div className={cx('list-title')}>
                             <p className={cx('title-head')}>Phim Mới Thịnh Hành Trên Phim Free</p>
@@ -202,7 +202,7 @@ function Home() {
                             />
                         </div>
                     </div>
-                </div> */}
+                </div>
             </div>
         </div>
     );

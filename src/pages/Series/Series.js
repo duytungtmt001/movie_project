@@ -1,6 +1,6 @@
 import ListMovieByCategory from '../../components/ListMovieByCategory';
 
-import { useContext, useEffect, useState } from 'react';
+import { useContext } from 'react';
 import {ApiContext} from '../../context';
 import { useLoaderData } from 'react-router-dom';
 

@@ -1,7 +1,7 @@
 import ReactPlayer from 'react-player';
 import styles from './Video.module.scss';
 import classNames from 'classnames/bind';
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import {
     BackVideoIcon,
     FeedbackIconVideo,
@@ -311,7 +311,7 @@ function Video({
                             />
                         </div>
                         <div className={cx('control-icon')} tabIndex={4}>
-                            {volumeValue == 1 ? (
+                            {volumeValue === 1 ? (
                                 <MaxVolumeIcon
                                     width="8rem"
                                     height="4rem"
@@ -321,7 +321,7 @@ function Video({
                                     }}
                                     className={cx('icon-item')}
                                 />
-                            ) : volumeValue == 0 ? (
+                            ) : volumeValue === 0 ? (
                                 <MutedIconVideo
                                     width="8rem"
                                     height="4rem"
