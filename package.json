@@ -47,7 +47,7 @@
         "predeploy": "npm run build",
         "deploy": "gh-pages -d build",
         "start": "react-app-rewired start",
-        "database": "json-server --watch database.json",
+        "database": "json-server --watch db.json",
         "build": "react-app-rewired build",
         "test": "react-app-rewired test",
         "eject": "react-scripts eject"
