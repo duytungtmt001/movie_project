@@ -6,15 +6,16 @@ import classNames from 'classnames/bind';
 import styles from './Home.module.scss';
 
 import { ApiContext } from '../../context';
-// import { useLoaderData } from 'react-router-dom';
+import { useLoaderData } from 'react-router-dom';
 
 import Video from '../../components/Video'
+import { ArrowRightIcon } from '../../components/Icons';
 
 const cx = classNames.bind(styles);
 
 function Home() {
     const apiData = useContext(ApiContext);
-    // const loaderData = useLoaderData();
+    const loaderData = useLoaderData();
 
     const [showVideo, setShowVideo] = useState(false);
     const [path, setPath] = useState('3.mp4');
@@ -57,8 +58,8 @@ function Home() {
                     />
                 </div>
 
-                {/* <div className={cx('list')}>
-                    <div className={cx('list-movie', 'list-trend')}>
+                <div className={cx('list')}>
+                    {/* <div className={cx('list-movie', 'list-trend')}>
                         <div className={cx('list-title')}>
                             <p className={cx('title-head')}>Phim Mới Thịnh Hành Trên Phim Free</p>
                             <ArrowRightIcon
@@ -173,7 +174,7 @@ function Home() {
                                 speed={1100}
                             />
                         </div>
-                    </div>
+                    </div> */}
 
                     <div className={cx('list-movie', 'list-wishlist')}>
                         <div className={cx('list-title')}>
@@ -201,7 +202,7 @@ function Home() {
                             />
                         </div>
                     </div>
-                </div> */}
+                </div>
             </div>
         </div>
     );
