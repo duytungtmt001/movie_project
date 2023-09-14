@@ -11,6 +11,18 @@
       "pass": "123",
       "img": "",
       "id": 2
+    },
+    {
+      "name": "aaaab2003",
+      "pass": "123",
+      "img": "",
+      "id": 3
+    },
+    {
+      "name": "aaaab20035",
+      "pass": "123",
+      "img": "",
+      "id": 4
     }
   ],
   "suggest": [
@@ -2771,7 +2783,7 @@
       "img_name": "benhuytri_name.jpg",
       "trailer": "4.mp4",
       "video": "4.mp4",
-      "isLike": false,
+      "isLike": true,
       "isMonopoly": false,
       "typeMovie_id": 6,
       "subtitle": "Thuyết minh"
@@ -3097,7 +3109,7 @@
       "subtitle": "Thuyết minh"
     }
   ],
-  "list_movie_series": [
+  "list_movie_series" : [
     {
       "id": 1,
       "name": "Vạn Dặm Nhân Sinh",
@@ -3735,7 +3747,7 @@
       "img_name": "demtoi_name.jpg",
       "trailer": "4.mp4",
       "video": "4.mp4",
-      "isLike": false,
+      "isLike": true,
       "isMonopoly": true,
       "subtitle": "Thuyết minh",
       "typeMovie_id": 17
@@ -3755,7 +3767,7 @@
       "img_name": "ainbo_name.jpg",
       "trailer": "4.mp4",
       "video": "4.mp4",
-      "isLike": false,
+      "isLike": true,
       "isMonopoly": true,
       "subtitle": "Thuyết minh",
       "typeMovie_id": 17
@@ -4301,5 +4313,26 @@
       "typeMovie_id": 19
     }
   ],
-  "wishlist": []
+  "wishlist": [
+    {
+      "name": "Đêm Tối Cuối Cùng Ở Địa Cầu",
+      "description": "Đã nhiều năm trôi qua, người đàn ông trở lại quê hương vẫn không thể ngưng dòng suy nghĩ về người phụ nữ ấy, người anh chưa từng biết tên nhưng luôn hy vọng được hội ngộ, dù chỉ là ảo mộng.",
+      "time": 138,
+      "year": 2018,
+      "age": 16,
+      "actor": "Thang Duy, Hoàng Giác, Trương Ngải Gia",
+      "director": "Tất Cống",
+      "award": "",
+      "img": "demtoi.jpg",
+      "img_banner": "demtoi.jpg",
+      "img_name": "demtoi_name.jpg",
+      "trailer": "4.mp4",
+      "video": "4.mp4",
+      "isMonopoly": true,
+      "subtitle": "Thuyết minh",
+      "typeMovie_id": 17,
+      "isLike": true,
+      "id": 1
+    }
+  ]
 }

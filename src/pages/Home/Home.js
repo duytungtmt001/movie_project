@@ -4,12 +4,12 @@ import SlideWithDescription from '../../components/Slider/SlideWithDescription';
 
 import classNames from 'classnames/bind';
 import styles from './Home.module.scss';
-import { ArrowRightIcon } from '../../components/Icons';
 
 import { ApiContext } from '../../context';
 import { useLoaderData } from 'react-router-dom';
 
 import Video from '../../components/Video'
+import { ArrowRightIcon } from '../../components/Icons';
 
 const cx = classNames.bind(styles);
 
@@ -59,7 +59,11 @@ function Home() {
                 </div>
 
                 <div className={cx('list')}>
+<<<<<<< HEAD
                     <div className={cx('list-movie', 'list-trend')}>
+=======
+                    {/* <div className={cx('list-movie', 'list-trend')}>
+>>>>>>> 13baaed66a6b48cd8b81cf304697273d2bb06cba
                         <div className={cx('list-title')}>
                             <p className={cx('title-head')}>Phim Mới Thịnh Hành Trên Phim Free</p>
                             <ArrowRightIcon
@@ -174,7 +178,7 @@ function Home() {
                                 speed={1100}
                             />
                         </div>
-                    </div>
+                    </div> */}
 
                     <div className={cx('list-movie', 'list-wishlist')}>
                         <div className={cx('list-title')}>

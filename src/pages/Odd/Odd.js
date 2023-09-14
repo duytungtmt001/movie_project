@@ -1,8 +1,8 @@
 import ListMovieByCategory from '../../components/ListMovieByCategory';
 
-import { useContext, useEffect, useState } from 'react';
+import { useContext } from 'react';
 import {ApiContext} from '../../context';
-import { useLoaderData, useNavigation } from 'react-router-dom';
+import { useLoaderData } from 'react-router-dom';
 
 function Odd() {
     const apiData = useContext(ApiContext);
