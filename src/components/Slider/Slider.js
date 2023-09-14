@@ -38,7 +38,7 @@ function SliderCarousel({
     typeMovie = [],
     slideEnd = false,
     slideEndBig = false,
-    seeAllPath = '/'
+    seeAllPath = '/movie_project'
 }) {
     const appenDotsFn = dotsFade ? {
         appendDots: (dots) => (

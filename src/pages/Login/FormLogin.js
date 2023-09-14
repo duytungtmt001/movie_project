@@ -36,7 +36,7 @@ function FormLogin({users, handleToggleLogin, setFocus}) {
             timer: 1500,
         }).then(() => {
             setSuccess(false);
-            return navigate('/');
+            return navigate('/movie_project');
         });
         
 

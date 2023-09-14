@@ -26,7 +26,7 @@ function SlideWithDescription({ sourceSliderImg, item, typeMovie, reRenderParent
             <div className={cx('icon')}>
                 <Tippy content="Chi tiết" placement="bottom" delay={[0, 100]}>
                     <div>
-                        <Button to={`/detail/${categoryMovieItem()}-${item.name}`}>
+                        <Button to={`/movie_project/detail/${categoryMovieItem()}-${item.name}`}>
                             <img
                                 alt=""
                                 src={require('../../../assets/images/Slider_Main/icon-info.png')}

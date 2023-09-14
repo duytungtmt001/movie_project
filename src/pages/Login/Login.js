@@ -32,7 +32,7 @@ function Login() {
 
     return (
         <div className={cx('wrapper')}>
-            <Button to="/" className={cx('logo')}>
+            <Button to="/movie_project" className={cx('logo')}>
                 <img alt="" src={require('../../assets/images/logo/logo.png')} width="100%" />
             </Button>
 

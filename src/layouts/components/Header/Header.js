@@ -60,7 +60,7 @@ function Header({ noStateHeaderColor }) {
         {
             icon: <AccountIcon />,
             title: 'Tài khoản',
-            to: '/',
+            to: '/movie_project',
         },
         {
             icon: <WishlistIcon />,
@@ -94,7 +94,7 @@ function Header({ noStateHeaderColor }) {
         {
             icon: <SettingIcon />,
             title: 'Cài đặt',
-            to: '/',
+            to: '/movie_project',
         },
         {
             icon: <ThemeIcon />,
@@ -122,7 +122,7 @@ function Header({ noStateHeaderColor }) {
             onClick: () => {
                 localStorage.clear()
             },
-            to: '/',
+            to: '/movie_project',
         },
     ];
 
@@ -147,7 +147,7 @@ function Header({ noStateHeaderColor }) {
             }}
         >
             <div className={cx('logo')}>
-                <Link to={'/'}>
+                <Link to={'/movie_project'}>
                     <img
                         src={require('../../../assets/images/logo/logo.png')}
                         alt=""
@@ -212,7 +212,7 @@ function Header({ noStateHeaderColor }) {
                     </div>
                 </Menu>
             ) : (
-                <Button to="/login">
+                <Button to="/movie_project/login">
                     <div className={cx('login')}>
                         <LoginIcon />
                         <p className={cx('login-text')}>Đăng nhập</p>

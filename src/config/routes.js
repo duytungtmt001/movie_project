@@ -6,7 +6,7 @@ export const routes = {
     wishlist: '/movie_project/wishlist',
     login: '/movie_project/login',
     donate: '/movie_project/donate',
-    detail: '/movie_project/detail/:info',
-    ribbon: '/movie_project/ribbon/:info',
+    detail: 'movie_project/detail/:info',
+    ribbon: 'movie_project/ribbon/:info',
     other: '*'
 }

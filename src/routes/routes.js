@@ -21,7 +21,7 @@ export const publicRoutes = [
     { path: routes.odd, component: Odd, linkName: 'Phim lẻ', loader: loaders.odd },
     { path: routes.series, component: Series, linkName: 'Phim bộ', loader: loaders.series },
     { path: routes.wishlist, component: Wishlist, linkName: 'Danh sách yêu thích' },
-    { path: routes.donate, component: Donate, linkName: 'Donate me' },
+    // { path: routes.donate, component: Donate, linkName: 'Donate me' },
     { path: routes.detail, component: Detail, loader: loaders.detail },
     { path: routes.ribbon, component: Ribbon, loader: loaders.ribbon },
     { path: routes.login, component: Login, layout: null, loader: loaders.login },

@@ -92,7 +92,7 @@ function ListMovieByCategory({
                                             responsive
                                             slidesToShow={5.2}
                                             slideEnd
-                                            seeAllPath={`/ribbon/${type.category}-${findIdTypeMovie(type.name)}`}
+                                            seeAllPath={`/movie_project/ribbon/${type.category}-${findIdTypeMovie(type.name)}`}
                                             easing="ease"
                                             speed={1100}
                                             zoomWhenHover
