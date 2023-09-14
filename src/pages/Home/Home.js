@@ -6,7 +6,7 @@ import classNames from 'classnames/bind';
 import styles from './Home.module.scss';
 
 import { ApiContext } from '../../context';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useLocation } from 'react-router-dom';
 
 import Video from '../../components/Video'
 import { ArrowRightIcon } from '../../components/Icons';
@@ -16,10 +16,10 @@ const cx = classNames.bind(styles);
 
 function Home() {
     const apiData = useContext(ApiContext);
-    const [listTrend, setListTrend] = useState();
-    const [listOdd, setListOdd] = useState();
-    const [listRelease, setListRelease] = useState();
-    const [listSeries, setListSeries] = useState();
+    // const [listTrend, setListTrend] = useState();
+    // const [listOdd, setListOdd] = useState();
+    // const [listRelease, setListRelease] = useState();
+    // const [listSeries, setListSeries] = useState();
     const loaderData = useLoaderData();
 
     const [showVideo, setShowVideo] = useState(false);
@@ -38,32 +38,32 @@ function Home() {
         setItem(item);
     }
 
-    useEffect(() => {
-        const callApi = async () =>  {
-            try {
-                const resOdd = await listMovieOdd();
-                const resSeries = await listMovieSeries();
-                const resRelease = await listMovieRelease();
-                const resultTrend = await listTrendHome();
-                let resultOdd = [];
-                let resultSeries = [];
-                let resultRelease = [];
-                for (let i = 0; i < 10; i++) {
-                    resultOdd.push(resOdd[i]);
-                    resultSeries.push(resSeries[i]);
-                    resultRelease.push(resRelease[i]);
-                }
-                setListTrend(resultTrend);
-                setListOdd(resOdd);
-                setListRelease(resultRelease);
-                setListSeries(resSeries);
-            } catch (error) {
-                console.log(error);
-            }
-        }
+    // useEffect(() => {
+    //     const callApi = async () =>  {
+    //         try {
+    //             const resOdd = await listMovieOdd();
+    //             const resSeries = await listMovieSeries();
+    //             const resRelease = await listMovieRelease();
+    //             const resultTrend = await listTrendHome();
+    //             let resultOdd = [];
+    //             let resultSeries = [];
+    //             let resultRelease = [];
+    //             for (let i = 0; i < 10; i++) {
+    //                 resultOdd.push(resOdd[i]);
+    //                 resultSeries.push(resSeries[i]);
+    //                 resultRelease.push(resRelease[i]);
+    //             }
+    //             setListTrend(resultTrend);
+    //             setListOdd(resOdd);
+    //             setListRelease(resultRelease);
+    //             setListSeries(resSeries);
+    //         } catch (error) {
+    //             console.log(error);
+    //         }
+    //     }
 
-        callApi();
-    }, [])
+    //     callApi();
+    // }, [])
 
 
     return (
@@ -103,7 +103,7 @@ function Home() {
                         <div className={cx('list-slider')}>
                             <SliderCarousel
                                 reRenderParent={handleReRender}
-                                data={listTrend}
+                                data={loaderData.resultTrend}
                                 sourceListImg="Home_Slider_Trend"
                                 classNameSlide={cx('list-slide-padding')}
                                 responsive
@@ -135,7 +135,7 @@ function Home() {
                         <div className={cx('list-slider')}>
                             <SliderCarousel
                                 reRenderParent={handleReRender}
-                                data={listRelease}
+                                data={loaderData.resultRelease}
                                 sourceListImg="List_Movie_Img"
                                 classNameSlide={cx('list-slide-padding')}
                                 responsive
@@ -162,7 +162,7 @@ function Home() {
                         <div className={cx('list-slider')}>
                             <SliderCarousel
                                 reRenderParent={handleReRender}
-                                data={listOdd}
+                                data={loaderData.resultOdd}
                                 sourceListImg="List_Movie_Img"
                                 classNameSlide={cx('list-slide-padding')}
                                 responsive
@@ -193,7 +193,7 @@ function Home() {
                         <div className={cx('list-slider')}>
                             <SliderCarousel
                                 reRenderParent={handleReRender}
-                                data={listSeries}
+                                data={loaderData.resultSeries}
                                 sourceListImg="List_Movie_Img"
                                 classNameSlide={cx('list-slide-padding')}
                                 responsive
@@ -220,7 +220,7 @@ function Home() {
                         <div className={cx('list-slider')}>
                             <SliderCarousel
                                 reRenderParent={handleReRender}
-                                data={listSeries}
+                                data={loaderData.resultSeries}
                                 sourceListImg="List_Movie_Img"
                                 classNameSlide={cx('list-slide-padding')}
                                 responsive

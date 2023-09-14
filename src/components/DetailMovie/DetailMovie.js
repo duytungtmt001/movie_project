@@ -10,7 +10,7 @@ import { useState } from 'react';
 import Video from '../Video';
 
 const cx = classNames.bind(styles);
-function DetailMovie({ item, typeMovie, list, type }) {
+function DetailMovie({ item, typeMovie, list }) {
     const [showVideo, setShowVideo] = useState(false);
     
     const scaleAnimation = showVideo
@@ -25,8 +25,8 @@ function DetailMovie({ item, typeMovie, list, type }) {
     };
 
     const typeMovieItem = () => {
-        return typeMovie.find((type, index) => {
-            return item.typeMovie_id === type.id;
+        return typeMovie.find((typeItem, index) => {
+            return item.typeMovie_id === typeItem.id;
         }).name;
     };
 
@@ -92,7 +92,7 @@ function DetailMovie({ item, typeMovie, list, type }) {
                             <div className={cx('actor-right')}>
                                 <div className={cx('actor-right-detail')}>{item.actor}</div>
                                 <div className={cx('actor-right-detail')}>{item.director}</div>
-                                <div className={cx('actor-right-detail')}>{typeMovieItem()}</div>
+                                {item && typeMovie && <div className={cx('actor-right-detail')}>{typeMovieItem()}</div>}
                             </div>
                         </div>
 

@@ -89,28 +89,28 @@ export const loaders = {
             console.log(error);
         }
     },
-    // home: async () => {
-    //     try {
-    //         const resOdd = await listMovieOdd();
-    //         const resSeries = await listMovieSeries();
-    //         const resRelease = await listMovieRelease();
-    //         const resultTrend = await listTrendHome();
-    //         let resultOdd = [];
-    //         let resultSeries = [];
-    //         let resultRelease = [];
-    //         for (let i = 0; i < 10; i++) {
-    //             resultOdd.push(resOdd[i]);
-    //             resultSeries.push(resSeries[i]);
-    //             resultRelease.push(resRelease[i]);
-    //         }
-    //         return {
-    //             resultTrend,
-    //             resultOdd,
-    //             resultSeries,
-    //             resultRelease,
-    //         };
-    //     } catch (error) {
-    //         console.log(error);
-    //     }
-    // },
+    home: async () => {
+        try {
+            const resOdd = await listMovieOdd();
+            const resSeries = await listMovieSeries();
+            const resRelease = await listMovieRelease();
+            const resultTrend = await listTrendHome();
+            let resultOdd = [];
+            let resultSeries = [];
+            let resultRelease = [];
+            for (let i = 0; i < 10; i++) {
+                resultOdd.push(resOdd[i]);
+                resultSeries.push(resSeries[i]);
+                resultRelease.push(resRelease[i]);
+            }
+            return {
+                resultTrend,
+                resultOdd,
+                resultSeries,
+                resultRelease,
+            };
+        } catch (error) {
+            console.log(error);
+        }
+    },
 };
