@@ -63,7 +63,7 @@ function Home() {
         }
 
         callApi();
-    })
+    }, [])
 
 
     return (
