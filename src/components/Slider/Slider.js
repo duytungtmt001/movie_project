@@ -112,9 +112,9 @@ function SliderCarousel({
     const [widthScreen, setWidthScreen] = useState(window.innerWidth);
     
     const slideWidthDefault = () => {
-        if(window.innerWidth > 1536) {
+        if(window.innerWidth > 1535) {
             return 800;
-        } else if(window.innerWidth <= 1536 && window.innerWidth > 1280) {
+        } else if(window.innerWidth <= 1535 && window.innerWidth > 1280) {
             return 650;
         } else if(window.innerWidth <= 1280) {
             return 600;

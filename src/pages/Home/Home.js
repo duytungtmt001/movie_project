@@ -140,7 +140,7 @@ function Home() {
                                 classNameSlide={cx('list-slide-padding')}
                                 responsive
                                 slideEnd
-                                seeAllPath={'/release'}
+                                seeAllPath={'/movie_project/release'}
                                 typeMovie={apiData.typeMovie}
                                 slidesToShow={5.2}
                                 slideWidth="auto"
@@ -167,7 +167,7 @@ function Home() {
                                 classNameSlide={cx('list-slide-padding')}
                                 responsive
                                 slideEnd
-                                seeAllPath={'/odd'}
+                                seeAllPath={'/movie_project/odd'}
                                 typeMovie={apiData.typeMovie}
                                 slidesToShow={5.2}
                                 slideWidth="auto"
@@ -198,7 +198,7 @@ function Home() {
                                 classNameSlide={cx('list-slide-padding')}
                                 responsive
                                 slideEnd
-                                seeAllPath={'/series'}
+                                seeAllPath={'/movie_project/series'}
                                 typeMovie={apiData.typeMovie}
                                 slidesToShow={5.2}
                                 slideWidth="auto"
@@ -225,7 +225,7 @@ function Home() {
                                 classNameSlide={cx('list-slide-padding')}
                                 responsive
                                 slideEnd
-                                seeAllPath={'/wishlist'}
+                                seeAllPath={'/movie_project/wishlist'}
                                 typeMovie={apiData.typeMovie}
                                 slidesToShow={5.2}
                                 slideWidth="auto"
