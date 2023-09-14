@@ -25,7 +25,6 @@ function App() {
 
             return (
                 <Route
-                    exact
                     key={index}
                     path={route.path}
                     loader={loaderRoute}

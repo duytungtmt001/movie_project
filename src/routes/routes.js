@@ -16,7 +16,7 @@ export const publicRoutes = [
         path: routes.release,
         component: Release,
         linkName: 'Phim chiếu rạp',
-        loader: loaders.release,
+        // loader: loaders.release,
     },
     { path: routes.odd, component: Odd, linkName: 'Phim lẻ', loader: loaders.odd },
     { path: routes.series, component: Series, linkName: 'Phim bộ', loader: loaders.series },

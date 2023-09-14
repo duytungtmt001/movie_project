@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import SliderCarousel from '../../components/Slider';
 import SlideWithDescription from '../../components/Slider/SlideWithDescription';
 
@@ -10,11 +10,16 @@ import { useLoaderData } from 'react-router-dom';
 
 import Video from '../../components/Video'
 import { ArrowRightIcon } from '../../components/Icons';
+import { listMovieOdd, listMovieRelease, listMovieSeries, listTrendHome } from '../../apiServices';
 
 const cx = classNames.bind(styles);
 
 function Home() {
     const apiData = useContext(ApiContext);
+    const [listTrend, setListTrend] = useState();
+    const [listOdd, setListOdd] = useState();
+    const [listRelease, setListRelease] = useState();
+    const [listSeries, setListSeries] = useState();
     const loaderData = useLoaderData();
 
     const [showVideo, setShowVideo] = useState(false);
@@ -32,6 +37,33 @@ function Home() {
         item[type] && setPath(item[type]);
         setItem(item);
     }
+
+    useEffect(() => {
+        const callApi = async () =>  {
+            try {
+                const resOdd = await listMovieOdd();
+                const resSeries = await listMovieSeries();
+                const resRelease = await listMovieRelease();
+                const resultTrend = await listTrendHome();
+                let resultOdd = [];
+                let resultSeries = [];
+                let resultRelease = [];
+                for (let i = 0; i < 10; i++) {
+                    resultOdd.push(resOdd[i]);
+                    resultSeries.push(resSeries[i]);
+                    resultRelease.push(resRelease[i]);
+                }
+                setListTrend(resultTrend);
+                setListOdd(resOdd);
+                setListRelease(resultRelease);
+                setListSeries(resSeries);
+            } catch (error) {
+                console.log(error);
+            }
+        }
+
+        callApi();
+    })
 
 
     return (
@@ -59,11 +91,7 @@ function Home() {
                 </div>
 
                 <div className={cx('list')}>
-<<<<<<< HEAD
                     <div className={cx('list-movie', 'list-trend')}>
-=======
-                    {/* <div className={cx('list-movie', 'list-trend')}>
->>>>>>> 13baaed66a6b48cd8b81cf304697273d2bb06cba
                         <div className={cx('list-title')}>
                             <p className={cx('title-head')}>Phim Mới Thịnh Hành Trên Phim Free</p>
                             <ArrowRightIcon
@@ -75,7 +103,7 @@ function Home() {
                         <div className={cx('list-slider')}>
                             <SliderCarousel
                                 reRenderParent={handleReRender}
-                                data={loaderData.resultTrend}
+                                data={resultTrend}
                                 sourceListImg="Home_Slider_Trend"
                                 classNameSlide={cx('list-slide-padding')}
                                 responsive
@@ -107,7 +135,7 @@ function Home() {
                         <div className={cx('list-slider')}>
                             <SliderCarousel
                                 reRenderParent={handleReRender}
-                                data={loaderData.resultRelease}
+                                data={resultRelease}
                                 sourceListImg="List_Movie_Img"
                                 classNameSlide={cx('list-slide-padding')}
                                 responsive
@@ -134,7 +162,7 @@ function Home() {
                         <div className={cx('list-slider')}>
                             <SliderCarousel
                                 reRenderParent={handleReRender}
-                                data={loaderData.resultOdd}
+                                data={resultOdd}
                                 sourceListImg="List_Movie_Img"
                                 classNameSlide={cx('list-slide-padding')}
                                 responsive
@@ -165,7 +193,7 @@ function Home() {
                         <div className={cx('list-slider')}>
                             <SliderCarousel
                                 reRenderParent={handleReRender}
-                                data={loaderData.resultSeries}
+                                data={resultSeries}
                                 sourceListImg="List_Movie_Img"
                                 classNameSlide={cx('list-slide-padding')}
                                 responsive
@@ -178,7 +206,7 @@ function Home() {
                                 speed={1100}
                             />
                         </div>
-                    </div> */}
+                    </div>
 
                     <div className={cx('list-movie', 'list-wishlist')}>
                         <div className={cx('list-title')}>
@@ -192,7 +220,7 @@ function Home() {
                         <div className={cx('list-slider')}>
                             <SliderCarousel
                                 reRenderParent={handleReRender}
-                                data={loaderData.resultSeries}
+                                data={resultSeries}
                                 sourceListImg="List_Movie_Img"
                                 classNameSlide={cx('list-slide-padding')}
                                 responsive
