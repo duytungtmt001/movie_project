@@ -1,5 +1,6 @@
 @import 'normalize.css';
 @import 'tippy.js/themes/light.css';
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap');
 
 :root {
     --background-color: #111111;
@@ -9,7 +10,7 @@
     // Default layout
     --blue-color: #0A75FF;
     --white-color: #fff;
-    --font-family: 'Quicksand', 'san-serif';
+    // --font-family: 'Quicksand', 'san-serif';
 
     --header-height: 70px;
 }
@@ -18,7 +19,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: var(--font-family);
+    font-family: 'Quicksand', sans-serif;
 }
 
 html {
