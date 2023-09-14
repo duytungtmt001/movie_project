@@ -103,7 +103,7 @@ function Home() {
                         <div className={cx('list-slider')}>
                             <SliderCarousel
                                 reRenderParent={handleReRender}
-                                data={resultTrend}
+                                data={listTrend}
                                 sourceListImg="Home_Slider_Trend"
                                 classNameSlide={cx('list-slide-padding')}
                                 responsive
@@ -135,7 +135,7 @@ function Home() {
                         <div className={cx('list-slider')}>
                             <SliderCarousel
                                 reRenderParent={handleReRender}
-                                data={resultRelease}
+                                data={listRelease}
                                 sourceListImg="List_Movie_Img"
                                 classNameSlide={cx('list-slide-padding')}
                                 responsive
@@ -162,7 +162,7 @@ function Home() {
                         <div className={cx('list-slider')}>
                             <SliderCarousel
                                 reRenderParent={handleReRender}
-                                data={resultOdd}
+                                data={listOdd}
                                 sourceListImg="List_Movie_Img"
                                 classNameSlide={cx('list-slide-padding')}
                                 responsive
@@ -193,7 +193,7 @@ function Home() {
                         <div className={cx('list-slider')}>
                             <SliderCarousel
                                 reRenderParent={handleReRender}
-                                data={resultSeries}
+                                data={listSeries}
                                 sourceListImg="List_Movie_Img"
                                 classNameSlide={cx('list-slide-padding')}
                                 responsive
@@ -220,7 +220,7 @@ function Home() {
                         <div className={cx('list-slider')}>
                             <SliderCarousel
                                 reRenderParent={handleReRender}
-                                data={resultSeries}
+                                data={listSeries}
                                 sourceListImg="List_Movie_Img"
                                 classNameSlide={cx('list-slide-padding')}
                                 responsive
