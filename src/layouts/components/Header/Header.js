@@ -202,11 +202,6 @@ function Header({ noStateHeaderColor }) {
             {localStorage.getItem('isLogin') ? (
                 <Menu items={userMenu} hideOnClick>
                     <div className={cx('user')}>
-                        {/* <Image
-                                src={require('../../../assets/images/avt/1.jpg')}
-                                alt={'error'}
-                                className="header-avt"
-                            /> */}
                         <UserIcon width="3.5rem" height="3.5rem" />
                         <p className={cx('user-text')}>{localStorage.getItem('isLogin')}</p>
                     </div>

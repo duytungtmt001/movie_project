@@ -7,6 +7,7 @@ import {motion, useSpring} from 'framer-motion'
 import Tippy from '@tippyjs/react/headless';
 import Wrapper from '../Popper/Wrapper';
 import Image from '../Image/Image';
+import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
@@ -45,17 +46,31 @@ function Search({
                             {
                                 if(index+1 <= 6) {
                                     return (
-                                        <div className="col l-4" style={{marginTop: '12px', padding: '0 6px', position: 'relative'}} key={index}>
-                                            <div className={cx('item')}>
-                                                <Image
-                                                    alt="Movie"
-                                                    src={require(`../../assets/images/type_movie/${item.img}`)}
-                                                    className={cx('item-image')}
-                                                />
-                                                <span className={cx('item-title')}>{item.name}</span>
-                                            </div>
+                                        <div
+                                            className="col l-4"
+                                            style={{
+                                                marginTop: '12px',
+                                                padding: '0 6px',
+                                                position: 'relative',
+                                            }}
+                                            key={index}
+                                        >
+                                            <Link
+                                                to={`/movie_project/ribbon/${item.category}-${item.id}`}
+                                            >
+                                                <div className={cx('item')}>
+                                                    <Image
+                                                        alt="Movie"
+                                                        src={require(`../../assets/images/type_movie/${item.img}`)}
+                                                        className={cx('item-image')}
+                                                    />
+                                                    <span className={cx('item-title')}>
+                                                        {item.name}
+                                                    </span>
+                                                </div>
+                                            </Link>
                                         </div>
-                                    )
+                                    );
                                 }
                             }
                         )}
@@ -66,17 +81,31 @@ function Search({
                             {
                                 if(index+1 > 6) {
                                     return (
-                                        <div className="col l-4" style={{marginTop: '12px', padding: '0 6px', position: 'relative'}} key={index}>
-                                            <div className={cx('item')}>
-                                                <Image
-                                                    alt="Movie"
-                                                    src={require(`../../assets/images/type_movie/${item.img}`)}
-                                                    className={cx('item-image')}
-                                                />
-                                                <span className={cx('item-title')}>{item.name}</span>
-                                            </div>
+                                        <div
+                                            className="col l-4"
+                                            style={{
+                                                marginTop: '12px',
+                                                padding: '0 6px',
+                                                position: 'relative',
+                                            }}
+                                            key={index}
+                                        >
+                                            <Link
+                                                to={`/movie_project/ribbon/${item.category}-${item.id}`}
+                                            >
+                                                <div className={cx('item')}>
+                                                    <Image
+                                                        alt="Movie"
+                                                        src={require(`../../assets/images/type_movie/${item.img}`)}
+                                                        className={cx('item-image')}
+                                                    />
+                                                    <span className={cx('item-title')}>
+                                                        {item.name}
+                                                    </span>
+                                                </div>
+                                            </Link>
                                         </div>
-                                    )
+                                    );
                                 }
                             }
                         )}

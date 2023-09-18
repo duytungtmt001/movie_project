@@ -6,25 +6,41 @@ import classNames from 'classnames/bind';
 import styles from './Home.module.scss';
 
 import { ApiContext } from '../../context';
-import { useLoaderData, useLocation } from 'react-router-dom';
+import { useLoaderData, useLocation, useNavigate } from 'react-router-dom';
 
 import Video from '../../components/Video'
 import { ArrowRightIcon } from '../../components/Icons';
-import { listMovieOdd, listMovieRelease, listMovieSeries, listTrendHome } from '../../apiServices';
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 
 const cx = classNames.bind(styles);
 
 function Home() {
     const apiData = useContext(ApiContext);
-    // const [listTrend, setListTrend] = useState();
-    // const [listOdd, setListOdd] = useState();
-    // const [listRelease, setListRelease] = useState();
-    // const [listSeries, setListSeries] = useState();
     const loaderData = useLoaderData();
 
     const [showVideo, setShowVideo] = useState(false);
     const [path, setPath] = useState('3.mp4');
     const [item, setItem] = useState();
+    const [login, setLogin] = useState(false)
+    let navigate = useNavigate();
+    
+    
+    const MySwal = withReactContent(Swal);
+
+    login && MySwal.fire({
+        title: 'Đăng nhập để xem phim nhé',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Đăng nhập ngay',
+    }).then((result) => {
+        setLogin(false)
+        if (result.isConfirmed) {
+            return navigate('/movie_project/login');
+        }
+    });
 
     const scaleAnimation = showVideo
         ? {
@@ -33,38 +49,14 @@ function Home() {
         : {};
 
     const handleReRender = (item, type) => {
-        setShowVideo(!showVideo);
-        item[type] && setPath(item[type]);
-        setItem(item);
+        if(localStorage.getItem('isLogin')){
+            setShowVideo(!showVideo);
+            item[type] && setPath(item[type]);
+            setItem(item);
+        } else {
+            setLogin(true)
+        }
     }
-
-    // useEffect(() => {
-    //     const callApi = async () =>  {
-    //         try {
-    //             const resOdd = await listMovieOdd();
-    //             const resSeries = await listMovieSeries();
-    //             const resRelease = await listMovieRelease();
-    //             const resultTrend = await listTrendHome();
-    //             let resultOdd = [];
-    //             let resultSeries = [];
-    //             let resultRelease = [];
-    //             for (let i = 0; i < 10; i++) {
-    //                 resultOdd.push(resOdd[i]);
-    //                 resultSeries.push(resSeries[i]);
-    //                 resultRelease.push(resRelease[i]);
-    //             }
-    //             setListTrend(resultTrend);
-    //             setListOdd(resOdd);
-    //             setListRelease(resultRelease);
-    //             setListSeries(resSeries);
-    //         } catch (error) {
-    //             console.log(error);
-    //         }
-    //     }
-
-    //     callApi();
-    // }, [])
-
 
     return (
         <div>

@@ -103,6 +103,7 @@ function Slide({ sourceListImg, item, slideLarge, typeMovie, reRenderParent, see
                             </Tippy>
 
                             <div className={cx('seperate')}></div>
+
                             <Tippy
                                 content="Xem phim"
                                 placement="top"
@@ -119,6 +120,7 @@ function Slide({ sourceListImg, item, slideLarge, typeMovie, reRenderParent, see
                             </Tippy>
 
                             <div className={cx('seperate')}></div>
+                            
                             <Tippy
                                 content={item.isLike || wishListIcon ? 'Đã thêm' : 'Yêu thích'}
                                 placement="top"

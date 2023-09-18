@@ -8,10 +8,33 @@ import Button from '../Button';
 import Tippy from '@tippyjs/react';
 import { useState } from 'react';
 import Video from '../Video';
+import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 
 const cx = classNames.bind(styles);
 function DetailMovie({ item, typeMovie, list }) {
     const [showVideo, setShowVideo] = useState(false);
+    const [login, setLogin] = useState(false);
+    let navigate = useNavigate();
+
+    const MySwal = withReactContent(Swal);
+
+    login &&
+        MySwal.fire({
+            title: 'Đăng nhập để xem phim nhé',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Đăng nhập ngay',
+        }).then((result) => {
+            setLogin(false);
+            if (result.isConfirmed) {
+                return navigate('/movie_project/login');
+            }
+        });
+
     
     const scaleAnimation = showVideo
     ? {
@@ -23,6 +46,14 @@ function DetailMovie({ item, typeMovie, list }) {
     const handleReRenderVideo = () => {
         setShowVideo(!showVideo);
     };
+
+    const handleShowVideo = () => {
+        if (localStorage.getItem('isLogin')) {
+            setShowVideo(!showVideo);
+        } else {
+            setLogin(true);
+        }
+    }
 
     const typeMovieItem = () => {
         return typeMovie.find((typeItem, index) => {
@@ -114,7 +145,7 @@ function DetailMovie({ item, typeMovie, list }) {
                                         height="2.5rem"
                                     />
                                 }
-                                onClick={() => setShowVideo(!showVideo)}
+                                onClick={handleShowVideo}
                             >
                                 Xem phim
                             </Button>

@@ -8,6 +8,9 @@ import { useContext, useState } from 'react';
 import Video from '../Video';
 
 import {ApiContext} from '../../context'
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
+import { useNavigate } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
@@ -18,11 +21,14 @@ function ListMovieByCategory({
     sourceSliderImg,
     sourceListImg,
 }) {
+    
     const dataContext = useContext(ApiContext) 
 
     const [showVideo, setShowVideo] = useState(false);
     const [path, setPath] = useState();
+    const [login, setLogin] = useState(false);
     const [item, setItem] = useState();
+    let navigate = useNavigate();
 
     const scaleAnimation = showVideo
         ? {
@@ -31,14 +37,36 @@ function ListMovieByCategory({
         : {};
 
     const handleReRender = (item, type) => {
-        setShowVideo(!showVideo);
-        item[type] && setPath(item[type]);
-        setItem(item);
+        if (localStorage.getItem('isLogin')) {
+            setShowVideo(!showVideo);
+            item[type] && setPath(item[type]);
+            setItem(item);
+        } else {
+            setLogin(true);
+        }
     };
 
     const findIdTypeMovie = (name) => {
         return dataContext.typeMovie.find((type, index) => name === type.name).id
     }
+
+
+    const MySwal = withReactContent(Swal);
+
+    login &&
+        MySwal.fire({
+            title: 'Đăng nhập để xem phim nhé',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Đăng nhập ngay',
+        }).then((result) => {
+            setLogin(false);
+            if (result.isConfirmed) {
+                return navigate('/movie_project/login');
+            }
+        });
 
     return (
         <div>
